@@ -1,0 +1,86 @@
+﻿### New Endpoints: None
+-----------------------
+### Deleted Endpoints: None
+---------------------------
+### Modified Endpoints: 4
+-------------------------
+POST /consents
+- Responses changed
+  - Modified response: 201
+    - Content changed
+      - Modified media type: application/jwt
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Deleted property: ibgeTownCode
+GET /consents/{consentId}
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/jwt
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Deleted property: ibgeTownCode
+POST /pix/payments
+- Responses changed
+  - Modified response: 201
+    - Content changed
+      - Modified media type: application/jwt
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: proxy
+                  - Description changed from 'Chave cadastrada no DICT pertencente ao recebedor. Os tipos de chaves podem ser: telefone, e-mail, cpf/cnpj ou chave aleat├│ria.
+No caso de telefone celular deve ser informado no padr├úo E.1641.
+Para e-mail deve ter o formato xxxxxxxx@xxxxxxx.xxx(.xx) e no m├íximo 77 caracteres.
+No caso de CPF dever├í ser informado com 11 n├║meros, sem pontos ou tra├ºos.
+Para o caso de CNPJ dever├í ser informado com 14 n├║meros, sem pontos ou tra├ºos.
+No caso de chave aleat├│ria deve ser informado o UUID gerado pelo DICT, conforme formato especificado na RFC41223.
+Se informado, a detentora da conta deve validar o proxy no DICT quando localInstrument for igual a DICT, QRDN ou QRES e validar o campo creditorAccount.
+Esta valida├º├úo ├⌐ opcional caso o localInstrument for igual a INIC.
+[Restri├º├úo] Se localInstrument for igual a MANU, o campo proxy n├úo deve ser preenchido. Se localInstrument for igual INIC, DICT, QRDN ou QRES, o campo proxy deve ser sempre preenchido com a chave Pix.
+[Restri├º├úo] Se localInstrument for igual a MANU, o campo proxy n├úo deve ser preenchido. Se localInstrument for igual INIC, DICT, QRDN ou QRES, o campo proxy deve ser sempre preenchido com a chave Pix.
+' to 'Chave cadastrada no DICT pertencente ao recebedor. Os tipos de chaves podem ser: telefone, e-mail, cpf/cnpj ou chave aleat├│ria.
+No caso de telefone celular deve ser informado no padr├úo E.1641.
+Para e-mail deve ter o formato xxxxxxxx@xxxxxxx.xxx(.xx) e no m├íximo 77 caracteres.
+No caso de CPF dever├í ser informado com 11 n├║meros, sem pontos ou tra├ºos.
+Para o caso de CNPJ dever├í ser informado com 14 n├║meros, sem pontos ou tra├ºos.
+No caso de chave aleat├│ria deve ser informado o UUID gerado pelo DICT, conforme formato especificado na RFC41223.
+Se informado, a detentora da conta deve validar o proxy no DICT quando localInstrument for igual a DICT, QRDN ou QRES e validar o campo creditorAccount.
+Esta valida├º├úo ├⌐ opcional caso o localInstrument for igual a INIC.
+[Restri├º├úo] Se localInstrument for igual a MANU, o campo proxy n├úo deve ser preenchido. Se localInstrument for igual INIC, DICT, QRDN ou QRES, o campo proxy deve ser sempre preenchido com a chave Pix.
+'
+GET /pix/payments/{paymentId}
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/jwt
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: proxy
+                  - Description changed from 'Chave cadastrada no DICT pertencente ao recebedor. Os tipos de chaves podem ser: telefone, e-mail, cpf/cnpj ou chave aleat├│ria.
+No caso de telefone celular deve ser informado no padr├úo E.1641.
+Para e-mail deve ter o formato xxxxxxxx@xxxxxxx.xxx(.xx) e no m├íximo 77 caracteres.
+No caso de CPF dever├í ser informado com 11 n├║meros, sem pontos ou tra├ºos.
+Para o caso de CNPJ dever├í ser informado com 14 n├║meros, sem pontos ou tra├ºos.
+No caso de chave aleat├│ria deve ser informado o UUID gerado pelo DICT, conforme formato especificado na RFC41223.
+Se informado, a detentora da conta deve validar o proxy no DICT quando localInstrument for igual a DICT, QRDN ou QRES e validar o campo creditorAccount.
+Esta valida├º├úo ├⌐ opcional caso o localInstrument for igual a INIC.
+[Restri├º├úo] Se localInstrument for igual a MANU, o campo proxy n├úo deve ser preenchido. Se localInstrument for igual INIC, DICT, QRDN ou QRES, o campo proxy deve ser sempre preenchido com a chave Pix.
+[Restri├º├úo] Se localInstrument for igual a MANU, o campo proxy n├úo deve ser preenchido. Se localInstrument for igual INIC, DICT, QRDN ou QRES, o campo proxy deve ser sempre preenchido com a chave Pix.
+' to 'Chave cadastrada no DICT pertencente ao recebedor. Os tipos de chaves podem ser: telefone, e-mail, cpf/cnpj ou chave aleat├│ria.
+No caso de telefone celular deve ser informado no padr├úo E.1641.
+Para e-mail deve ter o formato xxxxxxxx@xxxxxxx.xxx(.xx) e no m├íximo 77 caracteres.
+No caso de CPF dever├í ser informado com 11 n├║meros, sem pontos ou tra├ºos.
+Para o caso de CNPJ dever├í ser informado com 14 n├║meros, sem pontos ou tra├ºos.
+No caso de chave aleat├│ria deve ser informado o UUID gerado pelo DICT, conforme formato especificado na RFC41223.
+Se informado, a detentora da conta deve validar o proxy no DICT quando localInstrument for igual a DICT, QRDN ou QRES e validar o campo creditorAccount.
+Esta valida├º├úo ├⌐ opcional caso o localInstrument for igual a INIC.
+[Restri├º├úo] Se localInstrument for igual a MANU, o campo proxy n├úo deve ser preenchido. Se localInstrument for igual INIC, DICT, QRDN ou QRES, o campo proxy deve ser sempre preenchido com a chave Pix.
+'

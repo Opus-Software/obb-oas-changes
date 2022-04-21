@@ -1,0 +1,442 @@
+﻿### New Endpoints: None
+-----------------------
+### Deleted Endpoints: None
+---------------------------
+### Modified Endpoints: 10
+--------------------------
+GET /business-credit-cards
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: brand
+                  - Properties changed
+                    - Modified property: companies
+                      - Items changed
+                        - Properties changed
+                          - Modified property: businessCreditCards
+                            - Items changed
+                              - Properties changed
+                                - Modified property: interest
+                                  - Properties changed
+                                    - Modified property: instalmentRates
+                                      - Items changed
+                                        - Properties changed
+                                          - Modified property: applications
+                                            - Items changed
+                                              - Properties changed
+                                                - Modified property: indexer
+                                                  - Properties changed
+                                                    - Modified property: rate
+                                                      - Description changed from 'Percentual que corresponde a mediana da taxa efetiva cobrada do cliente pela contrata├º├úo do cr├⌐dito, no intervalo informado. p.ex. '0,8700%'. A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+' to 'Percentual que corresponde a mediana da Taxa Nominal Mensal cobrada do cliente pela contrata├º├úo do cr├⌐dito, no intervalo informado. p.ex. '0,8700%'. A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+'
+                                                - Modified property: interval
+                                                  - Description changed from 'Faixas para cobran├ºa da taxa efetiva aplicada pela contrata├º├úo do cr├⌐dito, no intervalo informado: 1┬¬ faixa, 2┬¬ faixa, 3┬¬ faixa e 4┬¬ faixa. Segundo Normativa n┬║32 de 2020: 'Distribui├º├úo de frequ├¬ncia relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o ┬º 2┬║ do art. 3┬║ da Circular n┬║ 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicita├º├úo dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas.
+' to 'Faixas para cobran├ºa da Taxa Nominal Mensal aplicada pela contrata├º├úo do cr├⌐dito, no intervalo informado: 1┬¬ faixa, 2┬¬ faixa, 3┬¬ faixa e 4┬¬ faixa. Segundo Normativa n┬║32 de 2020: 'Distribui├º├úo de frequ├¬ncia relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o ┬º 2┬║ do art. 3┬║ da Circular n┬║ 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicita├º├úo dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas.
+'
+                                          - Modified property: maximumRate
+                                            - Description changed from 'Percentual m├íximo cobrado (taxa efetiva) no m├¬s de refer├¬ncia, para o Financiamento contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)' to 'Percentual m├íximo cobrado (Taxa Nominal Mensal) no m├¬s de refer├¬ncia, para o Financiamento contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)'
+                                          - Modified property: minimumRate
+                                            - Description changed from 'Percentual m├¡nimo cobrado (taxa efetiva) no m├¬s de refer├¬ncia, para o Financiamento contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)' to 'Percentual m├¡nimo cobrado (Taxa Nominal Mensal) no m├¬s de refer├¬ncia, para o Financiamento contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)'
+                                    - Modified property: rates
+                                      - Items changed
+                                        - Properties changed
+                                          - Modified property: applications
+                                            - Items changed
+                                              - Properties changed
+                                                - Modified property: indexer
+                                                  - Properties changed
+                                                    - Modified property: rate
+                                                      - Description changed from 'Percentual que corresponde a mediana da taxa efetiva cobrada do cliente pela contrata├º├úo do cr├⌐dito, no intervalo informado. p.ex. '0,8700%'. A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+' to 'Percentual que corresponde a mediana da Taxa Nominal Mensal cobrada do cliente pela contrata├º├úo do cr├⌐dito, no intervalo informado. p.ex. '0,8700%'. A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+'
+                                                - Modified property: interval
+                                                  - Description changed from 'Faixas para cobran├ºa da taxa efetiva aplicada pela contrata├º├úo do cr├⌐dito, no intervalo informado: 1┬¬ faixa, 2┬¬ faixa, 3┬¬ faixa e 4┬¬ faixa. Segundo Normativa n┬║32 de 2020: 'Distribui├º├úo de frequ├¬ncia relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o ┬º 2┬║ do art. 3┬║ da Circular n┬║ 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicita├º├úo dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas.
+' to 'Faixas para cobran├ºa da Taxa Nominal Mensal aplicada pela contrata├º├úo do cr├⌐dito, no intervalo informado: 1┬¬ faixa, 2┬¬ faixa, 3┬¬ faixa e 4┬¬ faixa. Segundo Normativa n┬║32 de 2020: 'Distribui├º├úo de frequ├¬ncia relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o ┬º 2┬║ do art. 3┬║ da Circular n┬║ 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicita├º├úo dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas.
+'
+                                          - Modified property: maximumRate
+                                            - Description changed from 'Percentual m├íximo cobrado (taxa efetiva) no m├¬s de refer├¬ncia, para o Financiamento contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)' to 'Percentual m├íximo cobrado (Taxa Nominal Mensal) no m├¬s de refer├¬ncia, para o Financiamento contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)'
+                                          - Modified property: minimumRate
+                                            - Description changed from 'Percentual m├¡nimo cobrado (taxa efetiva) no m├¬s de refer├¬ncia, para o Financiamento contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)' to 'Percentual m├¡nimo cobrado (Taxa Nominal Mensal) no m├¬s de refer├¬ncia, para o Financiamento contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)'
+GET /business-financings
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: brand
+                  - Properties changed
+                    - Modified property: companies
+                      - Items changed
+                        - Properties changed
+                          - Modified property: businessFinancings
+                            - Items changed
+                              - Properties changed
+                                - Modified property: interestRates
+                                  - Items changed
+                                    - Properties changed
+                                      - Modified property: applications
+                                        - Items changed
+                                          - Properties changed
+                                            - Modified property: indexer
+                                              - Properties changed
+                                                - Modified property: rate
+                                                  - Description changed from 'Percentual que corresponde a mediana da taxa efetiva cobrada do cliente pela contrata├º├úo do cr├⌐dito, no intervalo informado. p.ex. '0,8700%'. A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+' to 'Percentual que corresponde a mediana da Taxa Nominal Mensal cobrada do cliente pela contrata├º├úo do cr├⌐dito, no intervalo informado. p.ex. '0,8700%'. A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+'
+                                            - Modified property: interval
+                                              - Description changed from 'Faixas para cobran├ºa da taxa efetiva aplicada pela contrata├º├úo do cr├⌐dito, no intervalo informado: 1┬¬ faixa, 2┬¬ faixa, 3┬¬ faixa e 4┬¬ faixa. Segundo Normativa n┬║32 de 2020: 'Distribui├º├úo de frequ├¬ncia relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o ┬º 2┬║ do art. 3┬║ da Circular n┬║ 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicita├º├úo dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas.
+' to 'Faixas para cobran├ºa da Taxa Nominal Mensal aplicada pela contrata├º├úo do cr├⌐dito, no intervalo informado: 1┬¬ faixa, 2┬¬ faixa, 3┬¬ faixa e 4┬¬ faixa. Segundo Normativa n┬║32 de 2020: 'Distribui├º├úo de frequ├¬ncia relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o ┬º 2┬║ do art. 3┬║ da Circular n┬║ 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicita├º├úo dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas.
+'
+                                      - Modified property: maximumRate
+                                        - Description changed from 'Percentual m├íximo cobrado (taxa efetiva) no m├¬s de refer├¬ncia, para o Financiamento contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)' to 'Percentual m├íximo cobrado (Taxa Nominal Mensal) no m├¬s de refer├¬ncia, para o Financiamento contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)'
+                                      - Modified property: minimumRate
+                                        - Description changed from 'Percentual m├¡nimo cobrado (taxa efetiva) no m├¬s de refer├¬ncia, para o Financiamento contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)' to 'Percentual m├¡nimo cobrado (Taxa Nominal Mensal) no m├¬s de refer├¬ncia, para o Financiamento contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)'
+GET /business-invoice-financings
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: brand
+                  - Properties changed
+                    - Modified property: companies
+                      - Items changed
+                        - Properties changed
+                          - Modified property: businessInvoiceFinancings
+                            - Items changed
+                              - Properties changed
+                                - Modified property: interestRates
+                                  - Items changed
+                                    - Properties changed
+                                      - Modified property: applications
+                                        - Description changed from 'Lista  das faixas de cobran├ºa da taxa efetiva de remunera├º├úo' to 'Lista  das faixas de cobran├ºa da Taxa Nominal Mensal de remunera├º├úo'
+                                        - Items changed
+                                          - Properties changed
+                                            - Modified property: indexer
+                                              - Properties changed
+                                                - Modified property: rate
+                                                  - Description changed from 'Percentual que corresponde a mediana da taxa efetiva cobrada do cliente pela contrata├º├úo do cr├⌐dito, no intervalo informado. p.ex. '0,8700%'. A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+' to 'Percentual que corresponde a mediana da Taxa Nominal Mensal cobrada do cliente pela contrata├º├úo do cr├⌐dito, no intervalo informado. p.ex. '0,8700%'. A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+'
+                                            - Modified property: interval
+                                              - Description changed from 'Faixas para cobran├ºa da taxa efetiva aplicada pela contrata├º├úo do cr├⌐dito, no intervalo informado: 1┬¬ faixa, 2┬¬ faixa, 3┬¬ faixa e 4┬¬ faixa. Segundo Normativa n┬║32 de 2020: 'Distribui├º├úo de frequ├¬ncia relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o ┬º 2┬║ do art. 3┬║ da Circular n┬║ 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicita├º├úo dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas.
+' to 'Faixas para cobran├ºa da Taxa Nominal Mensal aplicada pela contrata├º├úo do cr├⌐dito, no intervalo informado: 1┬¬ faixa, 2┬¬ faixa, 3┬¬ faixa e 4┬¬ faixa. Segundo Normativa n┬║32 de 2020: 'Distribui├º├úo de frequ├¬ncia relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o ┬º 2┬║ do art. 3┬║ da Circular n┬║ 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicita├º├úo dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas.
+'
+                                      - Modified property: maximumRate
+                                        - Description changed from 'Percentual m├íximo cobrado (taxa efetiva) no m├¬s de refer├¬ncia, para os Direitos Credit├│rios Descontados contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.15. Este valor representa 15%. O valor 1 representa 100%)
+' to 'Percentual m├íximo cobrado (Taxa Nominal Mensal) no m├¬s de refer├¬ncia, para os Direitos Credit├│rios Descontados contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.15. Este valor representa 15%. O valor 1 representa 100%)
+'
+                                      - Modified property: minimumRate
+                                        - Description changed from 'Percentual m├¡nimo cobrado (taxa efetiva) no m├¬s de refer├¬ncia, para os Direitos Credit├│rios Descontados contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.15. Este valor representa 15%. O valor 1 representa 100%)
+' to 'Percentual m├¡nimo cobrado (Taxa Nominal Mensal) no m├¬s de refer├¬ncia, para os Direitos Credit├│rios Descontados contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.15. Este valor representa 15%. O valor 1 representa 100%)
+'
+GET /business-loans
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: brand
+                  - Properties changed
+                    - Modified property: companies
+                      - Items changed
+                        - Properties changed
+                          - Modified property: businessLoans
+                            - Items changed
+                              - Properties changed
+                                - Modified property: interestRates
+                                  - Items changed
+                                    - Properties changed
+                                      - Modified property: applications
+                                        - Description changed from 'Lista  das faixas de cobran├ºa da taxa efetiva aplicada pela contrata├º├úo de cr├⌐dito' to 'Lista  das faixas de cobran├ºa da Taxa Nominal Mensal aplicada pela contrata├º├úo de cr├⌐dito'
+                                        - Items changed
+                                          - Properties changed
+                                            - Modified property: indexer
+                                              - Properties changed
+                                                - Modified property: rate
+                                                  - Description changed from 'Percentual que corresponde a mediana da taxa efetiva cobrada do cliente pela contrata├º├úo do cr├⌐dito, no intervalo informado. p.ex. '0,8700%'. A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+' to 'Percentual que corresponde a mediana da Taxa Nominal Mensal cobrada do cliente pela contrata├º├úo do cr├⌐dito, no intervalo informado. p.ex. '0,8700%'. A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+'
+                                            - Modified property: interval
+                                              - Description changed from 'Faixas para cobran├ºa da taxa efetiva aplicada pela contrata├º├úo do cr├⌐dito, no intervalo informado: 1┬¬ faixa, 2┬¬ faixa, 3┬¬ faixa e 4┬¬ faixa. Segundo Normativa n┬║32 de 2020: 'Distribui├º├úo de frequ├¬ncia relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o ┬º 2┬║ do art. 3┬║ da Circular n┬║ 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicita├º├úo dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas.
+' to 'Faixas para cobran├ºa da Taxa Nominal Mensal aplicada pela contrata├º├úo do cr├⌐dito, no intervalo informado: 1┬¬ faixa, 2┬¬ faixa, 3┬¬ faixa e 4┬¬ faixa. Segundo Normativa n┬║32 de 2020: 'Distribui├º├úo de frequ├¬ncia relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o ┬º 2┬║ do art. 3┬║ da Circular n┬║ 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicita├º├úo dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas.
+'
+                                      - Modified property: maximumRate
+                                        - Description changed from 'Percentual m├íximo cobrado (taxa efetiva) no m├¬s de refer├¬ncia, para o Empr├⌐stimo contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)' to 'Percentual m├íximo cobrado (Taxa Nominal Mensal) no m├¬s de refer├¬ncia, para o Empr├⌐stimo contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)'
+                                      - Modified property: minimumRate
+                                        - Description changed from 'Percentual m├¡nimo cobrado (taxa efetiva) no m├¬s de refer├¬ncia, para o Empr├⌐stimo contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)' to 'Percentual m├¡nimo cobrado (Taxa Nominal Mensal) no m├¬s de refer├¬ncia, para o Empr├⌐stimo contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)'
+GET /business-unarranged-account-overdraft
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: brand
+                  - Properties changed
+                    - Modified property: companies
+                      - Items changed
+                        - Properties changed
+                          - Modified property: businessUnarrangedAccountOverdraft
+                            - Items changed
+                              - Properties changed
+                                - Modified property: interestRates
+                                  - Items changed
+                                    - Properties changed
+                                      - Modified property: applications
+                                        - Description changed from 'Lista  das faixas de cobran├ºa da taxa efetiva de remunera├º├úo.' to 'Lista  das faixas de cobran├ºa da Taxa Nominal Mensal de remunera├º├úo.'
+                                        - Items changed
+                                          - Properties changed
+                                            - Modified property: indexer
+                                              - Properties changed
+                                                - Modified property: rate
+                                                  - Description changed from 'Percentual que corresponde a mediana da taxa efetiva cobrada do cliente pela contrata├º├úo do cr├⌐dito, no intervalo informado. p.ex. '0,8700%'. A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+' to 'Percentual que corresponde a mediana da Taxa Nominal Mensal cobrada do cliente pela contrata├º├úo do cr├⌐dito, no intervalo informado. p.ex. '0,8700%'. A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+'
+                                            - Modified property: interval
+                                              - Description changed from 'Faixas para cobran├ºa da taxa efetiva aplicada pela contrata├º├úo do cr├⌐dito, no intervalo informado: 1┬¬ faixa, 2┬¬ faixa, 3┬¬ faixa e 4┬¬ faixa. Segundo Normativa n┬║32 de 2020: 'Distribui├º├úo de frequ├¬ncia relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o ┬º 2┬║ do art. 3┬║ da Circular n┬║ 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicita├º├úo dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas.
+' to 'Faixas para cobran├ºa da Taxa Nominal Mensal aplicada pela contrata├º├úo do cr├⌐dito, no intervalo informado: 1┬¬ faixa, 2┬¬ faixa, 3┬¬ faixa e 4┬¬ faixa. Segundo Normativa n┬║32 de 2020: 'Distribui├º├úo de frequ├¬ncia relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o ┬º 2┬║ do art. 3┬║ da Circular n┬║ 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicita├º├úo dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas.
+'
+                                      - Modified property: maximumRate
+                                        - Description changed from 'Percentual m├íximo cobrado (taxa efetiva) no m├¬s de refer├¬ncia, para o cr├⌐dito contratado A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+' to 'Percentual m├íximo cobrado (Taxa Nominal Mensal) no m├¬s de refer├¬ncia, para o cr├⌐dito contratado A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+'
+                                      - Modified property: minimumRate
+                                        - Description changed from 'Percentual m├¡nimo cobrado (taxa efetiva) no m├¬s de refer├¬ncia, para o cr├⌐dito contratado A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+' to 'Percentual m├¡nimo cobrado (Taxa Nominal Mensal) no m├¬s de refer├¬ncia, para o cr├⌐dito contratado A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+'
+GET /personal-credit-cards
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: brand
+                  - Properties changed
+                    - Modified property: companies
+                      - Items changed
+                        - Properties changed
+                          - Modified property: personalCreditCards
+                            - Items changed
+                              - Properties changed
+                                - Modified property: interest
+                                  - Properties changed
+                                    - Modified property: instalmentRates
+                                      - Items changed
+                                        - Properties changed
+                                          - Modified property: applications
+                                            - Items changed
+                                              - Properties changed
+                                                - Modified property: indexer
+                                                  - Properties changed
+                                                    - Modified property: rate
+                                                      - Description changed from 'Percentual que corresponde a mediana da taxa efetiva cobrada do cliente pela contrata├º├úo do cr├⌐dito, no intervalo informado. p.ex. '0,8700%'. A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+' to 'Percentual que corresponde a mediana da Taxa Nominal Mensal cobrada do cliente pela contrata├º├úo do cr├⌐dito, no intervalo informado. p.ex. '0,8700%'. A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+'
+                                                - Modified property: interval
+                                                  - Description changed from 'Faixas para cobran├ºa da taxa efetiva aplicada pela contrata├º├úo do cr├⌐dito, no intervalo informado: 1┬¬ faixa, 2┬¬ faixa, 3┬¬ faixa e 4┬¬ faixa. Segundo Normativa n┬║32 de 2020: 'Distribui├º├úo de frequ├¬ncia relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o ┬º 2┬║ do art. 3┬║ da Circular n┬║ 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicita├º├úo dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas.
+' to 'Faixas para cobran├ºa da Taxa Nominal Mensal aplicada pela contrata├º├úo do cr├⌐dito, no intervalo informado: 1┬¬ faixa, 2┬¬ faixa, 3┬¬ faixa e 4┬¬ faixa. Segundo Normativa n┬║32 de 2020: 'Distribui├º├úo de frequ├¬ncia relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o ┬º 2┬║ do art. 3┬║ da Circular n┬║ 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicita├º├úo dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas.
+'
+                                          - Modified property: maximumRate
+                                            - Description changed from 'Percentual m├íximo cobrado (taxa efetiva) no m├¬s de refer├¬ncia, para o Financiamento contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)' to 'Percentual m├íximo cobrado (Taxa Nominal Mensal) no m├¬s de refer├¬ncia, para o Financiamento contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)'
+                                          - Modified property: minimumRate
+                                            - Description changed from 'Percentual m├¡nimo cobrado (taxa efetiva) no m├¬s de refer├¬ncia, para o Financiamento contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)' to 'Percentual m├¡nimo cobrado (Taxa Nominal Mensal) no m├¬s de refer├¬ncia, para o Financiamento contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)'
+                                    - Modified property: rates
+                                      - Items changed
+                                        - Properties changed
+                                          - Modified property: applications
+                                            - Items changed
+                                              - Properties changed
+                                                - Modified property: indexer
+                                                  - Properties changed
+                                                    - Modified property: rate
+                                                      - Description changed from 'Percentual que corresponde a mediana da taxa efetiva cobrada do cliente pela contrata├º├úo do cr├⌐dito, no intervalo informado. p.ex. '0,8700%'. A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+' to 'Percentual que corresponde a mediana da Taxa Nominal Mensal cobrada do cliente pela contrata├º├úo do cr├⌐dito, no intervalo informado. p.ex. '0,8700%'. A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+'
+                                                - Modified property: interval
+                                                  - Description changed from 'Faixas para cobran├ºa da taxa efetiva aplicada pela contrata├º├úo do cr├⌐dito, no intervalo informado: 1┬¬ faixa, 2┬¬ faixa, 3┬¬ faixa e 4┬¬ faixa. Segundo Normativa n┬║32 de 2020: 'Distribui├º├úo de frequ├¬ncia relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o ┬º 2┬║ do art. 3┬║ da Circular n┬║ 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicita├º├úo dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas.
+' to 'Faixas para cobran├ºa da Taxa Nominal Mensal aplicada pela contrata├º├úo do cr├⌐dito, no intervalo informado: 1┬¬ faixa, 2┬¬ faixa, 3┬¬ faixa e 4┬¬ faixa. Segundo Normativa n┬║32 de 2020: 'Distribui├º├úo de frequ├¬ncia relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o ┬º 2┬║ do art. 3┬║ da Circular n┬║ 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicita├º├úo dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas.
+'
+                                          - Modified property: maximumRate
+                                            - Description changed from 'Percentual m├íximo cobrado (taxa efetiva) no m├¬s de refer├¬ncia, para o Financiamento contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)' to 'Percentual m├íximo cobrado (Taxa Nominal Mensal) no m├¬s de refer├¬ncia, para o Financiamento contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)'
+                                          - Modified property: minimumRate
+                                            - Description changed from 'Percentual m├¡nimo cobrado (taxa efetiva) no m├¬s de refer├¬ncia, para o Financiamento contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)' to 'Percentual m├¡nimo cobrado (Taxa Nominal Mensal) no m├¬s de refer├¬ncia, para o Financiamento contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)'
+GET /personal-financings
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: brand
+                  - Properties changed
+                    - Modified property: companies
+                      - Items changed
+                        - Properties changed
+                          - Modified property: personalFinancings
+                            - Items changed
+                              - Properties changed
+                                - Modified property: interestRates
+                                  - Items changed
+                                    - Properties changed
+                                      - Modified property: applications
+                                        - Items changed
+                                          - Properties changed
+                                            - Modified property: indexer
+                                              - Properties changed
+                                                - Modified property: rate
+                                                  - Description changed from 'Percentual que corresponde a mediana da taxa efetiva cobrada do cliente pela contrata├º├úo do cr├⌐dito, no intervalo informado. p.ex. '0,8700%'. A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+' to 'Percentual que corresponde a mediana da Taxa Nominal Mensal cobrada do cliente pela contrata├º├úo do cr├⌐dito, no intervalo informado. p.ex. '0,8700%'. A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+'
+                                            - Modified property: interval
+                                              - Description changed from 'Faixas para cobran├ºa da taxa efetiva aplicada pela contrata├º├úo do cr├⌐dito, no intervalo informado: 1┬¬ faixa, 2┬¬ faixa, 3┬¬ faixa e 4┬¬ faixa. Segundo Normativa n┬║32 de 2020: 'Distribui├º├úo de frequ├¬ncia relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o ┬º 2┬║ do art. 3┬║ da Circular n┬║ 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicita├º├úo dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas.
+' to 'Faixas para cobran├ºa da Taxa Nominal Mensal aplicada pela contrata├º├úo do cr├⌐dito, no intervalo informado: 1┬¬ faixa, 2┬¬ faixa, 3┬¬ faixa e 4┬¬ faixa. Segundo Normativa n┬║32 de 2020: 'Distribui├º├úo de frequ├¬ncia relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o ┬º 2┬║ do art. 3┬║ da Circular n┬║ 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicita├º├úo dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas.
+'
+                                      - Modified property: maximumRate
+                                        - Description changed from 'Percentual m├íximo cobrado (taxa efetiva) no m├¬s de refer├¬ncia, para o Financiamento contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)' to 'Percentual m├íximo cobrado (Taxa Nominal Mensal) no m├¬s de refer├¬ncia, para o Financiamento contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)'
+                                      - Modified property: minimumRate
+                                        - Description changed from 'Percentual m├¡nimo cobrado (taxa efetiva) no m├¬s de refer├¬ncia, para o Financiamento contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)' to 'Percentual m├¡nimo cobrado (Taxa Nominal Mensal) no m├¬s de refer├¬ncia, para o Financiamento contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)'
+GET /personal-invoice-financings
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: brand
+                  - Properties changed
+                    - Modified property: companies
+                      - Items changed
+                        - Properties changed
+                          - Modified property: personalInvoiceFinancings
+                            - Items changed
+                              - Properties changed
+                                - Modified property: interestRates
+                                  - Items changed
+                                    - Properties changed
+                                      - Modified property: applications
+                                        - Description changed from 'Lista  das faixas de cobran├ºa da taxa efetiva de remunera├º├úo' to 'Lista  das faixas de cobran├ºa da Taxa Nominal Mensal de remunera├º├úo'
+                                        - Items changed
+                                          - Properties changed
+                                            - Modified property: indexer
+                                              - Properties changed
+                                                - Modified property: rate
+                                                  - Description changed from 'Percentual que corresponde a mediana da taxa efetiva cobrada do cliente pela contrata├º├úo do cr├⌐dito, no intervalo informado. p.ex. '0,8700%'. A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+' to 'Percentual que corresponde a mediana da Taxa Nominal Mensal cobrada do cliente pela contrata├º├úo do cr├⌐dito, no intervalo informado. p.ex. '0,8700%'. A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+'
+                                            - Modified property: interval
+                                              - Description changed from 'Faixas para cobran├ºa da taxa efetiva aplicada pela contrata├º├úo do cr├⌐dito, no intervalo informado: 1┬¬ faixa, 2┬¬ faixa, 3┬¬ faixa e 4┬¬ faixa. Segundo Normativa n┬║32 de 2020: 'Distribui├º├úo de frequ├¬ncia relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o ┬º 2┬║ do art. 3┬║ da Circular n┬║ 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicita├º├úo dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas.
+' to 'Faixas para cobran├ºa da Taxa Nominal Mensal aplicada pela contrata├º├úo do cr├⌐dito, no intervalo informado: 1┬¬ faixa, 2┬¬ faixa, 3┬¬ faixa e 4┬¬ faixa. Segundo Normativa n┬║32 de 2020: 'Distribui├º├úo de frequ├¬ncia relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o ┬º 2┬║ do art. 3┬║ da Circular n┬║ 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicita├º├úo dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas.
+'
+                                      - Modified property: maximumRate
+                                        - Description changed from 'Percentual m├íximo cobrado (taxa efetiva) no m├¬s de refer├¬ncia, para os Direitos Credit├│rios Descontados contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.15. Este valor representa 15%. O valor 1 representa 100%)
+' to 'Percentual m├íximo cobrado (Taxa Nominal Mensal) no m├¬s de refer├¬ncia, para os Direitos Credit├│rios Descontados contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.15. Este valor representa 15%. O valor 1 representa 100%)
+'
+                                      - Modified property: minimumRate
+                                        - Description changed from 'Percentual m├¡nimo cobrado (taxa efetiva) no m├¬s de refer├¬ncia, para os Direitos Credit├│rios Descontados contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.15. Este valor representa 15%. O valor 1 representa 100%)
+' to 'Percentual m├¡nimo cobrado (Taxa Nominal Mensal) no m├¬s de refer├¬ncia, para os Direitos Credit├│rios Descontados contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.15. Este valor representa 15%. O valor 1 representa 100%)
+'
+GET /personal-loans
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: brand
+                  - Properties changed
+                    - Modified property: companies
+                      - Items changed
+                        - Properties changed
+                          - Modified property: personalLoans
+                            - Items changed
+                              - Properties changed
+                                - Modified property: interestRates
+                                  - Items changed
+                                    - Properties changed
+                                      - Modified property: applications
+                                        - Description changed from 'Lista  das faixas de cobran├ºa da taxa efetiva aplicada pela contrata├º├úo de cr├⌐dito' to 'Lista  das faixas de cobran├ºa da Taxa Nominal Mensal aplicada pela contrata├º├úo de cr├⌐dito'
+                                        - Items changed
+                                          - Properties changed
+                                            - Modified property: indexer
+                                              - Properties changed
+                                                - Modified property: rate
+                                                  - Description changed from 'Percentual que corresponde a mediana da taxa efetiva cobrada do cliente pela contrata├º├úo do cr├⌐dito, no intervalo informado. p.ex. '0,8700%'. A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+' to 'Percentual que corresponde a mediana da Taxa Nominal Mensal cobrada do cliente pela contrata├º├úo do cr├⌐dito, no intervalo informado. p.ex. '0,8700%'. A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+'
+                                            - Modified property: interval
+                                              - Description changed from 'Faixas para cobran├ºa da taxa efetiva aplicada pela contrata├º├úo do cr├⌐dito, no intervalo informado: 1┬¬ faixa, 2┬¬ faixa, 3┬¬ faixa e 4┬¬ faixa. Segundo Normativa n┬║32 de 2020: 'Distribui├º├úo de frequ├¬ncia relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o ┬º 2┬║ do art. 3┬║ da Circular n┬║ 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicita├º├úo dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas.
+' to 'Faixas para cobran├ºa da Taxa Nominal Mensal aplicada pela contrata├º├úo do cr├⌐dito, no intervalo informado: 1┬¬ faixa, 2┬¬ faixa, 3┬¬ faixa e 4┬¬ faixa. Segundo Normativa n┬║32 de 2020: 'Distribui├º├úo de frequ├¬ncia relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o ┬º 2┬║ do art. 3┬║ da Circular n┬║ 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicita├º├úo dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas.
+'
+                                      - Modified property: maximumRate
+                                        - Description changed from 'Percentual m├íximo cobrado (taxa efetiva) no m├¬s de refer├¬ncia, para o Empr├⌐stimo contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)' to 'Percentual m├íximo cobrado (Taxa Nominal Mensal) no m├¬s de refer├¬ncia, para o Empr├⌐stimo contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)'
+                                      - Modified property: minimumRate
+                                        - Description changed from 'Percentual m├¡nimo cobrado (taxa efetiva) no m├¬s de refer├¬ncia, para o Empr├⌐stimo contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)' to 'Percentual m├¡nimo cobrado (Taxa Nominal Mensal) no m├¬s de refer├¬ncia, para o Empr├⌐stimo contratado  A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)'
+GET /personal-unarranged-account-overdraft
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: brand
+                  - Properties changed
+                    - Modified property: companies
+                      - Items changed
+                        - Properties changed
+                          - Modified property: personalUnarrangedAccountOverdraft
+                            - Items changed
+                              - Properties changed
+                                - Modified property: interestRates
+                                  - Items changed
+                                    - Properties changed
+                                      - Modified property: applications
+                                        - Description changed from 'Lista  das faixas de cobran├ºa da taxa efetiva de remunera├º├úo.' to 'Lista  das faixas de cobran├ºa da Taxa Nominal Mensal de remunera├º├úo.'
+                                        - Items changed
+                                          - Properties changed
+                                            - Modified property: indexer
+                                              - Properties changed
+                                                - Modified property: rate
+                                                  - Description changed from 'Percentual que corresponde a mediana da taxa efetiva cobrada do cliente pela contrata├º├úo do cr├⌐dito, no intervalo informado. p.ex. '0,8700%'. A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+' to 'Percentual que corresponde a mediana da Taxa Nominal Mensal cobrada do cliente pela contrata├º├úo do cr├⌐dito, no intervalo informado. p.ex. '0,8700%'. A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+'
+                                            - Modified property: interval
+                                              - Description changed from 'Faixas para cobran├ºa da taxa efetiva aplicada pela contrata├º├úo do cr├⌐dito, no intervalo informado: 1┬¬ faixa, 2┬¬ faixa, 3┬¬ faixa e 4┬¬ faixa. Segundo Normativa n┬║32 de 2020: 'Distribui├º├úo de frequ├¬ncia relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o ┬º 2┬║ do art. 3┬║ da Circular n┬║ 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicita├º├úo dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas.
+' to 'Faixas para cobran├ºa da Taxa Nominal Mensal aplicada pela contrata├º├úo do cr├⌐dito, no intervalo informado: 1┬¬ faixa, 2┬¬ faixa, 3┬¬ faixa e 4┬¬ faixa. Segundo Normativa n┬║32 de 2020: 'Distribui├º├úo de frequ├¬ncia relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o ┬º 2┬║ do art. 3┬║ da Circular n┬║ 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicita├º├úo dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas.
+'
+                                      - Modified property: maximumRate
+                                        - Description changed from 'Percentual m├íximo cobrado (taxa efetiva) no m├¬s de refer├¬ncia, para o cr├⌐dito contratado A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+' to 'Percentual m├íximo cobrado (Taxa Nominal Mensal) no m├¬s de refer├¬ncia, para o cr├⌐dito contratado A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+'
+                                      - Modified property: minimumRate
+                                        - Description changed from 'Percentual m├¡nimo cobrado (taxa efetiva) no m├¬s de refer├¬ncia, para o cr├⌐dito contratado A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+' to 'Percentual m├¡nimo cobrado (Taxa Nominal Mensal) no m├¬s de refer├¬ncia, para o cr├⌐dito contratado A apura├º├úo pode acontecer com at├⌐ 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
+'

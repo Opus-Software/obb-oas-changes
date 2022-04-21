@@ -1,0 +1,83 @@
+﻿### New Endpoints: None
+-----------------------
+### Deleted Endpoints: None
+---------------------------
+### Modified Endpoints: 3
+-------------------------
+POST /consents
+- Responses changed
+  - Modified response: 201
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: consentId
+                  - Description changed from 'Identificador ├║nico do consentimento.' to 'O consentId ├⌐ o identificador ├║nico do consentimento e dever├í ser um URN - Uniform Resource Name.  
+Um URN, conforme definido na [RFC8141](https://tools.ietf.org/html/rfc8141) ├⌐ um Uniform Resource 
+Identifier - URI - que ├⌐ atribu├¡do sob o URI scheme "urn" e um namespace URN espec├¡fico, com a inten├º├úo de que o URN 
+seja um identificador de recurso persistente e independente da localiza├º├úo.  
+Considerando a string urn:bancoex:C1DD33123 como exemplo para consentId temos:
+- o namespace(urn)
+- o identificador associado ao namespace da institui├º├úo transnmissora (bancoex) 
+- o identificador espec├¡fico dentro do namespace (C1DD33123).  
+Informa├º├╡es mais detalhadas sobre a constru├º├úo de namespaces devem ser consultadas na [RFC8141](https://tools.ietf.org/html/rfc8141).
+'
+                  - MinLength changed from 1 to 0
+                  - MaxLength changed from 100 to 256
+                  - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-\:]{0,99}$' to '^urn:[a-zA-Z0-9][a-zA-Z0-9-]{0,31}:[a-zA-Z0-9()+,\-.:=@;$_!*'%\/?#]+$'
+DELETE /consents/{consentId}
+- Modified path param: consentId
+  - Description changed from 'Identificador do consentimento.' to 'O consentId ├⌐ o identificador ├║nico do consentimento e dever├í ser um URN - Uniform Resource Name.  
+Um URN, conforme definido na [RFC8141](https://tools.ietf.org/html/rfc8141) ├⌐ um Uniform Resource 
+Identifier - URI - que ├⌐ atribu├¡do sob o URI scheme "urn" e um namespace URN espec├¡fico, com a inten├º├úo de que o URN 
+seja um identificador de recurso persistente e independente da localiza├º├úo.  
+Considerando a string urn:bancoex:C1DD33123 como exemplo para consentId temos:
+- o namespace(urn)
+- o identificador associado ao namespace da institui├º├úo transnmissora (bancoex) 
+- o identificador espec├¡fico dentro do namespace (C1DD33123).  
+Informa├º├╡es mais detalhadas sobre a constru├º├úo de namespaces devem ser consultadas na [RFC8141](https://tools.ietf.org/html/rfc8141).
+'
+  - Schema changed
+    - MinLength changed from 1 to 0
+    - MaxLength changed from 100 to 256
+    - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^urn:[a-zA-Z0-9][a-zA-Z0-9-]{0,31}:[a-zA-Z0-9()+,\-.:=@;$_!*'%\/?#]+$'
+GET /consents/{consentId}
+- Modified path param: consentId
+  - Description changed from 'Identificador do consentimento.' to 'O consentId ├⌐ o identificador ├║nico do consentimento e dever├í ser um URN - Uniform Resource Name.  
+Um URN, conforme definido na [RFC8141](https://tools.ietf.org/html/rfc8141) ├⌐ um Uniform Resource 
+Identifier - URI - que ├⌐ atribu├¡do sob o URI scheme "urn" e um namespace URN espec├¡fico, com a inten├º├úo de que o URN 
+seja um identificador de recurso persistente e independente da localiza├º├úo.  
+Considerando a string urn:bancoex:C1DD33123 como exemplo para consentId temos:
+- o namespace(urn)
+- o identificador associado ao namespace da institui├º├úo transnmissora (bancoex) 
+- o identificador espec├¡fico dentro do namespace (C1DD33123).  
+Informa├º├╡es mais detalhadas sobre a constru├º├úo de namespaces devem ser consultadas na [RFC8141](https://tools.ietf.org/html/rfc8141).
+'
+  - Schema changed
+    - MinLength changed from 1 to 0
+    - MaxLength changed from 100 to 256
+    - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^urn:[a-zA-Z0-9][a-zA-Z0-9-]{0,31}:[a-zA-Z0-9()+,\-.:=@;$_!*'%\/?#]+$'
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: consentId
+                  - Description changed from 'Identificador ├║nico do consentimento.' to 'O consentId ├⌐ o identificador ├║nico do consentimento e dever├í ser um URN - Uniform Resource Name.  
+Um URN, conforme definido na [RFC8141](https://tools.ietf.org/html/rfc8141) ├⌐ um Uniform Resource 
+Identifier - URI - que ├⌐ atribu├¡do sob o URI scheme "urn" e um namespace URN espec├¡fico, com a inten├º├úo de que o URN 
+seja um identificador de recurso persistente e independente da localiza├º├úo.  
+Considerando a string urn:bancoex:C1DD33123 como exemplo para consentId temos:
+- o namespace(urn)
+- o identificador associado ao namespace da institui├º├úo transnmissora (bancoex) 
+- o identificador espec├¡fico dentro do namespace (C1DD33123).  
+Informa├º├╡es mais detalhadas sobre a constru├º├úo de namespaces devem ser consultadas na [RFC8141](https://tools.ietf.org/html/rfc8141).
+'
+                  - MinLength changed from 1 to 0
+                  - MaxLength changed from 100 to 256
+                  - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-\:]{0,99}$' to '^urn:[a-zA-Z0-9][a-zA-Z0-9-]{0,31}:[a-zA-Z0-9()+,\-.:=@;$_!*'%\/?#]+$'

@@ -1,0 +1,161 @@
+﻿### New Endpoints: None
+-----------------------
+### Deleted Endpoints: None
+---------------------------
+### Modified Endpoints: 4
+-------------------------
+POST /consents
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Properties changed
+          - Modified property: data
+            - Properties changed
+              - Modified property: debtorAccount
+                - Properties changed
+                  - Modified property: number
+                    - MinLength changed from 1 to 3
+                    - Pattern changed from '^\d{8,20}$' to '^\d{3,20}$'
+              - Modified property: payment
+                - Properties changed
+                  - Modified property: currency
+                    - Pattern changed from '^(\w{3}){1}$' to '^([A-Z]{3})$'
+- Responses changed
+  - Modified response: 201
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: debtorAccount
+                  - Properties changed
+                    - Modified property: number
+                      - MinLength changed from 1 to 3
+                      - Pattern changed from '^\d{8,20}$' to '^\d{3,20}$'
+                - Modified property: payment
+                  - Properties changed
+                    - Modified property: currency
+                      - Pattern changed from '^(\w{3}){1}$' to '^([A-Z]{3})$'
+GET /consents/{consentId}
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: debtorAccount
+                  - Properties changed
+                    - Modified property: number
+                      - MinLength changed from 1 to 3
+                      - Pattern changed from '^\d{8,20}$' to '^\d{3,20}$'
+                - Modified property: payment
+                  - Properties changed
+                    - Modified property: currency
+                      - Pattern changed from '^(\w{3}){1}$' to '^([A-Z]{3})$'
+POST /pix/payments
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Properties changed
+          - Modified property: data
+            - Properties changed
+              - Modified property: creditorAccount
+                - Properties changed
+                  - Modified property: number
+                    - MinLength changed from 1 to 3
+                    - Pattern changed from '^\d{8,20}$' to '^\d{3,20}$'
+              - Modified property: localInstrument
+                - Description changed from 'Especifica a forma de inicia├º├úo do pagamento:  
+- MANU - Inser├º├úo manual de dados da conta transacional  
+- DICT - Inser├º├úo manual de chave Pix  
+- QRDN - QR code din├ómico  
+- QRES - QR code est├ítico  
+' to 'Especifica a forma de inicia├º├úo do pagamento:  
+- MANU - Inser├º├úo manual de dados da conta transacional  
+- DICT - Inser├º├úo manual de chave Pix  
+- QRDN - QR code din├ómico (*Dom├¡nio reservado para uso futuro*)  
+- QRES - QR code est├ítico (*Dom├¡nio reservado para uso futuro*)  
+'
+              - Modified property: payment
+                - Properties changed
+                  - Modified property: currency
+                    - Pattern changed from '^(\w{3}){1}$' to '^([A-Z]{3})$'
+              - Modified property: qrCode
+                - Description changed from 'Sequ├¬ncia de caracteres que corresponde ao QR Code disponibilizado para o pagador.  
+├ë a sequ├¬ncia de caracteres que seria lida pelo leitor de QR Code, e deve propiciar o retorno dos dados do pagador ap├│s consulta na DICT.  
+Essa funcionalidade ├⌐ poss├¡vel tanto para QR Code est├ítico quanto para QR Code din├ómico.  
+No arranjo do Pix esta ├⌐ a mesma sequ├¬ncia gerada e/ou lida pela funcionalidade Pix Copia e Cola.  
+Este campo dever├í ser no formato UTF-8.  
+[Restri├º├úo] Preenchimento obrigat├│rio para pagamentos por QR Code, observado o tamanho m├íximo de 512 bytes.
+' to 'Obs: Campo reservado para uso futuro.  
+Sequ├¬ncia de caracteres que corresponde ao QR Code disponibilizado para o pagador.  
+├ë a sequ├¬ncia de caracteres que seria lida pelo leitor de QR Code, e deve propiciar o retorno dos dados do pagador ap├│s consulta na DICT.  
+Essa funcionalidade ├⌐ poss├¡vel tanto para QR Code est├ítico quanto para QR Code din├ómico.  
+No arranjo do Pix esta ├⌐ a mesma sequ├¬ncia gerada e/ou lida pela funcionalidade Pix Copia e Cola.  
+Este campo dever├í ser no formato UTF-8.  
+[Restri├º├úo] Preenchimento obrigat├│rio para pagamentos por QR Code, observado o tamanho m├íximo de 512 bytes.
+'
+- Responses changed
+  - Modified response: 201
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: creditorAccount
+                  - Properties changed
+                    - Modified property: number
+                      - MinLength changed from 1 to 3
+                      - Pattern changed from '^\d{8,20}$' to '^\d{3,20}$'
+                - Modified property: localInstrument
+                  - Description changed from 'Especifica a forma de inicia├º├úo do pagamento:  
+- MANU - Inser├º├úo manual de dados da conta transacional  
+- DICT - Inser├º├úo manual de chave Pix  
+- QRDN - QR code din├ómico  
+- QRES - QR code est├ítico  
+' to 'Especifica a forma de inicia├º├úo do pagamento:  
+- MANU - Inser├º├úo manual de dados da conta transacional  
+- DICT - Inser├º├úo manual de chave Pix  
+- QRDN - QR code din├ómico (*Dom├¡nio reservado para uso futuro*)  
+- QRES - QR code est├ítico (*Dom├¡nio reservado para uso futuro*)  
+'
+                - Modified property: payment
+                  - Properties changed
+                    - Modified property: currency
+                      - Pattern changed from '^(\w{3}){1}$' to '^([A-Z]{3})$'
+GET /pix/payments/{paymentId}
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: creditorAccount
+                  - Properties changed
+                    - Modified property: number
+                      - MinLength changed from 1 to 3
+                      - Pattern changed from '^\d{8,20}$' to '^\d{3,20}$'
+                - Modified property: localInstrument
+                  - Description changed from 'Especifica a forma de inicia├º├úo do pagamento:  
+- MANU - Inser├º├úo manual de dados da conta transacional  
+- DICT - Inser├º├úo manual de chave Pix  
+- QRDN - QR code din├ómico  
+- QRES - QR code est├ítico  
+' to 'Especifica a forma de inicia├º├úo do pagamento:  
+- MANU - Inser├º├úo manual de dados da conta transacional  
+- DICT - Inser├º├úo manual de chave Pix  
+- QRDN - QR code din├ómico (*Dom├¡nio reservado para uso futuro*)  
+- QRES - QR code est├ítico (*Dom├¡nio reservado para uso futuro*)  
+'
+                - Modified property: payment
+                  - Properties changed
+                    - Modified property: currency
+                      - Pattern changed from '^(\w{3}){1}$' to '^([A-Z]{3})$'

@@ -1,0 +1,62 @@
+﻿### New Endpoints: None
+-----------------------
+### Deleted Endpoints: None
+---------------------------
+### Modified Endpoints: 2
+-------------------------
+POST /pix/payments
+- Responses changed
+  - Modified response: 201
+    - Content changed
+      - Modified media type: application/jwt
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Required changed
+                - Deleted required property: endToEndId
+              - Properties changed
+                - Modified property: endToEndId
+                  - Description changed from 'Deve ser preenchido no formato padr├úo ExxxxxxxxyyyyMMddHHmmkkkkkkkkkkk (32 caracteres; ΓÇ£case sensitiveΓÇ¥, isso ├⌐, diferencia letras mai├║sculas e min├║sculas), sendo:
+ΓÇó ΓÇ£EΓÇ¥ ΓÇô fixo (1 caractere);  
+ΓÇó xxxxxxxx ΓÇô identifica├º├úo do agente que gerou o ┬┤EndToEndId┬┤, podendo ser: o ISPB do participante direto ou o ISPB do participante indireto (8 caracteres num├⌐ricos [0-9]);  
+ΓÇó yyyyMMddHHmm ΓÇô data, hora e minuto (12 caracteres), seguindo o hor├írio UTC, da submiss├úo da ordem de pagamento, caso a liquida├º├úo seja priorit├íria, ou prevista para o envio da ordem ao sistema de liquida├º├úo, caso seja realizado um agendamento. Para ordens priorit├írias e n├úo priorit├írias, aceita-se o preenchimento, pelo agente que gerou o ┬┤EndToEndId┬┤, com uma toler├óncia m├íxima de 12 horas, para o futuro e para o passado, em rela├º├úo ao hor├írio efetivo de processamento da ordem pelo SPI;  
+ΓÇó kkkkkkkkkkk ΓÇô sequencial criado pelo agente que gerou o ┬┤EndToEndId┬┤ (11 caracteres alfanum├⌐ricos [a-z/A-Z/0-9]). Deve ser ├║nico dentro de cada ΓÇ£yyyyMMddHHmmΓÇ¥.  
+Admite-se que o ┬┤EndToEndId┬┤ seja gerado pelo participante direto, pelo participante indireto ou pelo iniciador de pagamento.  
+Ele deve ser ├║nico, n├úo podendo ser repetido em qualquer outra opera├º├úo enviada ao SPI.
+' to 'Deve ser preenchido no formato padr├úo ExxxxxxxxyyyyMMddHHmmkkkkkkkkkkk (32 caracteres; ΓÇ£case sensitiveΓÇ¥, isso ├⌐, diferencia letras mai├║sculas e min├║sculas), sendo:
+ΓÇó ΓÇ£EΓÇ¥ ΓÇô fixo (1 caractere);  
+ΓÇó xxxxxxxx ΓÇô identifica├º├úo do agente que gerou o ┬┤EndToEndId┬┤, podendo ser: o ISPB do participante direto ou o ISPB do participante indireto (8 caracteres num├⌐ricos [0-9]);  
+ΓÇó yyyyMMddHHmm ΓÇô data, hora e minuto (12 caracteres), seguindo o hor├írio UTC, da submiss├úo da ordem de pagamento, caso a liquida├º├úo seja priorit├íria, ou prevista para o envio da ordem ao sistema de liquida├º├úo, caso seja realizado um agendamento. Para ordens priorit├írias e n├úo priorit├írias, aceita-se o preenchimento, pelo agente que gerou o ┬┤EndToEndId┬┤, com uma toler├óncia m├íxima de 12 horas, para o futuro e para o passado, em rela├º├úo ao hor├írio efetivo de processamento da ordem pelo SPI;  
+ΓÇó kkkkkkkkkkk ΓÇô sequencial criado pelo agente que gerou o ┬┤EndToEndId┬┤ (11 caracteres alfanum├⌐ricos [a-z/A-Z/0-9]). Deve ser ├║nico dentro de cada ΓÇ£yyyyMMddHHmmΓÇ¥.  
+Admite-se que o ┬┤EndToEndId┬┤ seja gerado pelo participante direto, pelo participante indireto ou pelo iniciador de pagamento.  
+Ele deve ser ├║nico, n├úo podendo ser repetido em qualquer outra opera├º├úo enviada ao SPI.  
+[Restri├º├úo] O ┬┤EndToEndId┬┤ deve ser informado obrigatoriamente caso o status do pagamento seja ACCEPTED_SETTLEMENT_COMPLETED.
+'
+GET /pix/payments/{paymentId}
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/jwt
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Required changed
+                - Deleted required property: endToEndId
+              - Properties changed
+                - Modified property: endToEndId
+                  - Description changed from 'Deve ser preenchido no formato padr├úo ExxxxxxxxyyyyMMddHHmmkkkkkkkkkkk (32 caracteres; ΓÇ£case sensitiveΓÇ¥, isso ├⌐, diferencia letras mai├║sculas e min├║sculas), sendo:
+ΓÇó ΓÇ£EΓÇ¥ ΓÇô fixo (1 caractere);  
+ΓÇó xxxxxxxx ΓÇô identifica├º├úo do agente que gerou o ┬┤EndToEndId┬┤, podendo ser: o ISPB do participante direto ou o ISPB do participante indireto (8 caracteres num├⌐ricos [0-9]);  
+ΓÇó yyyyMMddHHmm ΓÇô data, hora e minuto (12 caracteres), seguindo o hor├írio UTC, da submiss├úo da ordem de pagamento, caso a liquida├º├úo seja priorit├íria, ou prevista para o envio da ordem ao sistema de liquida├º├úo, caso seja realizado um agendamento. Para ordens priorit├írias e n├úo priorit├írias, aceita-se o preenchimento, pelo agente que gerou o ┬┤EndToEndId┬┤, com uma toler├óncia m├íxima de 12 horas, para o futuro e para o passado, em rela├º├úo ao hor├írio efetivo de processamento da ordem pelo SPI;  
+ΓÇó kkkkkkkkkkk ΓÇô sequencial criado pelo agente que gerou o ┬┤EndToEndId┬┤ (11 caracteres alfanum├⌐ricos [a-z/A-Z/0-9]). Deve ser ├║nico dentro de cada ΓÇ£yyyyMMddHHmmΓÇ¥.  
+Admite-se que o ┬┤EndToEndId┬┤ seja gerado pelo participante direto, pelo participante indireto ou pelo iniciador de pagamento.  
+Ele deve ser ├║nico, n├úo podendo ser repetido em qualquer outra opera├º├úo enviada ao SPI.
+' to 'Deve ser preenchido no formato padr├úo ExxxxxxxxyyyyMMddHHmmkkkkkkkkkkk (32 caracteres; ΓÇ£case sensitiveΓÇ¥, isso ├⌐, diferencia letras mai├║sculas e min├║sculas), sendo:
+ΓÇó ΓÇ£EΓÇ¥ ΓÇô fixo (1 caractere);  
+ΓÇó xxxxxxxx ΓÇô identifica├º├úo do agente que gerou o ┬┤EndToEndId┬┤, podendo ser: o ISPB do participante direto ou o ISPB do participante indireto (8 caracteres num├⌐ricos [0-9]);  
+ΓÇó yyyyMMddHHmm ΓÇô data, hora e minuto (12 caracteres), seguindo o hor├írio UTC, da submiss├úo da ordem de pagamento, caso a liquida├º├úo seja priorit├íria, ou prevista para o envio da ordem ao sistema de liquida├º├úo, caso seja realizado um agendamento. Para ordens priorit├írias e n├úo priorit├írias, aceita-se o preenchimento, pelo agente que gerou o ┬┤EndToEndId┬┤, com uma toler├óncia m├íxima de 12 horas, para o futuro e para o passado, em rela├º├úo ao hor├írio efetivo de processamento da ordem pelo SPI;  
+ΓÇó kkkkkkkkkkk ΓÇô sequencial criado pelo agente que gerou o ┬┤EndToEndId┬┤ (11 caracteres alfanum├⌐ricos [a-z/A-Z/0-9]). Deve ser ├║nico dentro de cada ΓÇ£yyyyMMddHHmmΓÇ¥.  
+Admite-se que o ┬┤EndToEndId┬┤ seja gerado pelo participante direto, pelo participante indireto ou pelo iniciador de pagamento.  
+Ele deve ser ├║nico, n├úo podendo ser repetido em qualquer outra opera├º├úo enviada ao SPI.  
+[Restri├º├úo] O ┬┤EndToEndId┬┤ deve ser informado obrigatoriamente caso o status do pagamento seja ACCEPTED_SETTLEMENT_COMPLETED.
+'

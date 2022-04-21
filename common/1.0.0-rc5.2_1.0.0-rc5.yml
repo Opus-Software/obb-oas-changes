@@ -1,0 +1,16 @@
+﻿### New Endpoints: None
+-----------------------
+### Deleted Endpoints: None
+---------------------------
+### Modified Endpoints: 2
+-------------------------
+GET /outages
+- Description changed from 'Obt├¬m a lista de indisponibilidade agendada para os servi├ºos.' to 'a descri├º├úo referente ao c├│digo de status retornado pelas APIs'
+- Responses changed
+  - Modified response: 200
+    - Description changed from 'Informa├º├╡es de indisponibiliade agendada' to 'c├│digo de status retornado pelas APIs'
+GET /status
+- Description changed from 'Obtem a descri├º├úo e detalhes referente aos c├│digos de status retornados pelas APIs.' to ' descri├º├úo referente ao c├│digo de status retornado pelas APIs'
+- Responses changed
+  - Modified response: 200
+    - Description changed from 'descri├º├úo e detalhes dos c├│digos de status retornado pelas APIs' to 'c├│digo de status retornado pelas APIs'

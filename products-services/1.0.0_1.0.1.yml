@@ -1,0 +1,946 @@
+﻿### New Endpoints: 2
+--------------------
+GET /business-unarranged-account-overdraft  
+GET /personal-unarranged-account-overdraft  
+### Deleted Endpoints: None
+---------------------------
+### Modified Endpoints: 10
+--------------------------
+GET /business-accounts
+- New query param: page
+- New query param: page-size
+- Responses changed
+  - Modified response: 200
+    - Description changed from '' to 'Dados sobre contas pessoa jur├¡dica obtidos com sucesso.'
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Example changed from map[data:map[brand:map[companies:[map[businessAccounts:[map[additionalInfo:NA fees:[map[service:map[chargingTriggerInfo:NA code:NA maximum:map[currency:BRL value:88.00] minimum:map[currency:BRL value:49.00] name:NA prices:[map[currency:BRL interval:1_QUARTIL_CLIENTES value:55.40] map[currency:BRL interval:2_QUARTIL_CLIENTES value:65.00] map[currency:BRL interval:3_QUARTIL_CLIENTES value:69.00] map[currency:BRL interval:4_QUARTIL_CLIENTES value:72.00]]]]] incomeRates:[map[prepaidPaymentAccount:map[applications:[map[interval:1_QUARTIL_CLIENTES rate:NA] map[interval:2_QUARTIL_CLIENTES rate:NA] map[interval:3_QUARTIL_CLIENTES rate:NA] map[interval:4_QUARTIL_CLIENTES rate:NA]] maximumRate:NA minimumRate:NA] savingAccount:NA]] openingClosingChannels:CENTRAL_TELEFONICA serviceBundles:[map[maximum:map[currency:BRL value:87.00] minimum:map[currency:BRL value:45.00] name:Conta de dep├│sitos ├á vista Movimenta├º├úo com cart├úo (sem cheque) prices:[map[currency:BRL interval:1_QUARTIL_CLIENTES monthlyFee:50.00] map[currency:BRL interval:2_QUARTIL_CLIENTES monthlyFee:65.40] map[currency:BRL interval:3_QUARTIL_CLIENTES monthlyFee:75.40] map[currency:BRL interval:4_QUARTIL_CLIENTES monthlyFee:83.00]] service:[map[code:CADASTRO eventLimitQuantity:999999 freeEventQuantity:999999] map[code:SAQUE_TERMINAL eventLimitQuantity:999999 freeEventQuantity:8] map[code:EXTRATO_MOVIMENTO_E eventLimitQuantity:999999 freeEventQuantity:4] map[code:TRANSF_RECURSO_P eventLimitQuantity:999999 freeEventQuantity:2]]]] termsConditions:map[closingProcessInfo:https://empresaa1.com/Accounts_closingProcess elegibilityCriteriaInfo:https://empresaa1.com/Accounts_elegebilityCriteria minimumBalance:map[currency:BRL value:500.00]] transactionMethods:MOVIMENTACAO_CARTAO type:CONTA_DEPOSITO_A_VISTA]] cnpjNumber:45086338000178 name:Empresa A1 urlComplementaryList:https://empresaa1.com/branches-banking]] name:Organiza├º├úo A]] links:map[first:https://api.banco.com.br/open-banking/products-services/v1/business-accounts last:https://api.banco.com.br/open-banking/products-services/v1/business-accounts next: prev: self:https://api.banco.com.br/open-banking/products-services/v1/business-accounts] meta:map[totalPages:1 totalRecords:1]] to null
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: brand
+                  - Properties changed
+                    - Modified property: companies
+                      - Description changed from '' to 'Companies traz uma lista de todas as institui├º├╡es da Marca'
+                      - MinItems changed from 0 to 1
+                      - Items changed
+                        - Property 'AllOf' changed
+                        - Type changed from '' to 'object'
+                        - Properties changed
+                          - Deleted property: cnpjNumber
+                          - Deleted property: name
+                          - Deleted property: urlComplementaryList
+                          - Modified property: businessAccounts
+                            - Description changed from '' to 'lista de tipos de conta'
+                            - MinItems changed from 0 to 1
+                            - MaxItems changed from null to 3
+                            - Items changed
+                              - Type changed from '' to 'object'
+                              - Required changed
+                                - New required property: incomeRate
+                                - Deleted required property: incomeRates
+                              - Properties changed
+                                - New property: incomeRate
+                                - Deleted property: incomeRates
+                                - Modified property: additionalInfo
+                                  - Description changed from 'Texto livre para complementar informa├º├úo relativa ao Canal dispon├¡vel, quando no campo 'openingClosingChannels' estiver preenchida a op├º├úo 'Outros'' to 'Texto livre para complementar informa├º├úo relativa ao Canal dispon├¡vel, quando no campo ''openingClosingChannels'' estiver preenchida a op├º├úo ''Outros''
+Restri├º├úo: Campo de preenchimento obrigat├│rio se ''openingCloseChannels'' estiver preenchida a op├º├úo ''OUTROS''
+'
+                                - Modified property: fees
+                                  - Type changed from 'array' to 'object'
+                                  - Description changed from '' to 'Objeto que re├║ne informa├º├╡es de tarifas de servi├ºos'
+                                  - Items changed
+                                    - Schema deleted
+                                  - Required changed
+                                    - New required property: services
+                                  - Properties changed
+                                    - New property: services
+                                - Modified property: openingClosingChannels
+                                  - Type changed from 'string' to 'array'
+                                  - Description changed from 'Canais dispon├¡veis para abertura e encerramento de contas' to 'Lista dos canais para aberturas e encerramento'
+                                  - Deleted enum values: [DEPENDENCIAS_PROPRIAS CORRESPONDENTES_BANCARIOS INTERNET_BANKING MOBILE_BANKING CENTRAL_TELEFONICA CHAT OUTROS]
+                                  - Example changed from 'CENTRAL_TELEFONICA' to null
+                                  - MinItems changed from 0 to 1
+                                  - MaxItems changed from null to 7
+                                  - Items changed
+                                    - Schema added
+                                - Modified property: serviceBundles
+                                  - Description changed from '' to 'Lista dos servi├ºos que comp├╡e o pacote de servi├ºos'
+                                  - MinItems changed from 0 to 1
+                                  - Items changed
+                                    - Required changed
+                                      - New required property: services
+                                      - Deleted required property: service
+                                    - Properties changed
+                                      - New property: services
+                                      - Deleted property: service
+                                      - Modified property: maximum
+                                        - Properties changed
+                                          - Modified property: value
+                                            - Description changed from 'Valor m├íximo cobrado para a tarifa de servi├ºos sobre a base de clientes no m├¬s de refer├¬ncia' to 'Valor m├íximo apurado para a tarifa de servi├ºos sobre a base de clientes no m├¬s de refer├¬ncia'
+                                            - Example changed from '71.00' to '8800.00'
+                                      - Modified property: minimum
+                                        - Properties changed
+                                          - Modified property: value
+                                            - Description changed from 'Valor m├¡nimo cobrado para a tarifa de servi├ºos sobre a base de clientes no m├¬s de refer├¬ncia' to 'Valor m├¡nimo apurado para a tarifa de servi├ºos sobre a base de clientes no m├¬s de refer├¬ncia'
+                                            - Example changed from '39.90' to '1350.00'
+                                      - Modified property: name
+                                        - Example changed from null to 'Conta de dep├│sitos ├á vista Movimenta├º├úo com cart├úo (sem cheque)'
+                                        - MaxLength changed from 70 to 250
+                                        - Pattern changed from '' to '\w*\W*'
+                                      - Modified property: prices
+                                        - Description changed from '' to 'Lista distribui├º├úo pre├ºos tarifas de servi├ºos'
+                                        - MinItems changed from 0 to 4
+                                        - MaxItems changed from null to 4
+                                        - Items changed
+                                          - Required changed
+                                            - New required property: customers
+                                          - Properties changed
+                                            - New property: customers
+                                            - Modified property: currency
+                                              - Description changed from 'Moeda referente ao valor da mediana da tarifa mensal do Pacote de Servi├ºos, segundo modelo ISO-4217.' to 'Moeda referente ao valor m├¡nimo da Tarifa, segundo modelo ISO-4217'
+                                            - Modified property: interval
+                                              - Description changed from 'Faixas de valor referentes ao pagamento mensal do Pacote de Servi├ºos informado: 1┬║ quartil de clientes, 2┬║ quartil de clientes, 3┬║ quartil de clientes e 4┬║ quartil de clientes' to 'Segundo Normativa n┬║ 32, BCB, de 2020: Distribui├º├úo de frequ├¬ncia relativa dos valores de tarifas cobradas dos clientes, de que trata o ┬º 2┬║ do art. 3┬║ da Circular n┬║ 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicita├º├úo dos valores sobre a mediana em cada uma dessas faixas. Informando: 1┬¬ faixa, 2┬¬ faixa, 3┬¬ faixa e 4┬¬ faixa
+'
+                                              - New enum values: [1_FAIXA 2_FAIXA 3_FAIXA 4_FAIXA]
+                                              - Deleted enum values: [1_QUARTIL_CLIENTES 2_QUARTIL_CLIENTES 3_QUARTIL_CLIENTES 4_QUARTIL_CLIENTES]
+                                              - Example changed from '1_QUARTIL_CLIENTES' to '1_FAIXA'
+                                              - MinItems changed from 0 to 1
+                                              - MaxItems changed from null to 1
+                                            - Modified property: monthlyFee
+                                              - Description changed from 'Valor da mediana da tarifa mensal referente ao Pacote de Servi├ºos.' to 'Valor da mediana de cada faixa relativa ao servi├ºo ofertado, informado no per├¡odo, conforme Res n┬║ 32 BCB, 2020. p.ex. ''45.00''
+(representa um valor monet├írio. p.ex: 1547368.92. Este valor, considerando que a moeda seja BRL, significa R$ 1.547.368,92. O ├║nico separador presente deve ser o ''.'' (ponto) para indicar a casa decimal. N├úo deve haver separador de milhar)
+'
+                                              - Example changed from '50.00' to '2000.00'
+                                              - MaxLength changed from null to 12
+                                              - Pattern changed from '' to '^((\d{1,9}\.\d{2}){1}|NA)$'
+                                - Modified property: termsConditions
+                                  - Description changed from '' to 'Objeto que re├║ne informa├º├╡es relativas a Termos e Condi├º├╡es para as modalidades tratadas'
+                                  - Properties changed
+                                    - Modified property: closingProcessInfo
+                                      - Description changed from 'Procedimentos de encerramento para o tipo de conta tratado. Possibilidade de inscri├º├úo da URL. Endere├ºo eletr├┤nico de acesso ao canal. URLs s├úo limitadas a 2048 caracteres mas, para o contexto do Sistema Financeiro aberto, ser├í adotado a metade deste tamanho.' to 'Procedimentos de encerramento para o tipo de conta tratado. Possibilidade de inscri├º├úo da URL. Endere├ºo eletr├┤nico de acesso ao canal. p.ex. 'https://example.com/mobile-banking' '
+                                    - Modified property: elegibilityCriteriaInfo
+                                      - Description changed from 'Crit├⌐rios de qualifica├º├úo do cliente com a finalidade de definir sua elegibilidade para a aquisi├º├úo do tipo de conta. Possibilidade de inscri├º├úo da URL. Endere├ºo eletr├┤nico de acesso ao canal. URLs s├úo limitadas a 2048 caracteres mas, para o contexto do Sistema Financeiro aberto, ser├í adotado a metade deste tamanho.' to 'Crit├⌐rios de qualifica├º├úo do cliente com a finalidade de definir sua elegibilidade para a aquisi├º├úo do tipo de conta. Campo Aberto'
+                                      - MaxLength changed from 1024 to 2000
+                                    - Modified property: minimumBalance
+                                      - Required changed
+                                        - New required property: currency
+                                        - New required property: value
+                                      - Properties changed
+                                        - Modified property: currency
+                                          - Description changed from 'Moeda referente ao saldo m├¡nimo exigido, segundo modelo ISO-4217.' to 'Moeda referente ao valor m├¡nimo da Tarifa, segundo modelo ISO-4217'
+                                          - MaxLength changed from null to 3
+                                          - Pattern changed from '' to '^(\w{3}){1}$'
+                                - Modified property: transactionMethods
+                                  - Type changed from 'string' to 'array'
+                                  - Description changed from 'Lista de formas de movimenta├º├úo poss├¡veis para a conta' to 'Lista de formas de movimenta├º├úo'
+                                  - Deleted enum values: [MOVIMENTACAO_ELETRONICA MOVIMENTACAO_CHEQUE MOVIMENTACAO_CARTAO MOVIMENTACAO_PRESENCIAL]
+                                  - Example changed from 'MOVIMENTACAO_CARTAO' to null
+                                  - MinItems changed from 0 to 1
+                                  - MaxItems changed from null to 4
+                                  - Items changed
+                                    - Schema added
+                                - Modified property: type
+                                  - Description changed from 'Tipos de contas ofertadas para pessoas jur├¡dicas, conforme Resolu├º├úo 3.919 do Bacen.' to 'Tipos de contas ofertadas para pessoa natural ou jur├¡dica, p.ex. 'CONTA_DEPOSITO_A_VISTA'.
+Conta de dep├│sito ├á vista ou Conta corrente - ├⌐ o tipo mais comum. Nela, o dinheiro fica ├á sua disposi├º├úo para ser sacado a qualquer momento. Essa conta n├úo gera rendimentos para o depositante
+Conta poupan├ºa - foi criada para estimular as pessoas a pouparem. O dinheiro que ficar na conta por trinta dias passa a gerar rendimentos, com isen├º├úo de imposto de renda para quem declara. Ou seja, o dinheiro ΓÇ£cresceΓÇ¥ (rende) enquanto ficar guardado na conta. Cada dep├│sito ter├í rendimentos de m├¬s em m├¬s, sempre no dia do m├¬s em que o dinheiro tiver sido depositado
+Conta de pagamento pr├⌐-paga: segundo CIRCULAR N┬║ 3.680, BCB de  2013, ├⌐ a 'destinada ├á execu├º├úo de transa├º├╡es de pagamento em moeda eletr├┤nica realizadas com base em fundos denominados em reais previamente aportados'
+'
+                    - Modified property: name
+                      - MaxLength changed from 30 to 80
+GET /business-credit-cards
+- New query param: page
+- New query param: page-size
+- Responses changed
+  - Modified response: 200
+    - Description changed from '' to 'Dados sobre cart├╡es de cr├⌐dito pessoa jur├¡dica obtidos com sucesso.'
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: brand
+                  - Property 'AllOf' changed
+                  - Required changed
+                    - Deleted required property: name
+                  - Properties changed
+                    - Deleted property: name
+                    - Modified property: companies
+                      - Description changed from '' to 'Companies traz uma lista de todas as institui├º├╡es da Marca'
+                      - MinItems changed from 0 to 1
+                      - Items changed
+                        - Property 'AllOf' changed
+                        - Type changed from '' to 'object'
+                        - Properties changed
+                          - Deleted property: cnpjNumber
+                          - Deleted property: name
+                          - Deleted property: urlComplementaryList
+                          - Modified property: businessCreditCards
+                            - Description changed from '' to 'Lista dos nomes de conta de pagamento p├│s-paga'
+                            - MinItems changed from 0 to 1
+                            - Items changed
+                              - Type changed from '' to 'object'
+                              - Properties changed
+                                - Modified property: fees
+                                  - Type changed from 'array' to 'object'
+                                  - Description changed from '' to 'Objeto que re├║ne informa├º├╡es de tarifas de servi├ºos'
+                                  - Items changed
+                                    - Schema deleted
+                                  - Required changed
+                                    - New required property: services
+                                  - Properties changed
+                                    - New property: services
+                                - Modified property: identification
+                                  - Properties changed
+                                    - Modified property: creditCard
+                                      - Properties changed
+                                        - Modified property: additionalInfo
+                                          - Description changed from 'Informa├º├╡es complementares se tipo de Cart├úo 'OUTROS'' to 'Texto livre para especificar categoria de bandeira marcada como 'OUTRAS'. Campo deve ser obrigatoriamente preenchido se campo network vier selecionado como 'OUTROS''
+                                          - Example changed from null to 'NA'
+                                        - Modified property: network
+                                          - Description changed from 'Categoria de Bandeiras de Cart├╡es. Bandeira ├⌐ a detentora de todos os direitos e deveres da utiliza├º├úo da marca estampada no cart├úo, inclusive as bandeiras pertencentes aos emissores. Essas bandeiras est├úo definidas em documento do BACEN de nome 'Elabora├º├úo e Remessa de Informa├º├╡es Relativas aos Cart├╡es de Pagamento  Emissores'' to 'Categoria de Bandeiras de Cart├╡es de Cr├⌐dito (Instituidor do arranjo de pagamento). Bandeira ├⌐ a detentora de todos os direitos e deveres da utiliza├º├úo da marca estampada no cart├úo, inclusive as bandeiras pertencentes aos emissores. p.ex. "American Express", "Diners Club" Essas bandeiras est├úo definidas em documento do BACEN de nome "Elabora├º├úo e Remessa de Informa├º├╡es Relativas aos Cart├╡es de Pagamento  Emissores"'
+                                    - Modified property: product
+                                      - Properties changed
+                                        - Modified property: additionalInfo
+                                          - Description changed from 'Informa├º├╡es complementares se tipo de Cart├úo 'OUTROS'' to 'Informa├º├╡es complementares se tipo de Cart├úo 'OUTROS'. Campo deve ser obrigatoriamente preenchido se selecionado 'OUTROS''
+                                          - Example changed from null to 'NA'
+                                - Modified property: interest
+                                  - Description changed from '' to 'Informa├º├╡es sobre taxas de juros'
+                                  - Required changed
+                                    - New required property: instalmentRates
+                                    - New required property: otherCredits
+                                    - New required property: rates
+                                    - Deleted required property: feeRate
+                                    - Deleted required property: instalmentRate
+                                    - Deleted required property: interestRates
+                                  - Properties changed
+                                    - New property: instalmentRates
+                                    - New property: otherCredits
+                                    - New property: rates
+                                    - Deleted property: feeRate
+                                    - Deleted property: instalmentRate
+                                    - Deleted property: interestRates
+                                - Modified property: name
+                                  - Description changed from 'Denomina├º├úo/Identifica├º├úo do nome da conta' to 'Denomina├º├úo/Identifica├º├úo do nome da conta (cart├úo de cr├⌐dito)'
+                                  - Example changed from 'Cart├úo Microempreendedor Bem-Vindo' to 'Cart├úo Vantagens'
+                                  - Pattern changed from '' to '\w*\W*'
+                                - Modified property: rewardsProgram
+                                  - Properties changed
+                                    - Modified property: hasRewardProgram
+                                      - Description changed from 'Indicador da exist├¬ncia de programa de fidelidade/recompensa associado ├á conta' to 'Indicador da exist├¬ncia de programa de fidelidade/recompensa associado ├á conta de pagamento p├│s-paga (cart├úo) true false'
+                                    - Modified property: rewardProgramInfo
+                                      - Description changed from 'Informa├º├╡es de termos e condi├º├╡es do programa de fidelidade/recompensa. Pode ser informada a URL referente ao endere├ºo onde constam as condi├º├╡es informadas' to 'Informa├º├╡es de termos e condi├º├╡es do programa de fidelidade/recompensa. Pode ser informada a URL referente ao endere├ºo onde constam as condi├º├╡es informadas. Ser├í de preenchimento obrigat├│rio caso o campo hasRewardProgram esteja preenchido como true'
+                                      - Example changed from 'https://example.com/mobile-banking' to 'https://empresaa1.com/credit_cards_rewards'
+                                - Modified property: termsConditions
+                                  - Properties changed
+                                    - Modified property: additionalInfo
+                                      - Example changed from null to 'NA'
+                                    - Modified property: closingProcessInfo
+                                      - Description changed from 'Descri├º├úo dos procedimentos para encerramento da conta p├│s paga. Pode ser informada a URL referente ao endere├ºo onde constam as condi├º├╡es informadas. URLs s├úo limitadas a 2048 caracteres mas, para o contexto do Sistema Financeiro aberto, ser├í adotado a metade deste tamanho.' to 'Descri├º├úo dos procedimentos para encerramento da conta de pagamento p├│s paga. Pode ser informada a URL referente ao endere├ºo onde constam as condi├º├╡es informadas.'
+                                    - Modified property: elegibilityCriteriaInfo
+                                      - Description changed from 'Informa├º├úo sobre as condi├º├╡es e crit├⌐rios de elegibilidade do emissor do cart├úo. Pode ser informada a URL referente ao endere├ºo onde constam as condi├º├╡es informadas. URLs s├úo limitadas a 2048 caracteres mas, para o contexto do Sistema Financeiro aberto, ser├í adotado a metade deste tamanho.' to 'Informa├º├úo sobre as condi├º├╡es e crit├⌐rios de elegibilidade do emissor do cart├úo. Pode ser informada a URL referente ao endere├ºo onde constam as condi├º├╡es informadas.'
+                                    - Modified property: minimumFeeRate
+                                      - MaxLength changed from null to 4
+                                      - Pattern changed from '((-?[1-9]?\d{1,4}){1}(\.\d{1,4}){1}|NA)$' to '(^[0-9](\.[0-9]{2})$|^NA$)'
+GET /business-financings
+- Description changed from 'Obt├⌐m a lista de Financiamentos de Pessoa F├¡sica.' to 'Obt├⌐m a lista de Financiamentos de Pessoa Jur├¡dica.'
+- New query param: page
+- New query param: page-size
+- Responses changed
+  - Modified response: 200
+    - Description changed from 'Retorna lista de financiamentos de pessoa jur├¡dica.' to 'Lista de financiamentos de pessoa jur├¡dica obtida com sucesso.'
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: brand
+                  - Property 'AllOf' changed
+                  - Properties changed
+                    - Deleted property: name
+                    - Modified property: companies
+                      - MinItems changed from 0 to 1
+                      - Items changed
+                        - Property 'AllOf' changed
+                        - Properties changed
+                          - Deleted property: name
+                          - Deleted property: urlComplementaryList
+                          - Modified property: businessFinancings
+                            - MinItems changed from 0 to 1
+                            - MaxItems changed from null to 9
+                            - Items changed
+                              - Required changed
+                                - New required property: interestRates
+                                - New required property: termsConditions
+                                - Deleted required property: interestRate
+                              - Properties changed
+                                - New property: interestRates
+                                - Deleted property: interestRate
+                                - Modified property: fees
+                                  - Type changed from 'array' to 'object'
+                                  - Description changed from '' to 'Objeto que re├║ne informa├º├╡es de tarifas de servi├ºos'
+                                  - Items changed
+                                    - Schema deleted
+                                  - Required changed
+                                    - New required property: services
+                                  - Properties changed
+                                    - New property: services
+                                - Modified property: requiredWarranties
+                                  - MinItems changed from 0 to 1
+                                  - MaxItems changed from null to 14
+                                  - Items changed
+                                    - Type changed from '' to 'string'
+                                    - Description changed from 'Rela├º├úo de garantias exigidas' to 'Rela├º├úo de garantias exigidas, segundo documento 3040 do Bacen:
+* `cess├úo de direitos credit├│rios`: o cedente transfere ao credor/cession├írio a titularidade de direitos credit├│rios, at├⌐ a liquida├º├úo da d├¡vida. O credor/cession├írio passa a receb├¬-los diretamente dos devedores e credita o produto da opera├º├úo para o cedente na opera├º├úo que originou a cess├úo, at├⌐ a sua liquida├º├úo
+* `cau├º├úo`: garantia institu├¡da sobre cr├⌐ditos do garantidor
+* `penhor`: direito real que consiste na tradi├º├úo de uma coisa m├│vel ou mobiliz├ível, suscet├¡vel de aliena├º├úo, realizada pelo devedor ou por terceiro ao credor, a fim de garantir o pagamento do d├⌐bito
+* `aliena├º├úo fiduci├íria`: transfer├¬ncia ao credor, ou fiduci├írio, da propriedade do bem
+* `hipoteca`: direito real de garantia que afeta um bem im├│vel para o cumprimento da obriga├º├úo
+* `opera├º├╡es garantidas pelo governo`: nas inst├óncias federal, estadual ou municipal
+* `outras garantias n├úo fidejuss├│rias`: as garantias reais n├úo descritas como: cess├úo de direitos credit├│rios, cau├º├úo, penhor, aliena├º├úo fiduci├íria, hipoteca ou opera├º├úo garantida pelo governo
+* `seguros e assemelhados`: os seguros (e assemelhados) contratados para garantir o pagamento da opera├º├úo em circunst├óncias adversas
+* `garantia fidejuss├│ria`: baseada na fidelidade do garantidor em cumprir as obriga├º├╡es, caso o devedor n├úo o fa├ºa
+* `bens arrendados`: bem objeto do arrendamento financeiro
+* `garantias internacionais`: declarar se a garantia ├⌐ mitigadora ou n├úo, observados os crit├⌐rios definidos pela Circular 3.644, de 4 de mar├ºo de 2013
+* `opera├º├╡es garantidas por outras entidade`: declarar as garantias prestadas pelas entidades descritas no item 3. Informa├º├╡es de Garantias (i) do documento 3040 - Bacen
+* `acordos de compensa├º├úo`: opera├º├╡es que sejam abrangidas por acordos para a compensa├º├úo e liquida├º├úo de obriga├º├╡es no ├ómbito do SFN, nos termos da Resolu├º├úo 3.263, de 24 de fevereiro de 2005
+* `n├úo aplic├ível`
+'
+                                    - New enum values: [OPERACOES_GARANTIDAS_PELO_GOVERNO]
+                                    - Deleted enum values: [OPERCAOES_GARANTIDAS_PELO_GOVERNO]
+                                    - Example changed from 'ALIENACAO_FIDUCIARIA' to 'CESSAO_DIREITOS_CREDITORIOS'
+                                - Modified property: termsConditions
+                                  - Description changed from 'Campo aberto para informar as condi├º├╡es contratuais relativas ao produto ou servi├ºo informado. Pode ser informada a URL referente ao endere├ºo onde constam as condi├º├╡es informadas.' to 'Campo aberto para informar as condi├º├╡es contratuais relativas ├á Modalidade de Financiamentos para pessoa jur├¡dica informada. Pode ser informada a URL referente ao endere├ºo onde constam as condi├º├╡es informadas. Endere├ºo eletr├┤nico de acesso ao canal.'
+                                - Modified property: type
+                                  - New enum values: [FINANCIAMENTO_IMOBILIARIO_SISTEMA_FINANCEIRO_HABITACAO_SFH FINANCIAMENTO_IMOBILIARIO_SISTEMA_FINANCEIRO_HABITACAO_SFI]
+                                  - Deleted enum values: [FINANCIAMENTO_IMOBILIARIO_SISTEMA_FINANCIERO_HABILITACAO_SFH FINANCIAMENTO_IMOBILIARIO_SISTEMA_FINANCIERO_HABILITACAO_SFI]
+GET /business-invoice-financings
+- New query param: page
+- New query param: page-size
+- Responses changed
+  - Modified response: 200
+    - Description changed from 'Retorna lista de adiantamento de receb├¡veis de pessoa jur├¡dica.' to 'Lista de adiantamento de receb├¡veis de pessoa jur├¡dica obtida com sucesso.'
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Example changed from map[data:map[brand:map[companies:[map[businessInvoiceFinancings:[map[fees:[map[service:map[chargingTriggerInfo:3% do valor do contrato code:NA maximum:map[currency:BRL value:87.00] minimum:map[currency:BRL value:59.90] name:Informar Servi├ºo para PJ prices:[map[currency:BRL interval:1_QUARTIL_CLIENTES value:62.00] map[currency:BRL interval:2_QUARTIL_CLIENTES value:69.00] map[currency:BRL interval:3_QUARTIL_CLIENTES value:75.40] map[currency:BRL interval:4_QUARTIL_CLIENTES value:85.00]]]]] interestRate:map[applications:[map[interval:1_QUARTIL_CLIENTES rate:0.0100] map[interval:2_QUARTIL_CLIENTES rate:0.0200] map[interval:3_QUARTIL_CLIENTES rate:0.0390] map[interval:4_QUARTIL_CLIENTES rate:0.0455]] maximumRate:0.5100 minimumRate:0.0015] requiredWarranties:[CESSAO_DIREITOS_CREDITORIOS] termsConditions:https://empresaa1.com/business_invoice_financings type:DESCONTO_DUPLICATAS]] cnpjNumber:45086338000178 name:Empresa A1 urlComplementaryList:https://empresaa1.com/branches-banking]] name:Organiza├º├úo A]] links:map[first:https://api.banco.com.br/open-banking/products-services/v1/business-invoice-financings last:https://api.banco.com.br/open-banking/products-services/v1/business-invoice-financings next: prev: self:https://api.banco.com.br/open-banking/products-services/v1/business-invoice-financings] meta:map[totalPages:1 totalRecords:1]] to null
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: brand
+                  - Properties changed
+                    - Modified property: companies
+                      - Description changed from 'Lista de institui├º├╡es pertencentes ├á marga' to 'Companies traz uma lista de todas as institui├º├╡es da Marca'
+                      - MinItems changed from 0 to 1
+                      - Items changed
+                        - Property 'AllOf' changed
+                        - Properties changed
+                          - Deleted property: name
+                          - Deleted property: urlComplementaryList
+                          - Modified property: businessInvoiceFinancings
+                            - Description changed from 'Lista de adiantamento de receb├¡veis' to 'Lista de Modalidades de Direitos Credit├│rios Descontados'
+                            - MinItems changed from 0 to 1
+                            - MaxItems changed from null to 5
+                            - Items changed
+                              - Required changed
+                                - New required property: interestRates
+                                - New required property: termsConditions
+                                - Deleted required property: interestRate
+                              - Properties changed
+                                - New property: interestRates
+                                - Deleted property: interestRate
+                                - Modified property: fees
+                                  - Type changed from 'array' to 'object'
+                                  - Description changed from '' to 'Objeto que re├║ne informa├º├╡es de tarifas de servi├ºos'
+                                  - Items changed
+                                    - Schema deleted
+                                  - Required changed
+                                    - New required property: services
+                                  - Properties changed
+                                    - New property: services
+                                - Modified property: requiredWarranties
+                                  - Description changed from 'Rela├º├úo de garantias exigidas' to 'Lista das  garantias exigidas'
+                                  - MinItems changed from 0 to 1
+                                  - MaxItems changed from null to 14
+                                  - Items changed
+                                    - Description changed from '' to 'Rela├º├úo de garantias exigidas, segundo documento 3040 do Bacen:
+* `cess├úo de direitos credit├│rios`: o cedente transfere ao credor/cession├írio a titularidade de direitos credit├│rios, at├⌐ a liquida├º├úo da d├¡vida. O credor/cession├írio passa a receb├¬-los diretamente dos devedores e credita o produto da opera├º├úo para o cedente na opera├º├úo que originou a cess├úo, at├⌐ a sua liquida├º├úo
+* `cau├º├úo`: garantia institu├¡da sobre cr├⌐ditos do garantidor
+* `penhor`: direito real que consiste na tradi├º├úo de uma coisa m├│vel ou mobiliz├ível, suscet├¡vel de aliena├º├úo, realizada pelo devedor ou por terceiro ao credor, a fim de garantir o pagamento do d├⌐bito
+* `aliena├º├úo fiduci├íria`: transfer├¬ncia ao credor, ou fiduci├írio, da propriedade do bem
+* `hipoteca`: direito real de garantia que afeta um bem im├│vel para o cumprimento da obriga├º├úo
+* `opera├º├╡es garantidas pelo governo`: nas inst├óncias federal, estadual ou municipal
+* `outras garantias n├úo fidejuss├│rias`: as garantias reais n├úo descritas como: cess├úo de direitos credit├│rios, cau├º├úo, penhor, aliena├º├úo fiduci├íria, hipoteca ou opera├º├úo garantida pelo governo
+* `seguros e assemelhados`: os seguros (e assemelhados) contratados para garantir o pagamento da opera├º├úo em circunst├óncias adversas
+* `garantia fidejuss├│ria`: baseada na fidelidade do garantidor em cumprir as obriga├º├╡es, caso o devedor n├úo o fa├ºa
+* `bens arrendados`: bem objeto do arrendamento financeiro
+* `garantias internacionais`: declarar se a garantia ├⌐ mitigadora ou n├úo, observados os crit├⌐rios definidos pela Circular 3.644, de 4 de mar├ºo de 2013
+* `opera├º├╡es garantidas por outras entidade`: declarar as garantias prestadas pelas entidades descritas no item 3. Informa├º├╡es de Garantias (i) do documento 3040 - Bacen
+* `acordos de compensa├º├úo`: opera├º├╡es que sejam abrangidas por acordos para a compensa├º├úo e liquida├º├úo de obriga├º├╡es no ├ómbito do SFN, nos termos da Resolu├º├úo 3.263, de 24 de fevereiro de 2005
+* `n├úo aplic├ível`
+'
+                                    - New enum values: [OPERACOES_GARANTIDAS_PELO_GOVERNO]
+                                    - Deleted enum values: [OPERCAOES_GARANTIDAS_PELO_GOVERNO]
+                                    - Example changed from null to 'CESSAO_DIREITOS_CREDITORIOS'
+                                - Modified property: termsConditions
+                                  - Description changed from 'Campo aberto para informar as condi├º├╡es contratuais relativas ao produto ou servi├ºo informado. Pode ser informada a URL referente ao endere├ºo onde constam as condi├º├╡es informadas.' to 'Campo aberto para informar as condi├º├╡es contratuais relativas ├á Modalidade de Financiamentos para pessoa jur├¡dica informada. Pode ser informada a URL referente ao endere├ºo onde constam as condi├º├╡es informadas. Endere├ºo eletr├┤nico de acesso ao canal.'
+                                  - Example changed from '' to 'https://empresaa1.com/personal_invoice_financings'
+                                - Modified property: type
+                                  - New enum values: [OUTROS_TITULOS_DESCONTADOS]
+                                  - Deleted enum values: [OUTROS_T├ìTULOS_DESCONTADOS]
+GET /business-loans
+- New query param: page
+- New query param: page-size
+- Responses changed
+  - Modified response: 200
+    - Description changed from '' to 'Dados sobre empr├⌐stimos pessoa jur├¡dica obtidos com sucesso.'
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: brand
+                  - Properties changed
+                    - Modified property: companies
+                      - Description changed from 'Lista de institui├º├╡es pertencentes ├á marca' to 'Companies traz uma lista de todas as institui├º├╡es da Marca'
+                      - MinItems changed from 0 to 1
+                      - Items changed
+                        - Property 'AllOf' changed
+                        - Properties changed
+                          - Modified property: businessLoans
+                            - Description changed from 'Lista' to 'Lista de modalidades de empr├⌐stimos'
+                            - MinItems changed from 0 to 1
+                            - MaxItems changed from null to 6
+                            - Items changed
+                              - Required changed
+                                - New required property: termsConditions
+                              - Properties changed
+                                - New property: interestRates
+                                - Deleted property: interestRate
+                                - Modified property: fees
+                                  - Type changed from 'array' to 'object'
+                                  - Description changed from 'Lista' to 'Objeto que re├║ne informa├º├╡es de tarifas de servi├ºos'
+                                  - Items changed
+                                    - Schema deleted
+                                  - Properties changed
+                                    - New property: services
+                                - Modified property: requiredWarranties
+                                  - Description changed from '' to 'Lista das garantias exigidas'
+                                  - MinItems changed from 0 to 1
+                                  - MaxItems changed from null to 14
+                                  - Items changed
+                                    - Description changed from 'Campo aberto para informar as condi├º├╡es contratuais relativas ├á Modalidade de direitos credit├│rios descontados informada' to 'Rela├º├úo de garantias exigidas, segundo documento 3040 do Bacen:
+* `cess├úo de direitos credit├│rios`: o cedente transfere ao credor/cession├írio a titularidade de direitos credit├│rios, at├⌐ a liquida├º├úo da d├¡vida. O credor/cession├írio passa a receb├¬-los diretamente dos devedores e credita o produto da opera├º├úo para o cedente na opera├º├úo que originou a cess├úo, at├⌐ a sua liquida├º├úo
+* `cau├º├úo`: garantia institu├¡da sobre cr├⌐ditos do garantidor
+* `penhor`: direito real que consiste na tradi├º├úo de uma coisa m├│vel ou mobiliz├ível, suscet├¡vel de aliena├º├úo, realizada pelo devedor ou por terceiro ao credor, a fim de garantir o pagamento do d├⌐bito
+* `aliena├º├úo fiduci├íria`: transfer├¬ncia ao credor, ou fiduci├írio, da propriedade do bem
+* `hipoteca`: direito real de garantia que afeta um bem im├│vel para o cumprimento da obriga├º├úo
+* `opera├º├╡es garantidas pelo governo`: nas inst├óncias federal, estadual ou municipal
+* `outras garantias n├úo fidejuss├│rias`: as garantias reais n├úo descritas como: cess├úo de direitos credit├│rios, cau├º├úo, penhor, aliena├º├úo fiduci├íria, hipoteca ou opera├º├úo garantida pelo governo
+* `seguros e assemelhados`: os seguros (e assemelhados) contratados para garantir o pagamento da opera├º├úo em circunst├óncias adversas
+* `garantia fidejuss├│ria`: baseada na fidelidade do garantidor em cumprir as obriga├º├╡es, caso o devedor n├úo o fa├ºa
+* `bens arrendados`: bem objeto do arrendamento financeiro
+* `garantias internacionais`: declarar se a garantia ├⌐ mitigadora ou n├úo, observados os crit├⌐rios definidos pela Circular 3.644, de 4 de mar├ºo de 2013
+* `opera├º├╡es garantidas por outras entidade`: declarar as garantias prestadas pelas entidades descritas no item 3. Informa├º├╡es de Garantias (i) do documento 3040 - Bacen
+* `acordos de compensa├º├úo`: opera├º├╡es que sejam abrangidas por acordos para a compensa├º├úo e liquida├º├úo de obriga├º├╡es no ├ómbito do SFN, nos termos da Resolu├º├úo 3.263, de 24 de fevereiro de 2005
+* `n├úo aplic├ível`
+'
+                                    - New enum values: [OPERACOES_GARANTIDAS_PELO_GOVERNO]
+                                    - Deleted enum values: [OPERCAOES_GARANTIDAS_PELO_GOVERNO]
+                                    - MaxLength changed from 50 to null
+                                - Modified property: termsConditions
+                                  - Description changed from 'Campo aberto para informar as condi├º├╡es contratuais relativas ao produto ou servi├ºo informado. Pode ser informada a URL referente ao endere├ºo onde constam as condi├º├╡es informadas.' to 'Campo aberto para informar as condi├º├╡es contratuais relativas ├á Modalidade de Empr├⌐stimo para pessoa jur├¡dica informada. Pode ser informada a URL referente ao endere├ºo onde constam as condi├º├╡es informadas. Endere├ºo eletr├┤nico de acesso ao canal.'
+                                - Modified property: type
+                                  - Description changed from 'Modalidades de empr├⌐stimos ofertados para pessoas jur├¡dicas' to 'Modalidades de empr├⌐stimos ofertados para pessoas Jur├¡dicas, conforme Circular 4015-Bacen. Segundo cartilha do Bacen: Empr├⌐stimo ├⌐ um contrato entre o cliente e uma institui├º├úo financeira (banco, cooperativa de cr├⌐dito, caixa econ├┤mica) pelo qual o cliente recebe uma quantia em dinheiro que dever├í ser devolvida em prazo determinado, acrescida dos juros acertados. Os recursos obtidos no empr├⌐stimo n├úo tem destina├º├úo espec├¡fica.
+* Empr├⌐stimo-Microcr├⌐dito Produtivo Orientado - segundo PNMPO ├⌐ o cr├⌐dito concedido para financiamento das atividades produtivas, cuja metodologia ser├í estabelecida em regulamento, observada a prefer├¬ncia do relacionamento direto com os empreendedores, admitido o uso de tecnologias digitais e eletr├┤nicas que possam substituir o contato presencial
+* Empr├⌐stimo-Cheque especial - opera├º├╡es de cr├⌐dito vinculadas ├á conta corrente, nas quais determinado limite de cr├⌐dito ├⌐ disponibilizado aos clientes para utiliza├º├úo de acordo com suas conveni├¬ncias, sem necessidade de comunica├º├úo pr├⌐via ├á institui├º├úo financeira
+* Empr├⌐stimo-Conta garantida - opera├º├╡es de cr├⌐dito rotativo, nas quais determinado limite de cr├⌐dito ├⌐ disponibilizado para utiliza├º├úo pelo cliente, atrav├⌐s da simples movimenta├º├úo da conta corrente e/ou solicita├º├úo formal ├á institui├º├úo financeira. As opera├º├╡es classificadas nessa modalidade n├úo devem ter data definida para a amortiza├º├úo do saldo devedor, exceto a estabelecida para vig├¬ncia do contrato
+* Empr├⌐stimo-Capital de giro com prazo de vencimento at├⌐ 365 dias: opera├º├╡es de cr├⌐dito voltadas para o financiamento de curto prazo (igual ou inferior a 365 dias) das pessoas jur├¡dicas, vinculadas ├ás necessidades de capital de giro e a um contrato espec├¡fico que estabele├ºa prazos, taxas e garantias
+* Empr├⌐stimo-Capital de giro com prazo vencimento superior a 365 dias: opera├º├╡es de cr├⌐dito voltadas para o financiamento de m├⌐dio e longo prazo (superior a 365 dias) das pessoas jur├¡dicas, vinculadas ├ás necessidades de capital de giro e a um contrato espec├¡fico que estabele├ºa prazos, taxas e garantias
+* Empr├⌐stimo-Capital de giro rotativo: opera├º├╡es de cr├⌐dito voltadas para o financiamento de capital de giro, vinculadas a um contrato que estabele├ºa linha de cr├⌐dito rotativo, de forma que, ├á medida que a empresa devedora amortize os empr├⌐stimos j├í tomados, o limite dispon├¡vel para utiliza├º├úo seja restitu├¡do, e amortiza├º├╡es com datas predeterminadas, podendo ser facultado ao devedor repactuar o fluxo de pagamentos ao longo da vig├¬ncia do contrato
+'
+                                  - Deleted enum values: [ADIANTAMENTO_DEPOSITANTE]
+                                  - Example changed from 'ADIANTAMENTO_DEPOSITANTE' to 'EMPRESTIMO_MICROCREDITO_PRODUTIVO_ORIENTADO'
+                          - Modified property: name
+                            - Description changed from 'Nome da Institui├º├úo, pertencente ├á marca, respons├ível pela comercializa├º├úo dos produtos e servi├ºos' to 'Nome da Institui├º├úo, pertencente ├á marca, respons├ível pela modalidade de Empr├⌐stimos. p.ex.'Empresa da Organiza├º├úo A''
+                    - Modified property: name
+                      - Description changed from 'Nome do marca.' to 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a 'marca' ├⌐ em ess├¬ncia uma promessa da empresa em fornecer uma s├⌐rie espec├¡fica de atributos, benef├¡cios e servi├ºos uniformes aos clientes'
+                      - MaxLength changed from 30 to 80
+GET /personal-accounts
+- New query param: page
+- New query param: page-size
+- Responses changed
+  - Modified response: 200
+    - Description changed from '' to 'Dados sobre contas pessoa natural obtidos com sucesso.'
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: brand
+                  - Properties changed
+                    - Modified property: companies
+                      - Description changed from '' to 'Companies traz uma lista de todas as institui├º├╡es da Marca'
+                      - MinItems changed from 0 to 1
+                      - Items changed
+                        - Property 'AllOf' changed
+                        - Required changed
+                          - Deleted required property: cnpjNumbers
+                          - Deleted required property: name
+                        - Properties changed
+                          - Deleted property: cnpjNumbers
+                          - Deleted property: name
+                          - Deleted property: urlComplementaryList
+                          - Modified property: personalAccounts
+                            - Description changed from '' to 'Lista de tipos de conta'
+                            - MinItems changed from 0 to 1
+                            - MaxItems changed from null to 3
+                            - Items changed
+                              - Properties changed
+                                - New property: incomeRate
+                                - Deleted property: incomeRates
+                                - Modified property: additionalInfo
+                                  - Description changed from 'Texto livre para complementar informa├º├úo relativa ao Canal dispon├¡vel, quando no campo 'openingClosingChannels' estiver preenchida a op├º├úo 'Outros'' to 'Texto livre para complementar informa├º├úo relativa ao Canal dispon├¡vel, quando no campo ''openingClosingChannels'' estiver preenchida a op├º├úo ''Outros''
+Restri├º├úo: Campo de preenchimento obrigat├│rio se ''openingCloseChannels'' estiver preenchida a op├º├úo ''OUTROS''
+'
+                                - Modified property: fees
+                                  - Type changed from 'array' to 'object'
+                                  - Description changed from '' to 'Objeto que re├║ne informa├º├╡es de tarifas de servi├ºos'
+                                  - Items changed
+                                    - Schema deleted
+                                  - Required changed
+                                    - New required property: priorityServices
+                                  - Properties changed
+                                    - New property: otherServices
+                                    - New property: priorityServices
+                                - Modified property: openingClosingChannels
+                                  - Type changed from 'string' to 'array'
+                                  - Description changed from 'Canais dispon├¡veis para abertura e encerramento de contas' to 'Lista dos canais para aberturas e encerramento'
+                                  - Deleted enum values: [DEPENDENCIAS_PROPRIAS CORRESPONDENTES_BANCARIOS INTERNET_BANKING MOBILE_BANKING CENTRAL_TELEFONICA CHAT OUTROS]
+                                  - Example changed from 'CENTRAL_TELEFONICA' to null
+                                  - MinItems changed from 0 to 1
+                                  - MaxItems changed from null to 7
+                                  - Items changed
+                                    - Schema added
+                                - Modified property: serviceBundles
+                                  - Description changed from '' to 'Lista dos Pacotes de servi├ºos'
+                                  - Example changed from [map[maximum:map[currency:BRL value:88.00] minimum:map[currency:BRL value:19.00] name:Movimenta├º├úo com cart├úo (sem cheque) prices:[map[currency:BRL interval:1_QUARTIL_CLIENTES monthlyFee:43.40] map[currency:BRL interval:2_QUARTIL_CLIENTES monthlyFee:55.00] map[currency:BRL interval:3_QUARTIL_CLIENTES monthlyFee:62.00] map[currency:BRL interval:4_QUARTIL_CLIENTES monthlyFee:69.00]] services:[map[code:CADASTRO eventLimitQuantity:1 freeEventQuantity:0] map[code:SAQUE_TERMINAL eventLimitQuantity:999999 freeEventQuantity:8] map[code:EXTRATO_MOVIMENTO_E eventLimitQuantity:999999 freeEventQuantity:4] map[code:TRANSF_RECURSO_P eventLimitQuantity:999999 freeEventQuantity:2]]] map[maximum:map[currency:BRL value:87.00] minimum:map[currency:BRL value:33.00] name:Conta de dep├│sitos ├á vista - Pacote XXX prices:[map[currency:BRL interval:1_QUARTIL_CLIENTES monthlyFee:30.40] map[currency:BRL interval:2_QUARTIL_CLIENTES monthlyFee:45.00] map[currency:BRL interval:3_QUARTIL_CLIENTES monthlyFee:62.00] map[currency:BRL interval:4_QUARTIL_CLIENTES monthlyFee:69.00]] services:[map[code:Servi├ºo 1 eventLimitQuantity:999999 freeEventQuantity:999999] map[code:Servi├ºo 2 eventLimitQuantity:999999 freeEventQuantity:8] map[code:Servi├ºo 3 eventLimitQuantity:999999 freeEventQuantity:4] map[code:Servi├ºo 4 eventLimitQuantity:999999 freeEventQuantity:2]]]] to null
+                                  - MinItems changed from 0 to 1
+                                  - Items changed
+                                    - Properties changed
+                                      - Modified property: maximum
+                                        - Properties changed
+                                          - Modified property: currency
+                                            - Description changed from 'Moeda referente ao valor m├íximo da tarifa do Pacote de Servi├ºos, segundo modelo ISO-4217.' to 'Moeda referente ao valor m├¡nimo da Tarifa, segundo modelo ISO-4217'
+                                            - MaxLength changed from null to 3
+                                            - Pattern changed from '' to '^(\w{3}){1}$'
+                                          - Modified property: value
+                                            - Description changed from 'Valor mensal m├íximo cobrado referente ao Pacote de Servi├ºos no m├¬s de refer├¬ncia.' to 'Valor m├íximo apurado para a tarifa de servi├ºos sobre a base de clientes no m├¬s de refer├¬ncia'
+                                            - Example changed from '45.00' to '8800.00'
+                                      - Modified property: minimum
+                                        - Properties changed
+                                          - Modified property: currency
+                                            - Description changed from 'Moeda referente ao valor m├¡nimo da tarifa de Pacote de Servi├ºos, segundo modelo ISO-4217.' to 'Moeda referente ao valor m├¡nimo da Tarifa, segundo modelo ISO-4217'
+                                            - MaxLength changed from null to 3
+                                            - Pattern changed from '' to '^(\w{3}){1}$'
+                                          - Modified property: value
+                                            - Description changed from 'Valor  mensal m├¡nimo cobrado referente ao Pacote de Servi├ºos no m├¬s de refer├¬ncia' to 'Valor m├¡nimo apurado para a tarifa de servi├ºos sobre a base de clientes no m├¬s de refer├¬ncia'
+                                            - Example changed from '45.00' to '1350.00'
+                                      - Modified property: name
+                                        - MaxLength changed from 70 to 250
+                                      - Modified property: prices
+                                        - Description changed from '' to 'Lista distribui├º├úo pre├ºos tarifas de servi├ºos'
+                                        - MinItems changed from 0 to 4
+                                        - MaxItems changed from null to 4
+                                        - Items changed
+                                          - Type changed from '' to 'object'
+                                          - Required changed
+                                            - New required property: customers
+                                          - Properties changed
+                                            - New property: customers
+                                            - Modified property: currency
+                                              - Description changed from 'Moeda referente ao valor da mediana da tarifa mensal do Pacote de Servi├ºos, segundo modelo ISO-4217. ' to 'Moeda referente ao valor m├¡nimo da Tarifa, segundo modelo ISO-4217'
+                                            - Modified property: interval
+                                              - Description changed from 'Faixas de valor referentes a tarifa de Pacote de Servi├ºos informada: 1┬║ quartil de clientes, 2┬║ quartil de clientes, 3┬║ quartil de clientes e 4┬║ quartil de clientes' to 'Segundo Normativa n┬║ 32, BCB, de 2020: Distribui├º├úo de frequ├¬ncia relativa dos valores de tarifas cobradas dos clientes, de que trata o ┬º 2┬║ do art. 3┬║ da Circular n┬║ 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicita├º├úo dos valores sobre a mediana em cada uma dessas faixas. Informando: 1┬¬ faixa, 2┬¬ faixa, 3┬¬ faixa e 4┬¬ faixa
+'
+                                              - New enum values: [1_FAIXA 2_FAIXA 3_FAIXA 4_FAIXA]
+                                              - Deleted enum values: [1_QUARTIL_CLIENTES 2_QUARTIL_CLIENTES 3_QUARTIL_CLIENTES 4_QUARTIL_CLIENTES]
+                                              - Example changed from '1_QUARTIL_CLIENTES' to '1_FAIXA'
+                                              - MinItems changed from 0 to 1
+                                              - MaxItems changed from null to 1
+                                            - Modified property: monthlyFee
+                                              - Description changed from 'Valor da mediana da tarifa mensal referente ao Pacote de Servi├ºos.' to 'Valor da mediana de cada faixa relativa ao servi├ºo ofertado, informado no per├¡odo, conforme Res n┬║ 32 BCB, 2020. p.ex. ''45.00''
+(representa um valor monet├írio. p.ex: 1547368.92. Este valor, considerando que a moeda seja BRL, significa R$ 1.547.368,92. O ├║nico separador presente deve ser o ''.'' (ponto) para indicar a casa decimal. N├úo deve haver separador de milhar)
+'
+                                              - Example changed from '130.00' to '2000.00'
+                                      - Modified property: services
+                                        - Description changed from '' to 'Lista dos servi├ºos que comp├╡e o pacote de servi├ºos'
+                                        - MinItems changed from 0 to 1
+                                        - Items changed
+                                          - Type changed from '' to 'object'
+                                          - Required changed
+                                            - New required property: chargingTriggerInfo
+                                          - Properties changed
+                                            - New property: chargingTriggerInfo
+                                            - Modified property: code
+                                              - Description changed from 'C├│digo que identifica o Servi├ºo que comp├╡e o Pacote de Servi├ºos, podendo ser da lista de Servi├ºos Priorit├írios ou Outros Servi├ºos.' to 'C├│digo que identifica o Servi├ºo que comp├╡e o Pacote de Servi├ºos, podendo ser da lista de Servi├ºos Priorit├írios ou Outros Servi├ºos. p.ex. segundo Resolu├º├úo 3.919 do Bacen: 'SAQUE_TERMINAL'.
+'
+                                              - MaxLength changed from 30 to 100
+                                              - Pattern changed from '' to '\w*\W*'
+                                            - Modified property: eventLimitQuantity
+                                              - Description changed from 'Quantidade de eventos previstos no Pacote de Servi├ºos (N├║mero de eventos inclu├¡dos no m├¬s)' to 'Segundo Resolu├º├úo  4196, BCB, de 2013: Quantidade de eventos previstos no Pacote de Servi├ºos (N├║mero de eventos inclu├¡dos no m├¬s) p.ex.'2'. No caso de quantidade ilimitada, reportar 999999
+'
+                                              - Pattern changed from '' to '^(\d{1,6}){1}$'
+                                            - Modified property: freeEventQuantity
+                                              - Description changed from 'Quantidade de eventos previstos no Pacote de Servi├ºos com isen├º├úo de Tarifa' to 'Segundo Resolu├º├úo  4196, BCB, de 2013: Quantidade de eventos previstos no Pacote de Servi├ºos com isen├º├úo de Tarifa.p.ex.'1'  No caso de quantidade ilimitada, reportar 999999
+'
+                                              - Pattern changed from '' to '^(\d{1,6}){1}$'
+                                - Modified property: termsConditions
+                                  - Description changed from '' to 'Objeto que re├║ne informa├º├╡es relativas a Termos e Condi├º├╡es para as modalidades tratadas'
+                                  - Properties changed
+                                    - Modified property: closingProcessInfo
+                                      - Description changed from 'Procedimentos de encerramento para o tipo de conta tratado. Possibilidade de inscri├º├úo da URL. Endere├ºo eletr├┤nico de acesso ao canal. URLs s├úo limitadas a 2048 caracteres mas, para o contexto do Sistema Financeiro aberto, ser├í adotado a metade deste tamanho.' to 'Procedimentos de encerramento para o tipo de conta tratado. Possibilidade de inscri├º├úo da URL. Endere├ºo eletr├┤nico de acesso ao canal. p.ex. 'https://example.com/mobile-banking' '
+                                    - Modified property: elegibilityCriteriaInfo
+                                      - Description changed from 'Crit├⌐rios de qualifica├º├úo do cliente com a finalidade de definir sua elegibilidade para a aquisi├º├úo do tipo de conta. Possibilidade de inscri├º├úo da URL. Endere├ºo eletr├┤nico de acesso ao canal. URLs s├úo limitadas a 2048 caracteres mas, para o contexto do Sistema Financeiro aberto, ser├í adotado a metade deste tamanho.' to 'Crit├⌐rios de qualifica├º├úo do cliente com a finalidade de definir sua elegibilidade para a aquisi├º├úo do tipo de conta. Campo Aberto'
+                                      - MaxLength changed from 1024 to 2000
+                                    - Modified property: minimumBalance
+                                      - Required changed
+                                        - New required property: currency
+                                        - New required property: value
+                                      - Properties changed
+                                        - Modified property: currency
+                                          - Description changed from 'Moeda referente ao saldo m├¡nimo exigido, segundo modelo ISO-4217.' to 'Moeda referente ao valor m├¡nimo da Tarifa, segundo modelo ISO-4217'
+                                          - MaxLength changed from null to 3
+                                          - Pattern changed from '' to '^(\w{3}){1}$'
+                                - Modified property: transactionMethods
+                                  - Type changed from 'string' to 'array'
+                                  - Description changed from 'Lista de formas de movimenta├º├úo poss├¡veis para a conta' to 'Lista de formas de movimenta├º├úo'
+                                  - Deleted enum values: [MOVIMENTACAO_ELETRONICA MOVIMENTACAO_CHEQUE MOVIMENTACAO_CARTAO MOVIMENTACAO_PRESENCIAL]
+                                  - Example changed from 'MOVIMENTACAO_CARTAO' to null
+                                  - MinItems changed from 0 to 1
+                                  - MaxItems changed from null to 4
+                                  - Items changed
+                                    - Schema added
+                                - Modified property: type
+                                  - Description changed from 'Tipos de contas ofertadas para pessoas F├¡sicas, conforme Resolu├º├úo 3.919 do Bacen.' to 'Tipos de contas ofertadas para pessoa natural ou jur├¡dica, p.ex. 'CONTA_DEPOSITO_A_VISTA'.
+Conta de dep├│sito ├á vista ou Conta corrente - ├⌐ o tipo mais comum. Nela, o dinheiro fica ├á sua disposi├º├úo para ser sacado a qualquer momento. Essa conta n├úo gera rendimentos para o depositante
+Conta poupan├ºa - foi criada para estimular as pessoas a pouparem. O dinheiro que ficar na conta por trinta dias passa a gerar rendimentos, com isen├º├úo de imposto de renda para quem declara. Ou seja, o dinheiro ΓÇ£cresceΓÇ¥ (rende) enquanto ficar guardado na conta. Cada dep├│sito ter├í rendimentos de m├¬s em m├¬s, sempre no dia do m├¬s em que o dinheiro tiver sido depositado
+Conta de pagamento pr├⌐-paga: segundo CIRCULAR N┬║ 3.680, BCB de  2013, ├⌐ a 'destinada ├á execu├º├úo de transa├º├╡es de pagamento em moeda eletr├┤nica realizadas com base em fundos denominados em reais previamente aportados'
+'
+                    - Modified property: name
+                      - Description changed from 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a 'marca' ├⌐ em ess├¬ncia uma promessa da empresa em fornecer uma s├⌐rie espec├¡fica de atributos, benef├¡cios e servi├ºos uniformes aos clientes.' to 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a 'marca' ├⌐ em ess├¬ncia uma promessa da empresa em fornecer uma s├⌐rie espec├¡fica de atributos, benef├¡cios e servi├ºos uniformes aos clientes'
+                      - MaxLength changed from 30 to 80
+GET /personal-credit-cards
+- Description changed from 'Obt├⌐m dados sobre cart├╡es de cr├⌐dito pessoa f├¡sica' to 'Obt├⌐m dados sobre cart├╡es de cr├⌐dito pessoa natural'
+- New query param: page
+- New query param: page-size
+- Responses changed
+  - Modified response: 200
+    - Description changed from '' to 'Dados sobre cart├úo de cr├⌐dito pessoa natural obtidos com sucesso.'
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: brand
+                  - Property 'AllOf' changed
+                  - Required changed
+                    - Deleted required property: name
+                  - Properties changed
+                    - Deleted property: name
+                    - Modified property: companies
+                      - Description changed from '' to 'Companies traz uma lista de todas as institui├º├╡es da Marca'
+                      - MinItems changed from 0 to 1
+                      - Items changed
+                        - Property 'AllOf' changed
+                        - Type changed from '' to 'object'
+                        - Required changed
+                          - New required property: personalCreditCards
+                        - Properties changed
+                          - Deleted property: cnpjNumber
+                          - Deleted property: name
+                          - Deleted property: urlComplementaryList
+                          - Modified property: personalCreditCards
+                            - Description changed from '' to 'Lista das contas de pagamento p├│s-paga'
+                            - MinItems changed from 0 to 1
+                            - Items changed
+                              - Type changed from '' to 'object'
+                              - Properties changed
+                                - Modified property: fees
+                                  - Type changed from 'array' to 'object'
+                                  - Description changed from '' to 'Objeto que re├║ne informa├º├╡es de tarifas de servi├ºos'
+                                  - Items changed
+                                    - Schema deleted
+                                  - Required changed
+                                    - New required property: services
+                                  - Properties changed
+                                    - New property: services
+                                - Modified property: identification
+                                  - Properties changed
+                                    - Modified property: creditCard
+                                      - Properties changed
+                                        - Modified property: additionalInfo
+                                          - Description changed from 'Informa├º├╡es complementares se tipo de Cart├úo 'OUTROS'' to 'Texto livre para especificar categoria de bandeira marcada como 'OUTRAS'. Campo deve ser obrigatoriamente preenchido se campo network vier selecionado como 'OUTROS''
+                                          - Example changed from null to 'NA'
+                                        - Modified property: network
+                                          - Description changed from 'Categoria de Bandeiras de Cart├╡es. Bandeira ├⌐ a detentora de todos os direitos e deveres da utiliza├º├úo da marca estampada no cart├úo, inclusive as bandeiras pertencentes aos emissores. Essas bandeiras est├úo definidas em documento do BACEN de nome 'Elabora├º├úo e Remessa de Informa├º├╡es Relativas aos Cart├╡es de Pagamento  Emissores'' to 'Categoria de Bandeiras de Cart├╡es de Cr├⌐dito (Instituidor do arranjo de pagamento). Bandeira ├⌐ a detentora de todos os direitos e deveres da utiliza├º├úo da marca estampada no cart├úo, inclusive as bandeiras pertencentes aos emissores. p.ex. "American Express", "Diners Club" Essas bandeiras est├úo definidas em documento do BACEN de nome "Elabora├º├úo e Remessa de Informa├º├╡es Relativas aos Cart├╡es de Pagamento  Emissores"'
+                                    - Modified property: product
+                                      - Properties changed
+                                        - Modified property: additionalInfo
+                                          - Description changed from 'Informa├º├╡es complementares se tipo de Cart├úo 'OUTROS'' to 'Informa├º├╡es complementares se tipo de Cart├úo 'OUTROS'. Campo deve ser obrigatoriamente preenchido se selecionado 'OUTROS''
+                                          - Example changed from null to 'NA'
+                                - Modified property: interest
+                                  - Description changed from '' to 'Informa├º├╡es sobre taxas de juros'
+                                  - Required changed
+                                    - New required property: instalmentRates
+                                    - New required property: otherCredits
+                                    - New required property: rates
+                                    - Deleted required property: feeRate
+                                    - Deleted required property: instalmentRate
+                                    - Deleted required property: interestRates
+                                  - Properties changed
+                                    - New property: instalmentRates
+                                    - New property: otherCredits
+                                    - New property: rates
+                                    - Deleted property: feeRate
+                                    - Deleted property: instalmentRate
+                                    - Deleted property: interestRates
+                                - Modified property: name
+                                  - Pattern changed from '' to '\w*\W*'
+                                - Modified property: rewardsProgram
+                                  - Properties changed
+                                    - Modified property: hasRewardProgram
+                                      - Description changed from 'Indicador da exist├¬ncia de programa de fidelidade/recompensa associado ├á conta' to 'Indicador da exist├¬ncia de programa de fidelidade/recompensa associado ├á conta de pagamento p├│s-paga (cart├úo) true false'
+                                    - Modified property: rewardProgramInfo
+                                      - Description changed from 'Informa├º├╡es de termos e condi├º├╡es do programa de fidelidade/recompensa. Pode ser informada a URL referente ao endere├ºo onde constam as condi├º├╡es informadas' to 'Informa├º├╡es de termos e condi├º├╡es do programa de fidelidade/recompensa. Pode ser informada a URL referente ao endere├ºo onde constam as condi├º├╡es informadas. Ser├í de preenchimento obrigat├│rio caso o campo hasRewardProgram esteja preenchido como true'
+                                      - Example changed from 'https://example.com/mobile-banking' to 'https://empresaa1.com/credit_cards_rewards'
+                                - Modified property: termsConditions
+                                  - Properties changed
+                                    - Modified property: additionalInfo
+                                      - Example changed from null to 'NA'
+                                    - Modified property: closingProcessInfo
+                                      - Description changed from 'Descri├º├úo dos procedimentos para encerramento da conta p├│s paga. Pode ser informada a URL referente ao endere├ºo onde constam as condi├º├╡es informadas. URLs s├úo limitadas a 2048 caracteres mas, para o contexto do Sistema Financeiro aberto, ser├í adotado a metade deste tamanho.' to 'Descri├º├úo dos procedimentos para encerramento da conta de pagamento p├│s paga. Pode ser informada a URL referente ao endere├ºo onde constam as condi├º├╡es informadas.'
+                                    - Modified property: elegibilityCriteriaInfo
+                                      - Description changed from 'Informa├º├úo sobre as condi├º├╡es e crit├⌐rios de elegibilidade do emissor do cart├úo. Pode ser informada a URL referente ao endere├ºo onde constam as condi├º├╡es informadas. URLs s├úo limitadas a 2048 caracteres mas, para o contexto do Sistema Financeiro aberto, ser├í adotado a metade deste tamanho.' to 'Informa├º├úo sobre as condi├º├╡es e crit├⌐rios de elegibilidade do emissor do cart├úo. Pode ser informada a URL referente ao endere├ºo onde constam as condi├º├╡es informadas.'
+                                    - Modified property: minimumFeeRate
+                                      - MaxLength changed from null to 4
+                                      - Pattern changed from '((-?[1-9]?\d{1,4}){1}(\.\d{1,4}){1}|NA)$' to '(^[0-9](\.[0-9]{2})$|^NA$)'
+GET /personal-financings
+- Description changed from 'Obt├⌐m a lista de Financiamentos de Pessoa F├¡sica' to 'Obt├⌐m a lista de Financiamentos de Pessoa Natural'
+- New query param: page
+- New query param: page-size
+- Responses changed
+  - Modified response: 200
+    - Description changed from 'Retorna lista de financiamentos de pessoa f├¡sica.' to 'Lista de financiamentos de pessoa natural obtida com sucesso.'
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: brand
+                  - Property 'AllOf' changed
+                  - Properties changed
+                    - Deleted property: name
+                    - Modified property: companies
+                      - MinItems changed from 0 to 1
+                      - Items changed
+                        - Property 'AllOf' changed
+                        - Properties changed
+                          - Deleted property: name
+                          - Deleted property: urlComplementaryList
+                          - Modified property: personalFinancings
+                            - MinItems changed from 0 to 1
+                            - MaxItems changed from null to 9
+                            - Items changed
+                              - Required changed
+                                - New required property: interestRates
+                                - New required property: termsConditions
+                                - Deleted required property: interestRate
+                              - Properties changed
+                                - New property: interestRates
+                                - Deleted property: interestRate
+                                - Modified property: fees
+                                  - Type changed from 'array' to 'object'
+                                  - Items changed
+                                    - Schema deleted
+                                  - Required changed
+                                    - New required property: services
+                                  - Properties changed
+                                    - New property: services
+                                - Modified property: requiredWarranties
+                                  - MinItems changed from 0 to 1
+                                  - MaxItems changed from null to 14
+                                  - Items changed
+                                    - Type changed from '' to 'string'
+                                    - Description changed from 'Rela├º├úo de garantias exigidas' to 'Rela├º├úo de garantias exigidas, segundo documento 3040 do Bacen:
+* `cess├úo de direitos credit├│rios`: o cedente transfere ao credor/cession├írio a titularidade de direitos credit├│rios, at├⌐ a liquida├º├úo da d├¡vida. O credor/cession├írio passa a receb├¬-los diretamente dos devedores e credita o produto da opera├º├úo para o cedente na opera├º├úo que originou a cess├úo, at├⌐ a sua liquida├º├úo
+* `cau├º├úo`: garantia institu├¡da sobre cr├⌐ditos do garantidor
+* `penhor`: direito real que consiste na tradi├º├úo de uma coisa m├│vel ou mobiliz├ível, suscet├¡vel de aliena├º├úo, realizada pelo devedor ou por terceiro ao credor, a fim de garantir o pagamento do d├⌐bito
+* `aliena├º├úo fiduci├íria`: transfer├¬ncia ao credor, ou fiduci├írio, da propriedade do bem
+* `hipoteca`: direito real de garantia que afeta um bem im├│vel para o cumprimento da obriga├º├úo
+* `opera├º├╡es garantidas pelo governo`: nas inst├óncias federal, estadual ou municipal
+* `outras garantias n├úo fidejuss├│rias`: as garantias reais n├úo descritas como: cess├úo de direitos credit├│rios, cau├º├úo, penhor, aliena├º├úo fiduci├íria, hipoteca ou opera├º├úo garantida pelo governo
+* `seguros e assemelhados`: os seguros (e assemelhados) contratados para garantir o pagamento da opera├º├úo em circunst├óncias adversas
+* `garantia fidejuss├│ria`: baseada na fidelidade do garantidor em cumprir as obriga├º├╡es, caso o devedor n├úo o fa├ºa
+* `bens arrendados`: bem objeto do arrendamento financeiro
+* `garantias internacionais`: declarar se a garantia ├⌐ mitigadora ou n├úo, observados os crit├⌐rios definidos pela Circular 3.644, de 4 de mar├ºo de 2013
+* `opera├º├╡es garantidas por outras entidade`: declarar as garantias prestadas pelas entidades descritas no item 3. Informa├º├╡es de Garantias (i) do documento 3040 - Bacen
+* `acordos de compensa├º├úo`: opera├º├╡es que sejam abrangidas por acordos para a compensa├º├úo e liquida├º├úo de obriga├º├╡es no ├ómbito do SFN, nos termos da Resolu├º├úo 3.263, de 24 de fevereiro de 2005
+* `n├úo aplic├ível`
+'
+                                    - New enum values: [OPERACOES_GARANTIDAS_PELO_GOVERNO]
+                                    - Deleted enum values: [OPERCAOES_GARANTIDAS_PELO_GOVERNO]
+                                    - Example changed from [ALIENACAO_FIDUCIARIA PENHOR] to 'CESSAO_DIREITOS_CREDITORIOS'
+                                - Modified property: type
+                                  - Description changed from 'Modalidades de financiamentos ofertados para pessoas f├¡sicas, conforme Circular 4015-Bacen. Segundo cartilha do Bacen: Financiamento ├⌐ um contrato entre o cliente e uma institui├º├úo financeira, mas com, destina├º├úo espec├¡fica como para a aquisi├º├úo de ve├¡culo ou de bem im├│vel, que funcionam como garantia para o cr├⌐dito concedido' to 'Modalidades de financiamentos ofertados para pessoas naturais, conforme Circular 4015-Bacen. Segundo cartilha do Bacen: Financiamento ├⌐ um contrato entre o cliente e uma institui├º├úo financeira, mas com, destina├º├úo espec├¡fica como para a aquisi├º├úo de ve├¡culo ou de bem im├│vel, que funcionam como garantia para o cr├⌐dito concedido'
+                                  - New enum values: [FINANCIAMENTO_IMOBILIARIO_SISTEMA_FINANCEIRO_HABITACAO_SFH FINANCIAMENTO_IMOBILIARIO_SISTEMA_FINANCEIRO_HABITACAO_SFI]
+                                  - Deleted enum values: [FINANCIAMENTO_IMOBILIARIO_SISTEMA_FINANCIERO_HABILITACAO_SFH FINANCIAMENTO_IMOBILIARIO_SISTEMA_FINANCIERO_HABILITACAO_SFI]
+GET /personal-invoice-financings
+- Description changed from 'Obt├⌐m a lista de Adiantamento de Receb├¡veis de Pessoa F├¡sica.' to 'Obt├⌐m a lista de Adiantamento de Receb├¡veis de Pessoa Natural.'
+- New query param: page
+- New query param: page-size
+- Responses changed
+  - Modified response: 200
+    - Description changed from 'Retorna lista de adiantamento de receb├¡veis de pessoa f├¡sica.' to 'Lista de adiantamento de receb├¡veis de pessoa natural obtida com sucesso.'
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Example changed from map[data:map[brand:map[companies:[map[cnpjNumber:45086338000178 name:Empresa A1 personalInvoiceFinancings:[map[fees:[map[service:map[chargingTriggerInfo:3% do valor do contrato code:NA maximum:map[currency:BRL value:87.00] minimum:map[currency:BRL value:59.90] name:Informar Servi├ºo para PF prices:[map[currency:BRL interval:1_QUARTIL_CLIENTES value:62.00] map[currency:BRL interval:2_QUARTIL_CLIENTES value:69.00] map[currency:BRL interval:3_QUARTIL_CLIENTES value:75.40] map[currency:BRL interval:4_QUARTIL_CLIENTES value:85.00]]]]] interestRate:map[applications:[map[interval:1_QUARTIL_CLIENTES rate:0.0100] map[interval:2_QUARTIL_CLIENTES rate:0.0200] map[interval:3_QUARTIL_CLIENTES rate:0.0390] map[interval:4_QUARTIL_CLIENTES rate:0.0455]] maximumRate:0.5100 minimumRate:0.0015] requiredWarranties:CESSAO_DIREITOS_CREDITORIOS termsConditions:https://empresaa1.com/business_invoice_financings type:DESCONTO_DUPLICATAS]] urlComplementaryList:https://empresaa1.com/branches-banking]] name:Organiza├º├úo A]] links:map[first:https://api.banco.com.br/open-banking/products-services/v1/business-invoice-financings last:https://api.banco.com.br/open-banking/products-services/v1/business-invoice-financings next: prev: self:https://api.banco.com.br/open-banking/products-services/v1/business-invoice-financings] meta:map[totalPages:1 totalRecords:1]] to null
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: brand
+                  - Properties changed
+                    - Modified property: companies
+                      - Description changed from 'Lista de institui├º├╡es pertencentes ├á marga' to 'Companies traz uma lista de todas as institui├º├╡es da Marca'
+                      - MinItems changed from 0 to 1
+                      - Items changed
+                        - Property 'AllOf' changed
+                        - Properties changed
+                          - Deleted property: name
+                          - Deleted property: urlComplementaryList
+                          - Modified property: personalInvoiceFinancings
+                            - Description changed from 'Lista de adiantamento de receb├¡veis' to 'Lista de Modalidades de Direitos Credit├│rios Descontados ofertados'
+                            - MinItems changed from 0 to 1
+                            - MaxItems changed from null to 5
+                            - Items changed
+                              - Required changed
+                                - New required property: interestRates
+                                - New required property: termsConditions
+                                - Deleted required property: interestRate
+                              - Properties changed
+                                - New property: interestRates
+                                - Deleted property: interestRate
+                                - Modified property: fees
+                                  - Type changed from 'array' to 'object'
+                                  - Description changed from '' to 'Objeto que re├║ne informa├º├╡es de tarifas de servi├ºos'
+                                  - Items changed
+                                    - Schema deleted
+                                  - Required changed
+                                    - New required property: services
+                                  - Properties changed
+                                    - New property: services
+                                - Modified property: requiredWarranties
+                                  - Type changed from 'string' to 'array'
+                                  - Description changed from 'Rela├º├úo de garantias exigidas' to 'Lista das  garantias exigidas'
+                                  - Deleted enum values: [CESSAO_DIREITOS_CREDITORIOS CAUCAO PENHOR ALIENACAO_FIDUCIARIA HIPOTECA OPERACOES_GARANTIDAS_GOVERNO OUTRAS_GARANTIAS_NAO_FIDEJUSSORIAS SEGUROS_ASSEMELHADOS GARANTIA_FIDEJUSSORIA BENS_ARRENDADOS GARANTIAS_INTERNACIONAIS OPERACOES_GARANTIDAS_OUTRAS_ENTIDADE ACORDOS_COMPENSACAO NAO_APLICAVEL]
+                                  - MinItems changed from 0 to 1
+                                  - MaxItems changed from null to 14
+                                  - Items changed
+                                    - Schema added
+                                - Modified property: termsConditions
+                                  - Description changed from 'Campo aberto para informar as condi├º├╡es contratuais relativas ao produto ou servi├ºo informado. Pode ser informada a URL referente ao endere├ºo onde constam as condi├º├╡es informadas.' to 'Campo aberto para informar as condi├º├╡es contratuais relativas ├á Modalidade de Financiamentos para pessoa natural informada. Pode ser informada a URL referente ao endere├ºo onde constam as condi├º├╡es informadas. Endere├ºo eletr├┤nico de acesso ao canal.'
+                                  - Example changed from '' to 'https://empresaa1.com/personal_invoice_financings'
+                                - Modified property: type
+                                  - Description changed from 'Modalidades de direitos credit├│rios descontados ofertados para pessoas F├¡sicas, conforme Circular 4015-Bacen. Direito credit├│rio descontado ├⌐ a antecipa├º├úo de cr├⌐ditos relativos por ex. ao: desconto de duplicatas, desconto de cheques,antecipa├º├úo de fatura de cart├úo de cr├⌐dito' to 'Modalidades de direitos credit├│rios descontados ofertados para pessoas naturais, conforme Circular 4015-Bacen. Direito credit├│rio descontado ├⌐ a antecipa├º├úo de cr├⌐ditos relativos por ex. ao: desconto de duplicatas, desconto de cheques,antecipa├º├úo de fatura de cart├úo de cr├⌐dito'
+                                  - New enum values: [OUTROS_TITULOS_DESCONTADOS]
+                                  - Deleted enum values: [OUTROS_T├ìTULOS_DESCONTADOS]
+                                  - Example changed from null to 'DESCONTO_DUPLICATAS'
+                    - Modified property: name
+                      - Example changed from 'Marca A' to 'Organiza├º├úo A'
+                      - MaxLength changed from 30 to 80
+GET /personal-loans
+- Description changed from 'Obt├⌐m dados sobre empr├⌐stimos pessoa f├¡sica' to 'Obt├⌐m dados sobre empr├⌐stimos pessoa natural'
+- New query param: page
+- New query param: page-size
+- Responses changed
+  - Modified response: 200
+    - Description changed from '' to 'Dados sobre empr├⌐stimos pessoa natural obtidos com sucesso.'
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: brand
+                  - Properties changed
+                    - Modified property: companies
+                      - Description changed from 'Lista de institui├º├╡es pertencentes ├á marca' to 'Companies traz uma lista de todas as institui├º├╡es da Marca'
+                      - MinItems changed from 0 to 1
+                      - Items changed
+                        - Property 'AllOf' changed
+                        - Properties changed
+                          - Modified property: personalLoans
+                            - Description changed from 'Lista' to 'Lista de modalidades de empr├⌐stimos'
+                            - MinItems changed from 0 to 1
+                            - MaxItems changed from null to 6
+                            - Items changed
+                              - Required changed
+                                - New required property: termsConditions
+                              - Properties changed
+                                - New property: interestRates
+                                - Deleted property: interestRate
+                                - Modified property: fees
+                                  - Type changed from 'array' to 'object'
+                                  - Description changed from 'Lista' to 'Objeto que re├║ne informa├º├╡es de tarifas de servi├ºos'
+                                  - Items changed
+                                    - Schema deleted
+                                  - Properties changed
+                                    - New property: services
+                                - Modified property: requiredWarranties
+                                  - Description changed from '' to 'Lista das garantias exigidas'
+                                  - MinItems changed from 0 to 1
+                                  - MaxItems changed from null to 14
+                                  - Items changed
+                                    - Description changed from 'Campo aberto para informar as condi├º├╡es contratuais relativas ├á Modalidade de direitos credit├│rios descontados informada' to 'Rela├º├úo de garantias exigidas, segundo documento 3040 do Bacen:
+* `cess├úo de direitos credit├│rios`: o cedente transfere ao credor/cession├írio a titularidade de direitos credit├│rios, at├⌐ a liquida├º├úo da d├¡vida. O credor/cession├írio passa a receb├¬-los diretamente dos devedores e credita o produto da opera├º├úo para o cedente na opera├º├úo que originou a cess├úo, at├⌐ a sua liquida├º├úo
+* `cau├º├úo`: garantia institu├¡da sobre cr├⌐ditos do garantidor
+* `penhor`: direito real que consiste na tradi├º├úo de uma coisa m├│vel ou mobiliz├ível, suscet├¡vel de aliena├º├úo, realizada pelo devedor ou por terceiro ao credor, a fim de garantir o pagamento do d├⌐bito
+* `aliena├º├úo fiduci├íria`: transfer├¬ncia ao credor, ou fiduci├írio, da propriedade do bem
+* `hipoteca`: direito real de garantia que afeta um bem im├│vel para o cumprimento da obriga├º├úo
+* `opera├º├╡es garantidas pelo governo`: nas inst├óncias federal, estadual ou municipal
+* `outras garantias n├úo fidejuss├│rias`: as garantias reais n├úo descritas como: cess├úo de direitos credit├│rios, cau├º├úo, penhor, aliena├º├úo fiduci├íria, hipoteca ou opera├º├úo garantida pelo governo
+* `seguros e assemelhados`: os seguros (e assemelhados) contratados para garantir o pagamento da opera├º├úo em circunst├óncias adversas
+* `garantia fidejuss├│ria`: baseada na fidelidade do garantidor em cumprir as obriga├º├╡es, caso o devedor n├úo o fa├ºa
+* `bens arrendados`: bem objeto do arrendamento financeiro
+* `garantias internacionais`: declarar se a garantia ├⌐ mitigadora ou n├úo, observados os crit├⌐rios definidos pela Circular 3.644, de 4 de mar├ºo de 2013
+* `opera├º├╡es garantidas por outras entidade`: declarar as garantias prestadas pelas entidades descritas no item 3. Informa├º├╡es de Garantias (i) do documento 3040 - Bacen
+* `acordos de compensa├º├úo`: opera├º├╡es que sejam abrangidas por acordos para a compensa├º├úo e liquida├º├úo de obriga├º├╡es no ├ómbito do SFN, nos termos da Resolu├º├úo 3.263, de 24 de fevereiro de 2005
+* `n├úo aplic├ível`
+'
+                                    - New enum values: [OPERACOES_GARANTIDAS_PELO_GOVERNO]
+                                    - Deleted enum values: [OPERCAOES_GARANTIDAS_PELO_GOVERNO]
+                                    - MaxLength changed from 50 to null
+                                - Modified property: termsConditions
+                                  - Description changed from 'Campo aberto para informar as condi├º├╡es contratuais relativas ao produto ou servi├ºo informado. Pode ser informada a URL referente ao endere├ºo onde constam as condi├º├╡es informadas.' to 'Campo aberto para informar as condi├º├╡es contratuais relativas ├á Modalidade de Financiamentos para pessoa jur├¡dica informada. Pode ser informada a URL referente ao endere├ºo onde constam as condi├º├╡es informadas. Endere├ºo eletr├┤nico de acesso ao canal.'
+                                - Modified property: type
+                                  - Description changed from 'Modalidades de empr├⌐stimos ofertados para pessoas f├¡sicas' to 'Modalidades de empr├⌐stimos ofertados para pessoa Natural, conforme Circular 4015-Bacen. Segundo cartilha do Bacen: Empr├⌐stimo ├⌐ um contrato entre o cliente e uma institui├º├úo financeira (banco, cooperativa de cr├⌐dito, caixa econ├┤mica) pelo qual o cliente recebe uma quantia em dinheiro que dever├í ser devolvida em prazo determinado, acrescida dos juros acertados. Os recursos obtidos no empr├⌐stimo n├úo tem destina├º├úo espec├¡fica.
+  * `EMPRESTIMO_CREDITO_PESSOAL_CONSIGNADO` -  opera├º├╡es de cr├⌐dito com reten├º├úo de parcela do sal├írio ou benef├¡cio do tomador, para o pagamento das presta├º├╡es do empr├⌐stimo ΓÇô desconto em folha de pagamento ΓÇô nos termos da legisla├º├úo em vigor
+  * `EMPRESTIMO_CREDITO_PESSOAL_SEM_CONSIGNACAO` - opera├º├╡es de empr├⌐stimos ├ás pessoa natural, sem vincula├º├úo com aquisi├º├úo de bem ou servi├ºo e sem reten├º├úo de parcela do sal├írio ou benef├¡cio do tomador para o pagamento das presta├º├╡es do empr├⌐stimo
+  * `EMPRESTIMO_HOME_EQUITY` - empr├⌐stimos pessoa natural, garantidos por hipoteca ou por aliena├º├úo fiduci├íria de bens im├│veis residenciais, sem vincula├º├úo a aquisi├º├úo de bens
+  * `EMPRESTIMO_MICROCREDITO_PRODUTIVO_ORIENTADO` - segundo PNMPO ├⌐ o cr├⌐dito concedido para financiamento das atividades produtivas, cuja metodologia ser├í estabelecida em regulamento, observada a prefer├¬ncia do relacionamento direto com os empreendedores, admitido o uso de tecnologias digitais e eletr├┤nicas que possam substituir o contato presencial
+  * `EMPRESTIMO_CHEQUE_ESPECIAL` - opera├º├╡es de cr├⌐dito vinculadas ├á conta corrente, nas quais determinado limite de cr├⌐dito ├⌐ disponibilizado aos clientes para utiliza├º├úo de acordo com suas conveni├¬ncias, sem necessidade de comunica├º├úo pr├⌐via ├á institui├º├úo financeira
+  * `EMPRESTIMO_CONTA_GARANTIDA` - opera├º├╡es de cr├⌐dito rotativo, nas quais determinado limite de cr├⌐dito ├⌐ disponibilizado para utiliza├º├úo pelo cliente, atrav├⌐s da simples movimenta├º├úo da conta corrente e/ou solicita├º├úo formal ├á institui├º├úo financeira. As opera├º├╡es classificadas nessa modalidade n├úo devem ter data definida para a amortiza├º├úo do saldo devedor, exceto a estabelecida para vig├¬ncia do contrato
+'
+                                  - New enum values: [EMPRESTIMO_CREDITO_PESSOAL_SEM_CONSIGNACAO]
+                                  - Deleted enum values: [ADIANTAMENTO_DEPOSITANTE EMPRESTIMO_CREDITO_PESSOAL_NAO_CONSIGNADO]
+                                  - Example changed from 'ADIANTAMENTO_DEPOSITANTE' to 'EMPRESTIMO_CREDITO_PESSOAL_CONSIGNADO'
+                    - Modified property: name
+                      - MaxLength changed from 30 to 80

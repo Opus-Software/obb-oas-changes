@@ -1,0 +1,41 @@
+﻿### New Endpoints: None
+-----------------------
+### Deleted Endpoints: None
+---------------------------
+### Modified Endpoints: 1
+-------------------------
+GET /metrics
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: averageResponse
+                  - Properties changed
+                    - Modified property: highPriority
+                      - Properties changed
+                        - Modified property: currentDay
+                          - Description changed from 'Tempo m├⌐dio de resposta para chamadas no dia atual.' to 'Tempo m├⌐dio de resposta em milissegundos para chamadas no dia atual.'
+                        - Modified property: previousDays
+                          - Description changed from 'Tempo m├⌐dio de resposta para chamadas nos dias anteriores. O primeiro item do array ├⌐ referente a ontem, e assim por diante. Devem ser retornados no m├íximo sete dias caso estejam dispon├¡veis.' to 'Tempo m├⌐dio de resposta em milissegundos para chamadas nos dias anteriores. O primeiro item do array ├⌐ referente a ontem, e assim por diante. Devem ser retornados no m├íximo sete dias caso estejam dispon├¡veis.'
+                    - Modified property: mediumPriority
+                      - Properties changed
+                        - Modified property: currentDay
+                          - Description changed from 'Tempo m├⌐dio de resposta para chamadas no dia atual.' to 'Tempo m├⌐dio de resposta em milissegundos para chamadas no dia atual.'
+                        - Modified property: previousDays
+                          - Description changed from 'Tempo m├⌐dio de resposta para chamadas nos dias anteriores. O primeiro item do array ├⌐ referente a ontem, e assim por diante. Devem ser retornados no m├íximo sete dias caso estejam dispon├¡veis.' to 'Tempo m├⌐dio de resposta em milissegundos para chamadas nos dias anteriores. O primeiro item do array ├⌐ referente a ontem, e assim por diante. Devem ser retornados no m├íximo sete dias caso estejam dispon├¡veis.'
+                    - Modified property: unattended
+                      - Properties changed
+                        - Modified property: currentDay
+                          - Description changed from 'Tempo m├⌐dio de resposta para chamadas no dia atual.' to 'Tempo m├⌐dio de resposta em milissegundos para chamadas no dia atual.'
+                        - Modified property: previousDays
+                          - Description changed from 'Tempo m├⌐dio de resposta para chamadas nos dias anteriores. O primeiro item do array ├⌐ referente a ontem, e assim por diante. Devem ser retornados no m├íximo sete dias caso estejam dispon├¡veis.' to 'Tempo m├⌐dio de resposta em milissegundos para chamadas nos dias anteriores. O primeiro item do array ├⌐ referente a ontem, e assim por diante. Devem ser retornados no m├íximo sete dias caso estejam dispon├¡veis.'
+                    - Modified property: unauthenticated
+                      - Properties changed
+                        - Modified property: currentDay
+                          - Description changed from 'Tempo m├⌐dio de resposta para chamadas no dia atual.' to 'Tempo m├⌐dio de resposta em milissegundos para chamadas no dia atual.'
+                        - Modified property: previousDays
+                          - Description changed from 'Tempo m├⌐dio de resposta para chamadas nos dias anteriores. O primeiro item do array ├⌐ referente a ontem, e assim por diante. Devem ser retornados no m├íximo sete dias caso estejam dispon├¡veis.' to 'Tempo m├⌐dio de resposta em milissegundos para chamadas nos dias anteriores. O primeiro item do array ├⌐ referente a ontem, e assim por diante. Devem ser retornados no m├íximo sete dias caso estejam dispon├¡veis.'

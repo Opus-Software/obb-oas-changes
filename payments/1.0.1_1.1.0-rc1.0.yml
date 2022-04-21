@@ -1,0 +1,667 @@
+﻿### New Endpoints: 1
+--------------------
+PATCH /consents/{consentId}  
+### Deleted Endpoints: None
+---------------------------
+### Modified Endpoints: 4
+-------------------------
+POST /consents
+- Request body changed
+  - Content changed
+    - Modified media type: application/jwt
+      - Schema changed
+        - Properties changed
+          - Modified property: data
+            - Properties changed
+              - Modified property: loggedUser
+                - Description changed from 'Usu├írio (pessoa natural) que encontra-se logado na institui├º├úo Iniciadora de Pagamento.' to 'Usu├írio (pessoa natural) que encontra-se logado na institui├º├úo Iniciadora de Pagamento.
+[Restri├º├úo] Deve obrigatoriamente ser enviado quando a revoga├º├úo for feita pelo usu├írio final, ou seja, se o campo revokedBy estiver com o valor 'USER'.
+'
+                - Properties changed
+                  - Modified property: document
+                    - Description changed from '' to 'Objeto que cont├⌐m os dados de identifica├º├úo do usu├írio.'
+              - Modified property: payment
+                - Required changed
+                  - Deleted required property: date
+                - Properties changed
+                  - New property: schedule
+                  - Modified property: date
+                    - Description changed from 'Data do pagamento, conforme especifica├º├úo RFC-3339.' to 'Mutuamente exclusivo com o objeto schedule. Este campo ├⌐ obrigat├│rio no caso de pagamento ├║nico. Neste caso, o objeto schedule n├úo deve ser informado.
+'
+- Responses changed
+  - Modified response: 201
+    - Content changed
+      - Modified media type: application/jwt
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - New property: revocation
+                - Modified property: loggedUser
+                  - Description changed from 'Usu├írio (pessoa natural) que encontra-se logado na institui├º├úo Iniciadora de Pagamento.' to 'Usu├írio (pessoa natural) que encontra-se logado na institui├º├úo Iniciadora de Pagamento.
+[Restri├º├úo] Deve obrigatoriamente ser enviado quando a revoga├º├úo for feita pelo usu├írio final, ou seja, se o campo revokedBy estiver com o valor 'USER'.
+'
+                  - Properties changed
+                    - Modified property: document
+                      - Description changed from '' to 'Objeto que cont├⌐m os dados de identifica├º├úo do usu├írio.'
+                - Modified property: payment
+                  - Required changed
+                    - Deleted required property: date
+                  - Properties changed
+                    - New property: schedule
+                    - Modified property: date
+                      - Description changed from 'Data do pagamento, conforme especifica├º├úo RFC-3339.' to 'Mutuamente exclusivo com o objeto schedule. Este campo ├⌐ obrigat├│rio no caso de pagamento ├║nico. Neste caso, o objeto schedule n├úo deve ser informado.
+'
+                - Modified property: status
+                  - Description changed from 'Retorna o estado do consentimento, o qual no momento de sua cria├º├úo ser├í AWAITING_AUTHORISATION.
+Este estado ser├í alterado depois da autoriza├º├úo do consentimento na detentora da conta do pagador (Debtor) para AUTHORISED ou REJECTED. 
+O consentimento fica no estado CONSUMED ap├│s ocorrer a inicia├º├úo do pagamento referente ao consentimento.  
+Em caso de consentimento expirado a detentora dever├í retornar o status REJECTED.  
+Estados poss├¡veis:  
+AWAITING_AUTHORISATION - Aguardando autoriza├º├úo  
+AUTHORISED - Autorizado   
+REJECTED - Rejeitado  
+CONSUMED - Consumido 
+' to 'Retorna o estado do consentimento, o qual no momento de sua cria├º├úo ser├í AWAITING_AUTHORISATION.
+Este estado ser├í alterado depois da autoriza├º├úo do consentimento na detentora da conta do pagador (Debtor) para AUTHORISED, REJECTED ou REVOKED.
+O consentimento fica no estado CONSUMED ap├│s ocorrer a inicia├º├úo do pagamento referente ao consentimento.
+Em caso de consentimento expirado a detentora dever├í retornar o status REJECTED.
+Em caso de revoga├º├úo do consentimento a detentora dever├í retornar o status REVOKED.
+Estados poss├¡veis:
+AWAITING_AUTHORISATION - Aguardando autoriza├º├úo
+AUTHORISED - Autorizado
+REJECTED - Rejeitado
+CONSUMED - Consumido
+REVOKED - Revogado
+'
+                  - New enum values: [REVOKED]
+                  - Example changed from 'AWAITING_AUTHORISATION' to 'REVOKED'
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 400
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 401
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 403
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 404
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 405
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 406
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 415
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 422
+    - Content changed
+      - Modified media type: application/jwt
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 429
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 500
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: default
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+GET /consents/{consentId}
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/jwt
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - New property: revocation
+                - Modified property: loggedUser
+                  - Description changed from 'Usu├írio (pessoa natural) que encontra-se logado na institui├º├úo Iniciadora de Pagamento.' to 'Usu├írio (pessoa natural) que encontra-se logado na institui├º├úo Iniciadora de Pagamento.
+[Restri├º├úo] Deve obrigatoriamente ser enviado quando a revoga├º├úo for feita pelo usu├írio final, ou seja, se o campo revokedBy estiver com o valor 'USER'.
+'
+                  - Properties changed
+                    - Modified property: document
+                      - Description changed from '' to 'Objeto que cont├⌐m os dados de identifica├º├úo do usu├írio.'
+                - Modified property: payment
+                  - Required changed
+                    - Deleted required property: date
+                  - Properties changed
+                    - New property: schedule
+                    - Modified property: date
+                      - Description changed from 'Data do pagamento, conforme especifica├º├úo RFC-3339.' to 'Mutuamente exclusivo com o objeto schedule. Este campo ├⌐ obrigat├│rio no caso de pagamento ├║nico. Neste caso, o objeto schedule n├úo deve ser informado.
+'
+                - Modified property: status
+                  - Description changed from 'Retorna o estado do consentimento, o qual no momento de sua cria├º├úo ser├í AWAITING_AUTHORISATION.
+Este estado ser├í alterado depois da autoriza├º├úo do consentimento na detentora da conta do pagador (Debtor) para AUTHORISED ou REJECTED. 
+O consentimento fica no estado CONSUMED ap├│s ocorrer a inicia├º├úo do pagamento referente ao consentimento.  
+Em caso de consentimento expirado a detentora dever├í retornar o status REJECTED.  
+Estados poss├¡veis:  
+AWAITING_AUTHORISATION - Aguardando autoriza├º├úo  
+AUTHORISED - Autorizado   
+REJECTED - Rejeitado  
+CONSUMED - Consumido 
+' to 'Retorna o estado do consentimento, o qual no momento de sua cria├º├úo ser├í AWAITING_AUTHORISATION.
+Este estado ser├í alterado depois da autoriza├º├úo do consentimento na detentora da conta do pagador (Debtor) para AUTHORISED, REJECTED ou REVOKED.
+O consentimento fica no estado CONSUMED ap├│s ocorrer a inicia├º├úo do pagamento referente ao consentimento.
+Em caso de consentimento expirado a detentora dever├í retornar o status REJECTED.
+Em caso de revoga├º├úo do consentimento a detentora dever├í retornar o status REVOKED.
+Estados poss├¡veis:
+AWAITING_AUTHORISATION - Aguardando autoriza├º├úo
+AUTHORISED - Autorizado
+REJECTED - Rejeitado
+CONSUMED - Consumido
+REVOKED - Revogado
+'
+                  - New enum values: [REVOKED]
+                  - Example changed from 'AWAITING_AUTHORISATION' to 'REVOKED'
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 400
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 401
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 403
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 404
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 405
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 406
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 429
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 500
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: default
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+POST /pix/payments
+- Responses changed
+  - Modified response: 201
+    - Content changed
+      - Modified media type: application/jwt
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: rejectionReason
+                  - Description changed from 'Motivo da rejei├º├úo do pagamento. Informa├º├╡es complementares sobre o motivo do status.  
+ABORTED_SETTLEMENT_TIMEOUT - Liquida├º├úo da transa├º├úo interrompida devido a timeout no SPI (AB03).  
+ERROR_CREDITOR_AGENT - Transa├º├úo interrompida devido a erro no participante do usu├írio recebedor (AB09).  
+TIMEOUT_DEBTOR_AGENT - Timeout do participante emissor da ordem de pagamento (AB11).  
+INVALID_CREDITOR_ACCOUNT_NUMBER - N├║mero da conta transacional do usu├írio recebedor inexistente ou inv├ílido (AC03).  
+BLOCKED_ACCOUNT - Conta transacional do usu├írio recebedor encontra-se bloqueada (AC06).  
+CLOSED_CREDITOR_ACCOUNT_NUMBER - N├║mero da conta transacional do usu├írio recebedor encerrada (AC07).  
+INVALID_CREDITOR_ACCOUNTTYPE - Tipo incorreto para a conta transacional do usu├írio recebedor (AC14).  
+TRANSACTION_NOT_SUPPORTED - Tipo de transa├º├úo n├úo ├⌐ suportado/autorizado na conta transacional do usu├írio recebedor (AG03). Exemplo: transfer├¬ncia para conta sal├írio.  
+NOT_ALLOWED_BOOK_TRANSFER - N├úo ├⌐ permitida ordem de pagamento/devolu├º├úo no SPI cujos recursos sejam transferidos de uma conta transacional para outra em uma mesma institui├º├úo participante ou entre participantes que utilizem o servi├ºo de liquida├º├úo de um mesmo participante liquidante no SPI (booktransfer) (AG12).  
+FORBIDDEN_RETURN_PAYMENT - N├úo ├⌐ permitido devolver a devolu├º├úo de um pagamento instant├óneo (AG13).  
+INCORRECT_AGENT - Participante direto n├úo ├⌐ liquidante do participante do usu├írio pagador / participante do usu├írio recebedor (AGNT).  
+ZERO_AMOUNT - Ordem de pagamento instant├óneo com valor zero (AM01).  
+NOT_ALLOWED_AMOUNT - Ordem de pagamento/devolu├º├úo em valor que faz superar o limite permitido para o tipo de conta transacional creditada (AM02).  
+INSUFFICIENT_FUNDS - Saldo insuficiente na conta PI do participante do usu├írio pagador (AM04).  
+WRONG_AMOUNT - Devolu├º├úo de pagamento em valor que faz superar o valor da ordem de pagamento instant├óneo correspondente (AM09).  
+INVALID_AMOUNT - Diverg├¬ncia entre a somat├│ria dos valores do bloco ΓÇÿvalorDoDinheiroOuCompraΓÇÖ e o campo ΓÇÿvalorΓÇÖ (AM12).  
+INVALID_NUMBER_OF_TRANSACTIONS - Quantidade de transa├º├╡es inv├ílida (AM18).  
+INCONSISTENT_WITH_END_CUSTOMER - CPF/CNPJ do usu├írio recebedor n├úo ├⌐ consistente com o titular da conta transacional especificada (BE01).  
+INVALID_IDENTIFICATION_CODE - C├│digo de situa├º├úo de pagamento ou de erro inv├ílido (BE15).  
+INVALID_CREDITOR_IDENTIFICATION_CODE - QR Code rejeitado pelo participante do usu├írio recebedor (BE17).  
+CREDITOR_IDENTIFIER_INCORRECT - CPF/CNPJ do usu├írio recebedor incorreto (CH11).  
+ELEMENT_CONTENT_FORMALLY_INCORRECT - Elemento da mensagem incorreto (CH16).  
+ORDER_REJECTED - Ordem rejeitada pelo participante do usu├írio recebedor (DS04).  
+NOT_ALLOWED_PAYMENT - Participante que assinou a mensagem n├úo ├⌐ autorizado a realizar a opera├º├úo na conta PI debitada. No caso em que o participante que assinou a mensagem n├úo ├⌐ o titular da conta PI debitada nem ├⌐ o liquidante no SPI do participante do usu├írio pagador (DS0G).  
+NOT_ALLOWED_ACCOUNT - ISPB do participante que submeteu a resposta ├á ordem de pagamento/devolu├º├úo diferente do ISPB do participante creditado pela ordem (DS0H).  
+USER_NOT_YET_ACTIVATED - Participante n├úo se encontra cadastrado ou ainda n├úo iniciou a opera├º├úo no SPI (DS27).  
+INVALID_CREATION_DATE - Data e Hora do envio da mensagem inv├ílida (DT02).  
+INVALID_CUT_OFF_DATE - Transa├º├úo extrapola o prazo m├íximo para devolu├º├úo de pagamento instant├óneo regulamentado pelo Arranjo PIX (DT05).  
+SETTLEMENT_FAILED - Erro no processamento do pagamento instant├óneo (ED05).  
+INVALID_PURPOSE - Inconsist├¬ncia entre a finalidade da transa├º├úo e o preenchimento do bloco elementos Structured (FF07).  
+INVALID_END_TO_END_ID - Identificador da opera├º├úo mal formatado (FF08).  
+INVALID_DEBTOR_CLEARING_SYSTEM_MEMBER_IDENTIFIER - ISPB do participante do usu├írio pagador inv├ílido ou inexistente (RC09).  
+INVALID_CREDITOR_CLEARING_SYSTEM_MEMBER_IDENTIFIER - ISPB do participante do usu├írio recebedor inv├ílido ou inexistente (RC10).  
+REGULATORY_REASON - Ordem de pagamento em que o usu├írio pagador ├⌐ sancionado por resolu├º├úo do Conselho de Seguran├ºa das Na├º├╡es Unidas (CSNU). Nos casos em que o usu├írio recebedor for o sancionado, a ordem de pagamento n├úo deve ser rejeitada (RR4).  
+SPECIFIC_SERVICE_OFFERED_BY_CREDITOR_AGENT - A transa├º├úo original n├úo est├í relacionada ao servi├ºo de Saque Pix (SL02).  
+INVALID_BILL - Valida├º├úo de expira├º├úo, valida├º├úo de vencimento, Status V├ílido (INDT).  
+OPERATION_WINDOW - Requisi├º├úo est├í fora da janela de funcionamento (IDEA).  
+INCOMPATIBLE_DATE - Data do pagamento divergente da data consentida ou divergente da data atual do QR Code (TERM).  
+MISMATCH_AMOUNT - O valor informado no consentimento n├úo ├⌐ o mesmo valor do informado no payload de pagamento (OB01).  
+OVER_LIMIT - O valor (ou quantidade de transa├º├╡es) ultrapassa a faixa de limite parametrizada na detentora para permitir a realiza├º├úo de transa├º├╡es pelo cliente (OB02).   
+INVALID_CONSENT - Consentimento inv├ílido (status n├úo ├⌐ "authorised" ou est├í expirado) (OB03).  
+DENIED_MULTIPLE_AUTHORISATIONS - Um (ou mais) aprovadores na detentora recusaram a opera├º├úo (OB04).  
+EXPIRED_MULTIPLE_AUTHORISATIONS - Um (ou mais) aprovadores na detentora n├úo tomaram a├º├úo para aprovar a opera├º├úo (OB05).  
+EXPIRED_BILL - O QR Code n├úo ├⌐ mais v├ílido (OB06).   
+[Restri├º├úo] Esse motivo dever├í ser enviado quando o campo /data/status for igual a RJCT (REJECTED).
+' to 'Motivo da rejei├º├úo do pagamento. Informa├º├╡es complementares sobre o motivo do status.
+ABORTED_SETTLEMENT_TIMEOUT - Liquida├º├úo da transa├º├úo interrompida devido a timeout no SPI (AB03).
+ERROR_CREDITOR_AGENT - Transa├º├úo interrompida devido a erro no participante do usu├írio recebedor (AB09).
+TIMEOUT_DEBTOR_AGENT - Timeout do participante emissor da ordem de pagamento (AB11).
+INVALID_CREDITOR_ACCOUNT_NUMBER - N├║mero da conta transacional do usu├írio recebedor inexistente ou inv├ílido (AC03).
+BLOCKED_ACCOUNT - Conta transacional do usu├írio recebedor encontra-se bloqueada (AC06).
+CLOSED_CREDITOR_ACCOUNT_NUMBER - N├║mero da conta transacional do usu├írio recebedor encerrada (AC07).
+INVALID_CREDITOR_ACCOUNTTYPE - Tipo incorreto para a conta transacional do usu├írio recebedor (AC14).
+TRANSACTION_NOT_SUPPORTED - Tipo de transa├º├úo n├úo ├⌐ suportado/autorizado na conta transacional do usu├írio recebedor (AG03). Exemplo: transfer├¬ncia para conta sal├írio.
+NOT_ALLOWED_BOOK_TRANSFER - N├úo ├⌐ permitida ordem de pagamento/devolu├º├úo no SPI cujos recursos sejam transferidos de uma conta transacional para outra em uma mesma institui├º├úo participante ou entre participantes que utilizem o servi├ºo de liquida├º├úo de um mesmo participante liquidante no SPI (booktransfer) (AG12).
+FORBIDDEN_RETURN_PAYMENT - N├úo ├⌐ permitido devolver a devolu├º├úo de um pagamento instant├óneo (AG13).
+INCORRECT_AGENT - Participante direto n├úo ├⌐ liquidante do participante do usu├írio pagador / participante do usu├írio recebedor (AGNT).
+ZERO_AMOUNT - Ordem de pagamento instant├óneo com valor zero (AM01).
+NOT_ALLOWED_AMOUNT - Ordem de pagamento/devolu├º├úo em valor que faz superar o limite permitido para o tipo de conta transacional creditada (AM02).
+INSUFFICIENT_FUNDS - Saldo insuficiente na conta PI do participante do usu├írio pagador (AM04).
+WRONG_AMOUNT - Devolu├º├úo de pagamento em valor que faz superar o valor da ordem de pagamento instant├óneo correspondente (AM09).
+INVALID_AMOUNT - Diverg├¬ncia entre a somat├│ria dos valores do bloco ΓÇÿvalorDoDinheiroOuCompraΓÇÖ e o campo ΓÇÿvalorΓÇÖ (AM12).
+INVALID_NUMBER_OF_TRANSACTIONS - Quantidade de transa├º├╡es inv├ílida (AM18).
+INCONSISTENT_WITH_END_CUSTOMER - CPF/CNPJ do usu├írio recebedor n├úo ├⌐ consistente com o titular da conta transacional especificada (BE01).
+INVALID_IDENTIFICATION_CODE - C├│digo de situa├º├úo de pagamento ou de erro inv├ílido (BE15).
+INVALID_CREDITOR_IDENTIFICATION_CODE - QR Code rejeitado pelo participante do usu├írio recebedor (BE17).
+CREDITOR_IDENTIFIER_INCORRECT - CPF/CNPJ do usu├írio recebedor incorreto (CH11).
+ELEMENT_CONTENT_FORMALLY_INCORRECT - Elemento da mensagem incorreto (CH16).
+ORDER_REJECTED - Ordem rejeitada pelo participante do usu├írio recebedor (DS04).
+NOT_ALLOWED_PAYMENT - Participante que assinou a mensagem n├úo ├⌐ autorizado a realizar a opera├º├úo na conta PI debitada. No caso em que o participante que assinou a mensagem n├úo ├⌐ o titular da conta PI debitada nem ├⌐ o liquidante no SPI do participante do usu├írio pagador (DS0G).
+NOT_ALLOWED_ACCOUNT - ISPB do participante que submeteu a resposta ├á ordem de pagamento/devolu├º├úo diferente do ISPB do participante creditado pela ordem (DS0H).
+USER_NOT_YET_ACTIVATED - Participante n├úo se encontra cadastrado ou ainda n├úo iniciou a opera├º├úo no SPI (DS27).
+INVALID_CREATION_DATE - Data e Hora do envio da mensagem inv├ílida (DT02).
+INVALID_CUT_OFF_DATE - Transa├º├úo extrapola o prazo m├íximo para devolu├º├úo de pagamento instant├óneo regulamentado pelo Arranjo PIX (DT05).
+SETTLEMENT_FAILED - Erro no processamento do pagamento instant├óneo (ED05).
+INVALID_PURPOSE - Inconsist├¬ncia entre a finalidade da transa├º├úo e o preenchimento do bloco elementos Structured (FF07).
+INVALID_END_TO_END_ID - Identificador da opera├º├úo mal formatado (FF08).
+INVALID_DEBTOR_CLEARING_SYSTEM_MEMBER_IDENTIFIER - ISPB do participante do usu├írio pagador inv├ílido ou inexistente (RC09).
+INVALID_CREDITOR_CLEARING_SYSTEM_MEMBER_IDENTIFIER - ISPB do participante do usu├írio recebedor inv├ílido ou inexistente (RC10).
+REGULATORY_REASON - Ordem de pagamento em que o usu├írio pagador ├⌐ sancionado por resolu├º├úo do Conselho de Seguran├ºa das Na├º├╡es Unidas (CSNU). Nos casos em que o usu├írio recebedor for o sancionado, a ordem de pagamento n├úo deve ser rejeitada (RR4).
+SPECIFIC_SERVICE_OFFERED_BY_CREDITOR_AGENT - A transa├º├úo original n├úo est├í relacionada ao servi├ºo de Saque Pix (SL02).
+INVALID_BILL - Valida├º├úo de expira├º├úo, valida├º├úo de vencimento, Status V├ílido (INDT).
+OPERATION_WINDOW - Requisi├º├úo est├í fora da janela de funcionamento (IDEA).
+INCOMPATIBLE_DATE - Data do pagamento divergente da data consentida ou divergente da data atual do QR Code (TERM).
+MISMATCH_AMOUNT - O valor informado no consentimento n├úo ├⌐ o mesmo valor do informado no payload de pagamento.
+OVER_LIMIT - O valor (ou quantidade de transa├º├╡es) ultrapassa a faixa de limite parametrizada na detentora para permitir a realiza├º├úo de transa├º├╡es pelo cliente.
+INVALID_CONSENT - Consentimento inv├ílido (status n├úo ├⌐ "authorised" ou est├í expirado).
+DENIED_MULTIPLE_AUTHORISATIONS - Um (ou mais) aprovadores na detentora recusaram a opera├º├úo.
+EXPIRED_MULTIPLE_AUTHORISATIONS - Um (ou mais) aprovadores na detentora n├úo tomaram a├º├úo para aprovar a opera├º├úo.
+EXPIRED_BILL - O QR Code n├úo ├⌐ mais v├ílido.
+CONSENT_REVOKED - Pagamento cancelado devido ├á revoga├º├úo do consentimento.
+[Restri├º├úo] Esse motivo dever├í ser enviado quando o campo /data/status for igual a RJCT (REJECTED).
+'
+                  - New enum values: [CONSENT_REVOKED]
+                - Modified property: status
+                  - Description changed from 'Estado atual da inicia├º├úo de pagamento. O estado evolui na seguinte ordem:  
+1. PDNG (PENDING) - Inicia├º├úo de pagamento ou transa├º├úo de pagamento est├í pendente. Checagens adicionais em realiza├º├úo.  
+2. PART (PARTIALLY ACCEPTED) - Aguardando autoriza├º├úo m├║ltipla al├ºada.  
+3. ACSP (ACCEPTED_SETTLEMENT_IN_PROCESS) - Inicia├º├úo de pagamento aceita e processamento do pagamento foi iniciado.  
+4. ACSC (ACCEPTED_SETTLEMENT_COMPLETED_DEBITOR_ACCOUNT) - D├⌐bito realizado na conta do pagador.  
+5. ACCC (ACCEPTED_SETTLEMENT_COMPLETED) - Cr├⌐dito realizado na institui├º├úo de destino.  
+Em caso insucesso:  
+RJCT (REJECTED) - Instru├º├úo de pagamento rejeitada.
+' to 'Estado atual da inicia├º├úo de pagamento. O estado evolui na seguinte ordem:  
+1. PDNG (PENDING) - Inicia├º├úo de pagamento ou transa├º├úo de pagamento est├í pendente. Checagens adicionais em realiza├º├úo.  
+2. SASP (SCHEDULE_ACCEPTED_SETTLEMENT_IN_PROCESS) - Indica que o processo de agendamento est├í em processamento.  
+3. SASC (SCHEDULE_ACCEPTED_SETTLEMENT_COMPLETED) - Indica que o processo de agendamento foi realizado.  
+4. PART (PARTIALLY ACCEPTED) - Aguardando autoriza├º├úo m├║ltipla al├ºada.  
+5. ACSP (ACCEPTED_SETTLEMENT_IN_PROCESS) - Inicia├º├úo de pagamento aceita e processamento do pagamento foi iniciado.  
+6. ACSC (ACCEPTED_SETTLEMENT_COMPLETED_DEBITOR_ACCOUNT) - D├⌐bito realizado na conta do pagador.  
+7. ACCC (ACCEPTED_SETTLEMENT_COMPLETED) - Cr├⌐dito realizado na institui├º├úo de destino.  
+Em caso insucesso:  
+RJCT (REJECTED) - Instru├º├úo de pagamento rejeitada.
+'
+                  - New enum values: [SASP SASC]
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 400
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 401
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 403
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 404
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 405
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 406
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 415
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 422
+    - Content changed
+      - Modified media type: application/jwt
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 429
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 500
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: default
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+GET /pix/payments/{paymentId}
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/jwt
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: rejectionReason
+                  - Description changed from 'Motivo da rejei├º├úo do pagamento. Informa├º├╡es complementares sobre o motivo do status.  
+ABORTED_SETTLEMENT_TIMEOUT - Liquida├º├úo da transa├º├úo interrompida devido a timeout no SPI (AB03).  
+ERROR_CREDITOR_AGENT - Transa├º├úo interrompida devido a erro no participante do usu├írio recebedor (AB09).  
+TIMEOUT_DEBTOR_AGENT - Timeout do participante emissor da ordem de pagamento (AB11).  
+INVALID_CREDITOR_ACCOUNT_NUMBER - N├║mero da conta transacional do usu├írio recebedor inexistente ou inv├ílido (AC03).  
+BLOCKED_ACCOUNT - Conta transacional do usu├írio recebedor encontra-se bloqueada (AC06).  
+CLOSED_CREDITOR_ACCOUNT_NUMBER - N├║mero da conta transacional do usu├írio recebedor encerrada (AC07).  
+INVALID_CREDITOR_ACCOUNTTYPE - Tipo incorreto para a conta transacional do usu├írio recebedor (AC14).  
+TRANSACTION_NOT_SUPPORTED - Tipo de transa├º├úo n├úo ├⌐ suportado/autorizado na conta transacional do usu├írio recebedor (AG03). Exemplo: transfer├¬ncia para conta sal├írio.  
+NOT_ALLOWED_BOOK_TRANSFER - N├úo ├⌐ permitida ordem de pagamento/devolu├º├úo no SPI cujos recursos sejam transferidos de uma conta transacional para outra em uma mesma institui├º├úo participante ou entre participantes que utilizem o servi├ºo de liquida├º├úo de um mesmo participante liquidante no SPI (booktransfer) (AG12).  
+FORBIDDEN_RETURN_PAYMENT - N├úo ├⌐ permitido devolver a devolu├º├úo de um pagamento instant├óneo (AG13).  
+INCORRECT_AGENT - Participante direto n├úo ├⌐ liquidante do participante do usu├írio pagador / participante do usu├írio recebedor (AGNT).  
+ZERO_AMOUNT - Ordem de pagamento instant├óneo com valor zero (AM01).  
+NOT_ALLOWED_AMOUNT - Ordem de pagamento/devolu├º├úo em valor que faz superar o limite permitido para o tipo de conta transacional creditada (AM02).  
+INSUFFICIENT_FUNDS - Saldo insuficiente na conta PI do participante do usu├írio pagador (AM04).  
+WRONG_AMOUNT - Devolu├º├úo de pagamento em valor que faz superar o valor da ordem de pagamento instant├óneo correspondente (AM09).  
+INVALID_AMOUNT - Diverg├¬ncia entre a somat├│ria dos valores do bloco ΓÇÿvalorDoDinheiroOuCompraΓÇÖ e o campo ΓÇÿvalorΓÇÖ (AM12).  
+INVALID_NUMBER_OF_TRANSACTIONS - Quantidade de transa├º├╡es inv├ílida (AM18).  
+INCONSISTENT_WITH_END_CUSTOMER - CPF/CNPJ do usu├írio recebedor n├úo ├⌐ consistente com o titular da conta transacional especificada (BE01).  
+INVALID_IDENTIFICATION_CODE - C├│digo de situa├º├úo de pagamento ou de erro inv├ílido (BE15).  
+INVALID_CREDITOR_IDENTIFICATION_CODE - QR Code rejeitado pelo participante do usu├írio recebedor (BE17).  
+CREDITOR_IDENTIFIER_INCORRECT - CPF/CNPJ do usu├írio recebedor incorreto (CH11).  
+ELEMENT_CONTENT_FORMALLY_INCORRECT - Elemento da mensagem incorreto (CH16).  
+ORDER_REJECTED - Ordem rejeitada pelo participante do usu├írio recebedor (DS04).  
+NOT_ALLOWED_PAYMENT - Participante que assinou a mensagem n├úo ├⌐ autorizado a realizar a opera├º├úo na conta PI debitada. No caso em que o participante que assinou a mensagem n├úo ├⌐ o titular da conta PI debitada nem ├⌐ o liquidante no SPI do participante do usu├írio pagador (DS0G).  
+NOT_ALLOWED_ACCOUNT - ISPB do participante que submeteu a resposta ├á ordem de pagamento/devolu├º├úo diferente do ISPB do participante creditado pela ordem (DS0H).  
+USER_NOT_YET_ACTIVATED - Participante n├úo se encontra cadastrado ou ainda n├úo iniciou a opera├º├úo no SPI (DS27).  
+INVALID_CREATION_DATE - Data e Hora do envio da mensagem inv├ílida (DT02).  
+INVALID_CUT_OFF_DATE - Transa├º├úo extrapola o prazo m├íximo para devolu├º├úo de pagamento instant├óneo regulamentado pelo Arranjo PIX (DT05).  
+SETTLEMENT_FAILED - Erro no processamento do pagamento instant├óneo (ED05).  
+INVALID_PURPOSE - Inconsist├¬ncia entre a finalidade da transa├º├úo e o preenchimento do bloco elementos Structured (FF07).  
+INVALID_END_TO_END_ID - Identificador da opera├º├úo mal formatado (FF08).  
+INVALID_DEBTOR_CLEARING_SYSTEM_MEMBER_IDENTIFIER - ISPB do participante do usu├írio pagador inv├ílido ou inexistente (RC09).  
+INVALID_CREDITOR_CLEARING_SYSTEM_MEMBER_IDENTIFIER - ISPB do participante do usu├írio recebedor inv├ílido ou inexistente (RC10).  
+REGULATORY_REASON - Ordem de pagamento em que o usu├írio pagador ├⌐ sancionado por resolu├º├úo do Conselho de Seguran├ºa das Na├º├╡es Unidas (CSNU). Nos casos em que o usu├írio recebedor for o sancionado, a ordem de pagamento n├úo deve ser rejeitada (RR4).  
+SPECIFIC_SERVICE_OFFERED_BY_CREDITOR_AGENT - A transa├º├úo original n├úo est├í relacionada ao servi├ºo de Saque Pix (SL02).  
+INVALID_BILL - Valida├º├úo de expira├º├úo, valida├º├úo de vencimento, Status V├ílido (INDT).  
+OPERATION_WINDOW - Requisi├º├úo est├í fora da janela de funcionamento (IDEA).  
+INCOMPATIBLE_DATE - Data do pagamento divergente da data consentida ou divergente da data atual do QR Code (TERM).  
+MISMATCH_AMOUNT - O valor informado no consentimento n├úo ├⌐ o mesmo valor do informado no payload de pagamento (OB01).  
+OVER_LIMIT - O valor (ou quantidade de transa├º├╡es) ultrapassa a faixa de limite parametrizada na detentora para permitir a realiza├º├úo de transa├º├╡es pelo cliente (OB02).   
+INVALID_CONSENT - Consentimento inv├ílido (status n├úo ├⌐ "authorised" ou est├í expirado) (OB03).  
+DENIED_MULTIPLE_AUTHORISATIONS - Um (ou mais) aprovadores na detentora recusaram a opera├º├úo (OB04).  
+EXPIRED_MULTIPLE_AUTHORISATIONS - Um (ou mais) aprovadores na detentora n├úo tomaram a├º├úo para aprovar a opera├º├úo (OB05).  
+EXPIRED_BILL - O QR Code n├úo ├⌐ mais v├ílido (OB06).   
+[Restri├º├úo] Esse motivo dever├í ser enviado quando o campo /data/status for igual a RJCT (REJECTED).
+' to 'Motivo da rejei├º├úo do pagamento. Informa├º├╡es complementares sobre o motivo do status.
+ABORTED_SETTLEMENT_TIMEOUT - Liquida├º├úo da transa├º├úo interrompida devido a timeout no SPI (AB03).
+ERROR_CREDITOR_AGENT - Transa├º├úo interrompida devido a erro no participante do usu├írio recebedor (AB09).
+TIMEOUT_DEBTOR_AGENT - Timeout do participante emissor da ordem de pagamento (AB11).
+INVALID_CREDITOR_ACCOUNT_NUMBER - N├║mero da conta transacional do usu├írio recebedor inexistente ou inv├ílido (AC03).
+BLOCKED_ACCOUNT - Conta transacional do usu├írio recebedor encontra-se bloqueada (AC06).
+CLOSED_CREDITOR_ACCOUNT_NUMBER - N├║mero da conta transacional do usu├írio recebedor encerrada (AC07).
+INVALID_CREDITOR_ACCOUNTTYPE - Tipo incorreto para a conta transacional do usu├írio recebedor (AC14).
+TRANSACTION_NOT_SUPPORTED - Tipo de transa├º├úo n├úo ├⌐ suportado/autorizado na conta transacional do usu├írio recebedor (AG03). Exemplo: transfer├¬ncia para conta sal├írio.
+NOT_ALLOWED_BOOK_TRANSFER - N├úo ├⌐ permitida ordem de pagamento/devolu├º├úo no SPI cujos recursos sejam transferidos de uma conta transacional para outra em uma mesma institui├º├úo participante ou entre participantes que utilizem o servi├ºo de liquida├º├úo de um mesmo participante liquidante no SPI (booktransfer) (AG12).
+FORBIDDEN_RETURN_PAYMENT - N├úo ├⌐ permitido devolver a devolu├º├úo de um pagamento instant├óneo (AG13).
+INCORRECT_AGENT - Participante direto n├úo ├⌐ liquidante do participante do usu├írio pagador / participante do usu├írio recebedor (AGNT).
+ZERO_AMOUNT - Ordem de pagamento instant├óneo com valor zero (AM01).
+NOT_ALLOWED_AMOUNT - Ordem de pagamento/devolu├º├úo em valor que faz superar o limite permitido para o tipo de conta transacional creditada (AM02).
+INSUFFICIENT_FUNDS - Saldo insuficiente na conta PI do participante do usu├írio pagador (AM04).
+WRONG_AMOUNT - Devolu├º├úo de pagamento em valor que faz superar o valor da ordem de pagamento instant├óneo correspondente (AM09).
+INVALID_AMOUNT - Diverg├¬ncia entre a somat├│ria dos valores do bloco ΓÇÿvalorDoDinheiroOuCompraΓÇÖ e o campo ΓÇÿvalorΓÇÖ (AM12).
+INVALID_NUMBER_OF_TRANSACTIONS - Quantidade de transa├º├╡es inv├ílida (AM18).
+INCONSISTENT_WITH_END_CUSTOMER - CPF/CNPJ do usu├írio recebedor n├úo ├⌐ consistente com o titular da conta transacional especificada (BE01).
+INVALID_IDENTIFICATION_CODE - C├│digo de situa├º├úo de pagamento ou de erro inv├ílido (BE15).
+INVALID_CREDITOR_IDENTIFICATION_CODE - QR Code rejeitado pelo participante do usu├írio recebedor (BE17).
+CREDITOR_IDENTIFIER_INCORRECT - CPF/CNPJ do usu├írio recebedor incorreto (CH11).
+ELEMENT_CONTENT_FORMALLY_INCORRECT - Elemento da mensagem incorreto (CH16).
+ORDER_REJECTED - Ordem rejeitada pelo participante do usu├írio recebedor (DS04).
+NOT_ALLOWED_PAYMENT - Participante que assinou a mensagem n├úo ├⌐ autorizado a realizar a opera├º├úo na conta PI debitada. No caso em que o participante que assinou a mensagem n├úo ├⌐ o titular da conta PI debitada nem ├⌐ o liquidante no SPI do participante do usu├írio pagador (DS0G).
+NOT_ALLOWED_ACCOUNT - ISPB do participante que submeteu a resposta ├á ordem de pagamento/devolu├º├úo diferente do ISPB do participante creditado pela ordem (DS0H).
+USER_NOT_YET_ACTIVATED - Participante n├úo se encontra cadastrado ou ainda n├úo iniciou a opera├º├úo no SPI (DS27).
+INVALID_CREATION_DATE - Data e Hora do envio da mensagem inv├ílida (DT02).
+INVALID_CUT_OFF_DATE - Transa├º├úo extrapola o prazo m├íximo para devolu├º├úo de pagamento instant├óneo regulamentado pelo Arranjo PIX (DT05).
+SETTLEMENT_FAILED - Erro no processamento do pagamento instant├óneo (ED05).
+INVALID_PURPOSE - Inconsist├¬ncia entre a finalidade da transa├º├úo e o preenchimento do bloco elementos Structured (FF07).
+INVALID_END_TO_END_ID - Identificador da opera├º├úo mal formatado (FF08).
+INVALID_DEBTOR_CLEARING_SYSTEM_MEMBER_IDENTIFIER - ISPB do participante do usu├írio pagador inv├ílido ou inexistente (RC09).
+INVALID_CREDITOR_CLEARING_SYSTEM_MEMBER_IDENTIFIER - ISPB do participante do usu├írio recebedor inv├ílido ou inexistente (RC10).
+REGULATORY_REASON - Ordem de pagamento em que o usu├írio pagador ├⌐ sancionado por resolu├º├úo do Conselho de Seguran├ºa das Na├º├╡es Unidas (CSNU). Nos casos em que o usu├írio recebedor for o sancionado, a ordem de pagamento n├úo deve ser rejeitada (RR4).
+SPECIFIC_SERVICE_OFFERED_BY_CREDITOR_AGENT - A transa├º├úo original n├úo est├í relacionada ao servi├ºo de Saque Pix (SL02).
+INVALID_BILL - Valida├º├úo de expira├º├úo, valida├º├úo de vencimento, Status V├ílido (INDT).
+OPERATION_WINDOW - Requisi├º├úo est├í fora da janela de funcionamento (IDEA).
+INCOMPATIBLE_DATE - Data do pagamento divergente da data consentida ou divergente da data atual do QR Code (TERM).
+MISMATCH_AMOUNT - O valor informado no consentimento n├úo ├⌐ o mesmo valor do informado no payload de pagamento.
+OVER_LIMIT - O valor (ou quantidade de transa├º├╡es) ultrapassa a faixa de limite parametrizada na detentora para permitir a realiza├º├úo de transa├º├╡es pelo cliente.
+INVALID_CONSENT - Consentimento inv├ílido (status n├úo ├⌐ "authorised" ou est├í expirado).
+DENIED_MULTIPLE_AUTHORISATIONS - Um (ou mais) aprovadores na detentora recusaram a opera├º├úo.
+EXPIRED_MULTIPLE_AUTHORISATIONS - Um (ou mais) aprovadores na detentora n├úo tomaram a├º├úo para aprovar a opera├º├úo.
+EXPIRED_BILL - O QR Code n├úo ├⌐ mais v├ílido.
+CONSENT_REVOKED - Pagamento cancelado devido ├á revoga├º├úo do consentimento.
+[Restri├º├úo] Esse motivo dever├í ser enviado quando o campo /data/status for igual a RJCT (REJECTED).
+'
+                  - New enum values: [CONSENT_REVOKED]
+                - Modified property: status
+                  - Description changed from 'Estado atual da inicia├º├úo de pagamento. O estado evolui na seguinte ordem:  
+1. PDNG (PENDING) - Inicia├º├úo de pagamento ou transa├º├úo de pagamento est├í pendente. Checagens adicionais em realiza├º├úo.  
+2. PART (PARTIALLY ACCEPTED) - Aguardando autoriza├º├úo m├║ltipla al├ºada.  
+3. ACSP (ACCEPTED_SETTLEMENT_IN_PROCESS) - Inicia├º├úo de pagamento aceita e processamento do pagamento foi iniciado.  
+4. ACSC (ACCEPTED_SETTLEMENT_COMPLETED_DEBITOR_ACCOUNT) - D├⌐bito realizado na conta do pagador.  
+5. ACCC (ACCEPTED_SETTLEMENT_COMPLETED) - Cr├⌐dito realizado na institui├º├úo de destino.  
+Em caso insucesso:  
+RJCT (REJECTED) - Instru├º├úo de pagamento rejeitada.
+' to 'Estado atual da inicia├º├úo de pagamento. O estado evolui na seguinte ordem:  
+1. PDNG (PENDING) - Inicia├º├úo de pagamento ou transa├º├úo de pagamento est├í pendente. Checagens adicionais em realiza├º├úo.  
+2. SASP (SCHEDULE_ACCEPTED_SETTLEMENT_IN_PROCESS) - Indica que o processo de agendamento est├í em processamento.  
+3. SASC (SCHEDULE_ACCEPTED_SETTLEMENT_COMPLETED) - Indica que o processo de agendamento foi realizado.  
+4. PART (PARTIALLY ACCEPTED) - Aguardando autoriza├º├úo m├║ltipla al├ºada.  
+5. ACSP (ACCEPTED_SETTLEMENT_IN_PROCESS) - Inicia├º├úo de pagamento aceita e processamento do pagamento foi iniciado.  
+6. ACSC (ACCEPTED_SETTLEMENT_COMPLETED_DEBITOR_ACCOUNT) - D├⌐bito realizado na conta do pagador.  
+7. ACCC (ACCEPTED_SETTLEMENT_COMPLETED) - Cr├⌐dito realizado na institui├º├úo de destino.  
+Em caso insucesso:  
+RJCT (REJECTED) - Instru├º├úo de pagamento rejeitada.
+'
+                  - New enum values: [SASP SASC]
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 400
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 401
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 403
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 404
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 405
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 406
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 429
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: 500
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+  - Modified response: default
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'

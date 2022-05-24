@@ -1,0 +1,25 @@
+﻿### New Endpoints: None
+-----------------------
+### Deleted Endpoints: None
+---------------------------
+### Modified Endpoints: 1
+-------------------------
+GET /resources
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Items changed
+                - Required changed
+                  - New required property: resourceId
+  - Modified response: default
+    - Description changed from 'Dados de status dos recursos obtidos com sucesso.' to 'Erro inesperado.'
+    - Content changed
+      - New media type: application/json
+      - New media type: application/json; charset=utf-8
+      - Deleted media type: application/json
+    - Headers changed
+      - Deleted header: x-fapi-interaction-id

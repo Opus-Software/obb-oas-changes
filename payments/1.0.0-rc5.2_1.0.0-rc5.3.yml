@@ -18,7 +18,7 @@ POST /consents
       - Deleted media type: application/json
 - Security changed
   - New security requirements: OAuth2ClientCredentials AND OpenId
-  - Deleted security requirements: OAuth2Security AND OpenId
+  - Deleted security requirements: OpenId AND OAuth2Security
 GET /consents/{consentId}
 - Responses changed
   - Modified response: 200

@@ -23,8 +23,8 @@ GET /business/financial-relations
             - Modified property: data
               - Properties changed
                 - Modified property: accounts
-                  - Description changed from 'Lista de contas dep├│sito ├á vista, poupan├ºa e pagamento pr├⌐-pagas mantidas pelo cliente na institui├º├úo transmissora e para as quais ele tenha fornecido consentimento.    
-' to 'Lista de contas dep├│sito ├á vista, poupan├ºa e pagamento pr├⌐-pagas mantidas pelo cliente na institui├º├úo transmissora.    
+                  - Description changed from 'Lista de contas depósito à vista, poupança e pagamento pré-pagas mantidas pelo cliente na instituição transmissora e para as quais ele tenha fornecido consentimento.    
+' to 'Lista de contas depósito à vista, poupança e pagamento pré-pagas mantidas pelo cliente na instituição transmissora.    
 '
                   - Nullable changed from false to true
                   - Items changed
@@ -161,8 +161,8 @@ GET /business/financial-relations
             - Modified property: data
               - Properties changed
                 - Modified property: accounts
-                  - Description changed from 'Lista de contas dep├│sito ├á vista, poupan├ºa e pagamento pr├⌐-pagas mantidas pelo cliente na institui├º├úo transmissora e para as quais ele tenha fornecido consentimento.    
-' to 'Lista de contas dep├│sito ├á vista, poupan├ºa e pagamento pr├⌐-pagas mantidas pelo cliente na institui├º├úo transmissora.    
+                  - Description changed from 'Lista de contas depósito à vista, poupança e pagamento pré-pagas mantidas pelo cliente na instituição transmissora e para as quais ele tenha fornecido consentimento.    
+' to 'Lista de contas depósito à vista, poupança e pagamento pré-pagas mantidas pelo cliente na instituição transmissora.    
 '
                   - Nullable changed from false to true
                   - Items changed
@@ -632,8 +632,8 @@ GET /personal/financial-relations
             - Modified property: data
               - Properties changed
                 - Modified property: accounts
-                  - Description changed from 'Lista de contas dep├│sito ├á vista, poupan├ºa e pagamento pr├⌐-pagas mantidas pelo cliente na institui├º├úo transmissora e para as quais ele tenha fornecido consentimento.    
-' to 'Lista de contas dep├│sito ├á vista, poupan├ºa e pagamento pr├⌐-pagas mantidas pelo cliente na institui├º├úo transmissora.    
+                  - Description changed from 'Lista de contas depósito à vista, poupança e pagamento pré-pagas mantidas pelo cliente na instituição transmissora e para as quais ele tenha fornecido consentimento.    
+' to 'Lista de contas depósito à vista, poupança e pagamento pré-pagas mantidas pelo cliente na instituição transmissora.    
 '
                   - Nullable changed from false to true
                   - Items changed
@@ -772,8 +772,8 @@ GET /personal/financial-relations
             - Modified property: data
               - Properties changed
                 - Modified property: accounts
-                  - Description changed from 'Lista de contas dep├│sito ├á vista, poupan├ºa e pagamento pr├⌐-pagas mantidas pelo cliente na institui├º├úo transmissora e para as quais ele tenha fornecido consentimento.    
-' to 'Lista de contas dep├│sito ├á vista, poupan├ºa e pagamento pr├⌐-pagas mantidas pelo cliente na institui├º├úo transmissora.    
+                  - Description changed from 'Lista de contas depósito à vista, poupança e pagamento pré-pagas mantidas pelo cliente na instituição transmissora e para as quais ele tenha fornecido consentimento.    
+' to 'Lista de contas depósito à vista, poupança e pagamento pré-pagas mantidas pelo cliente na instituição transmissora.    
 '
                   - Nullable changed from false to true
                   - Items changed

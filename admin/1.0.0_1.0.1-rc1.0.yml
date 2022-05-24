@@ -8,9 +8,9 @@ GET /metrics
 - New query param: page
 - New query param: page-size
 - Modified query param: period
-  - Description changed from 'Per├¡odo a ser consultado' to 'Per├¡odo a ser consultado
-  * `CURRENT` - M├⌐tricas do dia atual.
-  * `ALL` - M├⌐tricas de todo o per├¡odo dispon├¡vel.
+  - Description changed from 'Período a ser consultado' to 'Período a ser consultado
+  * `CURRENT` - Métricas do dia atual.
+  * `ALL` - Métricas de todo o período disponível.
 '
 - Responses changed
   - Modified response: 200
@@ -45,7 +45,7 @@ GET /metrics
                             - Modified property: url
                               - Description changed from '' to 'URL do endpoint'
                         - Modified property: generalUptimeRate
-                          - Description changed from '' to 'Taxa de disponibilidade (considerando todos os servi├ºos ativos ao mesmo tempo).'
+                          - Description changed from '' to 'Taxa de disponibilidade (considerando todos os serviços ativos ao mesmo tempo).'
                 - Modified property: averageResponse
                   - Required changed
                     - New required property: mediumPriority
@@ -54,38 +54,38 @@ GET /metrics
                     - New property: mediumPriority
                     - Deleted property: lowPriority
                     - Modified property: highPriority
-                      - Description changed from '' to 'Tempo m├⌐dio de resposta de chamadas para o n├¡vel de alta prioridade.'
+                      - Description changed from '' to 'Tempo médio de resposta de chamadas para o nível de alta prioridade.'
                       - Properties changed
                         - Modified property: currentDay
-                          - Description changed from '' to 'Tempo m├⌐dio de resposta para chamadas no dia atual.'
+                          - Description changed from '' to 'Tempo médio de resposta para chamadas no dia atual.'
                         - Modified property: previousDays
-                          - Description changed from '' to 'Tempo m├⌐dio de resposta para chamadas nos dias anteriores. O primeiro item do array ├⌐ referente a ontem, e assim por diante. Devem ser retornados no m├íximo sete dias caso estejam dispon├¡veis.'
+                          - Description changed from '' to 'Tempo médio de resposta para chamadas nos dias anteriores. O primeiro item do array é referente a ontem, e assim por diante. Devem ser retornados no máximo sete dias caso estejam disponíveis.'
                     - Modified property: unattended
-                      - Description changed from '' to 'Tempo m├⌐dio de resposta para chamadas para o n├¡vel n├úo acompanhado.'
+                      - Description changed from '' to 'Tempo médio de resposta para chamadas para o nível não acompanhado.'
                       - Properties changed
                         - Modified property: currentDay
-                          - Description changed from '' to 'Tempo m├⌐dio de resposta para chamadas no dia atual.'
+                          - Description changed from '' to 'Tempo médio de resposta para chamadas no dia atual.'
                         - Modified property: previousDays
-                          - Description changed from '' to 'Tempo m├⌐dio de resposta para chamadas nos dias anteriores. O primeiro item do array ├⌐ referente a ontem, e assim por diante. Devem ser retornados no m├íximo sete dias caso estejam dispon├¡veis.'
+                          - Description changed from '' to 'Tempo médio de resposta para chamadas nos dias anteriores. O primeiro item do array é referente a ontem, e assim por diante. Devem ser retornados no máximo sete dias caso estejam disponíveis.'
                     - Modified property: unauthenticated
-                      - Description changed from '' to 'Tempo m├⌐dio de resposta para chamadas n├úo autenticadas.'
+                      - Description changed from '' to 'Tempo médio de resposta para chamadas não autenticadas.'
                       - Properties changed
                         - Modified property: currentDay
-                          - Description changed from '' to 'Tempo m├⌐dio de resposta para chamadas no dia atual.'
+                          - Description changed from '' to 'Tempo médio de resposta para chamadas no dia atual.'
                         - Modified property: previousDays
-                          - Description changed from '' to 'Tempo m├⌐dio de resposta para chamadas nos dias anteriores. O primeiro item do array ├⌐ referente a ontem, e assim por diante. Devem ser retornados no m├íximo sete dias caso estejam dispon├¡veis.'
+                          - Description changed from '' to 'Tempo médio de resposta para chamadas nos dias anteriores. O primeiro item do array é referente a ontem, e assim por diante. Devem ser retornados no máximo sete dias caso estejam disponíveis.'
                 - Modified property: averageTps
                   - Properties changed
                     - Modified property: currentDay
-                      - Description changed from '' to 'N├║mero m├⌐dio de chamadas por segundo no dia.'
+                      - Description changed from '' to 'Número médio de chamadas por segundo no dia.'
                     - Modified property: previousDays
-                      - Description changed from '' to 'N├║mero m├⌐dio de chamadas por segundo nos dias anteriores. O primeiro item do array ├⌐ referente a ontem, e assim por diante. Devem ser retornados no m├íximo sete dias caso estejam dispon├¡veis.'
+                      - Description changed from '' to 'Número médio de chamadas por segundo nos dias anteriores. O primeiro item do array é referente a ontem, e assim por diante. Devem ser retornados no máximo sete dias caso estejam disponíveis.'
                 - Modified property: errors
                   - Properties changed
                     - Modified property: currentDay
-                      - Description changed from '' to 'N├║mero de chamadas com erro no dia atual.'
+                      - Description changed from '' to 'Número de chamadas com erro no dia atual.'
                     - Modified property: previousDays
-                      - Description changed from '' to 'N├║mero de chamadas com erro nos dias anteriores. O primeiro item do array ├⌐ referente a ontem, e assim por diante. Devem ser retornados no m├íximo sete dias caso estejam dispon├¡veis.'
+                      - Description changed from '' to 'Número de chamadas com erro nos dias anteriores. O primeiro item do array é referente a ontem, e assim por diante. Devem ser retornados no máximo sete dias caso estejam disponíveis.'
                 - Modified property: invocations
                   - Required changed
                     - New required property: mediumPriority
@@ -94,37 +94,37 @@ GET /metrics
                     - New property: mediumPriority
                     - Deleted property: lowPriority
                     - Modified property: highPriority
-                      - Description changed from '' to 'N├║mero de chamadas para o n├¡vel de alta prioridade.'
+                      - Description changed from '' to 'Número de chamadas para o nível de alta prioridade.'
                       - Properties changed
                         - Modified property: currentDay
-                          - Description changed from '' to 'N├║mero de chamadas no dia atual para o n├¡vel de alta prioridade.'
+                          - Description changed from '' to 'Número de chamadas no dia atual para o nível de alta prioridade.'
                         - Modified property: previousDays
-                          - Description changed from '' to 'N├║mero de chamadas nos dias anteriores para o n├¡vel de alta prioridade. O primeiro item do array ├⌐ referente a ontem, e assim por diante. Devem ser retornados no m├íximo sete dias caso estejam dispon├¡veis.'
+                          - Description changed from '' to 'Número de chamadas nos dias anteriores para o nível de alta prioridade. O primeiro item do array é referente a ontem, e assim por diante. Devem ser retornados no máximo sete dias caso estejam disponíveis.'
                     - Modified property: unattended
-                      - Description changed from '' to 'N├║mero de chamadas para o n├¡vel n├úo acompanhado.'
+                      - Description changed from '' to 'Número de chamadas para o nível não acompanhado.'
                       - Properties changed
                         - Modified property: currentDay
-                          - Description changed from '' to 'N├║mero de chamadas no dia atual para o n├¡vel n├úo acompanhado.'
+                          - Description changed from '' to 'Número de chamadas no dia atual para o nível não acompanhado.'
                         - Modified property: previousDays
-                          - Description changed from '' to 'N├║mero de chamadas nos dias anteriores para o n├¡vel n├úo acompanhado. O primeiro item do array ├⌐ referente a ontem, e assim por diante. Devem ser retornados no m├íximo sete dias caso estejam dispon├¡veis.'
+                          - Description changed from '' to 'Número de chamadas nos dias anteriores para o nível não acompanhado. O primeiro item do array é referente a ontem, e assim por diante. Devem ser retornados no máximo sete dias caso estejam disponíveis.'
                     - Modified property: unauthenticated
-                      - Description changed from '' to 'N├║mero de chamadas n├úo autenticadas.'
+                      - Description changed from '' to 'Número de chamadas não autenticadas.'
                       - Properties changed
                         - Modified property: currentDay
-                          - Description changed from '' to 'N├║mero de chamadas n├úo autenticadas no dia atual.'
+                          - Description changed from '' to 'Número de chamadas não autenticadas no dia atual.'
                         - Modified property: previousDays
-                          - Description changed from '' to 'N├║mero de chamadas n├úo autenticadas nos dias anteriores. O primeiro item do array ├⌐ referente a ontem, e assim por diante. Devem ser retornados no m├íximo sete dias caso estejam dispon├¡veis.'
+                          - Description changed from '' to 'Número de chamadas não autenticadas nos dias anteriores. O primeiro item do array é referente a ontem, e assim por diante. Devem ser retornados no máximo sete dias caso estejam disponíveis.'
                 - Modified property: peakTps
                   - Properties changed
                     - Modified property: currentDay
                       - Description changed from '' to 'Pico de chamadas por segundo no dia.'
                     - Modified property: previousDays
-                      - Description changed from '' to 'Pico de chamadas por segundo nos dias anteriores. O primeiro item do array ├⌐ referente a ontem, e assim por diante. Devem ser retornados no m├íximo sete dias caso estejam dispon├¡veis.'
+                      - Description changed from '' to 'Pico de chamadas por segundo nos dias anteriores. O primeiro item do array é referente a ontem, e assim por diante. Devem ser retornados no máximo sete dias caso estejam disponíveis.'
                 - Modified property: rejections
                   - Properties changed
                     - Modified property: currentDay
-                      - Description changed from '' to 'N├║mero de chamadas rejeitadas no dia atual.'
+                      - Description changed from '' to 'Número de chamadas rejeitadas no dia atual.'
                     - Modified property: previousDays
-                      - Description changed from '' to 'N├║mero de chamadas rejeitadas nos dias anteriores. O primeiro item do array ├⌐ referente a ontem, e assim por diante. Devem ser retornados no m├íximo sete dias caso estejam dispon├¡veis.'
+                      - Description changed from '' to 'Número de chamadas rejeitadas nos dias anteriores. O primeiro item do array é referente a ontem, e assim por diante. Devem ser retornados no máximo sete dias caso estejam disponíveis.'
                 - Modified property: requestTime
-                  - Description changed from '' to 'Data e hora que as m├⌐tricas foram requisitadas.'
+                  - Description changed from '' to 'Data e hora que as métricas foram requisitadas.'

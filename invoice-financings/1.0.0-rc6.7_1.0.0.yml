@@ -60,12 +60,12 @@ GET /contracts/{contractId}
                   - Items changed
                     - Properties changed
                       - Modified property: chargeAdditionalInfo
-                        - Description changed from 'Campos para informa├º├╡es adicionais.
-[Restri├º├úo] Obrigat├│rio se selecionada a op├º├úo 'OUTROS' em Tipo de encargo pactuado no contrato.
-' to 'Campos para informa├º├╡es adicionais.
-[Restri├º├úo] Obrigat├│rio se selecionada a op├º├úo 'OUTROS' em Tipo de encargo pactuado no contrato. Pode ser retornado NA caso a Institui├º├úo n├úo possua essa informa├º├úo.
+                        - Description changed from 'Campos para informações adicionais.
+[Restrição] Obrigatório se selecionada a opção 'OUTROS' em Tipo de encargo pactuado no contrato.
+' to 'Campos para informações adicionais.
+[Restrição] Obrigatório se selecionada a opção 'OUTROS' em Tipo de encargo pactuado no contrato. Pode ser retornado NA caso a Instituição não possua essa informação.
 '
-                        - Example changed from null to 'Informa├º├╡es adicionais sobre encargos'
+                        - Example changed from null to 'Informações adicionais sobre encargos'
                         - Pattern changed from '\w*\W*$|^NA$' to '[\w\W\s]*'
                 - Modified property: instalmentPeriodicityAdditionalInfo
                   - Pattern changed from '\w*\W*' to '[\w\W\s]*'
@@ -74,7 +74,7 @@ GET /contracts/{contractId}
                   - Items changed
                     - Properties changed
                       - Modified property: additionalInfo
-                        - Example changed from '' to 'Informa├º├╡es adicionais'
+                        - Example changed from '' to 'Informações adicionais'
                         - Pattern changed from '\w*\W*' to '[\w\W\s]*'
                       - Modified property: postFixedRate
                         - Format changed from '' to 'double'
@@ -82,7 +82,7 @@ GET /contracts/{contractId}
                         - Format changed from '' to 'double'
                         - Nullable changed from false to true
                       - Modified property: referentialRateIndexerAdditionalInfo
-                        - Example changed from '' to 'Informa├º├╡es adicionais de Indexador ou tipo de taxa referencial'
+                        - Example changed from '' to 'Informações adicionais de Indexador ou tipo de taxa referencial'
                         - Pattern changed from '\w*\W*' to '[\w\W\s]*'
                 - Modified property: productName
                   - Pattern changed from '\w*\W*' to '[\w\W\s]*'
@@ -111,12 +111,12 @@ GET /contracts/{contractId}
                   - Items changed
                     - Properties changed
                       - Modified property: chargeAdditionalInfo
-                        - Description changed from 'Campos para informa├º├╡es adicionais.
-[Restri├º├úo] Obrigat├│rio se selecionada a op├º├úo 'OUTROS' em Tipo de encargo pactuado no contrato.
-' to 'Campos para informa├º├╡es adicionais.
-[Restri├º├úo] Obrigat├│rio se selecionada a op├º├úo 'OUTROS' em Tipo de encargo pactuado no contrato. Pode ser retornado NA caso a Institui├º├úo n├úo possua essa informa├º├úo.
+                        - Description changed from 'Campos para informações adicionais.
+[Restrição] Obrigatório se selecionada a opção 'OUTROS' em Tipo de encargo pactuado no contrato.
+' to 'Campos para informações adicionais.
+[Restrição] Obrigatório se selecionada a opção 'OUTROS' em Tipo de encargo pactuado no contrato. Pode ser retornado NA caso a Instituição não possua essa informação.
 '
-                        - Example changed from null to 'Informa├º├╡es adicionais sobre encargos'
+                        - Example changed from null to 'Informações adicionais sobre encargos'
                         - Pattern changed from '\w*\W*$|^NA$' to '[\w\W\s]*'
                 - Modified property: instalmentPeriodicityAdditionalInfo
                   - Pattern changed from '\w*\W*' to '[\w\W\s]*'
@@ -125,7 +125,7 @@ GET /contracts/{contractId}
                   - Items changed
                     - Properties changed
                       - Modified property: additionalInfo
-                        - Example changed from '' to 'Informa├º├╡es adicionais'
+                        - Example changed from '' to 'Informações adicionais'
                         - Pattern changed from '\w*\W*' to '[\w\W\s]*'
                       - Modified property: postFixedRate
                         - Format changed from '' to 'double'
@@ -133,7 +133,7 @@ GET /contracts/{contractId}
                         - Format changed from '' to 'double'
                         - Nullable changed from false to true
                       - Modified property: referentialRateIndexerAdditionalInfo
-                        - Example changed from '' to 'Informa├º├╡es adicionais de Indexador ou tipo de taxa referencial'
+                        - Example changed from '' to 'Informações adicionais de Indexador ou tipo de taxa referencial'
                         - Pattern changed from '\w*\W*' to '[\w\W\s]*'
                 - Modified property: productName
                   - Pattern changed from '\w*\W*' to '[\w\W\s]*'
@@ -166,7 +166,7 @@ GET /contracts/{contractId}/payments
                             - Items changed
                               - Properties changed
                                 - Modified property: chargeAdditionalInfo
-                                  - Example changed from null to 'Informa├º├╡es adicionais'
+                                  - Example changed from null to 'Informações adicionais'
                                   - Pattern changed from '\w*\W*' to '[\w\W\s]*'
                           - Modified property: fees
                             - Nullable changed from false to true
@@ -204,7 +204,7 @@ GET /contracts/{contractId}/payments
                             - Items changed
                               - Properties changed
                                 - Modified property: chargeAdditionalInfo
-                                  - Example changed from null to 'Informa├º├╡es adicionais'
+                                  - Example changed from null to 'Informações adicionais'
                                   - Pattern changed from '\w*\W*' to '[\w\W\s]*'
                           - Modified property: fees
                             - Nullable changed from false to true

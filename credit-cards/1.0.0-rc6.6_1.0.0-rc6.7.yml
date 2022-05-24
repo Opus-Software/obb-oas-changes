@@ -575,8 +575,8 @@ GET /accounts/{creditCardAccountId}/bills/{billId}/transactions
                     - MaxLength changed from 19 to 20
                     - Pattern changed from '(-?\d{15}(.\d{4}?))$' to '^-?\d{1,15}\.\d{2,4}$'
 GET /accounts/{creditCardAccountId}/limits
-- Description changed from 'M├⌐todo para obter os limites da conta de pagamento p├│s-paga identificada por creditCardAccountId mantida pelo cliente na institui├º├úo transmissora.
-' to 'M├⌐todo para obter os limites da conta de pagamento p├│s-paga identificada por creditCardAccountId mantida pelo cliente na institui├º├úo transmissora.'
+- Description changed from 'Método para obter os limites da conta de pagamento pós-paga identificada por creditCardAccountId mantida pelo cliente na instituição transmissora.
+' to 'Método para obter os limites da conta de pagamento pós-paga identificada por creditCardAccountId mantida pelo cliente na instituição transmissora.'
 - Modified header param: Authorization
   - Schema changed
     - Pattern changed from '\w*\W*' to '[\w\W\s]*'

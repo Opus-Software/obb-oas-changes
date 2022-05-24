@@ -12,70 +12,70 @@ GET /contracts
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 400
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 401
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 403
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 404
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 405
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 406
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 429
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 500
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: default
     - Content changed
       - Modified media type: application/json
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
 GET /contracts/{contractId}
 - Responses changed
   - Modified response: 200
@@ -90,10 +90,10 @@ GET /contracts/{contractId}
                 - Modified property: amortizationScheduled
                   - MaxLength changed from 24 to 23
                 - Modified property: amortizationScheduledAdditionalInfo
-                  - Description changed from 'Campo obrigat├│rio para complementar a informa├º├úo relativa ├á amortiza├º├úo quando selecionada a op├º├úo OUTROS.
-[Restri├º├úo] Obrigat├│rio para complementar a informa├º├úo relativa ├á amortiza├º├úo quando selecionada a op├º├úo OUTROS, para os demais casos informar "NA".       
-' to 'Campo obrigat├│rio para complementar a informa├º├úo relativa ├á amortiza├º├úo quando selecionada a op├º├úo OUTROS.
-[Restri├º├úo] Obrigat├│rio para complementar a informa├º├úo relativa ├á amortiza├º├úo quando selecionada a op├º├úo OUTROS, para os demais casos informar "NA".
+                  - Description changed from 'Campo obrigatório para complementar a informação relativa à amortização quando selecionada a opção OUTROS.
+[Restrição] Obrigatório para complementar a informação relativa à amortização quando selecionada a opção OUTROS, para os demais casos informar "NA".       
+' to 'Campo obrigatório para complementar a informação relativa à amortização quando selecionada a opção OUTROS.
+[Restrição] Obrigatório para complementar a informação relativa à amortização quando selecionada a opção OUTROS, para os demais casos informar "NA".
 '
                 - Modified property: contractedFees
                   - MinItems changed from 1 to 0
@@ -106,19 +106,19 @@ GET /contracts/{contractId}
                 - Modified property: instalmentPeriodicity
                   - MaxLength changed from null to 25
                 - Modified property: instalmentPeriodicityAdditionalInfo
-                  - Description changed from 'Campo obrigat├│rio para complementar a informa├º├úo relativa ├á periodicidade de pagamento regular quando tiver a op├º├úo OUTROS.
-[Restri├º├úo] Obrigat├│rio para complementar a informa├º├úo relativa da periodicidade de pagamento regular, quando selecionada o tipo ou subtipo OUTRO.       
-' to 'Campo obrigat├│rio para complementar a informa├º├úo relativa ├á periodicidade de pagamento regular quando tiver a op├º├úo OUTROS.
-[Restri├º├úo] Obrigat├│rio para complementar a informa├º├úo relativa da periodicidade de pagamento regular, quando selecionada o tipo ou subtipo OUTRO.
+                  - Description changed from 'Campo obrigatório para complementar a informação relativa à periodicidade de pagamento regular quando tiver a opção OUTROS.
+[Restrição] Obrigatório para complementar a informação relativa da periodicidade de pagamento regular, quando selecionada o tipo ou subtipo OUTRO.       
+' to 'Campo obrigatório para complementar a informação relativa à periodicidade de pagamento regular quando tiver a opção OUTROS.
+[Restrição] Obrigatório para complementar a informação relativa da periodicidade de pagamento regular, quando selecionada o tipo ou subtipo OUTRO.
 '
                 - Modified property: interestRates
                   - Items changed
                     - Properties changed
                       - Modified property: additionalInfo
-                        - Description changed from 'Texto com informa├º├╡es adicionais sobre a composi├º├úo das taxas de juros pactuadas.
-[Restri├º├úo] Caso a institui├º├úo n├úo possua a informa├º├úo para compartilhamento, informar NA.       
-' to 'Texto com informa├º├╡es adicionais sobre a composi├º├úo das taxas de juros pactuadas.
-[Restri├º├úo] Caso a institui├º├úo n├úo possua a informa├º├úo para compartilhamento, informar NA.
+                        - Description changed from 'Texto com informações adicionais sobre a composição das taxas de juros pactuadas.
+[Restrição] Caso a instituição não possua a informação para compartilhamento, informar NA.       
+' to 'Texto com informações adicionais sobre a composição das taxas de juros pactuadas.
+[Restrição] Caso a instituição não possua a informação para compartilhamento, informar NA.
 '
                       - Modified property: interestRateType
                         - MaxLength changed from 10 to 8
@@ -127,63 +127,63 @@ GET /contracts/{contractId}
                       - Modified property: taxType
                         - MaxLength changed from 10 to 7
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 400
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 401
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 403
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 404
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 405
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 406
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 429
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 500
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: default
     - Content changed
       - Modified media type: application/json
@@ -196,10 +196,10 @@ GET /contracts/{contractId}
                 - Modified property: amortizationScheduled
                   - MaxLength changed from 24 to 23
                 - Modified property: amortizationScheduledAdditionalInfo
-                  - Description changed from 'Campo obrigat├│rio para complementar a informa├º├úo relativa ├á amortiza├º├úo quando selecionada a op├º├úo OUTROS.
-[Restri├º├úo] Obrigat├│rio para complementar a informa├º├úo relativa ├á amortiza├º├úo quando selecionada a op├º├úo OUTROS, para os demais casos informar "NA".       
-' to 'Campo obrigat├│rio para complementar a informa├º├úo relativa ├á amortiza├º├úo quando selecionada a op├º├úo OUTROS.
-[Restri├º├úo] Obrigat├│rio para complementar a informa├º├úo relativa ├á amortiza├º├úo quando selecionada a op├º├úo OUTROS, para os demais casos informar "NA".
+                  - Description changed from 'Campo obrigatório para complementar a informação relativa à amortização quando selecionada a opção OUTROS.
+[Restrição] Obrigatório para complementar a informação relativa à amortização quando selecionada a opção OUTROS, para os demais casos informar "NA".       
+' to 'Campo obrigatório para complementar a informação relativa à amortização quando selecionada a opção OUTROS.
+[Restrição] Obrigatório para complementar a informação relativa à amortização quando selecionada a opção OUTROS, para os demais casos informar "NA".
 '
                 - Modified property: contractedFees
                   - MinItems changed from 1 to 0
@@ -212,19 +212,19 @@ GET /contracts/{contractId}
                 - Modified property: instalmentPeriodicity
                   - MaxLength changed from null to 25
                 - Modified property: instalmentPeriodicityAdditionalInfo
-                  - Description changed from 'Campo obrigat├│rio para complementar a informa├º├úo relativa ├á periodicidade de pagamento regular quando tiver a op├º├úo OUTROS.
-[Restri├º├úo] Obrigat├│rio para complementar a informa├º├úo relativa da periodicidade de pagamento regular, quando selecionada o tipo ou subtipo OUTRO.       
-' to 'Campo obrigat├│rio para complementar a informa├º├úo relativa ├á periodicidade de pagamento regular quando tiver a op├º├úo OUTROS.
-[Restri├º├úo] Obrigat├│rio para complementar a informa├º├úo relativa da periodicidade de pagamento regular, quando selecionada o tipo ou subtipo OUTRO.
+                  - Description changed from 'Campo obrigatório para complementar a informação relativa à periodicidade de pagamento regular quando tiver a opção OUTROS.
+[Restrição] Obrigatório para complementar a informação relativa da periodicidade de pagamento regular, quando selecionada o tipo ou subtipo OUTRO.       
+' to 'Campo obrigatório para complementar a informação relativa à periodicidade de pagamento regular quando tiver a opção OUTROS.
+[Restrição] Obrigatório para complementar a informação relativa da periodicidade de pagamento regular, quando selecionada o tipo ou subtipo OUTRO.
 '
                 - Modified property: interestRates
                   - Items changed
                     - Properties changed
                       - Modified property: additionalInfo
-                        - Description changed from 'Texto com informa├º├╡es adicionais sobre a composi├º├úo das taxas de juros pactuadas.
-[Restri├º├úo] Caso a institui├º├úo n├úo possua a informa├º├úo para compartilhamento, informar NA.       
-' to 'Texto com informa├º├╡es adicionais sobre a composi├º├úo das taxas de juros pactuadas.
-[Restri├º├úo] Caso a institui├º├úo n├úo possua a informa├º├úo para compartilhamento, informar NA.
+                        - Description changed from 'Texto com informações adicionais sobre a composição das taxas de juros pactuadas.
+[Restrição] Caso a instituição não possua a informação para compartilhamento, informar NA.       
+' to 'Texto com informações adicionais sobre a composição das taxas de juros pactuadas.
+[Restrição] Caso a instituição não possua a informação para compartilhamento, informar NA.
 '
                       - Modified property: interestRateType
                         - MaxLength changed from 10 to 8
@@ -233,7 +233,7 @@ GET /contracts/{contractId}
                       - Modified property: taxType
                         - MaxLength changed from 10 to 7
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
 GET /contracts/{contractId}/payments
 - Responses changed
   - Modified response: 200
@@ -242,70 +242,70 @@ GET /contracts/{contractId}/payments
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 400
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 401
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 403
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 404
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 405
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 406
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 429
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 500
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: default
     - Content changed
       - Modified media type: application/json
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
 GET /contracts/{contractId}/scheduled-instalments
 - Responses changed
   - Modified response: 200
@@ -316,70 +316,70 @@ GET /contracts/{contractId}/scheduled-instalments
             - Modified property: data
               - Properties changed
                 - Modified property: typeContractRemaining
-                  - Description changed from 'Tipo de prazo remanescente do contrato referente ├á modalidade de cr├⌐dito informada.   
-' to 'Tipo de prazo remanescente do contrato referente ├á modalidade de cr├⌐dito informada.
+                  - Description changed from 'Tipo de prazo remanescente do contrato referente à modalidade de crédito informada.   
+' to 'Tipo de prazo remanescente do contrato referente à modalidade de crédito informada.
 '
                   - MaxLength changed from 6 to 22
                 - Modified property: typeNumberOfInstalments
                   - MaxLength changed from 6 to 15
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 400
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 401
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 403
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 404
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 405
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 406
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 429
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 500
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: default
     - Content changed
       - Modified media type: application/json
@@ -388,14 +388,14 @@ GET /contracts/{contractId}/scheduled-instalments
             - Modified property: data
               - Properties changed
                 - Modified property: typeContractRemaining
-                  - Description changed from 'Tipo de prazo remanescente do contrato referente ├á modalidade de cr├⌐dito informada.   
-' to 'Tipo de prazo remanescente do contrato referente ├á modalidade de cr├⌐dito informada.
+                  - Description changed from 'Tipo de prazo remanescente do contrato referente à modalidade de crédito informada.   
+' to 'Tipo de prazo remanescente do contrato referente à modalidade de crédito informada.
 '
                   - MaxLength changed from 6 to 22
                 - Modified property: typeNumberOfInstalments
                   - MaxLength changed from 6 to 15
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
 GET /contracts/{contractId}/warranties
 - Responses changed
   - Modified response: 200
@@ -411,63 +411,63 @@ GET /contracts/{contractId}/warranties
                   - Modified property: warrantyType
                     - MaxLength changed from 40 to 37
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 400
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 401
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 403
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 404
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 405
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 406
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 429
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: 500
     - Content changed
       - Modified media type: application/json; charset=utf-8
         - Schema changed
           - Properties changed
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'
   - Modified response: default
     - Content changed
       - Modified media type: application/json
@@ -481,4 +481,4 @@ GET /contracts/{contractId}/warranties
                   - Modified property: warrantyType
                     - MaxLength changed from 40 to 37
             - Modified property: meta
-              - Description changed from 'Meta informa├º├╡es referente a API requisitada.' to 'Meta informa├º├╡es referente ├á API requisitada.'
+              - Description changed from 'Meta informações referente a API requisitada.' to 'Meta informações referente à API requisitada.'

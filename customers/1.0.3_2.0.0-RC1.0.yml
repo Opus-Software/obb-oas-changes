@@ -19,9 +19,9 @@ GET /business/financial-relations
                       - Deleted required property: branchCode
                     - Properties changed
                       - Modified property: branchCode
-                        - Description changed from 'C├│digo da Ag├¬ncia detentora da conta. (Ag├¬ncia ├⌐ a depend├¬ncia destinada ao atendimento aos clientes, ao p├║blico em geral e aos associados de cooperativas de cr├⌐dito, no exerc├¡cio de atividades da institui├º├úo, n├úo podendo ser m├│vel ou transit├│ria)
-' to 'C├│digo da Ag├¬ncia detentora da conta. (Ag├¬ncia ├⌐ a depend├¬ncia destinada ao atendimento aos clientes, ao p├║blico em geral e aos associados de cooperativas de cr├⌐dito, no exerc├¡cio de atividades da institui├º├úo, n├úo podendo ser m├│vel ou transit├│ria)   
-[Restri├º├úo] Obrigatoriamente deve ser preenchido quando o campo "type" for diferente de conta pr├⌐ paga.
+                        - Description changed from 'Código da Agência detentora da conta. (Agência é a dependência destinada ao atendimento aos clientes, ao público em geral e aos associados de cooperativas de crédito, no exercício de atividades da instituição, não podendo ser móvel ou transitória)
+' to 'Código da Agência detentora da conta. (Agência é a dependência destinada ao atendimento aos clientes, ao público em geral e aos associados de cooperativas de crédito, no exercício de atividades da instituição, não podendo ser móvel ou transitória)   
+[Restrição] Obrigatoriamente deve ser preenchido quando o campo "type" for diferente de conta pré paga.
 '
                         - Pattern changed from '\d{4}|^NA$' to '^\d{4}$'
                       - Modified property: compeCode
@@ -38,10 +38,10 @@ GET /business/financial-relations
                         - Pattern changed from '^\d{11}$|^\d{14}$|^NA$' to '^\d{11}$|^\d{14}$'
                       - Modified property: socialName
                         - Description changed from 'Nome social da pessoa natural, se houver. Aquele pelo qual travestis e transexuais se reconhecem, 
-bem como s├úo identificados por sua comunidade e em seu meio social, conforme Decreto Local.
-[Restri├º├úo] Preenchimento obrigat├│rio quando o s├│cio for uma pessoa natural.
+bem como são identificados por sua comunidade e em seu meio social, conforme Decreto Local.
+[Restrição] Preenchimento obrigatório quando o sócio for uma pessoa natural.
 ' to 'Nome social da pessoa natural, se houver. Aquele pelo qual travestis e transexuais se reconhecem, 
-bem como s├úo identificados por sua comunidade e em seu meio social, conforme Decreto Local.
+bem como são identificados por sua comunidade e em seu meio social, conforme Decreto Local.
 '
                       - Modified property: type
                         - Deleted enum values: [NAO_POSSUI]
@@ -50,10 +50,10 @@ bem como s├úo identificados por sua comunidade e em seu meio social, conforme
                   - Items changed
                     - MaxLength changed from 24 to null
                 - Modified property: updateDateTime
-                  - Description changed from 'Data e hora da atualiza├º├úo do bloco de Relacionamento, conforme especifica├º├úo RFC-3339, formato UTC.' to 'Data e hora da atualiza├º├úo dos campos \<_endpoint_\>, conforme especifica├º├úo RFC-3339, formato UTC. Quando n├úo existente uma data vinculada especificamente ao bloco, assumir a data e hora de atualiza├º├úo do cadastro como um todo.
+                  - Description changed from 'Data e hora da atualização do bloco de Relacionamento, conforme especificação RFC-3339, formato UTC.' to 'Data e hora da atualização dos campos \<_endpoint_\>, conforme especificação RFC-3339, formato UTC. Quando não existente uma data vinculada especificamente ao bloco, assumir a data e hora de atualização do cadastro como um todo.
 '
   - Modified response: default
-    - Description changed from 'Dados sobre relacionamento pessoa jur├¡dica' to 'Erro inesperado.'
+    - Description changed from 'Dados sobre relacionamento pessoa jurídica' to 'Erro inesperado.'
     - Content changed
       - New media type: application/json
       - New media type: application/json; charset=utf-8
@@ -79,8 +79,8 @@ GET /business/identifications
                   - New property: companiesCnpj
                   - Deleted property: companyCnpjNumber
                   - Modified property: brandName
-                    - Description changed from 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a 'marca' ├⌐ em ess├¬ncia uma promessa da empresa em fornecer uma s├⌐rie espec├¡fica de atributos, benef├¡cios e servi├ºos uniformes aos clientes
-' to 'Nome da Marca reportada pelo participante no Open Finance. Recomenda-se utilizar, sempre que poss├¡vel, o mesmo nome de marca atribu├¡do no campo do diret├│rio Customer Friendly Server Name (Authorisation Server).
+                    - Description changed from 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a 'marca' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes
+' to 'Nome da Marca reportada pelo participante no Open Finance. Recomenda-se utilizar, sempre que possível, o mesmo nome de marca atribuído no campo do diretório Customer Friendly Server Name (Authorisation Server).
 '
                   - Modified property: cnpjNumber
                     - Pattern changed from '\d{14}|^NA$' to '^\d{14}$'
@@ -114,36 +114,36 @@ GET /business/identifications
                             - Deleted required property: postCode
                           - Properties changed
                             - Modified property: address
-                              - Description changed from 'Corresponde ao endere├ºo comercial do cliente' to 'Corresponde ao endere├ºo comercial do cliente.
+                              - Description changed from 'Corresponde ao endereço comercial do cliente' to 'Corresponde ao endereço comercial do cliente.
 '
                               - MinLength changed from 0 to 2
                               - Pattern changed from '[\w\W\s]*' to '^\w{2}[\w\W\s]*$'
                             - Modified property: country
                               - Pattern changed from '[\w\W\s]*' to '\w*\W*'
                             - Modified property: countryCode
-                              - Description changed from 'C├│digo do pais de acordo com o c├│digo ΓÇ£alpha3ΓÇ¥ do ISO-3166' to 'C├│digo do pais de acordo com o c├│digo alpha3 do ISO-3166'
+                              - Description changed from 'Código do pais de acordo com o código “alpha3” do ISO-3166' to 'Código do pais de acordo com o código alpha3 do ISO-3166'
                               - Pattern changed from '' to '^([A-Z]{3})$'
                             - Modified property: districtName
-                              - Description changed from 'Bairro ├⌐ uma comunidade ou regi├úo localizada em uma cidade ou munic├¡pio de acordo com as suas subdivis├╡es geogr├íficas.' to 'Bairro ├⌐ uma comunidade ou regi├úo localizada em uma cidade ou munic├¡pio de acordo com as suas subdivis├╡es geogr├íficas. Preenchimento obrigat├│rio, se houver.
+                              - Description changed from 'Bairro é uma comunidade ou região localizada em uma cidade ou município de acordo com as suas subdivisões geográficas.' to 'Bairro é uma comunidade ou região localizada em uma cidade ou município de acordo com as suas subdivisões geográficas. Preenchimento obrigatório, se houver.
 '
                               - Pattern changed from '[\w\W\s]*' to '\w*\W*'
                             - Modified property: geographicCoordinates
                               - Properties changed
                                 - Modified property: latitude
-                                  - Description changed from 'Informa├º├úo da Latitude referente a geolocaliza├º├úo informada. Entre -90 e 90.p.ex. '-90.8365180'. (2 casas antes da v├¡rgula, 11 posi├º├╡es) 
-' to 'Informa├º├úo da Latitude referente a geolocaliza├º├úo informada. Entre -90 e 90.p.ex. '-23.5475000'. (2 casas antes da v├¡rgula, 11 posi├º├╡es)
+                                  - Description changed from 'Informação da Latitude referente a geolocalização informada. Entre -90 e 90.p.ex. '-90.8365180'. (2 casas antes da vírgula, 11 posições) 
+' to 'Informação da Latitude referente a geolocalização informada. Entre -90 e 90.p.ex. '-23.5475000'. (2 casas antes da vírgula, 11 posições)
 '
                                   - Example changed from '-90.8365180' to '-23.5475000'
                                 - Modified property: longitude
-                                  - Description changed from 'Informa├º├úo da Longitude referente a geolocaliza├º├úo informada. Entre -180 e 180. p.ex '-180.836519.' (3 casas antes da v├¡rgula, 11 posi├º├╡es) 
-' to 'Informa├º├úo da Longitude referente a geolocaliza├º├úo informada. Entre -180 e 180. p.ex '-46.6361100'. (3 casas antes da v├¡rgula, 11 posi├º├╡es)
+                                  - Description changed from 'Informação da Longitude referente a geolocalização informada. Entre -180 e 180. p.ex '-180.836519.' (3 casas antes da vírgula, 11 posições) 
+' to 'Informação da Longitude referente a geolocalização informada. Entre -180 e 180. p.ex '-46.6361100'. (3 casas antes da vírgula, 11 posições)
 '
                                   - Example changed from '-180.836519' to '-46.6361100'
                             - Modified property: postCode
                               - Pattern changed from '\d{8}|^NA$' to '^\d{8}$'
                             - Modified property: townName
-                              - Description changed from 'Localidade: O nome da localidade corresponde ├á designa├º├úo da cidade ou munic├¡pio no qual o endere├ºo est├í localizado.
-' to 'Localidade: O nome da localidade corresponde ├á designa├º├úo da cidade ou munic├¡pio no qual o endere├ºo est├í localizado.  
+                              - Description changed from 'Localidade: O nome da localidade corresponde à designação da cidade ou município no qual o endereço está localizado.
+' to 'Localidade: O nome da localidade corresponde à designação da cidade ou município no qual o endereço está localizado.  
 '
                               - MinLength changed from 0 to 2
                               - Pattern changed from '[\w\W\s]*' to '^\w{2}[\w\W\s]*$'
@@ -155,7 +155,7 @@ GET /business/identifications
                         - Deleted required property: expirationDate
                       - Properties changed
                         - Modified property: country
-                          - Description changed from 'Pais de emiss├úo do tipo de documento informado. C├│digo do pais de acordo com o c├│digo ΓÇ£alpha3ΓÇ¥ do ISO-3166' to 'Pais de emiss├úo do tipo de documento informado. C├│digo do pais de acordo com o c├│digo alpha3 do ISO-3166'
+                          - Description changed from 'Pais de emissão do tipo de documento informado. Código do pais de acordo com o código “alpha3” do ISO-3166' to 'Pais de emissão do tipo de documento informado. Código do pais de acordo com o código alpha3 do ISO-3166'
                           - Pattern changed from '^(\w{3}){1}$|^NA$' to '^(\w{3}){1}$'
                         - Modified property: expirationDate
                           - Pattern changed from '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$|^NA$' to '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
@@ -169,31 +169,31 @@ GET /business/identifications
                         - Deleted required property: startDate
                       - Properties changed
                         - Modified property: documentCountry
-                          - Description changed from 'Pa├¡s de emiss├úo do documento. C├│digo do pais de acordo com o c├│digo alpha3 do ISO-3166.' to 'Pa├¡s de emiss├úo do documento. C├│digo do pais de acordo com o c├│digo alpha3 do ISO-3166.
+                          - Description changed from 'País de emissão do documento. Código do pais de acordo com o código alpha3 do ISO-3166.' to 'País de emissão do documento. Código do pais de acordo com o código alpha3 do ISO-3166.
 '
                           - Pattern changed from '' to '[\w*\W*]'
                         - Modified property: documentExpirationDate
                           - Pattern changed from '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])|^NA$' to '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
                         - Modified property: shareholding
                           - Format changed from '' to 'double'
-                          - Description changed from 'Percentual de participa├º├úo societ├íria (informar com 2 casas decimais). S├│cio s├│ deve ser informado se sua participa├º├úo societ├íria for igual ou superior a 25%. p.ex: 0.25 (Este valor  representa 25%. O valor '1 'representa 100%)
-' to 'Percentual de participa├º├úo societ├íria (informar com 6 casas decimais). O S├│cio s├│ deve ser informado se sua participa├º├úo societ├íria for igual ou superior a 25%. p.ex: 0.250000 (Este valor  representa 25%. O valor '1 'representa 100%).
-[Restri├º├úo]: Campo obrigat├│rio caso o type for igual a SOCIO e este tiver participa├º├úo societ├íria maior que 25%.
+                          - Description changed from 'Percentual de participação societária (informar com 2 casas decimais). Sócio só deve ser informado se sua participação societária for igual ou superior a 25%. p.ex: 0.25 (Este valor  representa 25%. O valor '1 'representa 100%)
+' to 'Percentual de participação societária (informar com 6 casas decimais). O Sócio só deve ser informado se sua participação societária for igual ou superior a 25%. p.ex: 0.250000 (Este valor  representa 25%. O valor '1 'representa 100%).
+[Restrição]: Campo obrigatório caso o type for igual a SOCIO e este tiver participação societária maior que 25%.
 '
                           - Example changed from '0.51' to '0.510000'
                           - MinLength changed from 0 to 8
                           - MaxLength changed from 4 to 8
                           - Pattern changed from '^((\d{1,9}\.\d{2}){1}|NA)$' to '^[01]\.\d{6}$'
                         - Modified property: socialName
-                          - Description changed from 'Nome social da pessoa natural, se houver. (aquele pelo qual travestis e transexuais se reconhecem, bem como s├úo identificados por sua comunidade e em seu meio social, conforme Decreto Local)' to 'Nome social da pessoa natural, se houver. (aquele pelo qual travestis e transexuais se reconhecem, bem como s├úo identificados por sua comunidade e em seu meio social, conforme Decreto Local).   
+                          - Description changed from 'Nome social da pessoa natural, se houver. (aquele pelo qual travestis e transexuais se reconhecem, bem como são identificados por sua comunidade e em seu meio social, conforme Decreto Local)' to 'Nome social da pessoa natural, se houver. (aquele pelo qual travestis e transexuais se reconhecem, bem como são identificados por sua comunidade e em seu meio social, conforme Decreto Local).   
 '
                         - Modified property: type
                           - MaxLength changed from 13 to null
                   - Modified property: updateDateTime
-                    - Description changed from 'Data e hora da atualiza├º├úo do bloco, conforme especifica├º├úo RFC-3339' to 'Data e hora da atualiza├º├úo dos campos \<_endpoint_\>, conforme especifica├º├úo RFC-3339, formato UTC. Quando n├úo existente uma data vinculada especificamente ao bloco, assumir a data e hora de atualiza├º├úo do cadastro como um todo.
+                    - Description changed from 'Data e hora da atualização do bloco, conforme especificação RFC-3339' to 'Data e hora da atualização dos campos \<_endpoint_\>, conforme especificação RFC-3339, formato UTC. Quando não existente uma data vinculada especificamente ao bloco, assumir a data e hora de atualização do cadastro como um todo.
 '
   - Modified response: default
-    - Description changed from 'Dados sobre identifica├º├úo pessoa jur├¡dica' to 'Erro inesperado.'
+    - Description changed from 'Dados sobre identificação pessoa jurídica' to 'Erro inesperado.'
     - Content changed
       - New media type: application/json
       - New media type: application/json; charset=utf-8
@@ -224,7 +224,7 @@ GET /business/qualifications
                         - MinLength changed from 0 to 2
                         - Pattern changed from '^\d{7}$|^NA$' to '^\d{7}$'
                       - Modified property: isMain
-                        - Description changed from 'Indica se ├⌐ o ramo principal de atividade da empresa quando true e se ├⌐ o ramo secund├írio quando false.' to 'Indica se ├⌐ o ramo principal de atividade da empresa quando true e se ├⌐ o ramo secund├írio quando false. [Restri├º├úo] Somente uma ocorr├¬ncia relativa ao c├│digo da atividade econ├┤mica principal deve trazer o valor true.'
+                        - Description changed from 'Indica se é o ramo principal de atividade da empresa quando true e se é o ramo secundário quando false.' to 'Indica se é o ramo principal de atividade da empresa quando true e se é o ramo secundário quando false. [Restrição] Somente uma ocorrência relativa ao código da atividade econômica principal deve trazer o valor true.'
                 - Modified property: informedPatrimony
                   - Required changed
                     - Deleted required property: currency
@@ -233,9 +233,9 @@ GET /business/qualifications
                     - Modified property: amount
                       - Type changed from 'number' to 'object'
                       - Format changed from 'double' to ''
-                      - Description changed from 'Valor do patrim├┤nio informado. Expresso em valor monet├írio com 4 casas decimais.
-Patrim├┤nio ├⌐ o conjunto de bens vinculado a uma pessoa ou a uma entidade.
-' to 'Valor do patrim├┤nio informado'
+                      - Description changed from 'Valor do patrimônio informado. Expresso em valor monetário com 4 casas decimais.
+Patrimônio é o conjunto de bens vinculado a uma pessoa ou a uma entidade.
+' to 'Valor do patrimônio informado'
                       - Example changed from 100000.04 to null
                       - AdditionalProperties changed from null to false
                       - Nullable changed from true to false
@@ -258,9 +258,9 @@ Patrim├┤nio ├⌐ o conjunto de bens vinculado a uma pessoa ou a uma entida
                     - Modified property: amount
                       - Type changed from 'number' to 'object'
                       - Format changed from 'double' to ''
-                      - Description changed from 'Valor do patrim├┤nio informado. Expresso em valor monet├írio com 4 casas decimais.
-Patrim├┤nio ├⌐ o conjunto de bens vinculado a uma pessoa ou a uma entidade.
-' to 'Valor do patrim├┤nio informado'
+                      - Description changed from 'Valor do patrimônio informado. Expresso em valor monetário com 4 casas decimais.
+Patrimônio é o conjunto de bens vinculado a uma pessoa ou a uma entidade.
+' to 'Valor do patrimônio informado'
                       - Example changed from 100000.04 to null
                       - AdditionalProperties changed from null to false
                       - Nullable changed from true to false
@@ -275,20 +275,20 @@ Patrim├┤nio ├⌐ o conjunto de bens vinculado a uma pessoa ou a uma entida
                     - Modified property: frequency
                       - Deleted enum values: [SEM_FREQUENCIA_FATURAMENTO_INFORMADO]
                     - Modified property: frequencyAdditionalInfo
-                      - Description changed from 'Texto livre para complementar informa├º├úo relativa ao patrimonio. 
-[Restri├º├úo] Preencher quando frequency for igual OUTROS.
-' to 'Texto livre para complementar informa├º├úo relativa ao patrimonio.
-[Restri├º├úo] Preencher quando frequency for igual OUTROS.
+                      - Description changed from 'Texto livre para complementar informação relativa ao patrimonio. 
+[Restrição] Preencher quando frequency for igual OUTROS.
+' to 'Texto livre para complementar informação relativa ao patrimonio.
+[Restrição] Preencher quando frequency for igual OUTROS.
 '
                     - Modified property: year
-                      - Description changed from 'Ano de refer├¬ncia do Patrim├┤nio, conforme especifica├º├úo RFC-3339.' to 'Ano de refer├¬ncia da Renda, conforme especifica├º├úo RFC-3339.'
+                      - Description changed from 'Ano de referência do Patrimônio, conforme especificação RFC-3339.' to 'Ano de referência da Renda, conforme especificação RFC-3339.'
                       - Nullable changed from true to false
                       - MaxLength changed from 4 to null
                 - Modified property: updateDateTime
-                  - Description changed from 'Data e hora da atualiza├º├úo do bloco, conforme especifica├º├úo RFC-3339' to 'Data e hora da atualiza├º├úo dos campos \<_endpoint_\>, conforme especifica├º├úo RFC-3339, formato UTC. Quando n├úo existente uma data vinculada especificamente ao bloco, assumir a data e hora de atualiza├º├úo do cadastro como um todo.
+                  - Description changed from 'Data e hora da atualização do bloco, conforme especificação RFC-3339' to 'Data e hora da atualização dos campos \<_endpoint_\>, conforme especificação RFC-3339, formato UTC. Quando não existente uma data vinculada especificamente ao bloco, assumir a data e hora de atualização do cadastro como um todo.
 '
   - Modified response: default
-    - Description changed from 'Dados sobre qualifica├º├úo pessoa jur├¡dica' to 'Erro inesperado.'
+    - Description changed from 'Dados sobre qualificação pessoa jurídica' to 'Erro inesperado.'
     - Content changed
       - New media type: application/json
       - New media type: application/json; charset=utf-8
@@ -307,17 +307,17 @@ GET /personal/financial-relations
                 - Deleted required property: procurators
               - Properties changed
                 - Modified property: accounts
-                  - Description changed from 'Lista de contas dep├│sito ├á vista, poupan├ºa e pagamento pr├⌐-pagas mantidas pelo cliente na institui├º├úo transmissora.    
-' to 'Lista de contas dep├│sito ├á vista, poupan├ºa e pagamento pr├⌐-pagas mantidas pelo cliente na institui├º├úo transmissora.
+                  - Description changed from 'Lista de contas depósito à vista, poupança e pagamento pré-pagas mantidas pelo cliente na instituição transmissora.    
+' to 'Lista de contas depósito à vista, poupança e pagamento pré-pagas mantidas pelo cliente na instituição transmissora.
 '
                   - Items changed
                     - Required changed
                       - Deleted required property: branchCode
                     - Properties changed
                       - Modified property: branchCode
-                        - Description changed from 'C├│digo da Ag├¬ncia detentora da conta. (Ag├¬ncia ├⌐ a depend├¬ncia destinada ao atendimento aos clientes, ao p├║blico em geral e aos associados de cooperativas de cr├⌐dito, no exerc├¡cio de atividades da institui├º├úo, n├úo podendo ser m├│vel ou transit├│ria)
-' to 'C├│digo da Ag├¬ncia detentora da conta. (Ag├¬ncia ├⌐ a depend├¬ncia destinada ao atendimento aos clientes, ao p├║blico em geral e aos associados de cooperativas de cr├⌐dito, no exerc├¡cio de atividades da institui├º├úo, n├úo podendo ser m├│vel ou transit├│ria)   
-[Restri├º├úo] Obrigatoriamente deve ser preenchido quando o campo "type" for diferente de conta pr├⌐ paga.
+                        - Description changed from 'Código da Agência detentora da conta. (Agência é a dependência destinada ao atendimento aos clientes, ao público em geral e aos associados de cooperativas de crédito, no exercício de atividades da instituição, não podendo ser móvel ou transitória)
+' to 'Código da Agência detentora da conta. (Agência é a dependência destinada ao atendimento aos clientes, ao público em geral e aos associados de cooperativas de crédito, no exercício de atividades da instituição, não podendo ser móvel ou transitória)   
+[Restrição] Obrigatoriamente deve ser preenchido quando o campo "type" for diferente de conta pré paga.
 '
                         - Pattern changed from '\d{4}|^NA$' to '^\d{4}$'
                       - Modified property: compeCode
@@ -325,8 +325,8 @@ GET /personal/financial-relations
                       - Modified property: number
                         - Pattern changed from '^\d{8,20}$|^NA$' to '^\d{8,20}$'
                 - Modified property: procurators
-                  - Description changed from 'Lista dos representantes. De preenchimento obrigat├│rio se houver representante.' to 'Lista dos representantes. 
-[Restri├º├úo] De preenchimento obrigat├│rio se houver representante.
+                  - Description changed from 'Lista dos representantes. De preenchimento obrigatório se houver representante.' to 'Lista dos representantes. 
+[Restrição] De preenchimento obrigatório se houver representante.
 '
                   - MinItems changed from 1 to 0
                   - Items changed
@@ -344,10 +344,10 @@ GET /personal/financial-relations
                 - Modified property: productsServicesTypeAdditionalInfo
                   - Pattern changed from '[\w\W\s]*' to '\w*\W*'
                 - Modified property: updateDateTime
-                  - Description changed from 'Data e hora da atualiza├º├úo do bloco de Relacionamento, conforme especifica├º├úo RFC-3339, formato UTC.' to 'Data e hora da atualiza├º├úo dos campos \<_endpoint_\>, conforme especifica├º├úo RFC-3339, formato UTC. Quando n├úo existente uma data vinculada especificamente ao bloco, assumir a data e hora de atualiza├º├úo do cadastro como um todo.
+                  - Description changed from 'Data e hora da atualização do bloco de Relacionamento, conforme especificação RFC-3339, formato UTC.' to 'Data e hora da atualização dos campos \<_endpoint_\>, conforme especificação RFC-3339, formato UTC. Quando não existente uma data vinculada especificamente ao bloco, assumir a data e hora de atualização do cadastro como um todo.
 '
   - Modified response: default
-    - Description changed from 'Dados sobre relacionamento da pessoa f├¡sica' to 'Erro inesperado.'
+    - Description changed from 'Dados sobre relacionamento da pessoa física' to 'Erro inesperado.'
     - Content changed
       - New media type: application/json
       - New media type: application/json; charset=utf-8
@@ -374,7 +374,7 @@ GET /personal/identifications
                   - Modified property: birthDate
                     - Example changed from '2021-05-21' to '1989-03-23'
                   - Modified property: brandName
-                    - Description changed from 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a 'marca' ├⌐ em ess├¬ncia uma promessa da empresa em fornecer uma s├⌐rie espec├¡fica de atributos, benef├¡cios e servi├ºos uniformes aos clientes' to 'Nome da Marca reportada pelo participante no Open Finance. Recomenda-se utilizar, sempre que poss├¡vel, o mesmo nome de marca atribu├¡do no campo do diret├│rio Customer Friendly Server Name (Authorisation Server).'
+                    - Description changed from 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a 'marca' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes' to 'Nome da Marca reportada pelo participante no Open Finance. Recomenda-se utilizar, sempre que possível, o mesmo nome de marca atribuído no campo do diretório Customer Friendly Server Name (Authorisation Server).'
                   - Modified property: contacts
                     - Properties changed
                       - Modified property: emails
@@ -402,22 +402,22 @@ GET /personal/identifications
                             - Deleted required property: districtName
                           - Properties changed
                             - Modified property: countryCode
-                              - Description changed from 'C├│digo do pais de acordo com o c├│digo ΓÇ£alpha3ΓÇ¥ do ISO-3166.' to 'C├│digo do pais de acordo com o c├│digo alpha3 do ISO-3166.'
+                              - Description changed from 'Código do pais de acordo com o código “alpha3” do ISO-3166.' to 'Código do pais de acordo com o código alpha3 do ISO-3166.'
                               - Pattern changed from '' to '^([A-Z]{3})$'
                             - Modified property: districtName
-                              - Description changed from 'Bairro ├⌐ uma comunidade ou regi├úo localizada em uma cidade ou munic├¡pio de acordo com as suas subdivis├╡es geogr├íficas.' to 'Bairro ├⌐ uma comunidade ou regi├úo localizada em uma cidade ou munic├¡pio de acordo com as suas subdivis├╡es geogr├íficas.
-[Restri├º├úo] De preenchimento obrigat├│rio, se houver.
+                              - Description changed from 'Bairro é uma comunidade ou região localizada em uma cidade ou município de acordo com as suas subdivisões geográficas.' to 'Bairro é uma comunidade ou região localizada em uma cidade ou município de acordo com as suas subdivisões geográficas.
+[Restrição] De preenchimento obrigatório, se houver.
 '
                             - Modified property: geographicCoordinates
                               - Properties changed
                                 - Modified property: latitude
-                                  - Description changed from 'Informa├º├úo da Latitude referente a geolocaliza├º├úo informada. Entre -90 e 90.p.ex. '-90.8365180'. (2 casas antes da v├¡rgula, 11 posi├º├╡es) 
-' to 'Informa├º├úo da Latitude referente a geolocaliza├º├úo informada. Entre -90 e 90.p.ex. '-23.5475000'. (2 casas antes da v├¡rgula, 11 posi├º├╡es)
+                                  - Description changed from 'Informação da Latitude referente a geolocalização informada. Entre -90 e 90.p.ex. '-90.8365180'. (2 casas antes da vírgula, 11 posições) 
+' to 'Informação da Latitude referente a geolocalização informada. Entre -90 e 90.p.ex. '-23.5475000'. (2 casas antes da vírgula, 11 posições)
 '
                                   - Example changed from '-90.8365180' to '-23.5475000'
                                 - Modified property: longitude
-                                  - Description changed from 'Informa├º├úo da Longitude referente a geolocaliza├º├úo informada. Entre -180 e 180. p.ex '-180.836519.' (3 casas antes da v├¡rgula, 11 posi├º├╡es) 
-' to 'Informa├º├úo da Longitude referente a geolocaliza├º├úo informada. Entre -180 e 180. p.ex '-46.6361100'. (3 casas antes da v├¡rgula, 11 posi├º├╡es)
+                                  - Description changed from 'Informação da Longitude referente a geolocalização informada. Entre -180 e 180. p.ex '-180.836519.' (3 casas antes da vírgula, 11 posições) 
+' to 'Informação da Longitude referente a geolocalização informada. Entre -180 e 180. p.ex '-46.6361100'. (3 casas antes da vírgula, 11 posições)
 '
                                   - Example changed from '-180.836519' to '-46.6361100'
                             - Modified property: postCode
@@ -437,10 +437,10 @@ GET /personal/identifications
                       - Deleted property: passportIssueDate
                       - Deleted property: passportNumber
                       - Modified property: cpfNumber
-                        - Description changed from 'N├║mero completo do CPF. Atributo que corresponde ├ás informa├º├╡es m├¡nimas exigidas pela Regulamenta├º├úo em vigor. O CPF ├⌐ o Cadastro de Pessoa natural.  Ele ├⌐ um documento feito pela Receita Federal e serve para identificar os contribuintes. O CPF ├⌐ uma numera├º├úo com 11 d├¡gitos, que s├│ mudam por decis├úo judicial. O documento ├⌐ emitido pela receita federal' to 'N├║mero completo do CPF. 
-Atributo que corresponde ├ás informa├º├╡es m├¡nimas exigidas pela Regulamenta├º├úo em vigor. 
-O CPF ├⌐ o Cadastro de Pessoa natural. Ele ├⌐ um documento feito pela Receita Federal e serve para identificar os contribuintes. O CPF ├⌐ uma numera├º├úo com 11 d├¡gitos, que s├│ mudam por decis├úo judicial. O documento ├⌐ emitido pela receita federal
-[Restri├º├úo] Campo de preenchimento obrigat├│rio quando o campo documentType for CPF ou AMBOS.
+                        - Description changed from 'Número completo do CPF. Atributo que corresponde às informações mínimas exigidas pela Regulamentação em vigor. O CPF é o Cadastro de Pessoa natural.  Ele é um documento feito pela Receita Federal e serve para identificar os contribuintes. O CPF é uma numeração com 11 dígitos, que só mudam por decisão judicial. O documento é emitido pela receita federal' to 'Número completo do CPF. 
+Atributo que corresponde às informações mínimas exigidas pela Regulamentação em vigor. 
+O CPF é o Cadastro de Pessoa natural. Ele é um documento feito pela Receita Federal e serve para identificar os contribuintes. O CPF é uma numeração com 11 dígitos, que só mudam por decisão judicial. O documento é emitido pela receita federal
+[Restrição] Campo de preenchimento obrigatório quando o campo documentType for CPF ou AMBOS.
 '
                         - Pattern changed from '^\d{11}$|^NA$' to '^\d{11}$'
                   - Modified property: filiation
@@ -448,21 +448,21 @@ O CPF ├⌐ o Cadastro de Pessoa natural. Ele ├⌐ um documento feito pela Re
                     - Items changed
                       - Properties changed
                         - Modified property: civilName
-                          - Description changed from 'Nome civil completo da pessoa relativa ├á filia├º├úo.
-(Direito fundamental da pessoa, o nome civil ├⌐ aquele atribu├¡do ├á pessoa natural desde o registro de seu nascimento, 
-com o qual ser├í identificada por toda a sua vida, bem como ap├│s a sua morte)
-' to 'Nome civil completo da pessoa relativa ├á filia├º├úo.
-(Direito fundamental da pessoa, o nome civil ├⌐ aquele atribu├¡do ├á pessoa natural desde o registro de seu nascimento, 
-com o qual ser├í identificada por toda a sua vida, bem como ap├│s a sua morte).
+                          - Description changed from 'Nome civil completo da pessoa relativa à filiação.
+(Direito fundamental da pessoa, o nome civil é aquele atribuído à pessoa natural desde o registro de seu nascimento, 
+com o qual será identificada por toda a sua vida, bem como após a sua morte)
+' to 'Nome civil completo da pessoa relativa à filiação.
+(Direito fundamental da pessoa, o nome civil é aquele atribuído à pessoa natural desde o registro de seu nascimento, 
+com o qual será identificada por toda a sua vida, bem como após a sua morte).
 '
                           - Pattern changed from '[\w\W\s]*' to '\w*\W*'
                         - Modified property: socialName
                           - Description changed from 'Nome social da pessoa natural, se houver. 
 (aquele pelo qual travestis e transexuais se reconhecem, 
-bem como s├úo identificados por sua comunidade e em seu meio social, conforme Decreto Local)
+bem como são identificados por sua comunidade e em seu meio social, conforme Decreto Local)
 ' to 'Nome social da pessoa natural, se houver. 
 (aquele pelo qual travestis e transexuais se reconhecem, 
-bem como s├úo identificados por sua comunidade e em seu meio social, conforme Decreto Local).
+bem como são identificados por sua comunidade e em seu meio social, conforme Decreto Local).
 '
                           - Example changed from 'NA' to null
                           - Pattern changed from '[\w\W\s]*' to '\w*\W*'
@@ -471,8 +471,8 @@ bem como s├úo identificados por sua comunidade e em seu meio social, conforme
                   - Modified property: hasBrazilianNationality
                     - Nullable changed from true to false
                   - Modified property: maritalStatusAdditionalInfo
-                    - Description changed from 'Campo livre para complementar a informa├º├úo relativa ao estado marital, quando selecionada a op├º├úo 'OUTROS'' to 'Campo livre para complementar a informa├º├úo relativa ao estado marital.
-[Restri├º├úo] Preenchimento obrigat├│rio quando selecionado o tipo 'OUTRO'.
+                    - Description changed from 'Campo livre para complementar a informação relativa ao estado marital, quando selecionada a opção 'OUTROS'' to 'Campo livre para complementar a informação relativa ao estado marital.
+[Restrição] Preenchimento obrigatório quando selecionado o tipo 'OUTRO'.
 '
                     - Example changed from 'Casado' to 'Amasiado'
                   - Modified property: maritalStatusCode
@@ -483,7 +483,7 @@ bem como s├úo identificados por sua comunidade e em seu meio social, conforme
                     - Example changed from 'SOLTEIRO' to 'OUTRO'
                   - Modified property: nationality
                     - Type changed from 'array' to 'object'
-                    - Description changed from '' to 'Objeto que agrupa informa├º├╡es relativas ├á nacionalidade da Pessoa Natural'
+                    - Description changed from '' to 'Objeto que agrupa informações relativas à nacionalidade da Pessoa Natural'
                     - AdditionalProperties changed from null to false
                     - Items changed
                       - Schema deleted
@@ -501,10 +501,10 @@ bem como s├úo identificados por sua comunidade e em seu meio social, conforme
                         - Modified property: expirationDate
                           - Pattern changed from '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$|^NA$' to '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
                   - Modified property: updateDateTime
-                    - Description changed from '' to 'Data e hora da atualiza├º├úo dos campos \<_endpoint_\>, conforme especifica├º├úo RFC-3339, formato UTC. Quando n├úo existente uma data vinculada especificamente ao bloco, assumir a data e hora de atualiza├º├úo do cadastro como um todo.
+                    - Description changed from '' to 'Data e hora da atualização dos campos \<_endpoint_\>, conforme especificação RFC-3339, formato UTC. Quando não existente uma data vinculada especificamente ao bloco, assumir a data e hora de atualização do cadastro como um todo.
 '
   - Modified response: default
-    - Description changed from 'Dados sobre identifica├º├úo pessoa f├¡sica.' to 'Erro inesperado.'
+    - Description changed from 'Dados sobre identificação pessoa física.' to 'Erro inesperado.'
     - Content changed
       - New media type: application/json
       - New media type: application/json; charset=utf-8
@@ -535,10 +535,10 @@ GET /personal/qualifications
                     - Modified property: amount
                       - Type changed from 'number' to 'object'
                       - Format changed from 'double' to ''
-                      - Description changed from 'Valor total da renda informada. Expresso em valor monet├írio com 4 casas decimais. 
-Renda prim├íria indica os montantes a pagar ou a receber em troca do uso tempor├írio de recursos financeiros, trabalho ou ativos n├úo financeiros n├úo produzidos, a saber, remunera├º├úo de trabalhadores, renda de investimentos e demais rendas prim├írias.
-Fazem parte da primeira a remunera├º├úo do trabalho assalariado (sal├írios e ordenados); da segunda, renda de investimento direto, renda de investimento em carteira, renda de outros investimentos e renda de ativos de reserva; e da terceira, tributos sobre a produ├º├úo e importa├º├úo, subs├¡dios e alugu├⌐is.
-Fonte: Banco Central do Brasil ΓÇô Departamento Econ├┤mico
+                      - Description changed from 'Valor total da renda informada. Expresso em valor monetário com 4 casas decimais. 
+Renda primária indica os montantes a pagar ou a receber em troca do uso temporário de recursos financeiros, trabalho ou ativos não financeiros não produzidos, a saber, remuneração de trabalhadores, renda de investimentos e demais rendas primárias.
+Fazem parte da primeira a remuneração do trabalho assalariado (salários e ordenados); da segunda, renda de investimento direto, renda de investimento em carteira, renda de outros investimentos e renda de ativos de reserva; e da terceira, tributos sobre a produção e importação, subsídios e aluguéis.
+Fonte: Banco Central do Brasil – Departamento Econômico
 ' to 'Valor total da renda informada'
                       - Example changed from 100000.04 to null
                       - AdditionalProperties changed from null to false
@@ -563,9 +563,9 @@ Fonte: Banco Central do Brasil ΓÇô Departamento Econ├┤mico
                     - Modified property: amount
                       - Type changed from 'number' to 'object'
                       - Format changed from 'double' to ''
-                      - Description changed from 'Valor do patrim├┤nio informado. Expresso em valor monet├írio com 4 casas decimais.
-Patrim├┤nio ├⌐ o conjunto de bens vinculado a uma pessoa ou a uma entidade.
-' to 'Valor do patrim├┤nio informado'
+                      - Description changed from 'Valor do patrimônio informado. Expresso em valor monetário com 4 casas decimais.
+Patrimônio é o conjunto de bens vinculado a uma pessoa ou a uma entidade.
+' to 'Valor do patrimônio informado'
                       - Example changed from 100000.04 to null
                       - AdditionalProperties changed from null to false
                       - Nullable changed from true to false
@@ -578,18 +578,18 @@ Patrim├┤nio ├⌐ o conjunto de bens vinculado a uma pessoa ou a uma entida
                         - New property: amount
                         - New property: currency
                     - Modified property: year
-                      - Description changed from 'Ano de refer├¬ncia do Patrim├┤nio, conforme especifica├º├úo RFC-3339.' to 'Ano de refer├¬ncia da Renda, conforme especifica├º├úo RFC-3339.'
+                      - Description changed from 'Ano de referência do Patrimônio, conforme especificação RFC-3339.' to 'Ano de referência da Renda, conforme especificação RFC-3339.'
                       - Nullable changed from true to false
                       - MaxLength changed from 4 to null
                 - Modified property: occupationDescription
-                  - Description changed from 'Campo livre, de preenchimento obrigat├│rio. Traz o c├│digo da ocupa├º├úo ou o descritivo da ocupa├º├úo, se selecionada a op├º├úo 'OUTRO'' to 'Campo livre, de preenchimento obrigat├│rio. Se selecionada a op├º├úo *occupationCode* "RECEITA_FEDERAL" ou "CBO", informar o c├│digo desta lista padronizada.   
-Se selecionada *occupationCode* "OUTRO", informar o descritivo da ocupa├º├úo quando a IF n├úo segue a lista padronizada da Receita Federal e nem da CBO.
+                  - Description changed from 'Campo livre, de preenchimento obrigatório. Traz o código da ocupação ou o descritivo da ocupação, se selecionada a opção 'OUTRO'' to 'Campo livre, de preenchimento obrigatório. Se selecionada a opção *occupationCode* "RECEITA_FEDERAL" ou "CBO", informar o código desta lista padronizada.   
+Se selecionada *occupationCode* "OUTRO", informar o descritivo da ocupação quando a IF não segue a lista padronizada da Receita Federal e nem da CBO.
 '
                 - Modified property: updateDateTime
-                  - Description changed from 'Data e hora da atualiza├º├úo do bloco, conforme especifica├º├úo RFC-3339' to 'Data e hora da atualiza├º├úo dos campos \<_endpoint_\>, conforme especifica├º├úo RFC-3339, formato UTC. Quando n├úo existente uma data vinculada especificamente ao bloco, assumir a data e hora de atualiza├º├úo do cadastro como um todo.
+                  - Description changed from 'Data e hora da atualização do bloco, conforme especificação RFC-3339' to 'Data e hora da atualização dos campos \<_endpoint_\>, conforme especificação RFC-3339, formato UTC. Quando não existente uma data vinculada especificamente ao bloco, assumir a data e hora de atualização do cadastro como um todo.
 '
   - Modified response: default
-    - Description changed from 'Dados sobre qualifica├º├úo da pessoa f├¡sica' to 'Erro inesperado.'
+    - Description changed from 'Dados sobre qualificação da pessoa física' to 'Erro inesperado.'
     - Content changed
       - New media type: application/json
       - New media type: application/json; charset=utf-8

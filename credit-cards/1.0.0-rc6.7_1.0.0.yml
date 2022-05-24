@@ -24,7 +24,7 @@ GET /accounts
                     - Pattern changed from '\w*\W*' to '[\w\W\s]*'
     - Headers changed
       - Modified header: x-fapi-interaction-id
-        - Description changed from 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correla├º├úo. Se fornecido, o transmissor deve "reproduzir" esse valor no cabe├ºalho de resposta.' to ''
+        - Description changed from 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.' to ''
   - Modified response: default
     - Content changed
       - Modified media type: application/json
@@ -43,7 +43,7 @@ GET /accounts
                     - Pattern changed from '\w*\W*' to '[\w\W\s]*'
     - Headers changed
       - Modified header: x-fapi-interaction-id
-        - Description changed from 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correla├º├úo. Se fornecido, o transmissor deve "reproduzir" esse valor no cabe├ºalho de resposta.' to ''
+        - Description changed from 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.' to ''
 GET /accounts/{creditCardAccountId}
 - Responses changed
   - Modified response: 200
@@ -61,7 +61,7 @@ GET /accounts/{creditCardAccountId}
                   - Pattern changed from '\w*\W*' to '[\w\W\s]*'
     - Headers changed
       - Modified header: x-fapi-interaction-id
-        - Description changed from 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correla├º├úo. Se fornecido, o transmissor deve "reproduzir" esse valor no cabe├ºalho de resposta.' to ''
+        - Description changed from 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.' to ''
   - Modified response: default
     - Content changed
       - Modified media type: application/json
@@ -77,7 +77,7 @@ GET /accounts/{creditCardAccountId}
                   - Pattern changed from '\w*\W*' to '[\w\W\s]*'
     - Headers changed
       - Modified header: x-fapi-interaction-id
-        - Description changed from 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correla├º├úo. Se fornecido, o transmissor deve "reproduzir" esse valor no cabe├ºalho de resposta.' to ''
+        - Description changed from 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.' to ''
 GET /accounts/{creditCardAccountId}/bills
 - Responses changed
   - Modified response: 200
@@ -97,7 +97,7 @@ GET /accounts/{creditCardAccountId}/bills
                     - Nullable changed from false to true
     - Headers changed
       - Modified header: x-fapi-interaction-id
-        - Description changed from 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correla├º├úo. Se fornecido, o transmissor deve "reproduzir" esse valor no cabe├ºalho de resposta.' to ''
+        - Description changed from 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.' to ''
   - Modified response: default
     - Content changed
       - Modified media type: application/json
@@ -115,7 +115,7 @@ GET /accounts/{creditCardAccountId}/bills
                     - Nullable changed from false to true
     - Headers changed
       - Modified header: x-fapi-interaction-id
-        - Description changed from 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correla├º├úo. Se fornecido, o transmissor deve "reproduzir" esse valor no cabe├ºalho de resposta.' to ''
+        - Description changed from 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.' to ''
 GET /accounts/{creditCardAccountId}/bills/{billId}/transactions
 - Responses changed
   - Modified response: 200
@@ -132,7 +132,7 @@ GET /accounts/{creditCardAccountId}/bills/{billId}/transactions
                     - Pattern changed from '\w*\W*' to '[\w\W\s]*'
     - Headers changed
       - Modified header: x-fapi-interaction-id
-        - Description changed from 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correla├º├úo. Se fornecido, o transmissor deve "reproduzir" esse valor no cabe├ºalho de resposta.' to ''
+        - Description changed from 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.' to ''
   - Modified response: default
     - Content changed
       - Modified media type: application/json
@@ -147,7 +147,7 @@ GET /accounts/{creditCardAccountId}/bills/{billId}/transactions
                     - Pattern changed from '\w*\W*' to '[\w\W\s]*'
     - Headers changed
       - Modified header: x-fapi-interaction-id
-        - Description changed from 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correla├º├úo. Se fornecido, o transmissor deve "reproduzir" esse valor no cabe├ºalho de resposta.' to ''
+        - Description changed from 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.' to ''
 GET /accounts/{creditCardAccountId}/limits
 - Responses changed
   - Modified response: 200
@@ -164,7 +164,7 @@ GET /accounts/{creditCardAccountId}/limits
                     - Pattern changed from '\w*\W*' to '[\w\W\s]*'
     - Headers changed
       - Modified header: x-fapi-interaction-id
-        - Description changed from 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correla├º├úo. Se fornecido, o transmissor deve "reproduzir" esse valor no cabe├ºalho de resposta.' to ''
+        - Description changed from 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.' to ''
   - Modified response: default
     - Content changed
       - Modified media type: application/json
@@ -179,7 +179,7 @@ GET /accounts/{creditCardAccountId}/limits
                     - Pattern changed from '\w*\W*' to '[\w\W\s]*'
     - Headers changed
       - Modified header: x-fapi-interaction-id
-        - Description changed from 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correla├º├úo. Se fornecido, o transmissor deve "reproduzir" esse valor no cabe├ºalho de resposta.' to ''
+        - Description changed from 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.' to ''
 GET /accounts/{creditCardAccountId}/transactions
 - Responses changed
   - Modified response: 200
@@ -196,7 +196,7 @@ GET /accounts/{creditCardAccountId}/transactions
                     - Pattern changed from '\w*\W*' to '[\w\W\s]*'
     - Headers changed
       - Modified header: x-fapi-interaction-id
-        - Description changed from 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correla├º├úo. Se fornecido, o transmissor deve "reproduzir" esse valor no cabe├ºalho de resposta.' to ''
+        - Description changed from 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.' to ''
   - Modified response: default
     - Content changed
       - Modified media type: application/json
@@ -211,4 +211,4 @@ GET /accounts/{creditCardAccountId}/transactions
                     - Pattern changed from '\w*\W*' to '[\w\W\s]*'
     - Headers changed
       - Modified header: x-fapi-interaction-id
-        - Description changed from 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correla├º├úo. Se fornecido, o transmissor deve "reproduzir" esse valor no cabe├ºalho de resposta.' to ''
+        - Description changed from 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.' to ''

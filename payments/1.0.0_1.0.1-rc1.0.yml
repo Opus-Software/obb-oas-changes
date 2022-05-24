@@ -39,39 +39,39 @@ POST /consents
               - Items changed
                 - Properties changed
                   - Modified property: code
-                    - Description changed from 'C├│digos de erros previstos na cria├º├úo de consentimento para a inicia├º├úo de pagamentos:  
-ΓÇó FORMA_PGTO_INVALIDA: Forma de pagamento inv├ílida.  
-ΓÇó DATA_PGTO_INVALIDA: Data de pagamento inv├ílida.  
-ΓÇó NAO_INFORMADO: N├úo informado.  
-' to 'C├│digos de erros previstos na cria├º├úo de consentimento para a inicia├º├úo de pagamentos:  
-ΓÇó FORMA_PGTO_INVALIDA: Forma de pagamento inv├ílida.  
-ΓÇó DATA_PGTO_INVALIDA: Data de pagamento inv├ílida.  
-ΓÇó DETALHE_PGTO_INVALIDO: Detalhe do pagamento inv├ílido.  
-ΓÇó NAO_INFORMADO: N├úo informado.   
+                    - Description changed from 'Códigos de erros previstos na criação de consentimento para a iniciação de pagamentos:  
+• FORMA_PGTO_INVALIDA: Forma de pagamento inválida.  
+• DATA_PGTO_INVALIDA: Data de pagamento inválida.  
+• NAO_INFORMADO: Não informado.  
+' to 'Códigos de erros previstos na criação de consentimento para a iniciação de pagamentos:  
+• FORMA_PGTO_INVALIDA: Forma de pagamento inválida.  
+• DATA_PGTO_INVALIDA: Data de pagamento inválida.  
+• DETALHE_PGTO_INVALIDO: Detalhe do pagamento inválido.  
+• NAO_INFORMADO: Não informado.   
 '
                     - New enum values: [DETALHE_PGTO_INVALIDO]
                     - MaxLength changed from 19 to 21
                   - Modified property: detail
-                    - Description changed from 'Descri├º├úo espec├¡fica do erro de acordo com o c├│digo reportado:  
-ΓÇó FORMA_PGTO_INVALIDA ΓÇô Meio de pagamento inv├ílido.  
-ΓÇó DATA_PGTO_INVALIDA ΓÇô Data de pagamento inv├ílida no contexto, por exemplo, data no passado. Para pagamentos ├║nicos deve ser informada a data atual, do dia corrente.  
-ΓÇó NAO_INFORMADO ΓÇô N├úo reportado/identificado pela institui├º├úo detentora de conta.  
-' to 'Descri├º├úo espec├¡fica do erro de acordo com o c├│digo reportado:  
-ΓÇó FORMA_PGTO_INVALIDA ΓÇô Meio de pagamento inv├ílido.  
-ΓÇó DATA_PGTO_INVALIDA ΓÇô Data de pagamento inv├ílida no contexto, por exemplo, data no passado. Para pagamentos ├║nicos deve ser informada a data atual, do dia corrente.  
-ΓÇó DETALHE_PGTO_INVALIDO: O campo [nome_campo] n├úo atende os requisitos de preenchimento.  
-ΓÇó NAO_INFORMADO ΓÇô N├úo reportado/identificado pela institui├º├úo detentora de conta.  
+                    - Description changed from 'Descrição específica do erro de acordo com o código reportado:  
+• FORMA_PGTO_INVALIDA – Meio de pagamento inválido.  
+• DATA_PGTO_INVALIDA – Data de pagamento inválida no contexto, por exemplo, data no passado. Para pagamentos únicos deve ser informada a data atual, do dia corrente.  
+• NAO_INFORMADO – Não reportado/identificado pela instituição detentora de conta.  
+' to 'Descrição específica do erro de acordo com o código reportado:  
+• FORMA_PGTO_INVALIDA – Meio de pagamento inválido.  
+• DATA_PGTO_INVALIDA – Data de pagamento inválida no contexto, por exemplo, data no passado. Para pagamentos únicos deve ser informada a data atual, do dia corrente.  
+• DETALHE_PGTO_INVALIDO: O campo [nome_campo] não atende os requisitos de preenchimento.  
+• NAO_INFORMADO – Não reportado/identificado pela instituição detentora de conta.  
 '
                   - Modified property: title
-                    - Description changed from 'T├¡tulo espec├¡fico do erro reportado, de acordo com o c├│digo enviado:  
-ΓÇó FORMA_PGTO_INVALIDA: Forma de pagamento inv├ílida.  
-ΓÇó DATA_PGTO_INVALIDA: Data de pagamento inv├ílida.  
-ΓÇó NAO_INFORMADO: N├úo informado.    
-' to 'T├¡tulo espec├¡fico do erro reportado, de acordo com o c├│digo enviado:  
-ΓÇó FORMA_PGTO_INVALIDA: Forma de pagamento inv├ílida.  
-ΓÇó DATA_PGTO_INVALIDA: Data de pagamento inv├ílida. 
-ΓÇó DETALHE_PGTO_INVALIDO: Detalhe do pagamento inv├ílido.
-ΓÇó NAO_INFORMADO: N├úo informado.    
+                    - Description changed from 'Título específico do erro reportado, de acordo com o código enviado:  
+• FORMA_PGTO_INVALIDA: Forma de pagamento inválida.  
+• DATA_PGTO_INVALIDA: Data de pagamento inválida.  
+• NAO_INFORMADO: Não informado.    
+' to 'Título específico do erro reportado, de acordo com o código enviado:  
+• FORMA_PGTO_INVALIDA: Forma de pagamento inválida.  
+• DATA_PGTO_INVALIDA: Data de pagamento inválida. 
+• DETALHE_PGTO_INVALIDO: Detalhe do pagamento inválido.
+• NAO_INFORMADO: Não informado.    
 '
 GET /consents/{consentId}
 - Responses changed
@@ -98,52 +98,52 @@ POST /pix/payments
             - Properties changed
               - New property: transactionIdentification
               - Modified property: localInstrument
-                - Description changed from 'Especifica a forma de inicia├º├úo do pagamento:  
-- MANU - Inser├º├úo manual de dados da conta transacional  
-- DICT - Inser├º├úo manual de chave Pix  
-- QRDN - QR code din├ómico (*Dom├¡nio reservado para uso futuro*)  
-- QRES - QR code est├ítico (*Dom├¡nio reservado para uso futuro*)  
-' to 'Especifica a forma de inicia├º├úo do pagamento:  
-- MANU - Inser├º├úo manual de dados da conta transacional  
-- DICT - Inser├º├úo manual de chave Pix  
-- QRDN - QR code din├ómico (*Dom├¡nio reservado para uso futuro*)  
-- QRES - QR code est├ítico (*Dom├¡nio reservado para uso futuro*)  
-- INIC - Indica que o recebedor (creditor) contratou o Iniciador de Pagamentos especificamente para realizar inicia├º├╡es de pagamento em que o benefici├írio ├⌐ previamente conhecido.  
+                - Description changed from 'Especifica a forma de iniciação do pagamento:  
+- MANU - Inserção manual de dados da conta transacional  
+- DICT - Inserção manual de chave Pix  
+- QRDN - QR code dinâmico (*Domínio reservado para uso futuro*)  
+- QRES - QR code estático (*Domínio reservado para uso futuro*)  
+' to 'Especifica a forma de iniciação do pagamento:  
+- MANU - Inserção manual de dados da conta transacional  
+- DICT - Inserção manual de chave Pix  
+- QRDN - QR code dinâmico (*Domínio reservado para uso futuro*)  
+- QRES - QR code estático (*Domínio reservado para uso futuro*)  
+- INIC - Indica que o recebedor (creditor) contratou o Iniciador de Pagamentos especificamente para realizar iniciações de pagamento em que o beneficiário é previamente conhecido.  
 '
                 - New enum values: [INIC]
               - Modified property: proxy
-                - Description changed from 'Chave cadastrada no DICT pertencente ao recebedor. Os tipos de chaves podem ser: telefone, e-mail, cpf/cnpj ou chave aleat├│ria.  
-No caso de telefone celular deve ser informado no padr├úo E.1641.  
-Para e-mail deve ter o formato xxxxxxxx@xxxxxxx.xxx(.xx) e no m├íximo 77 caracteres.  
-No caso de CPF dever├í ser informado com 11 n├║meros, sem pontos ou tra├ºos.  
-Para o caso de CNPJ dever├í ser informado com 14 n├║meros, sem pontos ou tra├ºos.  
-No caso de chave aleat├│ria deve ser informado o UUID gerado pelo DICT, conforme formato especificado na RFC41223.  
-[Restri├º├úo] Obrigat├│rio quando o campo localInstrument for igual a DICT.
-' to 'Chave cadastrada no DICT pertencente ao recebedor. Os tipos de chaves podem ser: telefone, e-mail, cpf/cnpj ou chave aleat├│ria.
-No caso de telefone celular deve ser informado no padr├úo E.1641.
-Para e-mail deve ter o formato xxxxxxxx@xxxxxxx.xxx(.xx) e no m├íximo 77 caracteres.
-No caso de CPF dever├í ser informado com 11 n├║meros, sem pontos ou tra├ºos.
-Para o caso de CNPJ dever├í ser informado com 14 n├║meros, sem pontos ou tra├ºos.
-No caso de chave aleat├│ria deve ser informado o UUID gerado pelo DICT, conforme formato especificado na RFC41223.
+                - Description changed from 'Chave cadastrada no DICT pertencente ao recebedor. Os tipos de chaves podem ser: telefone, e-mail, cpf/cnpj ou chave aleatória.  
+No caso de telefone celular deve ser informado no padrão E.1641.  
+Para e-mail deve ter o formato xxxxxxxx@xxxxxxx.xxx(.xx) e no máximo 77 caracteres.  
+No caso de CPF deverá ser informado com 11 números, sem pontos ou traços.  
+Para o caso de CNPJ deverá ser informado com 14 números, sem pontos ou traços.  
+No caso de chave aleatória deve ser informado o UUID gerado pelo DICT, conforme formato especificado na RFC41223.  
+[Restrição] Obrigatório quando o campo localInstrument for igual a DICT.
+' to 'Chave cadastrada no DICT pertencente ao recebedor. Os tipos de chaves podem ser: telefone, e-mail, cpf/cnpj ou chave aleatória.
+No caso de telefone celular deve ser informado no padrão E.1641.
+Para e-mail deve ter o formato xxxxxxxx@xxxxxxx.xxx(.xx) e no máximo 77 caracteres.
+No caso de CPF deverá ser informado com 11 números, sem pontos ou traços.
+Para o caso de CNPJ deverá ser informado com 14 números, sem pontos ou traços.
+No caso de chave aleatória deve ser informado o UUID gerado pelo DICT, conforme formato especificado na RFC41223.
 Se informado, a detentora da conta deve validar o proxy no DICT quando localInstrument for igual a DICT, QRDN (uso futuro) ou QRES (uso futuro) e validar o campo creditorAccount.
-Esta valida├º├úo ├⌐ opcional caso o localInstrument for igual a INIC.
-[Restri├º├úo] Se localInstrument for igual a MANU, o campo proxy n├úo deve ser preenchido. Se localInstrument for igual INIC, DICT, QRDN (uso futuro) ou QRES (uso futuro), o campo proxy deve ser sempre preenchido com a chave Pix.
+Esta validação é opcional caso o localInstrument for igual a INIC.
+[Restrição] Se localInstrument for igual a MANU, o campo proxy não deve ser preenchido. Se localInstrument for igual INIC, DICT, QRDN (uso futuro) ou QRES (uso futuro), o campo proxy deve ser sempre preenchido com a chave Pix.
 '
               - Modified property: qrCode
                 - Description changed from 'Obs: Campo reservado para uso futuro.  
-Sequ├¬ncia de caracteres que corresponde ao QR Code disponibilizado para o pagador.  
-├ë a sequ├¬ncia de caracteres que seria lida pelo leitor de QR Code, e deve propiciar o retorno dos dados do pagador ap├│s consulta na DICT.  
-Essa funcionalidade ├⌐ poss├¡vel tanto para QR Code est├ítico quanto para QR Code din├ómico.  
-No arranjo do Pix esta ├⌐ a mesma sequ├¬ncia gerada e/ou lida pela funcionalidade Pix Copia e Cola.  
-Este campo dever├í ser no formato UTF-8.  
-[Restri├º├úo] Preenchimento obrigat├│rio para pagamentos por QR Code, observado o tamanho m├íximo de 512 bytes.
+Sequência de caracteres que corresponde ao QR Code disponibilizado para o pagador.  
+É a sequência de caracteres que seria lida pelo leitor de QR Code, e deve propiciar o retorno dos dados do pagador após consulta na DICT.  
+Essa funcionalidade é possível tanto para QR Code estático quanto para QR Code dinâmico.  
+No arranjo do Pix esta é a mesma sequência gerada e/ou lida pela funcionalidade Pix Copia e Cola.  
+Este campo deverá ser no formato UTF-8.  
+[Restrição] Preenchimento obrigatório para pagamentos por QR Code, observado o tamanho máximo de 512 bytes.
 ' to 'Obs: Campo reservado para uso futuro.
-Sequ├¬ncia de caracteres que corresponde ao QR Code disponibilizado para o pagador.
-├ë a sequ├¬ncia de caracteres que seria lida pelo leitor de QR Code, e deve propiciar o retorno dos dados do pagador ap├│s consulta na DICT.
-Essa funcionalidade ├⌐ poss├¡vel tanto para QR Code est├ítico quanto para QR Code din├ómico.
-No arranjo do Pix esta ├⌐ a mesma sequ├¬ncia gerada e/ou lida pela funcionalidade Pix Copia e Cola.
-Este campo dever├í ser no formato UTF-8.
-[Restri├º├úo] Preenchimento obrigat├│rio para pagamentos por QR Code, observado o tamanho m├íximo de 512 bytes.
+Sequência de caracteres que corresponde ao QR Code disponibilizado para o pagador.
+É a sequência de caracteres que seria lida pelo leitor de QR Code, e deve propiciar o retorno dos dados do pagador após consulta na DICT.
+Essa funcionalidade é possível tanto para QR Code estático quanto para QR Code dinâmico.
+No arranjo do Pix esta é a mesma sequência gerada e/ou lida pela funcionalidade Pix Copia e Cola.
+Este campo deverá ser no formato UTF-8.
+[Restrição] Preenchimento obrigatório para pagamentos por QR Code, observado o tamanho máximo de 512 bytes.
 '
                 - Example changed from '00020104141234567890123426660014BR.GOV.BCB.PIX014466756C616E6F32303139406578616D706C652E636F6D27300012  
 BR.COM.OUTRO011001234567895204000053039865406123.455802BR5915NOMEDORECEBEDOR6008BRASILIA61087007490062  
@@ -164,80 +164,80 @@ CD81390012BR.COM.OUTRO01190123.ABCD.3456.WXYZ6304EB76
               - Properties changed
                 - New property: transactionIdentification
                 - Modified property: consentId
-                  - Description changed from 'Identificador ├║nico do consentimento criado para a inicia├º├úo de pagamento solicitada. Dever├í ser um URN - Uniform Resource Name.  
-Um URN, conforme definido na [RFC8141](https://tools.ietf.org/html/rfc8141) ├⌐ um Uniform Resource 
-Identifier - URI - que ├⌐ atribu├¡do sob o URI scheme "urn" e um namespace URN espec├¡fico, com a inten├º├úo de que o URN 
-seja um identificador de recurso persistente e independente da localiza├º├úo.  
+                  - Description changed from 'Identificador único do consentimento criado para a iniciação de pagamento solicitada. Deverá ser um URN - Uniform Resource Name.  
+Um URN, conforme definido na [RFC8141](https://tools.ietf.org/html/rfc8141) é um Uniform Resource 
+Identifier - URI - que é atribuído sob o URI scheme "urn" e um namespace URN específico, com a intenção de que o URN 
+seja um identificador de recurso persistente e independente da localização.  
 Considerando a string urn:bancoex:C1DD33123 como exemplo para consentId temos:
 - o namespace(urn)
-- o identificador associado ao namespace da institui├º├úo transnmissora (bancoex) 
-- o identificador espec├¡fico dentro do namespace (C1DD33123).  
-Informa├º├╡es mais detalhadas sobre a constru├º├úo de namespaces devem ser consultadas na [RFC8141](https://tools.ietf.org/html/rfc8141).
-' to 'Identificador ├║nico do consentimento criado para a inicia├º├úo de pagamento solicitada. Dever├í ser um URN - Uniform Resource Name.
-Um URN, conforme definido na [RFC8141](https://tools.ietf.org/html/rfc8141) ├⌐ um Uniform Resource
-Identifier - URI - que ├⌐ atribu├¡do sob o URI scheme "urn" e um namespace URN espec├¡fico, com a inten├º├úo de que o URN
-seja um identificador de recurso persistente e independente da localiza├º├úo.
+- o identificador associado ao namespace da instituição transnmissora (bancoex) 
+- o identificador específico dentro do namespace (C1DD33123).  
+Informações mais detalhadas sobre a construção de namespaces devem ser consultadas na [RFC8141](https://tools.ietf.org/html/rfc8141).
+' to 'Identificador único do consentimento criado para a iniciação de pagamento solicitada. Deverá ser um URN - Uniform Resource Name.
+Um URN, conforme definido na [RFC8141](https://tools.ietf.org/html/rfc8141) é um Uniform Resource
+Identifier - URI - que é atribuído sob o URI scheme "urn" e um namespace URN específico, com a intenção de que o URN
+seja um identificador de recurso persistente e independente da localização.
 Considerando a string urn:bancoex:C1DD33123 como exemplo para consentId temos:
 - o namespace(urn)
-- o identificador associado ao namespace da institui├º├úo transnmissora (bancoex)
-- o identificador espec├¡fico dentro do namespace (C1DD33123).
-Informa├º├╡es mais detalhadas sobre a constru├º├úo de namespaces devem ser consultadas na [RFC8141](https://tools.ietf.org/html/rfc8141).
+- o identificador associado ao namespace da instituição transnmissora (bancoex)
+- o identificador específico dentro do namespace (C1DD33123).
+Informações mais detalhadas sobre a construção de namespaces devem ser consultadas na [RFC8141](https://tools.ietf.org/html/rfc8141).
 '
                 - Modified property: creationDateTime
                   - Description changed from 'Data e hora em que o recurso foi criado.  
-Uma string com data e hora conforme especifica├º├úo RFC-3339,  
-sempre com a utiliza├º├úo de timezone UTC(UTC time format).
+Uma string com data e hora conforme especificação RFC-3339,  
+sempre com a utilização de timezone UTC(UTC time format).
 ' to 'Data e hora em que o recurso foi criado.
-Uma string com data e hora conforme especifica├º├úo RFC-3339,
-sempre com a utiliza├º├úo de timezone UTC(UTC time format).
+Uma string com data e hora conforme especificação RFC-3339,
+sempre com a utilização de timezone UTC(UTC time format).
 '
                 - Modified property: localInstrument
-                  - Description changed from 'Especifica a forma de inicia├º├úo do pagamento:  
-- MANU - Inser├º├úo manual de dados da conta transacional  
-- DICT - Inser├º├úo manual de chave Pix  
-- QRDN - QR code din├ómico (*Dom├¡nio reservado para uso futuro*)  
-- QRES - QR code est├ítico (*Dom├¡nio reservado para uso futuro*)  
-' to 'Especifica a forma de inicia├º├úo do pagamento:  
-- MANU - Inser├º├úo manual de dados da conta transacional  
-- DICT - Inser├º├úo manual de chave Pix  
-- QRDN - QR code din├ómico (*Dom├¡nio reservado para uso futuro*)  
-- QRES - QR code est├ítico (*Dom├¡nio reservado para uso futuro*)  
-- INIC - Indica que o recebedor (creditor) contratou o Iniciador de Pagamentos especificamente para realizar inicia├º├╡es de pagamento em que o benefici├írio ├⌐ previamente conhecido.  
+                  - Description changed from 'Especifica a forma de iniciação do pagamento:  
+- MANU - Inserção manual de dados da conta transacional  
+- DICT - Inserção manual de chave Pix  
+- QRDN - QR code dinâmico (*Domínio reservado para uso futuro*)  
+- QRES - QR code estático (*Domínio reservado para uso futuro*)  
+' to 'Especifica a forma de iniciação do pagamento:  
+- MANU - Inserção manual de dados da conta transacional  
+- DICT - Inserção manual de chave Pix  
+- QRDN - QR code dinâmico (*Domínio reservado para uso futuro*)  
+- QRES - QR code estático (*Domínio reservado para uso futuro*)  
+- INIC - Indica que o recebedor (creditor) contratou o Iniciador de Pagamentos especificamente para realizar iniciações de pagamento em que o beneficiário é previamente conhecido.  
 '
                   - New enum values: [INIC]
                 - Modified property: paymentId
-                  - Description changed from 'C├│digo ou identificador ├║nico informado pela institui├º├úo detentora da conta para representar  
-a inicia├º├úo de pagamento individual. O `paymentId` deve ser diferente do `endToEndId`.  
-Este ├⌐ o identificador que dever├í ser utilizado na consulta ao status da inicia├º├úo de pagamento efetuada.
-' to 'C├│digo ou identificador ├║nico informado pela institui├º├úo detentora da conta para representar
-a inicia├º├úo de pagamento individual. O `paymentId` deve ser diferente do `endToEndId`.
-Este ├⌐ o identificador que dever├í ser utilizado na consulta ao status da inicia├º├úo de pagamento efetuada.
+                  - Description changed from 'Código ou identificador único informado pela instituição detentora da conta para representar  
+a iniciação de pagamento individual. O `paymentId` deve ser diferente do `endToEndId`.  
+Este é o identificador que deverá ser utilizado na consulta ao status da iniciação de pagamento efetuada.
+' to 'Código ou identificador único informado pela instituição detentora da conta para representar
+a iniciação de pagamento individual. O `paymentId` deve ser diferente do `endToEndId`.
+Este é o identificador que deverá ser utilizado na consulta ao status da iniciação de pagamento efetuada.
 '
                 - Modified property: proxy
-                  - Description changed from 'Chave cadastrada no DICT pertencente ao recebedor. Os tipos de chaves podem ser: telefone, e-mail, cpf/cnpj ou chave aleat├│ria.  
-No caso de telefone celular deve ser informado no padr├úo E.1641.  
-Para e-mail deve ter o formato xxxxxxxx@xxxxxxx.xxx(.xx) e no m├íximo 77 caracteres.  
-No caso de CPF dever├í ser informado com 11 n├║meros, sem pontos ou tra├ºos.  
-Para o caso de CNPJ dever├í ser informado com 14 n├║meros, sem pontos ou tra├ºos.  
-No caso de chave aleat├│ria deve ser informado o UUID gerado pelo DICT, conforme formato especificado na RFC41223.  
-[Restri├º├úo] Obrigat├│rio quando o campo localInstrument for igual a DICT.
-' to 'Chave cadastrada no DICT pertencente ao recebedor. Os tipos de chaves podem ser: telefone, e-mail, cpf/cnpj ou chave aleat├│ria.
-No caso de telefone celular deve ser informado no padr├úo E.1641.
-Para e-mail deve ter o formato xxxxxxxx@xxxxxxx.xxx(.xx) e no m├íximo 77 caracteres.
-No caso de CPF dever├í ser informado com 11 n├║meros, sem pontos ou tra├ºos.
-Para o caso de CNPJ dever├í ser informado com 14 n├║meros, sem pontos ou tra├ºos.
-No caso de chave aleat├│ria deve ser informado o UUID gerado pelo DICT, conforme formato especificado na RFC41223.
+                  - Description changed from 'Chave cadastrada no DICT pertencente ao recebedor. Os tipos de chaves podem ser: telefone, e-mail, cpf/cnpj ou chave aleatória.  
+No caso de telefone celular deve ser informado no padrão E.1641.  
+Para e-mail deve ter o formato xxxxxxxx@xxxxxxx.xxx(.xx) e no máximo 77 caracteres.  
+No caso de CPF deverá ser informado com 11 números, sem pontos ou traços.  
+Para o caso de CNPJ deverá ser informado com 14 números, sem pontos ou traços.  
+No caso de chave aleatória deve ser informado o UUID gerado pelo DICT, conforme formato especificado na RFC41223.  
+[Restrição] Obrigatório quando o campo localInstrument for igual a DICT.
+' to 'Chave cadastrada no DICT pertencente ao recebedor. Os tipos de chaves podem ser: telefone, e-mail, cpf/cnpj ou chave aleatória.
+No caso de telefone celular deve ser informado no padrão E.1641.
+Para e-mail deve ter o formato xxxxxxxx@xxxxxxx.xxx(.xx) e no máximo 77 caracteres.
+No caso de CPF deverá ser informado com 11 números, sem pontos ou traços.
+Para o caso de CNPJ deverá ser informado com 14 números, sem pontos ou traços.
+No caso de chave aleatória deve ser informado o UUID gerado pelo DICT, conforme formato especificado na RFC41223.
 Se informado, a detentora da conta deve validar o proxy no DICT quando localInstrument for igual a DICT, QRDN (uso futuro) ou QRES (uso futuro) e validar o campo creditorAccount.
-Esta valida├º├úo ├⌐ opcional caso o localInstrument for igual a INIC.
-[Restri├º├úo] Se localInstrument for igual a MANU, o campo proxy n├úo deve ser preenchido. Se localInstrument for igual INIC, DICT, QRDN (uso futuro) ou QRES(uso futuro), o campo proxy deve ser sempre preenchido com a chave Pix.
+Esta validação é opcional caso o localInstrument for igual a INIC.
+[Restrição] Se localInstrument for igual a MANU, o campo proxy não deve ser preenchido. Se localInstrument for igual INIC, DICT, QRDN (uso futuro) ou QRES(uso futuro), o campo proxy deve ser sempre preenchido com a chave Pix.
 '
                 - Modified property: statusUpdateDateTime
-                  - Description changed from 'Data e hora da ├║ltima atualiza├º├úo da inicia├º├úo de pagamento.  
-Uma string com data e hora conforme especifica├º├úo RFC-3339,  
-sempre com a utiliza├º├úo de timezone UTC(UTC time format).
-' to 'Data e hora da ├║ltima atualiza├º├úo da inicia├º├úo de pagamento.
-Uma string com data e hora conforme especifica├º├úo RFC-3339,
-sempre com a utiliza├º├úo de timezone UTC(UTC time format).
+                  - Description changed from 'Data e hora da última atualização da iniciação de pagamento.  
+Uma string com data e hora conforme especificação RFC-3339,  
+sempre com a utilização de timezone UTC(UTC time format).
+' to 'Data e hora da última atualização da iniciação de pagamento.
+Uma string com data e hora conforme especificação RFC-3339,
+sempre com a utilização de timezone UTC(UTC time format).
 '
 GET /pix/payments/{paymentId}
 - Responses changed
@@ -250,78 +250,78 @@ GET /pix/payments/{paymentId}
               - Properties changed
                 - New property: transactionIdentification
                 - Modified property: consentId
-                  - Description changed from 'Identificador ├║nico do consentimento criado para a inicia├º├úo de pagamento solicitada. Dever├í ser um URN - Uniform Resource Name.  
-Um URN, conforme definido na [RFC8141](https://tools.ietf.org/html/rfc8141) ├⌐ um Uniform Resource 
-Identifier - URI - que ├⌐ atribu├¡do sob o URI scheme "urn" e um namespace URN espec├¡fico, com a inten├º├úo de que o URN 
-seja um identificador de recurso persistente e independente da localiza├º├úo.  
+                  - Description changed from 'Identificador único do consentimento criado para a iniciação de pagamento solicitada. Deverá ser um URN - Uniform Resource Name.  
+Um URN, conforme definido na [RFC8141](https://tools.ietf.org/html/rfc8141) é um Uniform Resource 
+Identifier - URI - que é atribuído sob o URI scheme "urn" e um namespace URN específico, com a intenção de que o URN 
+seja um identificador de recurso persistente e independente da localização.  
 Considerando a string urn:bancoex:C1DD33123 como exemplo para consentId temos:
 - o namespace(urn)
-- o identificador associado ao namespace da institui├º├úo transnmissora (bancoex) 
-- o identificador espec├¡fico dentro do namespace (C1DD33123).  
-Informa├º├╡es mais detalhadas sobre a constru├º├úo de namespaces devem ser consultadas na [RFC8141](https://tools.ietf.org/html/rfc8141).
-' to 'Identificador ├║nico do consentimento criado para a inicia├º├úo de pagamento solicitada. Dever├í ser um URN - Uniform Resource Name.
-Um URN, conforme definido na [RFC8141](https://tools.ietf.org/html/rfc8141) ├⌐ um Uniform Resource
-Identifier - URI - que ├⌐ atribu├¡do sob o URI scheme "urn" e um namespace URN espec├¡fico, com a inten├º├úo de que o URN
-seja um identificador de recurso persistente e independente da localiza├º├úo.
+- o identificador associado ao namespace da instituição transnmissora (bancoex) 
+- o identificador específico dentro do namespace (C1DD33123).  
+Informações mais detalhadas sobre a construção de namespaces devem ser consultadas na [RFC8141](https://tools.ietf.org/html/rfc8141).
+' to 'Identificador único do consentimento criado para a iniciação de pagamento solicitada. Deverá ser um URN - Uniform Resource Name.
+Um URN, conforme definido na [RFC8141](https://tools.ietf.org/html/rfc8141) é um Uniform Resource
+Identifier - URI - que é atribuído sob o URI scheme "urn" e um namespace URN específico, com a intenção de que o URN
+seja um identificador de recurso persistente e independente da localização.
 Considerando a string urn:bancoex:C1DD33123 como exemplo para consentId temos:
 - o namespace(urn)
-- o identificador associado ao namespace da institui├º├úo transnmissora (bancoex)
-- o identificador espec├¡fico dentro do namespace (C1DD33123).
-Informa├º├╡es mais detalhadas sobre a constru├º├úo de namespaces devem ser consultadas na [RFC8141](https://tools.ietf.org/html/rfc8141).
+- o identificador associado ao namespace da instituição transnmissora (bancoex)
+- o identificador específico dentro do namespace (C1DD33123).
+Informações mais detalhadas sobre a construção de namespaces devem ser consultadas na [RFC8141](https://tools.ietf.org/html/rfc8141).
 '
                 - Modified property: creationDateTime
                   - Description changed from 'Data e hora em que o recurso foi criado.  
-Uma string com data e hora conforme especifica├º├úo RFC-3339,  
-sempre com a utiliza├º├úo de timezone UTC(UTC time format).
+Uma string com data e hora conforme especificação RFC-3339,  
+sempre com a utilização de timezone UTC(UTC time format).
 ' to 'Data e hora em que o recurso foi criado.
-Uma string com data e hora conforme especifica├º├úo RFC-3339,
-sempre com a utiliza├º├úo de timezone UTC(UTC time format).
+Uma string com data e hora conforme especificação RFC-3339,
+sempre com a utilização de timezone UTC(UTC time format).
 '
                 - Modified property: localInstrument
-                  - Description changed from 'Especifica a forma de inicia├º├úo do pagamento:  
-- MANU - Inser├º├úo manual de dados da conta transacional  
-- DICT - Inser├º├úo manual de chave Pix  
-- QRDN - QR code din├ómico (*Dom├¡nio reservado para uso futuro*)  
-- QRES - QR code est├ítico (*Dom├¡nio reservado para uso futuro*)  
-' to 'Especifica a forma de inicia├º├úo do pagamento:  
-- MANU - Inser├º├úo manual de dados da conta transacional  
-- DICT - Inser├º├úo manual de chave Pix  
-- QRDN - QR code din├ómico (*Dom├¡nio reservado para uso futuro*)  
-- QRES - QR code est├ítico (*Dom├¡nio reservado para uso futuro*)  
-- INIC - Indica que o recebedor (creditor) contratou o Iniciador de Pagamentos especificamente para realizar inicia├º├╡es de pagamento em que o benefici├írio ├⌐ previamente conhecido.  
+                  - Description changed from 'Especifica a forma de iniciação do pagamento:  
+- MANU - Inserção manual de dados da conta transacional  
+- DICT - Inserção manual de chave Pix  
+- QRDN - QR code dinâmico (*Domínio reservado para uso futuro*)  
+- QRES - QR code estático (*Domínio reservado para uso futuro*)  
+' to 'Especifica a forma de iniciação do pagamento:  
+- MANU - Inserção manual de dados da conta transacional  
+- DICT - Inserção manual de chave Pix  
+- QRDN - QR code dinâmico (*Domínio reservado para uso futuro*)  
+- QRES - QR code estático (*Domínio reservado para uso futuro*)  
+- INIC - Indica que o recebedor (creditor) contratou o Iniciador de Pagamentos especificamente para realizar iniciações de pagamento em que o beneficiário é previamente conhecido.  
 '
                   - New enum values: [INIC]
                 - Modified property: paymentId
-                  - Description changed from 'C├│digo ou identificador ├║nico informado pela institui├º├úo detentora da conta para representar  
-a inicia├º├úo de pagamento individual. O `paymentId` deve ser diferente do `endToEndId`.  
-Este ├⌐ o identificador que dever├í ser utilizado na consulta ao status da inicia├º├úo de pagamento efetuada.
-' to 'C├│digo ou identificador ├║nico informado pela institui├º├úo detentora da conta para representar
-a inicia├º├úo de pagamento individual. O `paymentId` deve ser diferente do `endToEndId`.
-Este ├⌐ o identificador que dever├í ser utilizado na consulta ao status da inicia├º├úo de pagamento efetuada.
+                  - Description changed from 'Código ou identificador único informado pela instituição detentora da conta para representar  
+a iniciação de pagamento individual. O `paymentId` deve ser diferente do `endToEndId`.  
+Este é o identificador que deverá ser utilizado na consulta ao status da iniciação de pagamento efetuada.
+' to 'Código ou identificador único informado pela instituição detentora da conta para representar
+a iniciação de pagamento individual. O `paymentId` deve ser diferente do `endToEndId`.
+Este é o identificador que deverá ser utilizado na consulta ao status da iniciação de pagamento efetuada.
 '
                 - Modified property: proxy
-                  - Description changed from 'Chave cadastrada no DICT pertencente ao recebedor. Os tipos de chaves podem ser: telefone, e-mail, cpf/cnpj ou chave aleat├│ria.  
-No caso de telefone celular deve ser informado no padr├úo E.1641.  
-Para e-mail deve ter o formato xxxxxxxx@xxxxxxx.xxx(.xx) e no m├íximo 77 caracteres.  
-No caso de CPF dever├í ser informado com 11 n├║meros, sem pontos ou tra├ºos.  
-Para o caso de CNPJ dever├í ser informado com 14 n├║meros, sem pontos ou tra├ºos.  
-No caso de chave aleat├│ria deve ser informado o UUID gerado pelo DICT, conforme formato especificado na RFC41223.  
-[Restri├º├úo] Obrigat├│rio quando o campo localInstrument for igual a DICT.
-' to 'Chave cadastrada no DICT pertencente ao recebedor. Os tipos de chaves podem ser: telefone, e-mail, cpf/cnpj ou chave aleat├│ria.
-No caso de telefone celular deve ser informado no padr├úo E.1641.
-Para e-mail deve ter o formato xxxxxxxx@xxxxxxx.xxx(.xx) e no m├íximo 77 caracteres.
-No caso de CPF dever├í ser informado com 11 n├║meros, sem pontos ou tra├ºos.
-Para o caso de CNPJ dever├í ser informado com 14 n├║meros, sem pontos ou tra├ºos.
-No caso de chave aleat├│ria deve ser informado o UUID gerado pelo DICT, conforme formato especificado na RFC41223.
+                  - Description changed from 'Chave cadastrada no DICT pertencente ao recebedor. Os tipos de chaves podem ser: telefone, e-mail, cpf/cnpj ou chave aleatória.  
+No caso de telefone celular deve ser informado no padrão E.1641.  
+Para e-mail deve ter o formato xxxxxxxx@xxxxxxx.xxx(.xx) e no máximo 77 caracteres.  
+No caso de CPF deverá ser informado com 11 números, sem pontos ou traços.  
+Para o caso de CNPJ deverá ser informado com 14 números, sem pontos ou traços.  
+No caso de chave aleatória deve ser informado o UUID gerado pelo DICT, conforme formato especificado na RFC41223.  
+[Restrição] Obrigatório quando o campo localInstrument for igual a DICT.
+' to 'Chave cadastrada no DICT pertencente ao recebedor. Os tipos de chaves podem ser: telefone, e-mail, cpf/cnpj ou chave aleatória.
+No caso de telefone celular deve ser informado no padrão E.1641.
+Para e-mail deve ter o formato xxxxxxxx@xxxxxxx.xxx(.xx) e no máximo 77 caracteres.
+No caso de CPF deverá ser informado com 11 números, sem pontos ou traços.
+Para o caso de CNPJ deverá ser informado com 14 números, sem pontos ou traços.
+No caso de chave aleatória deve ser informado o UUID gerado pelo DICT, conforme formato especificado na RFC41223.
 Se informado, a detentora da conta deve validar o proxy no DICT quando localInstrument for igual a DICT, QRDN (uso futuro) ou QRES (uso futuro) e validar o campo creditorAccount.
-Esta valida├º├úo ├⌐ opcional caso o localInstrument for igual a INIC.
-[Restri├º├úo] Se localInstrument for igual a MANU, o campo proxy n├úo deve ser preenchido. Se localInstrument for igual INIC, DICT, QRDN (uso futuro) ou QRES(uso futuro), o campo proxy deve ser sempre preenchido com a chave Pix.
+Esta validação é opcional caso o localInstrument for igual a INIC.
+[Restrição] Se localInstrument for igual a MANU, o campo proxy não deve ser preenchido. Se localInstrument for igual INIC, DICT, QRDN (uso futuro) ou QRES(uso futuro), o campo proxy deve ser sempre preenchido com a chave Pix.
 '
                 - Modified property: statusUpdateDateTime
-                  - Description changed from 'Data e hora da ├║ltima atualiza├º├úo da inicia├º├úo de pagamento.  
-Uma string com data e hora conforme especifica├º├úo RFC-3339,  
-sempre com a utiliza├º├úo de timezone UTC(UTC time format).
-' to 'Data e hora da ├║ltima atualiza├º├úo da inicia├º├úo de pagamento.
-Uma string com data e hora conforme especifica├º├úo RFC-3339,
-sempre com a utiliza├º├úo de timezone UTC(UTC time format).
+                  - Description changed from 'Data e hora da última atualização da iniciação de pagamento.  
+Uma string com data e hora conforme especificação RFC-3339,  
+sempre com a utilização de timezone UTC(UTC time format).
+' to 'Data e hora da última atualização da iniciação de pagamento.
+Uma string com data e hora conforme especificação RFC-3339,
+sempre com a utilização de timezone UTC(UTC time format).
 '

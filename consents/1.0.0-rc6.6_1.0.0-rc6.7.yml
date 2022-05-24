@@ -14,9 +14,9 @@ POST /consents
             - Modified property: data
               - Properties changed
                 - Modified property: permissions
-                  - Description changed from '' to 'Especifica os tipos de permiss├╡es de acesso ├ás APIs no escopo do Open Banking Brasil - Fase 2, de acordo com os blocos de consentimento fornecidos pelo usu├írio e necess├írios ao acesso a cada endpoint das APIs.'
+                  - Description changed from '' to 'Especifica os tipos de permissões de acesso às APIs no escopo do Open Banking Brasil - Fase 2, de acordo com os blocos de consentimento fornecidos pelo usuário e necessários ao acesso a cada endpoint das APIs.'
                   - Items changed
-                    - Description changed from 'Especifica os tipos de permiss├╡es de acesso ├ás APIs no escopo do Open Banking Brasil - Fase 2, de acordo com os blocos de consentimento fornecidos pelo usu├írio e necess├írios ao acesso a cada endpoint das APIs.' to ''
+                    - Description changed from 'Especifica os tipos de permissões de acesso às APIs no escopo do Open Banking Brasil - Fase 2, de acordo com os blocos de consentimento fornecidos pelo usuário e necessários ao acesso a cada endpoint das APIs.' to ''
 GET /consents/{consentId}
 - Responses changed
   - Modified response: 200
@@ -27,6 +27,6 @@ GET /consents/{consentId}
             - Modified property: data
               - Properties changed
                 - Modified property: permissions
-                  - Description changed from '' to 'Especifica os tipos de permiss├╡es de acesso ├ás APIs no escopo do Open Banking Brasil - Fase 2, de acordo com os blocos de consentimento fornecidos pelo usu├írio e necess├írios ao acesso a cada endpoint das APIs.'
+                  - Description changed from '' to 'Especifica os tipos de permissões de acesso às APIs no escopo do Open Banking Brasil - Fase 2, de acordo com os blocos de consentimento fornecidos pelo usuário e necessários ao acesso a cada endpoint das APIs.'
                   - Items changed
-                    - Description changed from 'Especifica os tipos de permiss├╡es de acesso ├ás APIs no escopo do Open Banking Brasil - Fase 2, de acordo com os blocos de consentimento fornecidos pelo usu├írio e necess├írios ao acesso a cada endpoint das APIs.' to ''
+                    - Description changed from 'Especifica os tipos de permissões de acesso às APIs no escopo do Open Banking Brasil - Fase 2, de acordo com os blocos de consentimento fornecidos pelo usuário e necessários ao acesso a cada endpoint das APIs.' to ''

@@ -20,7 +20,7 @@ GET /accounts
               - Items changed
                 - Properties changed
                   - Modified property: brandName
-                    - Description changed from 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a 'marca' ├⌐ em ess├¬ncia uma promessa da empresa em fornecer uma s├⌐rie espec├¡fica de atributos, benef├¡cios e servi├ºos uniformes aos clientes' to 'Nome da Marca reportada pelo participante no Open Finance. Recomenda-se utilizar, sempre que poss├¡vel, o mesmo nome de marca atribu├¡do no campo do diret├│rio Customer Friendly Server Name (Authorisation Server).'
+                    - Description changed from 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a 'marca' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes' to 'Nome da Marca reportada pelo participante no Open Finance. Recomenda-se utilizar, sempre que possível, o mesmo nome de marca atribuído no campo do diretório Customer Friendly Server Name (Authorisation Server).'
                   - Modified property: creditCardNetwork
                     - MaxLength changed from 17 to null
                   - Modified property: productType
@@ -122,7 +122,7 @@ GET /accounts
                 - Deleted property: totalPages
                 - Deleted property: totalRecords
   - Modified response: default
-    - Description changed from 'Conjunto de informa├º├╡es das Contas de pagamento p├│s paga' to 'Erro inesperado.'
+    - Description changed from 'Conjunto de informações das Contas de pagamento pós paga' to 'Erro inesperado.'
     - Content changed
       - New media type: application/json
       - New media type: application/json; charset=utf-8
@@ -242,7 +242,7 @@ GET /accounts/{creditCardAccountId}
                 - Deleted property: totalPages
                 - Deleted property: totalRecords
   - Modified response: default
-    - Description changed from 'Dados de identifica├º├úo da conta identificada por creditCardAccountId obtidos com sucesso.' to 'Erro inesperado.'
+    - Description changed from 'Dados de identificação da conta identificada por creditCardAccountId obtidos com sucesso.' to 'Erro inesperado.'
     - Content changed
       - New media type: application/json
       - New media type: application/json; charset=utf-8
@@ -295,9 +295,9 @@ O campo deve assumir valor positivo para saldo devedor e negativo para saldo cre
                       - Properties changed
                         - Modified property: amount
                           - Type changed from 'number' to 'string'
-                          - Description changed from 'Valor pagamento segundo o valueType.  Expresso em valor monet├írio com 4 casas decimais' to 'Valor pagamento segundo o valueType.  
-Expresso em valor monet├írio com 4 casas decimais.
-O campo n├úo pode assumir valor negativo por se tratar de um pagamento.
+                          - Description changed from 'Valor pagamento segundo o valueType.  Expresso em valor monetário com 4 casas decimais' to 'Valor pagamento segundo o valueType.  
+Expresso em valor monetário com 4 casas decimais.
+O campo não pode assumir valor negativo por se tratar de um pagamento.
 '
                           - Example changed from 100000.04 to '100000.0400'
                           - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to '^\d{1,15}\.\d{2,4}$'
@@ -402,7 +402,7 @@ O campo n├úo pode assumir valor negativo por se tratar de um pagamento.
                 - Deleted property: totalPages
                 - Deleted property: totalRecords
   - Modified response: default
-    - Description changed from 'Dados referentes ├á lista de faturas da conta identificada por creditCardAccountId obtidos com sucesso.' to 'Erro inesperado.'
+    - Description changed from 'Dados referentes à lista de faturas da conta identificada por creditCardAccountId obtidos com sucesso.' to 'Erro inesperado.'
     - Content changed
       - New media type: application/json
       - New media type: application/json; charset=utf-8
@@ -437,7 +437,7 @@ GET /accounts/{creditCardAccountId}/bills/{billId}/transactions
                   - Modified property: amount
                     - Type changed from 'number' to 'object'
                     - Format changed from 'double' to ''
-                    - Description changed from 'Valor da transa├º├úo efetuada no exterior e convertida em moeda nacional com 4 casas decimais. Expresso em valor monet├írio com 4 casas decimais' to 'Valor da transa├º├úo. Expresso em valor monet├írio com 4 casas decimais. Se a transa├º├úo foi realizada em moeda estrangeira, deve ser preenchido com o valor original da transa├º├úo, sem convert├¬-lo.'
+                    - Description changed from 'Valor da transação efetuada no exterior e convertida em moeda nacional com 4 casas decimais. Expresso em valor monetário com 4 casas decimais' to 'Valor da transação. Expresso em valor monetário com 4 casas decimais. Se a transação foi realizada em moeda estrangeira, deve ser preenchido com o valor original da transação, sem convertê-lo.'
                     - Example changed from 100000.04 to null
                     - AdditionalProperties changed from null to false
                     - Nullable changed from true to false
@@ -467,7 +467,7 @@ GET /accounts/{creditCardAccountId}/bills/{billId}/transactions
                       - New property: currency
                   - Modified property: chargeNumber
                     - Description changed from 'Quantidade de parcelas' to 'Quantidade de parcelas.   
-[Restri├º├úo] O campo deve ser preenchido quando houverem parcelas relacionadas a transa├º├úo.
+[Restrição] O campo deve ser preenchido quando houverem parcelas relacionadas a transação.
 '
                     - Example changed from 3 to 12
                     - Nullable changed from true to false
@@ -477,29 +477,29 @@ GET /accounts/{creditCardAccountId}/bills/{billId}/transactions
                     - MaxLength changed from 7 to null
                   - Modified property: feeType
                     - Description changed from 'Traz os tipos de Tarifas: (Vide Enum)
-Anuidade, Saque com cart├úo no Brasil, Saque com cart├úo no exterior, Avalia├º├úo emergencial de cr├⌐dito, Emiss├úo segunda via, Tarifa pagamento de contas, SMS, OUTRA.
-[Restri├º├úo] Preenchimento obrigat├│rio se Tipo de Transa├º├úo selecionada for 'TARIFA'
+Anuidade, Saque com cartão no Brasil, Saque com cartão no exterior, Avaliação emergencial de crédito, Emissão segunda via, Tarifa pagamento de contas, SMS, OUTRA.
+[Restrição] Preenchimento obrigatório se Tipo de Transação selecionada for 'TARIFA'
 ' to 'Traz os tipos de Tarifas: (Vide Enum)
-Anuidade, Saque com cart├úo no Brasil, Saque com cart├úo no exterior, Avalia├º├úo emergencial de cr├⌐dito, Emiss├úo segunda via, Tarifa pagamento de contas, SMS, OUTRA.   
-Para transmissora: quando n├úo for do tipo TARIFA, preenche com OUTRA.
-Para recebedora: ignorar o campo preenchido conforme esse cen├írio.
-[Restri├º├úo] Preenchimento obrigat├│rio se Tipo de Transa├º├úo selecionada for 'TARIFA'.
+Anuidade, Saque com cartão no Brasil, Saque com cartão no exterior, Avaliação emergencial de crédito, Emissão segunda via, Tarifa pagamento de contas, SMS, OUTRA.   
+Para transmissora: quando não for do tipo TARIFA, preenche com OUTRA.
+Para recebedora: ignorar o campo preenchido conforme esse cenário.
+[Restrição] Preenchimento obrigatório se Tipo de Transação selecionada for 'TARIFA'.
 '
                     - MaxLength changed from 29 to null
                   - Modified property: feeTypeAdditionalInfo
                     - Pattern changed from '' to '^\S[\s\S]*$'
                   - Modified property: otherCreditsAdditionalInfo
-                    - Description changed from 'Campo livre, de preenchimento obrigat├│rio quando selecionado tipo de cr├⌐dito "OUTROS"' to 'Campo livre para preenchimento de dados adicionais de outros tipos de cr├⌐dito contratados no cart├úo.
-[Restri├º├úo] Preenchimento obrigat├│rio quando selecionado no campo outros tipos de cr├⌐dito "OUTROS".
+                    - Description changed from 'Campo livre, de preenchimento obrigatório quando selecionado tipo de crédito "OUTROS"' to 'Campo livre para preenchimento de dados adicionais de outros tipos de crédito contratados no cartão.
+[Restrição] Preenchimento obrigatório quando selecionado no campo outros tipos de crédito "OUTROS".
 '
                     - Pattern changed from '' to '^\S[\s\S]*$'
                   - Modified property: otherCreditsType
-                    - Description changed from 'Traz outros tipos de cr├⌐dito contratados no cart├úo.
-[Restri├º├úo] Preenchimento obrigat├│rio se o tipo transa├º├úo selecionado for 'OPERACOES_CREDITO_CONTRATADAS_CARTAO'
-' to 'Traz outros tipos de cr├⌐dito contratados no cart├úo.   
-[Restri├º├úo] Preenchimento obrigat├│rio se o tipo transa├º├úo selecionado for 'OPERACOES_CREDITO_CONTRATADAS_CARTAO'.
-Para transmissora: Quando n├úo for do tipo OPERACOES_CREDITO_CONTRATADAS_CARTAO, preencher com OUTROS.
-Para recebedora: Ignorar o campo preenchido conforme esse cen├írio.
+                    - Description changed from 'Traz outros tipos de crédito contratados no cartão.
+[Restrição] Preenchimento obrigatório se o tipo transação selecionado for 'OPERACOES_CREDITO_CONTRATADAS_CARTAO'
+' to 'Traz outros tipos de crédito contratados no cartão.   
+[Restrição] Preenchimento obrigatório se o tipo transação selecionado for 'OPERACOES_CREDITO_CONTRATADAS_CARTAO'.
+Para transmissora: Quando não for do tipo OPERACOES_CREDITO_CONTRATADAS_CARTAO, preencher com OUTROS.
+Para recebedora: Ignorar o campo preenchido conforme esse cenário.
 '
                     - MaxLength changed from 19 to null
                   - Modified property: payeeMCC
@@ -507,9 +507,9 @@ Para recebedora: Ignorar o campo preenchido conforme esse cen├írio.
                     - Max changed from null to 2.147483647e+09
                     - MaxLength changed from 4 to null
                   - Modified property: paymentType
-                    - Description changed from 'Traz os tipos de pagamento. Preenchimento obrigat├│rio se selecionado tipo de transa├º├úo PAGAMENTO.' to 'Traz os tipos de pagamento. Preenchimento obrigat├│rio se selecionado tipo de transa├º├úo PAGAMENTO.
-Para transmissora: preencher com qualquer op├º├úo.
-Para recebedora: ignorar o campo preenchido quando n├úo for uma transa├º├úo do tipo pagamento.
+                    - Description changed from 'Traz os tipos de pagamento. Preenchimento obrigatório se selecionado tipo de transação PAGAMENTO.' to 'Traz os tipos de pagamento. Preenchimento obrigatório se selecionado tipo de transação PAGAMENTO.
+Para transmissora: preencher com qualquer opção.
+Para recebedora: ignorar o campo preenchido quando não for uma transação do tipo pagamento.
 '
                     - MaxLength changed from 7 to null
                   - Modified property: transactionDate
@@ -625,7 +625,7 @@ Para recebedora: ignorar o campo preenchido quando n├úo for uma transa├º�
                 - Deleted property: totalPages
                 - Deleted property: totalRecords
   - Modified response: default
-    - Description changed from 'Dados das lista de transa├º├╡es da conta identificada obtidos com sucesso.' to 'Erro inesperado.'
+    - Description changed from 'Dados das lista de transações da conta identificada obtidos com sucesso.' to 'Erro inesperado.'
     - Content changed
       - New media type: application/json
       - New media type: application/json; charset=utf-8
@@ -641,9 +641,9 @@ GET /accounts/{creditCardAccountId}/limits
         - Schema changed
           - Properties changed
             - Modified property: data
-              - Description changed from '' to '[Restri├º├úo] A lista vazia deve ser interpretada como a aus├¬ncia da informa├º├úo.
-Cen├írio de limite com valor zerado, deve ter um registro expl├¡cito informando o valor como zero.
-Cen├írio de "cart├úo sem limite", isto ├⌐, cart├╡es em que o uso do limite ├⌐ ilimitado, deve ser informado em um registro expl├¡cito com isLimitFlexible como true.
+              - Description changed from '' to '[Restrição] A lista vazia deve ser interpretada como a ausência da informação.
+Cenário de limite com valor zerado, deve ter um registro explícito informando o valor como zero.
+Cenário de "cartão sem limite", isto é, cartões em que o uso do limite é ilimitado, deve ser informado em um registro explícito com isLimitFlexible como true.
 '
               - Items changed
                 - Required changed
@@ -663,18 +663,18 @@ Cen├írio de "cart├úo sem limite", isto ├⌐, cart├╡es em que o uso d
                     - MaxLength changed from 34 to null
                   - Modified property: limitAmount
                     - Type changed from 'number' to 'string'
-                    - Description changed from 'Valor total do limite informado Expresso em valor monet├írio com 4 casas decimais.' to 'Valor total do limite informado Expresso em valor monet├írio com 4 casas decimais.   
-[Restri├º├úo] O campo ├⌐ opcional caso isLimitFlexible for igual a false.
+                    - Description changed from 'Valor total do limite informado Expresso em valor monetário com 4 casas decimais.' to 'Valor total do limite informado Expresso em valor monetário com 4 casas decimais.   
+[Restrição] O campo é opcional caso isLimitFlexible for igual a false.
 '
                     - Example changed from 100000.0001 to '100000.0001'
                     - Nullable changed from true to false
                     - MaxLength changed from 20 to 21
                   - Modified property: limitAmountCurrency
                     - Description changed from 'Moeda referente ao limite informado, segundo modelo ISO-4217. p.ex. 'BRL.'
-Todos os limite informados est├úo representados com a moeda vigente do do Brasil.
+Todos os limite informados estão representados com a moeda vigente do do Brasil.
 ' to 'Moeda referente ao limite informado, segundo modelo ISO-4217. p.ex. 'BRL.'
-Todos os limite informados est├úo representados com a moeda vigente do do Brasil.   
-[Restri├º├úo] O campo ├⌐ opcional caso isLimitFlexible for igual a false.
+Todos os limite informados estão representados com a moeda vigente do do Brasil.   
+[Restrição] O campo é opcional caso isLimitFlexible for igual a false.
 '
                     - Pattern changed from '^(\w{3}){1}$|^NA$' to '^(\w{3}){1}$'
                   - Modified property: lineName
@@ -820,7 +820,7 @@ GET /accounts/{creditCardAccountId}/transactions
                   - Modified property: amount
                     - Type changed from 'number' to 'object'
                     - Format changed from 'double' to ''
-                    - Description changed from 'Valor da transa├º├úo efetuada no exterior e convertida em moeda nacional com 4 casas decimais. Expresso em valor monet├írio com 4 casas decimais' to 'Valor da transa├º├úo. Expresso em valor monet├írio com 4 casas decimais. Se a transa├º├úo foi realizada em moeda estrangeira, deve ser preenchido com o valor original da transa├º├úo, sem convert├¬-lo.'
+                    - Description changed from 'Valor da transação efetuada no exterior e convertida em moeda nacional com 4 casas decimais. Expresso em valor monetário com 4 casas decimais' to 'Valor da transação. Expresso em valor monetário com 4 casas decimais. Se a transação foi realizada em moeda estrangeira, deve ser preenchido com o valor original da transação, sem convertê-lo.'
                     - Example changed from 100000.04 to null
                     - AdditionalProperties changed from null to false
                     - Nullable changed from true to false
@@ -850,7 +850,7 @@ GET /accounts/{creditCardAccountId}/transactions
                       - New property: currency
                   - Modified property: chargeNumber
                     - Description changed from 'Quantidade de parcelas' to 'Quantidade de parcelas.   
-[Restri├º├úo] O campo deve ser preenchido quando houverem parcelas relacionadas a transa├º├úo.
+[Restrição] O campo deve ser preenchido quando houverem parcelas relacionadas a transação.
 '
                     - Example changed from 3 to 12
                     - Nullable changed from true to false
@@ -860,29 +860,29 @@ GET /accounts/{creditCardAccountId}/transactions
                     - MaxLength changed from 7 to null
                   - Modified property: feeType
                     - Description changed from 'Traz os tipos de Tarifas: (Vide Enum)
-Anuidade, Saque com cart├úo no Brasil, Saque com cart├úo no exterior, Avalia├º├úo emergencial de cr├⌐dito, Emiss├úo segunda via, Tarifa pagamento de contas, SMS, OUTRA.
-[Restri├º├úo] Preenchimento obrigat├│rio se Tipo de Transa├º├úo selecionada for 'TARIFA'
+Anuidade, Saque com cartão no Brasil, Saque com cartão no exterior, Avaliação emergencial de crédito, Emissão segunda via, Tarifa pagamento de contas, SMS, OUTRA.
+[Restrição] Preenchimento obrigatório se Tipo de Transação selecionada for 'TARIFA'
 ' to 'Traz os tipos de Tarifas: (Vide Enum)
-Anuidade, Saque com cart├úo no Brasil, Saque com cart├úo no exterior, Avalia├º├úo emergencial de cr├⌐dito, Emiss├úo segunda via, Tarifa pagamento de contas, SMS, OUTRA.   
-Para transmissora: quando n├úo for do tipo TARIFA, preenche com OUTRA.
-Para recebedora: ignorar o campo preenchido conforme esse cen├írio.
-[Restri├º├úo] Preenchimento obrigat├│rio se Tipo de Transa├º├úo selecionada for 'TARIFA'.
+Anuidade, Saque com cartão no Brasil, Saque com cartão no exterior, Avaliação emergencial de crédito, Emissão segunda via, Tarifa pagamento de contas, SMS, OUTRA.   
+Para transmissora: quando não for do tipo TARIFA, preenche com OUTRA.
+Para recebedora: ignorar o campo preenchido conforme esse cenário.
+[Restrição] Preenchimento obrigatório se Tipo de Transação selecionada for 'TARIFA'.
 '
                     - MaxLength changed from 29 to null
                   - Modified property: feeTypeAdditionalInfo
                     - Pattern changed from '' to '^\S[\s\S]*$'
                   - Modified property: otherCreditsAdditionalInfo
-                    - Description changed from 'Campo livre, de preenchimento obrigat├│rio quando selecionado tipo de cr├⌐dito "OUTROS"' to 'Campo livre para preenchimento de dados adicionais de outros tipos de cr├⌐dito contratados no cart├úo.
-[Restri├º├úo] Preenchimento obrigat├│rio quando selecionado no campo outros tipos de cr├⌐dito "OUTROS".
+                    - Description changed from 'Campo livre, de preenchimento obrigatório quando selecionado tipo de crédito "OUTROS"' to 'Campo livre para preenchimento de dados adicionais de outros tipos de crédito contratados no cartão.
+[Restrição] Preenchimento obrigatório quando selecionado no campo outros tipos de crédito "OUTROS".
 '
                     - Pattern changed from '' to '^\S[\s\S]*$'
                   - Modified property: otherCreditsType
-                    - Description changed from 'Traz outros tipos de cr├⌐dito contratados no cart├úo.
-[Restri├º├úo] Preenchimento obrigat├│rio se o tipo transa├º├úo selecionado for 'OPERACOES_CREDITO_CONTRATADAS_CARTAO'
-' to 'Traz outros tipos de cr├⌐dito contratados no cart├úo.   
-[Restri├º├úo] Preenchimento obrigat├│rio se o tipo transa├º├úo selecionado for 'OPERACOES_CREDITO_CONTRATADAS_CARTAO'.
-Para transmissora: Quando n├úo for do tipo OPERACOES_CREDITO_CONTRATADAS_CARTAO, preencher com OUTROS.
-Para recebedora: Ignorar o campo preenchido conforme esse cen├írio.
+                    - Description changed from 'Traz outros tipos de crédito contratados no cartão.
+[Restrição] Preenchimento obrigatório se o tipo transação selecionado for 'OPERACOES_CREDITO_CONTRATADAS_CARTAO'
+' to 'Traz outros tipos de crédito contratados no cartão.   
+[Restrição] Preenchimento obrigatório se o tipo transação selecionado for 'OPERACOES_CREDITO_CONTRATADAS_CARTAO'.
+Para transmissora: Quando não for do tipo OPERACOES_CREDITO_CONTRATADAS_CARTAO, preencher com OUTROS.
+Para recebedora: Ignorar o campo preenchido conforme esse cenário.
 '
                     - MaxLength changed from 19 to null
                   - Modified property: payeeMCC
@@ -890,9 +890,9 @@ Para recebedora: Ignorar o campo preenchido conforme esse cen├írio.
                     - Max changed from null to 2.147483647e+09
                     - MaxLength changed from 4 to null
                   - Modified property: paymentType
-                    - Description changed from 'Traz os tipos de pagamento. Preenchimento obrigat├│rio se selecionado tipo de transa├º├úo PAGAMENTO.' to 'Traz os tipos de pagamento. Preenchimento obrigat├│rio se selecionado tipo de transa├º├úo PAGAMENTO.
-Para transmissora: preencher com qualquer op├º├úo.
-Para recebedora: ignorar o campo preenchido quando n├úo for uma transa├º├úo do tipo pagamento.
+                    - Description changed from 'Traz os tipos de pagamento. Preenchimento obrigatório se selecionado tipo de transação PAGAMENTO.' to 'Traz os tipos de pagamento. Preenchimento obrigatório se selecionado tipo de transação PAGAMENTO.
+Para transmissora: preencher com qualquer opção.
+Para recebedora: ignorar o campo preenchido quando não for uma transação do tipo pagamento.
 '
                     - MaxLength changed from 7 to null
                   - Modified property: transactionDate
@@ -1008,7 +1008,7 @@ Para recebedora: ignorar o campo preenchido quando n├úo for uma transa├º�
                 - Deleted property: totalPages
                 - Deleted property: totalRecords
   - Modified response: default
-    - Description changed from 'Dados das lista de transa├º├╡es da conta identificada obtidos com sucesso.' to 'Erro inesperado.'
+    - Description changed from 'Dados das lista de transações da conta identificada obtidos com sucesso.' to 'Erro inesperado.'
     - Content changed
       - New media type: application/json
       - New media type: application/json; charset=utf-8

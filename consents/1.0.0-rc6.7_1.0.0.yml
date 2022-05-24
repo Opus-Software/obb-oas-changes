@@ -24,7 +24,7 @@ POST /consents
               - New required property: expirationDateTime
             - Properties changed
               - Modified property: expirationDateTime
-                - Description changed from 'Data e hora de expira├º├úo da permiss├úo. Se n├úo for preenchido, a permiss├úo ter├í a data aberta. Uma string com data e hora conforme especifica├º├úo RFC-3339, sempre com a utiliza├º├úo de timezone UTC(UTC time format).' to 'Data e hora de expira├º├úo da permiss├úo. De preenchimento obrigat├│rio, reflete a data limite de validade do consentimento. Uma string com data e hora conforme especifica├º├úo RFC-3339, sempre com a utiliza├º├úo de timezone UTC(UTC time format).'
+                - Description changed from 'Data e hora de expiração da permissão. Se não for preenchido, a permissão terá a data aberta. Uma string com data e hora conforme especificação RFC-3339, sempre com a utilização de timezone UTC(UTC time format).' to 'Data e hora de expiração da permissão. De preenchimento obrigatório, reflete a data limite de validade do consentimento. Uma string com data e hora conforme especificação RFC-3339, sempre com a utilização de timezone UTC(UTC time format).'
 - Responses changed
   - Modified response: 201
     - Content changed
@@ -36,7 +36,7 @@ POST /consents
                 - New required property: expirationDateTime
               - Properties changed
                 - Modified property: expirationDateTime
-                  - Description changed from 'Data e hora de expira├º├úo da permiss├úo. Se n├úo for preenchido, a permiss├úo ter├í a data aberta. Uma string com data e hora conforme especifica├º├úo RFC-3339, sempre com a utiliza├º├úo de timezone UTC(UTC time format).' to 'Data e hora de expira├º├úo da permiss├úo. De preenchimento obrigat├│rio, reflete a data limite de validade do consentimento. Uma string com data e hora conforme especifica├º├úo RFC-3339, sempre com a utiliza├º├úo de timezone UTC(UTC time format).'
+                  - Description changed from 'Data e hora de expiração da permissão. Se não for preenchido, a permissão terá a data aberta. Uma string com data e hora conforme especificação RFC-3339, sempre com a utilização de timezone UTC(UTC time format).' to 'Data e hora de expiração da permissão. De preenchimento obrigatório, reflete a data limite de validade do consentimento. Uma string com data e hora conforme especificação RFC-3339, sempre com a utilização de timezone UTC(UTC time format).'
   - Modified response: 400
     - Content changed
       - Modified media type: application/json; charset=utf-8
@@ -335,7 +335,7 @@ GET /consents/{consentId}
                 - New required property: expirationDateTime
               - Properties changed
                 - Modified property: expirationDateTime
-                  - Description changed from 'Data e hora de expira├º├úo da permiss├úo. Se n├úo for preenchido, a permiss├úo ter├í a data aberta. Uma string com data e hora conforme especifica├º├úo RFC-3339, sempre com a utiliza├º├úo de timezone UTC(UTC time format).' to 'Data e hora de expira├º├úo da permiss├úo. De preenchimento obrigat├│rio, reflete a data limite de validade do consentimento. Uma string com data e hora conforme especifica├º├úo RFC-3339, sempre com a utiliza├º├úo de timezone UTC(UTC time format).'
+                  - Description changed from 'Data e hora de expiração da permissão. Se não for preenchido, a permissão terá a data aberta. Uma string com data e hora conforme especificação RFC-3339, sempre com a utilização de timezone UTC(UTC time format).' to 'Data e hora de expiração da permissão. De preenchimento obrigatório, reflete a data limite de validade do consentimento. Uma string com data e hora conforme especificação RFC-3339, sempre com a utilização de timezone UTC(UTC time format).'
   - Modified response: 400
     - Content changed
       - Modified media type: application/json; charset=utf-8

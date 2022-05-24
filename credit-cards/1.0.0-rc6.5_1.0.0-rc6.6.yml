@@ -15,7 +15,7 @@ GET /accounts/{creditCardAccountId}
               - Properties changed
                 - Modified property: paymentMethod
                   - Type changed from 'object' to 'array'
-                  - Description changed from 'Conjunto de informa├º├╡es relativas aos Meios de Pagamento da Conta de pagamento p├│s-paga' to ''
+                  - Description changed from 'Conjunto de informações relativas aos Meios de Pagamento da Conta de pagamento pós-paga' to ''
                   - AdditionalProperties changed from false to null
                   - MinItems changed from 0 to 1
                   - Items changed
@@ -35,7 +35,7 @@ GET /accounts/{creditCardAccountId}
               - Properties changed
                 - Modified property: paymentMethod
                   - Type changed from 'object' to 'array'
-                  - Description changed from 'Conjunto de informa├º├╡es relativas aos Meios de Pagamento da Conta de pagamento p├│s-paga' to ''
+                  - Description changed from 'Conjunto de informações relativas aos Meios de Pagamento da Conta de pagamento pós-paga' to ''
                   - AdditionalProperties changed from false to null
                   - MinItems changed from 0 to 1
                   - Items changed

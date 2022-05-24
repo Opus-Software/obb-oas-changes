@@ -1,4 +1,4 @@
-﻿# Open Banking Brasil OAS Specification Diff
+﻿# Open Banking OAS Specification Diff
 
 ## Majors
 
@@ -10,7 +10,7 @@
 | capitalization-bonds          | 1.0.0-rc1.0 |             |                                                                           |                                                             |
 | channels                      | 1.0.2       |             |                                                                           |                                                             |
 | common                        | 1.0.2       |             |                                                                           |                                                             |
-| consents                      | 1.0.3       |             |                                                                           |                                                             |
+| consents                      | 1.0.3       | 2.0.0-RC1.0 | [YAML](consents/1.0.3_2.0.0-RC1.0-breaking-only.yml)                      | [YAML](consents/1.0.3_2.0.0-RC1.0.yml)                      |
 | credit-cards                  | 1.0.4       | 2.0.0-RC1.0 | [YAML](credit-cards/1.0.4_2.0.0-RC1.0-breaking-only.yml)                  | [YAML](credit-cards/1.0.4_2.0.0-RC1.0.yml)                  |
 | customers                     | 1.0.3       | 2.0.0-RC1.0 | [YAML](customers/1.0.3_2.0.0-RC1.0-breaking-only.yml)                     | [YAML](customers/1.0.3_2.0.0-RC1.0.yml)                     |
 | exchange                      | 1.0.0-rc1.0 |             |                                                                           |                                                             |
@@ -23,7 +23,7 @@
 | payments                      | 1.1.0-rc1.0 |             |                                                                           |                                                             |
 | pension                       | 1.0.0-rc1.0 |             |                                                                           |                                                             |
 | products-services             | 1.0.2       |             |                                                                           |                                                             |
-| resources                     | 1.0.2       |             |                                                                           |                                                             |
+| resources                     | 1.0.2       | 2.0.0-RC1.0 | [YAML](resources/1.0.2_2.0.0-RC1.0-breaking-only.yml)                     | [YAML](resources/1.0.2_2.0.0-RC1.0.yml)                     |
 | unarranged-accounts-overdraft | 1.0.4       | 2.0.0-RC1.0 | [YAML](unarranged-accounts-overdraft/1.0.4_2.0.0-RC1.0-breaking-only.yml) | [YAML](unarranged-accounts-overdraft/1.0.4_2.0.0-RC1.0.yml) |
 
 ## All revisions
@@ -63,6 +63,7 @@
 |                               | 1.0.0       | 1.0.1       | [YAML](consents/1.0.0_1.0.1.yml)                                  |
 |                               | 1.0.1       | 1.0.2       | [YAML](consents/1.0.1_1.0.2.yml)                                  |
 |                               | 1.0.2       | 1.0.3       | [YAML](consents/1.0.2_1.0.3.yml)                                  |
+|                               | 1.0.3       | 2.0.0-RC1.0 | [YAML](consents/1.0.3_2.0.0-RC1.0.yml)                            |
 | credit-cards                  | 1.0.0-rc6.5 | 1.0.0-rc6.6 | [YAML](credit-cards/1.0.0-rc6.5_1.0.0-rc6.6.yml)                  |
 |                               | 1.0.0-rc6.6 | 1.0.0-rc6.7 | [YAML](credit-cards/1.0.0-rc6.6_1.0.0-rc6.7.yml)                  |
 |                               | 1.0.0-rc6.7 | 1.0.0       | [YAML](credit-cards/1.0.0-rc6.7_1.0.0.yml)                        |
@@ -128,6 +129,7 @@
 |                               | 1.0.0-rc6.7 | 1.0.0       | [YAML](resources/1.0.0-rc6.7_1.0.0.yml)                           |
 |                               | 1.0.0       | 1.0.1       | [YAML](resources/1.0.0_1.0.1.yml)                                 |
 |                               | 1.0.1       | 1.0.2       | [YAML](resources/1.0.1_1.0.2.yml)                                 |
+|                               | 1.0.2       | 2.0.0-RC1.0 | [YAML](resources/1.0.2_2.0.0-RC1.0.yml)                           |
 | unarranged-accounts-overdraft | 1.0.0-rc6.5 | 1.0.0-rc6.6 | [YAML](unarranged-accounts-overdraft/1.0.0-rc6.5_1.0.0-rc6.6.yml) |
 |                               | 1.0.0-rc6.6 | 1.0.0-rc6.7 | [YAML](unarranged-accounts-overdraft/1.0.0-rc6.6_1.0.0-rc6.7.yml) |
 |                               | 1.0.0-rc6.7 | 1.0.0       | [YAML](unarranged-accounts-overdraft/1.0.0-rc6.7_1.0.0.yml)       |

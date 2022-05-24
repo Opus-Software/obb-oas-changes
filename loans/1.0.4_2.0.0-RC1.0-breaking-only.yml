@@ -5,24 +5,33 @@
 ### Modified Endpoints: 5
 -------------------------
 GET /contracts
+- Modified query param: page
+  - Schema changed
+    - Max changed from null to 2.147483647e+09
 - Responses changed
-  - Deleted response: default
   - Modified response: 200
     - Content changed
       - Modified media type: application/json
         - Schema changed
           - Properties changed
             - Modified property: data
+              - MinItems changed from 0 to 1
               - Items changed
                 - Properties changed
+                  - Modified property: companyCnpj
+                    - Pattern changed from '\d{14}|^NA$' to '\d{14}$'
                   - Modified property: contractId
                     - MinLength changed from 0 to 1
                   - Modified property: ipocCode
                     - MinLength changed from 0 to 22
                     - Pattern changed from '' to '^\d{22,67}$'
+  - Modified response: default
+    - Content changed
+      - Deleted media type: application/json
+    - Headers changed
+      - Deleted header: x-fapi-interaction-id
 GET /contracts/{contractId}
 - Responses changed
-  - Deleted response: default
   - Modified response: 200
     - Content changed
       - Modified media type: application/json
@@ -32,54 +41,81 @@ GET /contracts/{contractId}
               - Properties changed
                 - Modified property: CET
                   - Type changed from 'number' to 'string'
+                  - Format changed from '' to 'double'
                   - Nullable changed from true to false
-                  - MinLength changed from 0 to 6
-                  - MaxLength changed from 19 to 6
-                  - Pattern changed from '' to '^\d{1}\.\d{4}$'
+                  - MinLength changed from 0 to 8
+                  - MaxLength changed from 19 to 8
+                  - Pattern changed from '' to '^[01]\.\d{6}$'
+                - Modified property: cnpjConsignee
+                  - Pattern changed from '\d{14}|^NA$' to '^\d{14}$'
                 - Modified property: contractAmount
                   - Type changed from 'number' to 'string'
                   - Format changed from 'double' to ''
                   - Nullable changed from true to false
                   - MinLength changed from 0 to 4
+                  - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to '^\d{1,15}\.\d{2,4}$'
                 - Modified property: contractNumber
                   - MinLength changed from 0 to 1
                   - Pattern changed from '' to '^\d{1,100}$'
                 - Modified property: contractedFees
                   - Items changed
                     - Properties changed
+                      - Modified property: feeAmount
+                        - Type changed from 'number' to 'string'
+                        - Nullable changed from true to false
+                        - MinLength changed from 0 to 1
                       - Modified property: feeRate
                         - Type changed from 'number' to 'string'
-                        - Format changed from 'double' to ''
                         - Nullable changed from true to false
-                        - MinLength changed from 0 to 6
-                        - MaxLength changed from 19 to 6
-                        - Pattern changed from '' to '^\d{1}\.\d{4}$'
+                        - MinLength changed from 0 to 8
+                        - MaxLength changed from 19 to 8
+                        - Pattern changed from '' to '^[01]\.\d{6}$'
+                - Modified property: contractedFinanceCharges
+                  - Items changed
+                    - Properties changed
+                      - Modified property: chargeAdditionalInfo
+                        - MaxLength changed from null to 140
+                        - Pattern changed from '\w*\W*$|^NA$' to '\w*\W*$'
+                      - Modified property: chargeRate
+                        - Type changed from 'number' to 'string'
+                        - Format changed from '' to 'double'
+                        - MinLength changed from 0 to 8
+                        - MaxLength changed from 19 to 8
+                        - Pattern changed from '' to '^[01]\.\d{6}$'
                 - Modified property: dueDate
                   - MinLength changed from 0 to 2
-                  - Pattern changed from '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$' to '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$|^NA$'
-                - Modified property: firstInstalmentDueDate
-                  - Pattern changed from '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$' to '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$|^NA$'
                 - Modified property: interestRates
                   - Items changed
                     - Properties changed
                       - Modified property: postFixedRate
                         - Type changed from 'number' to 'string'
+                        - Format changed from '' to 'double'
                         - Nullable changed from true to false
-                        - MinLength changed from 0 to 6
-                        - MaxLength changed from 19 to 6
-                        - Pattern changed from '' to '^\d{1}\.\d{4}$'
+                        - MinLength changed from 0 to 8
+                        - MaxLength changed from 19 to 8
+                        - Pattern changed from '' to '^[01]\.\d{6}$'
                       - Modified property: preFixedRate
                         - Type changed from 'number' to 'string'
+                        - Format changed from '' to 'double'
                         - Nullable changed from true to false
-                        - MinLength changed from 0 to 6
-                        - MaxLength changed from 19 to 6
-                        - Pattern changed from '' to '^\d{1}\.\d{4}$'
+                        - MinLength changed from 0 to 8
+                        - MaxLength changed from 19 to 8
+                        - Pattern changed from '' to '^[01]\.\d{6}$'
                 - Modified property: ipocCode
                   - MinLength changed from 0 to 22
                   - Pattern changed from '' to '^\d{22,67}$'
+                - Modified property: settlementDate
+                  - Pattern changed from '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$|^NA$' to '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+  - Modified response: default
+    - Content changed
+      - Deleted media type: application/json
+    - Headers changed
+      - Deleted header: x-fapi-interaction-id
 GET /contracts/{contractId}/payments
+- Modified query param: page
+  - Schema changed
+    - Max changed from null to 2.147483647e+09
 - Responses changed
-  - Deleted response: default
   - Modified response: 200
     - Content changed
       - Modified media type: application/json
@@ -91,7 +127,12 @@ GET /contracts/{contractId}/payments
                   - Type changed from 'number' to 'string'
                   - Format changed from 'double' to ''
                   - MinLength changed from 0 to 4
+                  - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to '^\d{1,15}\.\d{2,4}$'
+                - Modified property: paidInstalments
+                  - Nullable changed from true to false
+                  - Max changed from null to 2.147483647e+09
                 - Modified property: releases
+                  - MinItems changed from 0 to 1
                   - Items changed
                     - Properties changed
                       - Modified property: overParcel
@@ -104,7 +145,9 @@ GET /contracts/{contractId}/payments
                                   - Format changed from 'double' to ''
                                   - Nullable changed from true to false
                                   - MinLength changed from 0 to 4
+                                  - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to '^\d{1,15}\.\d{2,4}$'
                           - Modified property: fees
+                            - MinItems changed from 0 to 1
                             - Items changed
                               - Properties changed
                                 - Modified property: feeAmount
@@ -116,9 +159,17 @@ GET /contracts/{contractId}/payments
                         - Type changed from 'number' to 'string'
                         - Format changed from 'double' to ''
                         - MinLength changed from 0 to 4
+                        - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to '^\d{1,15}\.\d{2,4}$'
+  - Modified response: default
+    - Content changed
+      - Deleted media type: application/json
+    - Headers changed
+      - Deleted header: x-fapi-interaction-id
 GET /contracts/{contractId}/scheduled-instalments
+- Modified query param: page
+  - Schema changed
+    - Max changed from null to 2.147483647e+09
 - Responses changed
-  - Deleted response: default
   - Modified response: 200
     - Content changed
       - Modified media type: application/json
@@ -127,28 +178,65 @@ GET /contracts/{contractId}/scheduled-instalments
             - Modified property: data
               - Properties changed
                 - Modified property: balloonPayments
+                  - Nullable changed from true to false
                   - Items changed
                     - Properties changed
+                      - Deleted property: currency
                       - Modified property: amount
-                        - Type changed from 'number' to 'string'
+                        - Type changed from 'number' to 'object'
                         - Format changed from 'double' to ''
+                        - AdditionalProperties changed from null to false
                         - Nullable changed from true to false
-                        - MinLength changed from 0 to 4
+                        - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to ''
+                        - Required changed
+                          - New required property: amount
+                          - New required property: currency
+                        - Properties changed
+                          - New property: amount
+                          - New property: currency
                       - Modified property: dueDate
                         - MinLength changed from 0 to 2
-                        - Pattern changed from '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$' to '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$|^NA$'
+                - Modified property: contractRemainingNumber
+                  - Nullable changed from true to false
+                  - Max changed from null to 9.99999999e+08
+                - Modified property: dueInstalments
+                  - Nullable changed from true to false
+                  - Max changed from null to 999
+                - Modified property: paidInstalments
+                  - Nullable changed from true to false
+                  - Max changed from null to 999
+                - Modified property: pastDueInstalments
+                  - Nullable changed from true to false
+                  - Max changed from null to 999
+                - Modified property: totalNumberOfInstalments
+                  - Nullable changed from true to false
+                  - Max changed from null to 9.99999999e+08
+  - Modified response: default
+    - Content changed
+      - Deleted media type: application/json
+    - Headers changed
+      - Deleted header: x-fapi-interaction-id
 GET /contracts/{contractId}/warranties
+- Modified query param: page
+  - Schema changed
+    - Max changed from null to 2.147483647e+09
 - Responses changed
-  - Deleted response: default
   - Modified response: 200
     - Content changed
       - Modified media type: application/json
         - Schema changed
           - Properties changed
             - Modified property: data
+              - MinItems changed from 0 to 1
               - Items changed
                 - Properties changed
                   - Modified property: warrantyAmount
                     - Type changed from 'number' to 'string'
                     - Format changed from 'double' to ''
                     - MinLength changed from 0 to 4
+                    - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to '^\d{1,15}\.\d{2,4}$'
+  - Modified response: default
+    - Content changed
+      - Deleted media type: application/json
+    - Headers changed
+      - Deleted header: x-fapi-interaction-id

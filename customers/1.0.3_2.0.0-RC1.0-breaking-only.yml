@@ -6,20 +6,63 @@
 -------------------------
 GET /business/financial-relations
 - Responses changed
-  - Deleted response: default
-GET /business/identifications
-- Responses changed
-  - Deleted response: default
   - Modified response: 200
     - Content changed
       - Modified media type: application/json
         - Schema changed
           - Properties changed
             - Modified property: data
+              - Properties changed
+                - Modified property: accounts
+                  - Items changed
+                    - Properties changed
+                      - Modified property: branchCode
+                        - Pattern changed from '\d{4}|^NA$' to '^\d{4}$'
+                      - Modified property: compeCode
+                        - Pattern changed from '\d{3}|^NA$' to '^\d{3}$'
+                      - Modified property: number
+                        - Pattern changed from '^\d{8,20}$|^NA$' to '^\d{8,20}$'
+                - Modified property: procurators
+                  - Items changed
+                    - Properties changed
+                      - Modified property: cnpjCpfNumber
+                        - Pattern changed from '^\d{11}$|^\d{14}$|^NA$' to '^\d{11}$|^\d{14}$'
+                      - Modified property: type
+                        - Deleted enum values: [NAO_POSSUI]
+  - Modified response: default
+    - Content changed
+      - Deleted media type: application/json
+    - Headers changed
+      - Deleted header: x-fapi-interaction-id
+GET /business/identifications
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - MinItems changed from 0 to 1
               - Items changed
+                - AdditionalProperties changed from null to false
+                - Required changed
+                  - New required property: companiesCnpj
                 - Properties changed
+                  - New property: companiesCnpj
+                  - Deleted property: companyCnpjNumber
+                  - Modified property: cnpjNumber
+                    - Pattern changed from '\d{14}|^NA$' to '^\d{14}$'
                   - Modified property: contacts
                     - Properties changed
+                      - Modified property: phones
+                        - Items changed
+                          - Properties changed
+                            - Modified property: countryCallingCode
+                              - Pattern changed from '^\d{2,4}$|^NA$' to '^\d{2,4}$'
+                            - Modified property: number
+                              - Pattern changed from '^([0-9]{8,11})|^NA$' to '^([0-9]{8,11})$'
+                            - Modified property: phoneExtension
+                              - Pattern changed from '^\d{1,5}$|^NA$' to '^\d{1,5}$'
                       - Modified property: postalAddresses
                         - Items changed
                           - Required changed
@@ -30,19 +73,42 @@ GET /business/identifications
                               - Pattern changed from '[\w\W\s]*' to '^\w{2}[\w\W\s]*$'
                             - Modified property: country
                               - Pattern changed from '[\w\W\s]*' to '\w*\W*'
+                            - Modified property: countryCode
+                              - Pattern changed from '' to '^([A-Z]{3})$'
                             - Modified property: districtName
                               - Pattern changed from '[\w\W\s]*' to '\w*\W*'
+                            - Modified property: postCode
+                              - Pattern changed from '\d{8}|^NA$' to '^\d{8}$'
                             - Modified property: townName
                               - MinLength changed from 0 to 2
                               - Pattern changed from '[\w\W\s]*' to '^\w{2}[\w\W\s]*$'
+                  - Modified property: otherDocuments
+                    - Items changed
+                      - Required changed
+                        - New required property: type
+                      - Properties changed
+                        - Modified property: country
+                          - Pattern changed from '^(\w{3}){1}$|^NA$' to '^(\w{3}){1}$'
+                        - Modified property: expirationDate
+                          - Pattern changed from '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$|^NA$' to '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
                   - Modified property: parties
                     - Items changed
                       - Properties changed
                         - Modified property: documentCountry
                           - Pattern changed from '' to '[\w*\W*]'
+                        - Modified property: documentExpirationDate
+                          - Pattern changed from '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])|^NA$' to '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+                        - Modified property: shareholding
+                          - Format changed from '' to 'double'
+                          - MinLength changed from 0 to 8
+                          - Pattern changed from '^((\d{1,9}\.\d{2}){1}|NA)$' to '^[01]\.\d{6}$'
+  - Modified response: default
+    - Content changed
+      - Deleted media type: application/json
+    - Headers changed
+      - Deleted header: x-fapi-interaction-id
 GET /business/qualifications
 - Responses changed
-  - Deleted response: default
   - Modified response: 200
     - Content changed
       - Modified media type: application/json
@@ -52,27 +118,55 @@ GET /business/qualifications
               - Properties changed
                 - Modified property: economicActivities
                   - Items changed
+                    - AdditionalProperties changed from null to false
                     - Properties changed
                       - Modified property: code
                         - Type changed from 'number' to 'string'
                         - MinLength changed from 0 to 2
+                        - Pattern changed from '^\d{7}$|^NA$' to '^\d{7}$'
                 - Modified property: informedPatrimony
                   - Properties changed
+                    - Deleted property: currency
                     - Modified property: amount
-                      - Type changed from 'number' to 'string'
+                      - Type changed from 'number' to 'object'
                       - Format changed from 'double' to ''
+                      - AdditionalProperties changed from null to false
                       - Nullable changed from true to false
-                      - MinLength changed from 0 to 4
+                      - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to ''
+                      - Required changed
+                        - New required property: amount
+                        - New required property: currency
+                      - Properties changed
+                        - New property: amount
+                        - New property: currency
+                    - Modified property: date
+                      - Pattern changed from '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$|^NA$' to '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
                 - Modified property: informedRevenue
                   - Properties changed
+                    - Deleted property: currency
                     - Modified property: amount
-                      - Type changed from 'number' to 'string'
+                      - Type changed from 'number' to 'object'
                       - Format changed from 'double' to ''
+                      - AdditionalProperties changed from null to false
                       - Nullable changed from true to false
-                      - MinLength changed from 0 to 4
+                      - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to ''
+                      - Required changed
+                        - New required property: amount
+                        - New required property: currency
+                      - Properties changed
+                        - New property: amount
+                        - New property: currency
+                    - Modified property: frequency
+                      - Deleted enum values: [SEM_FREQUENCIA_FATURAMENTO_INFORMADO]
+                    - Modified property: year
+                      - Nullable changed from true to false
+  - Modified response: default
+    - Content changed
+      - Deleted media type: application/json
+    - Headers changed
+      - Deleted header: x-fapi-interaction-id
 GET /personal/financial-relations
 - Responses changed
-  - Deleted response: default
   - Modified response: 200
     - Content changed
       - Modified media type: application/json
@@ -80,46 +174,103 @@ GET /personal/financial-relations
           - Properties changed
             - Modified property: data
               - Properties changed
+                - Modified property: accounts
+                  - Items changed
+                    - Properties changed
+                      - Modified property: branchCode
+                        - Pattern changed from '\d{4}|^NA$' to '^\d{4}$'
+                      - Modified property: compeCode
+                        - Pattern changed from '\d{3}|^NA$' to '^\d{3}$'
+                      - Modified property: number
+                        - Pattern changed from '^\d{8,20}$|^NA$' to '^\d{8,20}$'
                 - Modified property: procurators
                   - Items changed
                     - Properties changed
+                      - Modified property: cpfNumber
+                        - Pattern changed from '^\d{11}$|^NA$' to '^\d{11}$'
                       - Modified property: type
                         - Deleted enum values: [NAO_APLICA]
                 - Modified property: productsServicesTypeAdditionalInfo
                   - Pattern changed from '[\w\W\s]*' to '\w*\W*'
+  - Modified response: default
+    - Content changed
+      - Deleted media type: application/json
+    - Headers changed
+      - Deleted header: x-fapi-interaction-id
 GET /personal/identifications
 - Responses changed
-  - Deleted response: default
   - Modified response: 200
     - Content changed
       - Modified media type: application/json
         - Schema changed
           - Properties changed
             - Modified property: data
+              - MinItems changed from 0 to 1
               - Items changed
                 - Properties changed
-                  - Modified property: documents
+                  - Deleted property: companyCnpj
+                  - Modified property: contacts
                     - Properties changed
-                      - Modified property: passportNumber
-                        - Pattern changed from '[\w\W\s]*' to '\w*\W*'
+                      - Modified property: phones
+                        - Items changed
+                          - Properties changed
+                            - Modified property: countryCallingCode
+                              - Pattern changed from '^\d{2,4}$|^NA$' to '^\d{2,4}$'
+                            - Modified property: number
+                              - Pattern changed from '^([0-9]{8,11})|^NA$' to '^([0-9]{8,11})$'
+                            - Modified property: phoneExtension
+                              - Pattern changed from '^\d{1,5}$|^NA$' to '^\d{1,5}$'
+                      - Modified property: postalAddresses
+                        - Items changed
+                          - Properties changed
+                            - Modified property: countryCode
+                              - Pattern changed from '' to '^([A-Z]{3})$'
+                            - Modified property: postCode
+                              - Pattern changed from '\d{8}|^NA$' to '^\d{8}$'
+                  - Modified property: documents
+                    - Required changed
+                      - New required property: documentType
+                    - Properties changed
+                      - New property: documentType
+                      - Deleted property: passportCountry
+                      - Deleted property: passportExpirationDate
+                      - Deleted property: passportIssueDate
+                      - Deleted property: passportNumber
+                      - Modified property: cpfNumber
+                        - Pattern changed from '^\d{11}$|^NA$' to '^\d{11}$'
                   - Modified property: filiation
+                    - MinItems changed from 0 to 1
                     - Items changed
                       - Properties changed
                         - Modified property: civilName
                           - Pattern changed from '[\w\W\s]*' to '\w*\W*'
                         - Modified property: socialName
                           - Pattern changed from '[\w\W\s]*' to '\w*\W*'
+                        - Modified property: type
+                          - Deleted enum values: [SEM_FILIACAO]
+                  - Modified property: hasBrazilianNationality
+                    - Nullable changed from true to false
                   - Modified property: nationality
+                    - Type changed from 'array' to 'object'
+                    - AdditionalProperties changed from null to false
+                    - Required changed
+                      - New required property: documents
+                      - New required property: otherNationalitiesInfo
+                    - Properties changed
+                      - New property: documents
+                      - New property: otherNationalitiesInfo
+                  - Modified property: otherDocuments
                     - Items changed
                       - Properties changed
-                        - Modified property: documents
-                          - Items changed
-                            - Properties changed
-                              - Modified property: country
-                                - Pattern changed from '[\w\W\s]*' to '\w*\W*'
+                        - Modified property: expirationDate
+                          - Pattern changed from '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$|^NA$' to '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+  - Modified response: default
+    - Content changed
+      - Deleted media type: application/json
+    - Headers changed
+      - Deleted header: x-fapi-interaction-id
 GET /personal/qualifications
 - Responses changed
-  - Deleted response: default
   - Modified response: 200
     - Content changed
       - Modified media type: application/json
@@ -127,17 +278,46 @@ GET /personal/qualifications
           - Properties changed
             - Modified property: data
               - Properties changed
+                - Modified property: companyCnpj
+                  - Pattern changed from '\d{14}|^NA$' to '^\d{14}$'
                 - Modified property: informedIncome
                   - Properties changed
+                    - Deleted property: currency
                     - Modified property: amount
-                      - Type changed from 'number' to 'string'
+                      - Type changed from 'number' to 'object'
                       - Format changed from 'double' to ''
+                      - AdditionalProperties changed from null to false
                       - Nullable changed from true to false
-                      - MinLength changed from 0 to 4
+                      - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to ''
+                      - Required changed
+                        - New required property: amount
+                        - New required property: currency
+                      - Properties changed
+                        - New property: amount
+                        - New property: currency
+                    - Modified property: date
+                      - Pattern changed from '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$|^NA$' to '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+                    - Modified property: frequency
+                      - Deleted enum values: [SEM_FREQUENCIA_RENDA_INFORMADA]
                 - Modified property: informedPatrimony
                   - Properties changed
+                    - Deleted property: currency
                     - Modified property: amount
-                      - Type changed from 'number' to 'string'
+                      - Type changed from 'number' to 'object'
                       - Format changed from 'double' to ''
+                      - AdditionalProperties changed from null to false
                       - Nullable changed from true to false
-                      - MinLength changed from 0 to 4
+                      - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to ''
+                      - Required changed
+                        - New required property: amount
+                        - New required property: currency
+                      - Properties changed
+                        - New property: amount
+                        - New property: currency
+                    - Modified property: year
+                      - Nullable changed from true to false
+  - Modified response: default
+    - Content changed
+      - Deleted media type: application/json
+    - Headers changed
+      - Deleted header: x-fapi-interaction-id

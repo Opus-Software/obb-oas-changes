@@ -5,9 +5,11 @@
 ### Modified Endpoints: 5
 -------------------------
 GET /contracts
+- Modified query param: page
+  - Schema changed
+    - Max changed from null to 2.147483647e+09
 - Responses changed
   - New response: 422
-  - Deleted response: default
   - Modified response: 200
     - Content changed
       - Modified media type: application/json
@@ -16,29 +18,63 @@ GET /contracts
             - Modified property: data
               - Items changed
                 - Properties changed
+                  - Modified property: brandName
+                    - Description changed from 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a 'marca' ├⌐ em ess├¬ncia uma promessa da empresa em fornecer uma s├⌐rie espec├¡fica de atributos, benef├¡cios e servi├ºos uniformes aos clientes' to 'Nome da Marca reportada pelo participante no Open Finance. Recomenda-se utilizar, sempre que poss├¡vel, o mesmo nome de marca atribu├¡do no campo do diret├│rio Customer Friendly Server Name (Authorisation Server).
+'
+                  - Modified property: companyCnpj
+                    - Pattern changed from '\d{14}|^NA$' to '^\d{14}$'
                   - Modified property: contractId
                     - MinLength changed from 0 to 1
                   - Modified property: ipocCode
                     - MinLength changed from 0 to 22
                     - Pattern changed from '' to '^\d{22,67}$'
+                  - Modified property: productType
+                    - MaxLength changed from 27 to null
+  - Modified response: default
+    - Description changed from 'Lista de contratos obtida com sucesso.' to 'Erro inesperado.'
+    - Content changed
+      - New media type: application/json
+      - New media type: application/json; charset=utf-8
+      - Deleted media type: application/json
+    - Headers changed
+      - Deleted header: x-fapi-interaction-id
 GET /contracts/{contractId}
 - Responses changed
   - New response: 422
-  - Deleted response: default
   - Modified response: 200
     - Content changed
       - Modified media type: application/json
         - Schema changed
           - Properties changed
             - Modified property: data
+              - Required changed
+                - Deleted required property: contractAmount
+                - Deleted required property: currency
+                - Deleted required property: dueDate
+                - Deleted required property: firstInstalmentDueDate
+                - Deleted required property: settlementDate
               - Properties changed
                 - Modified property: CET
                   - Type changed from 'number' to 'string'
-                  - Example changed from 0.29 to '0.2900'
+                  - Format changed from '' to 'double'
+                  - Description changed from '"CET ΓÇô Custo Efetivo Total deve ser expresso na forma de taxa percentual anual e   incorpora todos os encargos e despesas incidentes nas opera├º├╡es de cr├⌐dito (taxa de juro, mas tamb├⌐m tarifas, tributos, seguros e outras despesas cobradas).
+O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
+(representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)"
+' to 'CET ΓÇô Custo Efetivo Total deve ser expresso na forma de taxa percentual anual e incorpora todos os encargos e despesas incidentes nas opera├º├╡es de cr├⌐dito (taxa de juro, mas tamb├⌐m tarifas, tributos, seguros e outras despesas cobradas). 
+O preenchimento deve respeitar as 6 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.150000. sEste valor representa 15%. O valor 1 representa 100%).
+'
+                  - Example changed from 0.29 to '0.290000'
                   - Nullable changed from true to false
-                  - MinLength changed from 0 to 6
-                  - MaxLength changed from 19 to 6
-                  - Pattern changed from '' to '^\d{1}\.\d{4}$'
+                  - MinLength changed from 0 to 8
+                  - MaxLength changed from 19 to 8
+                  - Pattern changed from '' to '^[01]\.\d{6}$'
+                - Modified property: amortizationScheduled
+                  - MaxLength changed from 23 to null
+                - Modified property: amortizationScheduledAdditionalInfo
+                  - Description changed from 'Campo obrigat├│rio para complementar a informa├º├úo relativa ├á amortiza├º├úo quando selecionada a op├º├úo OUTROS.
+[Restri├º├úo] Obrigat├│rio para complementar a informa├º├úo relativa ├á amortiza├º├úo quando selecionada a op├º├úo OUTROS, para os demais casos informar "NA".
+' to 'Campo obrigat├│rio para complementar a informa├º├úo relativa ├á amortiza├º├úo quando selecionada a op├º├úo OUTROS.
+'
                 - Modified property: contractAmount
                   - Type changed from 'number' to 'string'
                   - Format changed from 'double' to ''
@@ -50,53 +86,179 @@ GET /contracts/{contractId}
                   - MinLength changed from 0 to 1
                   - Pattern changed from '' to '^\d{1,100}$'
                 - Modified property: contractedFees
+                  - Description changed from 'Lista que traz a rela├º├úo de tarifas pactuadas no contrato' to 'Lista que traz o conjunto de informa├º├╡es necess├írias para demonstrar a composi├º├úo das taxas de juros remunerat├│rios da Modalidade de cr├⌐dito'
                   - Items changed
+                    - Required changed
+                      - Deleted required property: feeAmount
+                      - Deleted required property: feeRate
                     - Properties changed
+                      - Modified property: feeAmount
+                        - Type changed from 'number' to 'string'
+                        - Description changed from 'Valor monet├írio da tarifa pactuada no contrato. Preenchimento obrigat├│rio quando a forma de cobran├ºa for: M├¡nimo, M├íximo ou Fixo.
+' to 'Valor monet├írio da tarifa pactuada no contrato. 
+[Restri├º├úo] Preenchimento obrigat├│rio quando a forma de cobran├ºa for diferente de Percentual.
+'
+                        - Example changed from 100000.04 to '100000.04'
+                        - Nullable changed from true to false
+                      - Modified property: feeCharge
+                        - MaxLength changed from 10 to null
+                      - Modified property: feeChargeType
+                        - MaxLength changed from 11 to null
                       - Modified property: feeRate
                         - Type changed from 'number' to 'string'
-                        - Format changed from 'double' to ''
-                        - Example changed from 50 to '0.0150'
+                        - Description changed from '├ë o valor da tarifa em percentual pactuada no contrato. Deve-se informar 4 casas decimais, mesmo que preenchidas com zeros. Exemplo: 0.2000
+[Restri├º├úo] Preenchimento obrigat├│rio quando a forma de cobran├ºa for Percentual. Exemplo: 0.0150 = 1,5%.
+' to 'Objeto que traz o conjunto de informa├º├╡es necess├írias para demonstrar a composi├º├úo das taxas de juros remunerat├│rios da Modalidade de cr├⌐dito.
+[Restri├º├úo] Preenchimento obrigat├│rio quando a forma de cobran├ºa for Percentual.
+'
+                        - Example changed from 50 to '0.062000'
                         - Nullable changed from true to false
-                        - MinLength changed from 0 to 6
-                        - MaxLength changed from 19 to 6
-                        - Pattern changed from '' to '^\d{1}\.\d{4}$'
+                        - MinLength changed from 0 to 8
+                        - MaxLength changed from 19 to 8
+                        - Pattern changed from '' to '^[01]\.\d{6}$'
+                - Modified property: contractedFinanceCharges
+                  - Items changed
+                    - Required changed
+                      - Deleted required property: chargeAdditionalInfo
+                    - Properties changed
+                      - Modified property: chargeAdditionalInfo
+                        - Description changed from 'Campo para informa├º├╡es adicionais.
+[Restri├º├úo] Obrigat├│rio se selecionada a op├º├úo 'OUTROS' em Tipo de encargo pactuado no contrato.
+' to 'Campo para informa├º├╡es adicionais.
+[Restri├º├úo] Obrigat├│rio se selecionada a op├º├úo 'OUTROS' em Tipo de encargo pactuado no contrato.
+'
+                      - Modified property: chargeRate
+                        - Type changed from 'number' to 'string'
+                        - Format changed from '' to 'double'
+                        - Description changed from 'Representa o valor do encargo em percentual pactuado no contrato. Exemplo: 0.0210 (=2.1%).
+' to 'Representa o valor do encargo em percentual pactuado no contrato.
+O preenchimento deve respeitar as 6 casas decimais, mesmo que venham preenchidas com zeros(representa├º├úo de porcentagem p.ex: 0.150000. Este valor representa 15%. O valor 1 representa 100%).
+'
+                        - Example changed from 0.07 to '0.071200'
+                        - MinLength changed from 0 to 8
+                        - MaxLength changed from 19 to 8
+                        - Pattern changed from '' to '^[01]\.\d{6}$'
+                      - Modified property: chargeType
+                        - MaxLength changed from 31 to null
+                - Modified property: currency
+                  - Description changed from '"Moeda referente ao valor da garantia, segundo modelo ISO-4217. p.ex. 'BRL'
+Todos os valores monet├írios informados est├úo representados com a moeda vigente do Brasil"
+' to 'Moeda referente ao valor da garantia, segundo modelo ISO-4217. p.ex. 'BRL'
+Todos os valores monet├írios informados est├úo representados com a moeda vigente do Brasil
+'
                 - Modified property: dueDate
                   - Description changed from 'Data de vencimento Final da opera├º├úo. Especifica├º├úo RFC-3339' to 'Data de vencimento Final da opera├º├úo. Especifica├º├úo RFC-3339
-[Restri├º├úo] Caso a institui├º├úo n├úo possua a informa├º├úo para compartilhamento, informar NA
 '
                   - MinLength changed from 0 to 2
-                  - Pattern changed from '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$' to '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$|^NA$'
                 - Modified property: firstInstalmentDueDate
                   - Description changed from 'Data de vencimento primeira parcela do principal' to 'Data de vencimento primeira parcela do principal
-[Restri├º├úo] Caso a institui├º├úo n├úo possua a informa├º├úo para compartilhamento, informar NA
 '
                   - MinLength changed from 0 to 2
-                  - Pattern changed from '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$' to '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$|^NA$'
+                - Modified property: instalmentPeriodicity
+                  - MaxLength changed from 25 to null
+                - Modified property: instalmentPeriodicityAdditionalInfo
+                  - Description changed from 'Campo obrigat├│rio para complementar a informa├º├úo relativa ├á periodicidade de pagamento regular quando tiver a op├º├úo OUTROS.
+[Restri├º├úo] Obrigat├│rio para complementar a informa├º├úo relativa da periodicidade de pagamento regular, quando selecionada o tipo ou subtipo OUTRO.
+' to 'Campo obrigat├│rio para complementar a informa├º├úo relativa ├á periodicidade de pagamento regular quando tiver a op├º├úo OUTROS. 
+'
                 - Modified property: interestRates
-                  - Description changed from '' to 'Caso o contrato n├úo possua taxas de juros, deve ser compartilhardo uma lista vazia. Caso o contrato possua uma taxa de juros com valor 0, deve ser compartilhado um objeto com o valor 0 expl├¡cito.
+                  - Description changed from '' to 'Objeto que traz o conjunto de informa├º├╡es necess├írias para demonstrar a composi├º├úo das taxas de juros remunerat├│rios da Modalidade de cr├⌐dito.
 '
                   - Items changed
+                    - Required changed
+                      - Deleted required property: additionalInfo
                     - Properties changed
+                      - Modified property: additionalInfo
+                        - Description changed from 'Texto com informa├º├╡es adicionais sobre a composi├º├úo das taxas de juros pactuadas' to 'Texto com informa├º├╡es adicionais sobre a composi├º├úo das taxas de juros pactuadas. 
+[Restri├º├úo] Caso a institui├º├úo possua a informa├º├úo para compartilhamento, esta dever├í ser informada.
+'
+                      - Modified property: calculation
+                        - MaxLength changed from 6 to null
+                      - Modified property: interestRateType
+                        - MaxLength changed from 8 to null
                       - Modified property: postFixedRate
                         - Type changed from 'number' to 'string'
-                        - Example changed from 0.55 to '0.5500'
-                        - MinLength changed from 0 to 6
-                        - MaxLength changed from 19 to 6
-                        - Pattern changed from '' to '^\d{1}\.\d{4}$'
+                        - Format changed from '' to 'double'
+                        - Description changed from '"Taxa p├│s fixada aplicada sob o contrato da modalidade cr├⌐dito.
+p.ex. 0.0045 .O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
+(representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)"
+' to 'Taxa p├│s fixada aplicada sob o contrato da modalidade cr├⌐dito. p.ex. 0.014500. 
+O preenchimento deve respeitar as 6 casas decimais, mesmo que venham preenchidas com zeros (representa├º├úo de porcentagem p.ex: 0.150000. Este valor representa 15%. O valor 1 representa 100%).
+'
+                        - Example changed from 0.55 to '0.550000'
+                        - MinLength changed from 0 to 8
+                        - MaxLength changed from 19 to 8
+                        - Pattern changed from '' to '^[01]\.\d{6}$'
                       - Modified property: preFixedRate
                         - Type changed from 'number' to 'string'
-                        - Example changed from 0.6 to '0.6000'
+                        - Format changed from '' to 'double'
+                        - Description changed from '"Taxa pr├⌐ fixada aplicada sob o contrato da modalidade cr├⌐dito.
+p.ex. 0.0045. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
+(representa├º├úo de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)"
+' to 'Taxa pr├⌐ fixada aplicada sob o contrato da modalidade cr├⌐dito. p.ex. 0.014500. 
+O preenchimento deve respeitar as 6 casas decimais, mesmo que venham preenchidas com zeros(representa├º├úo de porcentagem p.ex: 0.150000. Este valor representa 15%. O valor 1 representa 100%).
+'
+                        - Example changed from 0.6 to '0.600000'
                         - Nullable changed from true to false
-                        - MinLength changed from 0 to 6
-                        - MaxLength changed from 19 to 6
-                        - Pattern changed from '' to '^\d{1}\.\d{4}$'
+                        - MinLength changed from 0 to 8
+                        - MaxLength changed from 19 to 8
+                        - Pattern changed from '' to '^[01]\.\d{6}$'
+                      - Modified property: referentialRateIndexerSubType
+                        - MaxLength changed from 24 to null
+                      - Modified property: referentialRateIndexerType
+                        - MaxLength changed from 18 to null
+                      - Modified property: taxPeriodicity
+                        - MaxLength changed from 2 to null
+                      - Modified property: taxType
+                        - MaxLength changed from 7 to null
                 - Modified property: ipocCode
+                  - Description changed from '"N├║mero padronizado do contrato - IPOC (Identifica├º├úo Padronizada da Opera├º├úo de Cr├⌐dito). Segundo DOC 3040, composta por:
+- **CNPJ da institui├º├úo:** 8 (oito) posi├º├╡es iniciais;
+- **Modalidade da opera├º├úo:** 4 (quatro) posi├º├╡es;
+- **Tipo do cliente:** 1 (uma) posi├º├úo( 1 = pessoa natural - CPF, 2= pessoa jur├¡dica ΓÇô CNPJ, 3 = pessoa f├¡sica no exterior, 4 = pessoa jur├¡dica no exterior, 5 = pessoa natural sem CPF e 6 = pessoa jur├¡dica sem CNPJ);
+- **C├│digo do cliente:** O n├║mero de posi├º├╡es varia conforme o tipo do cliente:
+  1. Para clientes pessoa f├¡sica com CPF (tipo de cliente = 1), informar as 11 (onze) posi├º├╡es do CPF;
+  2. Para clientes pessoa jur├¡dica com CNPJ (tipo de cliente = 2), informar as 8 (oito) posi├º├╡es iniciais do CNPJ;
+  3. Para os demais clientes (tipos de cliente 3, 4, 5 e 6), informar 14 (catorze) posi├º├╡es com complemento de zeros ├á esquerda se a identifica├º├úo tiver tamanho inferior;
+- **C├│digo do contrato:** 1 (uma) at├⌐ 40 (quarenta) posi├º├╡es, sem complemento de caracteres."
+' to 'N├║mero padronizado do contrato - IPOC (Identifica├º├úo Padronizada da Opera├º├úo de Cr├⌐dito). Segundo DOC 3040, composta por:
+- **CNPJ da institui├º├úo:** 8 (oito) posi├º├╡es iniciais;
+- **Modalidade da opera├º├úo:** 4 (quatro) posi├º├╡es;
+- **Tipo do cliente:** 1 (uma) posi├º├úo( 1 = pessoa natural - CPF, 2= pessoa jur├¡dica ΓÇô CNPJ, 3 = pessoa f├¡sica no exterior, 4 = pessoa jur├¡dica no exterior, 5 = pessoa natural sem CPF e 6 = pessoa jur├¡dica sem CNPJ);
+- **C├│digo do cliente:** O n├║mero de posi├º├╡es varia conforme o tipo do cliente:
+  1. Para clientes pessoa f├¡sica com CPF (tipo de cliente = 1), informar as 11 (onze) posi├º├╡es do CPF;
+  2. Para clientes pessoa jur├¡dica com CNPJ (tipo de cliente = 2), informar as 8 (oito) posi├º├╡es iniciais do CNPJ;
+  3. Para os demais clientes (tipos de cliente 3, 4, 5 e 6), informar 14 (catorze) posi├º├╡es com complemento de zeros ├á esquerda se a identifica├º├úo tiver tamanho inferior;
+- **C├│digo do contrato:** 1 (uma) at├⌐ 40 (quarenta) posi├º├╡es, sem complemento de caracteres.
+'
                   - MinLength changed from 0 to 22
                   - Pattern changed from '' to '^\d{22,67}$'
+                - Modified property: productName
+                  - Description changed from '"Denomina├º├úo/Identifica├º├úo do nome da Modalidade da Opera├º├úo de Cr├⌐dito divulgado ao cliente"
+' to 'Denomina├º├úo/Identifica├º├úo do nome da Modalidade da Opera├º├úo de Cr├⌐dito divulgado ao cliente
+'
+                - Modified property: productType
+                  - MaxLength changed from 27 to null
+                - Modified property: settlementDate
+                  - Description changed from 'Data de liquida├º├úo da opera├º├úo.
+[Restri├º├úo] Deve aceitar NA caso n├úo seja retornado pela institui├º├úo.
+' to 'Data de liquida├º├úo da opera├º├úo.
+'
+                  - Pattern changed from '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$|^NA$' to '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+  - Modified response: default
+    - Description changed from 'Dados do contrato de adiantamento a depositantes identificado por contractId' to 'Erro inesperado.'
+    - Content changed
+      - New media type: application/json
+      - New media type: application/json; charset=utf-8
+      - Deleted media type: application/json
+    - Headers changed
+      - Deleted header: x-fapi-interaction-id
 GET /contracts/{contractId}/payments
+- Modified query param: page
+  - Schema changed
+    - Max changed from null to 2.147483647e+09
 - Responses changed
   - New response: 422
-  - Deleted response: default
   - Modified response: 200
     - Content changed
       - Modified media type: application/json
@@ -110,14 +272,32 @@ GET /contracts/{contractId}/payments
                   - Example changed from 100000.04 to '100000.0400'
                   - MinLength changed from 0 to 4
                   - MaxLength changed from 20 to 21
+                - Modified property: paidInstalments
+                  - Nullable changed from true to false
+                  - Max changed from null to 999
+                  - MaxLength changed from 3 to null
                 - Modified property: releases
+                  - MinItems changed from 0 to 1
                   - Items changed
+                    - Required changed
+                      - Deleted required property: overParcel
                     - Properties changed
                       - Modified property: overParcel
+                        - Description changed from 'Objeto das tarifas e encargos que foram pagos fora da parcela.' to 'Objeto das tarifas e encargos que foram pagos fora da parcela.
+[Restri├º├úo] Informa├º├úo deve ser enviada caso ela exista, torna-se obrigat├│rio caso haja parcelamento.
+'
                         - Properties changed
                           - Modified property: charges
                             - Items changed
+                              - Required changed
+                                - Deleted required property: chargeAdditionalInfo
                               - Properties changed
+                                - Modified property: chargeAdditionalInfo
+                                  - Description changed from 'Campo livre para preenchimento das informa├º├╡es adicionais referente ao encargo.
+[Restri├º├úo] Obrigat├│rio quando chargeType for igual OUTROS.
+' to 'Campo livre para preenchimento das informa├º├╡es adicionais referente ao encargo.
+[Restri├º├úo] Obrigat├│rio quando chargeType for igual 'OUTROS'.
+'
                                 - Modified property: chargeAmount
                                   - Type changed from 'number' to 'string'
                                   - Format changed from 'double' to ''
@@ -125,21 +305,26 @@ GET /contracts/{contractId}/payments
                                   - Nullable changed from true to false
                                   - MinLength changed from 0 to 4
                                   - MaxLength changed from 20 to 21
+                                - Modified property: chargeType
+                                  - MaxLength changed from 31 to null
                           - Modified property: fees
+                            - MinItems changed from 0 to 1
                             - Items changed
                               - Properties changed
                                 - Modified property: feeAmount
                                   - Type changed from 'number' to 'string'
                                   - Format changed from 'double' to ''
+                                  - Description changed from 'Valor monet├írio da tarifa pactuada no contrato.
+[Restri├º├úo] Preenchimento obrigat├│rio quando a forma de cobran├ºa for: M├¡nimo, M├íximo ou Fixo
+' to 'Valor monet├írio da tarifa pactuada no contrato.
+'
                                   - Example changed from 100000.04 to '100000.0400'
                                   - Nullable changed from true to false
                                   - MinLength changed from 0 to 4
                                   - MaxLength changed from 20 to 21
                                 - Modified property: feeCode
-                                  - Description changed from 'Sigla identificadora da tarifa avulsa fora da parcela' to 'Sigla identificadora da tarifa avulsa fora da parcela
-[Restri├º├úo] Caso a institui├º├úo n├úo possua a informa├º├úo para compartilhamento, informar NA
+                                  - Description changed from 'Sigla identificadora da tarifa avulsa fora da parcela' to 'Sigla identificadora da tarifa pactuada.
 '
-                                  - Pattern changed from '[\w\W\s]*' to '^\w{2}[\w\W\s]*$'
                                 - Modified property: feeName
                                   - Description changed from 'Denomina├º├úo da Tarifa pactuada' to 'Denomina├º├úo da Tarifa pactuada.
 '
@@ -149,10 +334,20 @@ GET /contracts/{contractId}/payments
                         - Example changed from 100000.04 to '100000.0400'
                         - MinLength changed from 0 to 4
                         - MaxLength changed from 20 to 21
+  - Modified response: default
+    - Description changed from 'Dados de pagamentos do contrato de adiantamento a depositantes identificado por contractId' to 'Erro inesperado.'
+    - Content changed
+      - New media type: application/json
+      - New media type: application/json; charset=utf-8
+      - Deleted media type: application/json
+    - Headers changed
+      - Deleted header: x-fapi-interaction-id
 GET /contracts/{contractId}/scheduled-instalments
+- Modified query param: page
+  - Schema changed
+    - Max changed from null to 2.147483647e+09
 - Responses changed
   - New response: 422
-  - Deleted response: default
   - Modified response: 200
     - Content changed
       - Modified media type: application/json
@@ -161,34 +356,108 @@ GET /contracts/{contractId}/scheduled-instalments
             - Modified property: data
               - Required changed
                 - Deleted required property: balloonPayments
+                - Deleted required property: contractRemainingNumber
+                - Deleted required property: totalNumberOfInstalments
               - Properties changed
                 - Modified property: balloonPayments
+                  - Nullable changed from true to false
                   - Items changed
+                    - Required changed
+                      - Deleted required property: currency
+                      - Deleted required property: dueDate
                     - Properties changed
+                      - Deleted property: currency
                       - Modified property: amount
-                        - Type changed from 'number' to 'string'
+                        - Type changed from 'number' to 'object'
                         - Format changed from 'double' to ''
-                        - Example changed from 100000.04 to '100000.0400'
+                        - Description changed from 'Valor monet├írio da parcela n├úo regular a vencer. Expresso em valor monet├írio com 4 casas decimais.' to 'Valor monet├írio da parcela n├úo regular a vencer.'
+                        - Example changed from 100000.04 to null
+                        - AdditionalProperties changed from null to false
                         - Nullable changed from true to false
-                        - MinLength changed from 0 to 4
-                        - MaxLength changed from 20 to 21
+                        - MaxLength changed from 20 to null
+                        - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to ''
+                        - Required changed
+                          - New required property: amount
+                          - New required property: currency
+                        - Properties changed
+                          - New property: amount
+                          - New property: currency
+                - Modified property: contractRemainingNumber
+                  - Description changed from 'Prazo Remanescente segundo o tipo (dia, semana, m├¬s, ano) referente ├á Modalidade de Cr├⌐dito informada.' to 'Prazo Remanescente segundo o tipo (dia, semana, m├¬s, ano) referente ├á Modalidade de Cr├⌐dito informada.
+[Restri├º├úo] Obrigatoriamente deve ser preenchido caso o typeNumberOfInstalments seja diferente de SEM_PRAZO_REMANESCENTE.
+'
+                  - Example changed from 14600 to 80
+                  - Nullable changed from true to false
+                  - Max changed from null to 999
+                  - MaxLength changed from 6 to null
+                - Modified property: dueInstalments
+                  - Nullable changed from true to false
+                  - Max changed from null to 999
+                  - MaxLength changed from 3 to null
+                - Modified property: paidInstalments
+                  - Nullable changed from true to false
+                  - Max changed from null to 999
+                  - MaxLength changed from 3 to null
+                - Modified property: pastDueInstalments
+                  - Nullable changed from true to false
+                  - Max changed from null to 999
+                  - MaxLength changed from 3 to null
+                - Modified property: totalNumberOfInstalments
+                  - Description changed from 'Prazo Total segundo o tipo (dia, semana, m├¬s, ano) referente ├á Modalidade de Cr├⌐dito informada.' to 'Prazo Total segundo o tipo (dia, semana, m├¬s, ano) referente ├á Modalidade de Cr├⌐dito informada.
+[Restri├º├úo] Obrigatoriamente deve ser preenchido caso o typeNumberOfInstalments seja diferente de SEM_PRAZO_TOTAL.
+'
+                  - Nullable changed from true to false
+                  - Max changed from null to 999999
+                  - MaxLength changed from 6 to null
+                - Modified property: typeContractRemaining
+                  - MaxLength changed from 22 to null
+                - Modified property: typeNumberOfInstalments
+                  - MaxLength changed from 15 to null
+  - Modified response: default
+    - Description changed from 'Dados do cronograma de parcelas do contrato de adiantamento a depositantes identificado por contractId' to 'Erro inesperado.'
+    - Content changed
+      - New media type: application/json
+      - New media type: application/json; charset=utf-8
+      - Deleted media type: application/json
+    - Headers changed
+      - Deleted header: x-fapi-interaction-id
 GET /contracts/{contractId}/warranties
+- Modified query param: page
+  - Schema changed
+    - Max changed from null to 2.147483647e+09
 - Responses changed
   - New response: 422
-  - Deleted response: default
   - Modified response: 200
     - Content changed
       - Modified media type: application/json
         - Schema changed
           - Properties changed
             - Modified property: data
+              - MinItems changed from 0 to 1
               - Items changed
+                - Required changed
+                  - Deleted required property: warrantyAmount
                 - Properties changed
                   - Modified property: warrantyAmount
                     - Type changed from 'number' to 'string'
                     - Format changed from 'double' to ''
+                    - Description changed from 'Valor original da garantia. Valor monet├írio, expresso com at├⌐ 4 casas decimais.
+' to 'Valor original da garantia. Valor monet├írio, expresso com at├⌐ 4 casas decimais.
+[Restri├º├úo] Preenchimento obrigat├│rio se tipo de garantia selecionada for diferente de 'SEM_TIPO_GARANTIA'
+'
                     - Example changed from 100000.04 to '100000.0400'
                     - MinLength changed from 0 to 4
                     - MaxLength changed from 20 to 21
                   - Modified property: warrantySubType
                     - New enum values: [ACORDOS_COMPENSACAO_LIQUIDACAO_OBRIGACOES PROAGRO SEM_SUB_TIPO_GARANTIA]
+                    - MaxLength changed from 96 to null
+                  - Modified property: warrantyType
+                    - MaxLength changed from 37 to null
+  - Modified response: default
+    - Description changed from 'Lista de garantias vinculadas ao contrato de adiantamento a depositantes identificado por contractId' to 'Erro inesperado.'
+    - Content changed
+      - New media type: application/json
+      - New media type: application/json; charset=utf-8
+      - Deleted media type: application/json
+    - Headers changed
+      - Deleted header: x-fapi-interaction-id

@@ -18,7 +18,7 @@ POST /consents
       - Deleted media type: application/json
 - Security changed
   - New security requirements: OAuth2ClientCredentials AND OpenId
-  - Deleted security requirements: OpenId AND OAuth2Security
+  - Deleted security requirements: OAuth2Security AND OpenId
 GET /consents/{consentId}
 - Responses changed
   - Modified response: 200
@@ -28,7 +28,7 @@ GET /consents/{consentId}
       - Deleted media type: application/json
 - Security changed
   - New security requirements: OAuth2ClientCredentials
-  - Deleted security requirements: OAuth2Security AND OpenId
+  - Deleted security requirements: OpenId AND OAuth2Security
 POST /pix/payments
 - Request body changed
   - Content changed
@@ -54,4 +54,4 @@ GET /pix/payments/{paymentId}
 - Security changed
   - New security requirements: OAuth2AuthorizationCode
   - New security requirements: OAuth2ClientCredentials
-  - Deleted security requirements: OAuth2Security AND OpenId
+  - Deleted security requirements: OpenId AND OAuth2Security

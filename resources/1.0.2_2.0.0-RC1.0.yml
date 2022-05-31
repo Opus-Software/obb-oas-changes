@@ -15,6 +15,9 @@ GET /resources
               - Items changed
                 - Required changed
                   - New required property: resourceId
+                - Properties changed
+                  - Modified property: resourceId
+                    - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
   - Modified response: default
     - Description changed from 'Dados de status dos recursos obtidos com sucesso.' to 'Erro inesperado.'
     - Content changed
@@ -23,3 +26,8 @@ GET /resources
       - Deleted media type: application/json
     - Headers changed
       - Deleted header: x-fapi-interaction-id
+Servers changed
+- New server: https://api.banco.com.br/open-banking/resources/v2
+- New server: https://apih.banco.com.br/open-banking/resources/v2
+- Deleted server: https://api.banco.com.br/open-banking/resources/v1
+- Deleted server: https://apih.banco.com.br/open-banking/resources/v1

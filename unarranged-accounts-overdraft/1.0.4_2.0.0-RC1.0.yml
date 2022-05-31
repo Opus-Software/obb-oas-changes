@@ -16,6 +16,7 @@ GET /contracts
         - Schema changed
           - Properties changed
             - Modified property: data
+              - MinItems changed from 1 to 0
               - Items changed
                 - Properties changed
                   - Modified property: brandName
@@ -25,6 +26,7 @@ GET /contracts
                     - Pattern changed from '\d{14}|^NA$' to '^\d{14}$'
                   - Modified property: contractId
                     - MinLength changed from 0 to 1
+                    - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
                   - Modified property: ipocCode
                     - MinLength changed from 0 to 22
                     - Pattern changed from '' to '^\d{22,67}$'
@@ -54,6 +56,8 @@ GET /contracts/{contractId}
                 - Deleted required property: firstInstalmentDueDate
                 - Deleted required property: settlementDate
               - Properties changed
+                - New property: disbursementDates
+                - Deleted property: disbursementDate
                 - Modified property: CET
                   - Type changed from 'number' to 'string'
                   - Format changed from '' to 'double'
@@ -75,6 +79,8 @@ O preenchimento deve respeitar as 6 casas decimais, mesmo que venham preenchidas
 [Restrição] Obrigatório para complementar a informação relativa à amortização quando selecionada a opção OUTROS, para os demais casos informar "NA".
 ' to 'Campo obrigatório para complementar a informação relativa à amortização quando selecionada a opção OUTROS.
 '
+                  - Example changed from 'NA' to 'Informações complementares relativa à amortização do tipo 'OUTROS''
+                  - MaxLength changed from 50 to 200
                 - Modified property: contractAmount
                   - Type changed from 'number' to 'string'
                   - Format changed from 'double' to ''
@@ -98,8 +104,10 @@ O preenchimento deve respeitar as 6 casas decimais, mesmo que venham preenchidas
 ' to 'Valor monetário da tarifa pactuada no contrato. 
 [Restrição] Preenchimento obrigatório quando a forma de cobrança for diferente de Percentual.
 '
-                        - Example changed from 100000.04 to '100000.04'
+                        - Example changed from 100000.04 to '1000.0400'
                         - Nullable changed from true to false
+                        - MinLength changed from 0 to 4
+                        - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to '^\d{1,15}\.\d{2,4}$'
                       - Modified property: feeCharge
                         - MaxLength changed from 10 to null
                       - Modified property: feeChargeType
@@ -277,11 +285,13 @@ GET /contracts/{contractId}/payments
                   - Max changed from null to 999
                   - MaxLength changed from 3 to null
                 - Modified property: releases
-                  - MinItems changed from 0 to 1
                   - Items changed
                     - Required changed
                       - Deleted required property: overParcel
                     - Properties changed
+                      - Modified property: instalmentId
+                        - MinLength changed from 0 to 1
+                        - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
                       - Modified property: overParcel
                         - Description changed from 'Objeto das tarifas e encargos que foram pagos fora da parcela.' to 'Objeto das tarifas e encargos que foram pagos fora da parcela.
 [Restrição] Informação deve ser enviada caso ela exista, torna-se obrigatório caso haja parcelamento.
@@ -308,7 +318,6 @@ GET /contracts/{contractId}/payments
                                 - Modified property: chargeType
                                   - MaxLength changed from 31 to null
                           - Modified property: fees
-                            - MinItems changed from 0 to 1
                             - Items changed
                               - Properties changed
                                 - Modified property: feeAmount
@@ -334,6 +343,9 @@ GET /contracts/{contractId}/payments
                         - Example changed from 100000.04 to '100000.0400'
                         - MinLength changed from 0 to 4
                         - MaxLength changed from 20 to 21
+                      - Modified property: paymentId
+                        - MinLength changed from 0 to 1
+                        - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
   - Modified response: default
     - Description changed from 'Dados de pagamentos do contrato de adiantamento a depositantes identificado por contractId' to 'Erro inesperado.'
     - Content changed
@@ -361,6 +373,7 @@ GET /contracts/{contractId}/scheduled-instalments
               - Properties changed
                 - Modified property: balloonPayments
                   - Nullable changed from true to false
+                  - MinItems changed from 0 to 1
                   - Items changed
                     - Required changed
                       - Deleted required property: currency
@@ -433,18 +446,11 @@ GET /contracts/{contractId}/warranties
         - Schema changed
           - Properties changed
             - Modified property: data
-              - MinItems changed from 0 to 1
               - Items changed
-                - Required changed
-                  - Deleted required property: warrantyAmount
                 - Properties changed
                   - Modified property: warrantyAmount
                     - Type changed from 'number' to 'string'
                     - Format changed from 'double' to ''
-                    - Description changed from 'Valor original da garantia. Valor monetário, expresso com até 4 casas decimais.
-' to 'Valor original da garantia. Valor monetário, expresso com até 4 casas decimais.
-[Restrição] Preenchimento obrigatório se tipo de garantia selecionada for diferente de 'SEM_TIPO_GARANTIA'
-'
                     - Example changed from 100000.04 to '100000.0400'
                     - MinLength changed from 0 to 4
                     - MaxLength changed from 20 to 21
@@ -452,6 +458,7 @@ GET /contracts/{contractId}/warranties
                     - New enum values: [ACORDOS_COMPENSACAO_LIQUIDACAO_OBRIGACOES PROAGRO SEM_SUB_TIPO_GARANTIA]
                     - MaxLength changed from 96 to null
                   - Modified property: warrantyType
+                    - Deleted enum values: [SEM_TIPO_GARANTIA]
                     - MaxLength changed from 37 to null
   - Modified response: default
     - Description changed from 'Lista de garantias vinculadas ao contrato de adiantamento a depositantes identificado por contractId' to 'Erro inesperado.'
@@ -461,3 +468,8 @@ GET /contracts/{contractId}/warranties
       - Deleted media type: application/json
     - Headers changed
       - Deleted header: x-fapi-interaction-id
+Servers changed
+- New server: https://api.banco.com.br/open-banking/unarranged-accounts-overdraft/v2
+- New server: https://apih.banco.com.br/open-banking/unarranged-accounts-overdraft/v2
+- Deleted server: https://api.banco.com.br/open-banking/unarranged-accounts-overdraft/v1
+- Deleted server: https://apih.banco.com.br/open-banking/unarranged-accounts-overdraft/v1

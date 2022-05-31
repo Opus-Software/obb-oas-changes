@@ -9,6 +9,19 @@ GET /accounts
   - Schema changed
     - Max changed from null to 2.147483647e+09
 - Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Items changed
+                - Properties changed
+                  - Modified property: companyCnpj
+                    - Pattern changed from '\d{14}|^NA$' to '^\d{14}$'
+                  - Modified property: creditCardAccountId
+                    - MinLength changed from 0 to 1
+                    - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
   - Modified response: 400
     - Content changed
       - Modified media type: application/json; charset=utf-8
@@ -88,6 +101,19 @@ GET /accounts
       - Deleted header: x-fapi-interaction-id
 GET /accounts/{creditCardAccountId}
 - Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: paymentMethod
+                  - Items changed
+                    - Properties changed
+                      - Modified property: identificationNumber
+                        - MinLength changed from 0 to 1
+                        - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
   - Modified response: 400
     - Content changed
       - Modified media type: application/json; charset=utf-8
@@ -178,8 +204,12 @@ GET /accounts/{creditCardAccountId}/bills
             - Modified property: data
               - Items changed
                 - Properties changed
+                  - Modified property: billId
+                    - MinLength changed from 0 to 1
+                    - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
                   - Modified property: billMinimumAmount
                     - Type changed from 'number' to 'string'
+                    - MinLength changed from 0 to 4
                   - Modified property: billTotalAmount
                     - Type changed from 'number' to 'object'
                     - Format changed from 'double' to ''
@@ -191,11 +221,19 @@ GET /accounts/{creditCardAccountId}/bills
                     - Properties changed
                       - New property: amount
                       - New property: currency
+                  - Modified property: financeCharges
+                    - Items changed
+                      - Properties changed
+                        - Modified property: amount
+                          - Type changed from 'number' to 'string'
+                          - Nullable changed from true to false
+                          - MinLength changed from 0 to 4
                   - Modified property: payments
                     - Items changed
                       - Properties changed
                         - Modified property: amount
                           - Type changed from 'number' to 'string'
+                          - MinLength changed from 0 to 4
                           - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to '^\d{1,15}\.\d{2,4}$'
   - Modified response: 400
     - Content changed
@@ -278,6 +316,10 @@ GET /accounts/{creditCardAccountId}/bills/{billId}/transactions
 - Modified query param: page
   - Schema changed
     - Max changed from null to 2.147483647e+09
+- Modified query param: payeeMCC
+  - Schema changed
+    - Format changed from '' to 'int32'
+    - Max changed from null to 9999
 - Responses changed
   - Modified response: 200
     - Content changed
@@ -301,6 +343,9 @@ GET /accounts/{creditCardAccountId}/bills/{billId}/transactions
                     - Properties changed
                       - New property: amount
                       - New property: currency
+                  - Modified property: billId
+                    - MinLength changed from 0 to 1
+                    - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
                   - Modified property: billPostDate
                     - Pattern changed from '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$|^NA$' to '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
                   - Modified property: brazilianAmount
@@ -320,6 +365,9 @@ GET /accounts/{creditCardAccountId}/bills/{billId}/transactions
                     - Max changed from null to 999
                   - Modified property: feeTypeAdditionalInfo
                     - Pattern changed from '' to '^\S[\s\S]*$'
+                  - Modified property: identificationNumber
+                    - MinLength changed from 0 to 1
+                    - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
                   - Modified property: otherCreditsAdditionalInfo
                     - Pattern changed from '' to '^\S[\s\S]*$'
                   - Modified property: payeeMCC
@@ -327,6 +375,9 @@ GET /accounts/{creditCardAccountId}/bills/{billId}/transactions
                     - Max changed from null to 2.147483647e+09
                   - Modified property: transactionDate
                     - Pattern changed from '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$|^NA$' to '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+                  - Modified property: transactionId
+                    - MinLength changed from 0 to 1
+                    - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
                   - Modified property: transactionalAdditionalInfo
                     - Pattern changed from '' to '^\S[\s\S]*$'
             - Modified property: links
@@ -426,11 +477,16 @@ GET /accounts/{creditCardAccountId}/limits
                   - Modified property: availableAmount
                     - Type changed from 'number' to 'string'
                     - Nullable changed from true to false
+                    - MinLength changed from 0 to 4
                   - Modified property: availableAmountCurrency
                     - Pattern changed from '^(\w{3}){1}$|^NA$' to '^(\w{3}){1}$'
+                  - Modified property: identificationNumber
+                    - MinLength changed from 0 to 1
+                    - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
                   - Modified property: limitAmount
                     - Type changed from 'number' to 'string'
                     - Nullable changed from true to false
+                    - MinLength changed from 0 to 4
                   - Modified property: limitAmountCurrency
                     - Pattern changed from '^(\w{3}){1}$|^NA$' to '^(\w{3}){1}$'
                   - Modified property: lineNameAdditionalInfo
@@ -438,6 +494,7 @@ GET /accounts/{creditCardAccountId}/limits
                   - Modified property: usedAmount
                     - Type changed from 'number' to 'string'
                     - Nullable changed from true to false
+                    - MinLength changed from 0 to 4
                   - Modified property: usedAmountCurrency
                     - Pattern changed from '^(\w{3}){1}$|^NA$' to '^(\w{3}){1}$'
   - Modified response: 400
@@ -521,6 +578,10 @@ GET /accounts/{creditCardAccountId}/transactions
 - Modified query param: page
   - Schema changed
     - Max changed from null to 2.147483647e+09
+- Modified query param: payeeMCC
+  - Schema changed
+    - Format changed from '' to 'int32'
+    - Max changed from null to 9999
 - Responses changed
   - Modified response: 200
     - Content changed
@@ -544,6 +605,9 @@ GET /accounts/{creditCardAccountId}/transactions
                     - Properties changed
                       - New property: amount
                       - New property: currency
+                  - Modified property: billId
+                    - MinLength changed from 0 to 1
+                    - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
                   - Modified property: billPostDate
                     - Pattern changed from '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$|^NA$' to '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
                   - Modified property: brazilianAmount
@@ -563,6 +627,9 @@ GET /accounts/{creditCardAccountId}/transactions
                     - Max changed from null to 999
                   - Modified property: feeTypeAdditionalInfo
                     - Pattern changed from '' to '^\S[\s\S]*$'
+                  - Modified property: identificationNumber
+                    - MinLength changed from 0 to 1
+                    - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
                   - Modified property: otherCreditsAdditionalInfo
                     - Pattern changed from '' to '^\S[\s\S]*$'
                   - Modified property: payeeMCC
@@ -570,6 +637,9 @@ GET /accounts/{creditCardAccountId}/transactions
                     - Max changed from null to 2.147483647e+09
                   - Modified property: transactionDate
                     - Pattern changed from '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$|^NA$' to '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+                  - Modified property: transactionId
+                    - MinLength changed from 0 to 1
+                    - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
                   - Modified property: transactionalAdditionalInfo
                     - Pattern changed from '' to '^\S[\s\S]*$'
             - Modified property: links
@@ -656,3 +726,6 @@ GET /accounts/{creditCardAccountId}/transactions
       - Deleted media type: application/json
     - Headers changed
       - Deleted header: x-fapi-interaction-id
+Servers changed
+- Deleted server: https://api.banco.com.br/open-banking/credit-cards-accounts/v1
+- Deleted server: https://apih.banco.com.br/open-banking/credit-cards-accounts/v1

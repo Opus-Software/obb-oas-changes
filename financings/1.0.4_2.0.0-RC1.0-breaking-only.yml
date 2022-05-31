@@ -15,7 +15,6 @@ GET /contracts
         - Schema changed
           - Properties changed
             - Modified property: data
-              - MinItems changed from 0 to 1
               - Items changed
                 - Properties changed
                   - Modified property: companyCnpj
@@ -49,7 +48,6 @@ GET /contracts/{contractId}
                   - Pattern changed from '' to '^[01]\.\d{6}$'
                 - Modified property: contractAmount
                   - Type changed from 'number' to 'string'
-                  - Format changed from 'double' to ''
                   - Nullable changed from true to false
                   - MinLength changed from 0 to 4
                   - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to '^\d{1,15}\.\d{2,4}$'
@@ -60,9 +58,9 @@ GET /contracts/{contractId}
                     - Properties changed
                       - Modified property: feeAmount
                         - Type changed from 'number' to 'string'
-                        - Format changed from 'double' to ''
                         - Nullable changed from true to false
                         - MinLength changed from 0 to 4
+                        - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to '^\d{1,15}\.\d{2,4}$'
                       - Modified property: feeRate
                         - Type changed from 'number' to 'string'
                         - Nullable changed from true to false
@@ -121,16 +119,17 @@ GET /contracts/{contractId}/payments
               - Properties changed
                 - Modified property: contractOutstandingBalance
                   - Type changed from 'number' to 'string'
-                  - Format changed from 'double' to ''
                   - MinLength changed from 0 to 4
                   - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to '^\d{1,15}\.\d{2,4}$'
                 - Modified property: paidInstalments
                   - Nullable changed from true to false
                   - Max changed from null to 2.147483647e+09
                 - Modified property: releases
-                  - MinItems changed from 0 to 1
                   - Items changed
                     - Properties changed
+                      - Modified property: instalmentId
+                        - MinLength changed from 0 to 1
+                        - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
                       - Modified property: overParcel
                         - Properties changed
                           - Modified property: charges
@@ -138,25 +137,24 @@ GET /contracts/{contractId}/payments
                               - Properties changed
                                 - Modified property: chargeAmount
                                   - Type changed from 'number' to 'string'
-                                  - Format changed from 'double' to ''
                                   - Nullable changed from true to false
                                   - MinLength changed from 0 to 4
                                   - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to '^\d{1,15}\.\d{2,4}$'
                           - Modified property: fees
-                            - MinItems changed from 0 to 1
                             - Items changed
                               - Properties changed
                                 - Modified property: feeAmount
                                   - Type changed from 'number' to 'string'
-                                  - Format changed from 'double' to ''
                                   - Nullable changed from true to false
                                   - MinLength changed from 0 to 4
                                   - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to '^\d{1,15}\.\d{2,4}$'
                       - Modified property: paidAmount
                         - Type changed from 'number' to 'string'
-                        - Format changed from 'double' to ''
                         - MinLength changed from 0 to 4
                         - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to '^\d{1,15}\.\d{2,4}$'
+                      - Modified property: paymentId
+                        - MinLength changed from 0 to 1
+                        - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
   - Modified response: default
     - Content changed
       - Deleted media type: application/json
@@ -176,6 +174,7 @@ GET /contracts/{contractId}/scheduled-instalments
               - Properties changed
                 - Modified property: balloonPayments
                   - Nullable changed from true to false
+                  - MinItems changed from 0 to 1
                   - Items changed
                     - Properties changed
                       - Deleted property: currency
@@ -222,16 +221,21 @@ GET /contracts/{contractId}/warranties
         - Schema changed
           - Properties changed
             - Modified property: data
-              - MinItems changed from 0 to 1
               - Items changed
+                - Required changed
+                  - New required property: warrantyAmount
                 - Properties changed
                   - Modified property: warrantyAmount
                     - Type changed from 'number' to 'string'
-                    - Format changed from 'double' to ''
                     - MinLength changed from 0 to 4
                     - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to '^\d{1,15}\.\d{2,4}$'
+                  - Modified property: warrantyType
+                    - Deleted enum values: [SEM_TIPO_GARANTIA]
   - Modified response: default
     - Content changed
       - Deleted media type: application/json
     - Headers changed
       - Deleted header: x-fapi-interaction-id
+Servers changed
+- Deleted server: https://api.banco.com.br/open-banking/financings/v1
+- Deleted server: https://apih.banco.com.br/open-banking/financings/v1

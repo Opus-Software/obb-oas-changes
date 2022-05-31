@@ -24,6 +24,9 @@ GET /accounts
                 - Required changed
                   - Deleted required property: branchCode
                 - Properties changed
+                  - Modified property: accountId
+                    - MinLength changed from 0 to 1
+                    - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
                   - Modified property: branchCode
                     - Description changed from 'Código da Agência detentora da conta. (Agência é a dependência destinada ao atendimento aos clientes, ao público em geral e aos associados de cooperativas de crédito, no exercício de atividades da instituição, não podendo ser móvel ou transitória)' to 'Código da Agência detentora da conta. (Agência é a dependência destinada ao atendimento aos clientes, ao público em geral e aos associados de cooperativas de crédito, no exercício de atividades da instituição, não podendo ser móvel ou transitória)
 [Restrição] Obrigatoriamente deve ser preenchido quando o campo "type" for diferente de conta pré paga.
@@ -638,8 +641,10 @@ Pessoa Jurídica - Informar CNPJ no campo “payerCnpjCpf”
 Pessoa Natural - Informar CPF no campo “payerCnpjCpf”.   
 Pessoa Jurídica - Informar CNPJ no campo “payerCnpjCpf”.
 '
-                    - New enum values: [NAO_SE_APLICA]
                     - MaxLength changed from 15 to null
+                  - Modified property: transactionId
+                    - MinLength changed from 0 to 1
+                    - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
                   - Modified property: type
                     - Description changed from 'Tipo de Transação
 ' to 'O campo deve classificar a transação em um dos tipos descritos. O transmissor deve classificar as transações disponíveis associando-a a um dos itens do Enum listado neste campo. 
@@ -760,3 +765,8 @@ A opção OUTROS só deve ser utilizada para os casos em que de fato a transaç�
       - Deleted media type: application/json
     - Headers changed
       - Deleted header: x-fapi-interaction-id
+Servers changed
+- New server: https://api.banco.com.br/open-banking/accounts/v2
+- New server: https://apih.banco.com.br/open-banking/accounts/v2
+- Deleted server: https://api.banco.com.br/open-banking/accounts/v1
+- Deleted server: https://apih.banco.com.br/open-banking/accounts/v1

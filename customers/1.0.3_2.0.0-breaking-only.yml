@@ -22,6 +22,8 @@ GET /business/financial-relations
                         - Pattern changed from '\d{3}|^NA$' to '^\d{3}$'
                       - Modified property: number
                         - Pattern changed from '^\d{8,20}$|^NA$' to '^\d{8,20}$'
+                      - Modified property: type
+                        - Deleted enum values: [SEM_TIPO_CONTA]
                 - Modified property: procurators
                   - Items changed
                     - Properties changed
@@ -44,7 +46,6 @@ GET /business/identifications
             - Modified property: data
               - MinItems changed from 0 to 1
               - Items changed
-                - AdditionalProperties changed from null to false
                 - Required changed
                   - New required property: companiesCnpj
                 - Properties changed
@@ -52,7 +53,7 @@ GET /business/identifications
                   - Deleted property: companyCnpjNumber
                   - Modified property: businessId
                     - MinLength changed from 0 to 1
-                    - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
+                    - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{0,99}$'
                   - Modified property: cnpjNumber
                     - Pattern changed from '\d{14}|^NA$' to '^\d{14}$'
                   - Modified property: contacts
@@ -61,7 +62,7 @@ GET /business/identifications
                         - Items changed
                           - Properties changed
                             - Modified property: countryCallingCode
-                              - Pattern changed from '^\d{2,4}$|^NA$' to '^\d{2,4}$'
+                              - Pattern changed from '^\d{2,4}$|^NA$' to '^\d{1,4}$'
                             - Modified property: number
                               - Pattern changed from '^([0-9]{8,11})|^NA$' to '^([0-9]{8,11})$'
                             - Modified property: phoneExtension
@@ -78,8 +79,14 @@ GET /business/identifications
                               - Pattern changed from '[\w\W\s]*' to '\w*\W*'
                             - Modified property: countryCode
                               - Pattern changed from '' to '^([A-Z]{3})$'
+                            - Modified property: countrySubDivision
+                              - Deleted enum values: [NA]
                             - Modified property: districtName
                               - Pattern changed from '[\w\W\s]*' to '\w*\W*'
+                            - Modified property: geographicCoordinates
+                              - Required changed
+                                - New required property: latitude
+                                - New required property: longitude
                             - Modified property: postCode
                               - Pattern changed from '\d{8}|^NA$' to '^\d{8}$'
                             - Modified property: townName
@@ -121,7 +128,6 @@ GET /business/qualifications
               - Properties changed
                 - Modified property: economicActivities
                   - Items changed
-                    - AdditionalProperties changed from null to false
                     - Properties changed
                       - Modified property: code
                         - Type changed from 'number' to 'string'
@@ -133,7 +139,6 @@ GET /business/qualifications
                     - Modified property: amount
                       - Type changed from 'number' to 'object'
                       - Format changed from 'double' to ''
-                      - AdditionalProperties changed from null to false
                       - Nullable changed from true to false
                       - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to ''
                       - Required changed
@@ -150,7 +155,6 @@ GET /business/qualifications
                     - Modified property: amount
                       - Type changed from 'number' to 'object'
                       - Format changed from 'double' to ''
-                      - AdditionalProperties changed from null to false
                       - Nullable changed from true to false
                       - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to ''
                       - Required changed
@@ -186,6 +190,10 @@ GET /personal/financial-relations
                         - Pattern changed from '\d{3}|^NA$' to '^\d{3}$'
                       - Modified property: number
                         - Pattern changed from '^\d{8,20}$|^NA$' to '^\d{8,20}$'
+                      - Modified property: subtype
+                        - Deleted enum values: [SEM_SUB_TIPO_CONTA]
+                      - Modified property: type
+                        - Deleted enum values: [SEM_TIPO_CONTA]
                 - Modified property: procurators
                   - Items changed
                     - Properties changed
@@ -194,7 +202,7 @@ GET /personal/financial-relations
                       - Modified property: type
                         - Deleted enum values: [NAO_APLICA]
                 - Modified property: productsServicesTypeAdditionalInfo
-                  - Pattern changed from '[\w\W\s]*' to '\w*\W*'
+                  - Pattern changed from '[\w\W\s]*' to '^[\w\W]*$'
   - Modified response: default
     - Content changed
       - Deleted media type: application/json
@@ -210,15 +218,20 @@ GET /personal/identifications
             - Modified property: data
               - MinItems changed from 0 to 1
               - Items changed
+                - Required changed
+                  - New required property: companiesCnpj
                 - Properties changed
+                  - New property: companiesCnpj
                   - Deleted property: companyCnpj
+                  - Modified property: civilName
+                    - Pattern changed from '[\w\W\s]*' to '^[\w\W]*$'
                   - Modified property: contacts
                     - Properties changed
                       - Modified property: phones
                         - Items changed
                           - Properties changed
                             - Modified property: countryCallingCode
-                              - Pattern changed from '^\d{2,4}$|^NA$' to '^\d{2,4}$'
+                              - Pattern changed from '^\d{2,4}$|^NA$' to '^\d{1,4}$'
                             - Modified property: number
                               - Pattern changed from '^([0-9]{8,11})|^NA$' to '^([0-9]{8,11})$'
                             - Modified property: phoneExtension
@@ -228,13 +241,16 @@ GET /personal/identifications
                           - Properties changed
                             - Modified property: countryCode
                               - Pattern changed from '' to '^([A-Z]{3})$'
+                            - Modified property: countrySubDivision
+                              - Deleted enum values: [NA]
+                            - Modified property: geographicCoordinates
+                              - Required changed
+                                - New required property: latitude
+                                - New required property: longitude
                             - Modified property: postCode
                               - Pattern changed from '\d{8}|^NA$' to '^\d{8}$'
                   - Modified property: documents
-                    - Required changed
-                      - New required property: documentType
                     - Properties changed
-                      - New property: documentType
                       - Deleted property: passportCountry
                       - Deleted property: passportExpirationDate
                       - Deleted property: passportIssueDate
@@ -246,22 +262,29 @@ GET /personal/identifications
                     - Items changed
                       - Properties changed
                         - Modified property: civilName
-                          - Pattern changed from '[\w\W\s]*' to '\w*\W*'
+                          - Pattern changed from '[\w\W\s]*' to '^[\w\W]*$'
                         - Modified property: socialName
-                          - Pattern changed from '[\w\W\s]*' to '\w*\W*'
+                          - Pattern changed from '[\w\W\s]*' to '^[\w\W]*$'
                         - Modified property: type
                           - Deleted enum values: [SEM_FILIACAO]
                   - Modified property: hasBrazilianNationality
                     - Nullable changed from true to false
                   - Modified property: nationality
-                    - Type changed from 'array' to 'object'
-                    - AdditionalProperties changed from null to false
-                    - Required changed
-                      - New required property: documents
-                      - New required property: otherNationalitiesInfo
-                    - Properties changed
-                      - New property: documents
-                      - New property: otherNationalitiesInfo
+                    - MinItems changed from 0 to 1
+                    - Items changed
+                      - Properties changed
+                        - Modified property: documents
+                          - Items changed
+                            - Properties changed
+                              - Deleted property: typeAdditionalInfo
+                              - Modified property: country
+                                - Pattern changed from '[\w\W\s]*' to '\w*\W*'
+                              - Modified property: expirationDate
+                                - Pattern changed from '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$|^NA$' to '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+                              - Modified property: issueDate
+                                - Pattern changed from '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$|^NA$' to '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+                        - Modified property: otherNationalitiesInfo
+                          - Pattern changed from '' to '^\S[\s\S]*$'
                   - Modified property: otherDocuments
                     - Items changed
                       - Properties changed
@@ -269,7 +292,9 @@ GET /personal/identifications
                           - Pattern changed from '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$|^NA$' to '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
                   - Modified property: personalId
                     - MinLength changed from 0 to 1
-                    - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
+                    - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{0,99}$'
+                  - Modified property: sex
+                    - Deleted enum values: [NAO_DISPONIVEL]
   - Modified response: default
     - Content changed
       - Deleted media type: application/json
@@ -292,7 +317,6 @@ GET /personal/qualifications
                     - Modified property: amount
                       - Type changed from 'number' to 'object'
                       - Format changed from 'double' to ''
-                      - AdditionalProperties changed from null to false
                       - Nullable changed from true to false
                       - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to ''
                       - Required changed
@@ -311,7 +335,6 @@ GET /personal/qualifications
                     - Modified property: amount
                       - Type changed from 'number' to 'object'
                       - Format changed from 'double' to ''
-                      - AdditionalProperties changed from null to false
                       - Nullable changed from true to false
                       - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to ''
                       - Required changed

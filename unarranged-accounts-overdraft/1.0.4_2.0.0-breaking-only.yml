@@ -2,9 +2,9 @@
 -----------------------
 ### Deleted Endpoints: None
 ---------------------------
-### Modified Endpoints: 6
+### Modified Endpoints: 5
 -------------------------
-GET /accounts
+GET /contracts
 - Modified query param: page
   - Schema changed
     - Max changed from null to 2.147483647e+09
@@ -19,9 +19,16 @@ GET /accounts
                 - Properties changed
                   - Modified property: companyCnpj
                     - Pattern changed from '\d{14}|^NA$' to '^\d{14}$'
-                  - Modified property: creditCardAccountId
+                  - Modified property: contractId
                     - MinLength changed from 0 to 1
-                    - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
+                    - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{0,99}$'
+                  - Modified property: ipocCode
+                    - MinLength changed from 0 to 22
+                    - Pattern changed from '' to '^\d{22,67}$'
+            - Modified property: meta
+              - Properties changed
+                - Deleted property: totalPages
+                - Deleted property: totalRecords
   - Modified response: 400
     - Content changed
       - Modified media type: application/json; charset=utf-8
@@ -99,7 +106,7 @@ GET /accounts
       - Deleted media type: application/json
     - Headers changed
       - Deleted header: x-fapi-interaction-id
-GET /accounts/{creditCardAccountId}
+GET /contracts/{contractId}
 - Responses changed
   - Modified response: 200
     - Content changed
@@ -108,12 +115,205 @@ GET /accounts/{creditCardAccountId}
           - Properties changed
             - Modified property: data
               - Properties changed
-                - Modified property: paymentMethod
+                - Deleted property: disbursementDate
+                - Modified property: CET
+                  - Type changed from 'number' to 'string'
+                  - Format changed from '' to 'double'
+                  - Nullable changed from true to false
+                  - MinLength changed from 0 to 8
+                  - MaxLength changed from 19 to 8
+                  - Pattern changed from '' to '^[01]\.\d{6}$'
+                - Modified property: contractAmount
+                  - Type changed from 'number' to 'string'
+                  - Format changed from 'double' to ''
+                  - Nullable changed from true to false
+                  - MinLength changed from 0 to 4
+                - Modified property: contractNumber
+                  - MinLength changed from 0 to 1
+                  - Pattern changed from '' to '^\d{1,100}$'
+                - Modified property: contractedFees
                   - Items changed
                     - Properties changed
-                      - Modified property: identificationNumber
+                      - Modified property: feeAmount
+                        - Type changed from 'number' to 'string'
+                        - Nullable changed from true to false
+                        - MinLength changed from 0 to 4
+                        - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to '^\d{1,15}\.\d{2,4}$'
+                      - Modified property: feeRate
+                        - Type changed from 'number' to 'string'
+                        - Nullable changed from true to false
+                        - MinLength changed from 0 to 8
+                        - MaxLength changed from 19 to 8
+                        - Pattern changed from '' to '^[01]\.\d{6}$'
+                - Modified property: contractedFinanceCharges
+                  - Items changed
+                    - Properties changed
+                      - Modified property: chargeRate
+                        - Type changed from 'number' to 'string'
+                        - Format changed from '' to 'double'
+                        - MinLength changed from 0 to 8
+                        - MaxLength changed from 19 to 8
+                        - Pattern changed from '' to '^[01]\.\d{6}$'
+                - Modified property: dueDate
+                  - MinLength changed from 0 to 2
+                - Modified property: firstInstalmentDueDate
+                  - MinLength changed from 0 to 2
+                - Modified property: interestRates
+                  - Items changed
+                    - Properties changed
+                      - Modified property: postFixedRate
+                        - Type changed from 'number' to 'string'
+                        - Format changed from '' to 'double'
+                        - MinLength changed from 0 to 8
+                        - MaxLength changed from 19 to 8
+                        - Pattern changed from '' to '^[01]\.\d{6}$'
+                      - Modified property: preFixedRate
+                        - Type changed from 'number' to 'string'
+                        - Format changed from '' to 'double'
+                        - Nullable changed from true to false
+                        - MinLength changed from 0 to 8
+                        - MaxLength changed from 19 to 8
+                        - Pattern changed from '' to '^[01]\.\d{6}$'
+                - Modified property: ipocCode
+                  - MinLength changed from 0 to 22
+                  - Pattern changed from '' to '^\d{22,67}$'
+                - Modified property: settlementDate
+                  - Pattern changed from '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$|^NA$' to '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+            - Modified property: meta
+              - Properties changed
+                - Deleted property: totalPages
+                - Deleted property: totalRecords
+  - Modified response: 400
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Properties changed
+                - Deleted property: totalPages
+                - Deleted property: totalRecords
+  - Modified response: 401
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Properties changed
+                - Deleted property: totalPages
+                - Deleted property: totalRecords
+  - Modified response: 403
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Properties changed
+                - Deleted property: totalPages
+                - Deleted property: totalRecords
+  - Modified response: 404
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Properties changed
+                - Deleted property: totalPages
+                - Deleted property: totalRecords
+  - Modified response: 405
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Properties changed
+                - Deleted property: totalPages
+                - Deleted property: totalRecords
+  - Modified response: 406
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Properties changed
+                - Deleted property: totalPages
+                - Deleted property: totalRecords
+  - Modified response: 429
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Properties changed
+                - Deleted property: totalPages
+                - Deleted property: totalRecords
+  - Modified response: 500
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Properties changed
+                - Deleted property: totalPages
+                - Deleted property: totalRecords
+  - Modified response: default
+    - Content changed
+      - Deleted media type: application/json
+    - Headers changed
+      - Deleted header: x-fapi-interaction-id
+GET /contracts/{contractId}/payments
+- Modified query param: page
+  - Schema changed
+    - Max changed from null to 2.147483647e+09
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: contractOutstandingBalance
+                  - Type changed from 'number' to 'string'
+                  - Format changed from 'double' to ''
+                  - MinLength changed from 0 to 4
+                - Modified property: paidInstalments
+                  - Nullable changed from true to false
+                  - Max changed from null to 999
+                - Modified property: releases
+                  - Items changed
+                    - Properties changed
+                      - Modified property: instalmentId
                         - MinLength changed from 0 to 1
-                        - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
+                        - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{0,99}$'
+                      - Modified property: overParcel
+                        - Properties changed
+                          - Modified property: charges
+                            - Items changed
+                              - Properties changed
+                                - Modified property: chargeAmount
+                                  - Type changed from 'number' to 'string'
+                                  - Format changed from 'double' to ''
+                                  - Nullable changed from true to false
+                                  - MinLength changed from 0 to 4
+                          - Modified property: fees
+                            - Items changed
+                              - Properties changed
+                                - Modified property: feeAmount
+                                  - Type changed from 'number' to 'string'
+                                  - Format changed from 'double' to ''
+                                  - Nullable changed from true to false
+                                  - MinLength changed from 0 to 4
+                      - Modified property: paidAmount
+                        - Type changed from 'number' to 'string'
+                        - Format changed from 'double' to ''
+                        - MinLength changed from 0 to 4
+                      - Modified property: paymentId
+                        - MinLength changed from 0 to 1
+                        - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{0,99}$'
+            - Modified property: meta
+              - Properties changed
+                - Deleted property: totalPages
+                - Deleted property: totalRecords
   - Modified response: 400
     - Content changed
       - Modified media type: application/json; charset=utf-8
@@ -191,7 +391,132 @@ GET /accounts/{creditCardAccountId}
       - Deleted media type: application/json
     - Headers changed
       - Deleted header: x-fapi-interaction-id
-GET /accounts/{creditCardAccountId}/bills
+GET /contracts/{contractId}/scheduled-instalments
+- Modified query param: page
+  - Schema changed
+    - Max changed from null to 2.147483647e+09
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Properties changed
+            - Modified property: data
+              - Properties changed
+                - Modified property: balloonPayments
+                  - Nullable changed from true to false
+                  - MinItems changed from 0 to 1
+                  - Items changed
+                    - Properties changed
+                      - Deleted property: currency
+                      - Modified property: amount
+                        - Type changed from 'number' to 'object'
+                        - Format changed from 'double' to ''
+                        - Nullable changed from true to false
+                        - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to ''
+                        - Required changed
+                          - New required property: amount
+                          - New required property: currency
+                        - Properties changed
+                          - New property: amount
+                          - New property: currency
+                - Modified property: contractRemainingNumber
+                  - Nullable changed from true to false
+                  - Max changed from null to 999
+                - Modified property: dueInstalments
+                  - Nullable changed from true to false
+                  - Max changed from null to 999
+                - Modified property: paidInstalments
+                  - Nullable changed from true to false
+                  - Max changed from null to 999
+                - Modified property: pastDueInstalments
+                  - Nullable changed from true to false
+                  - Max changed from null to 999
+                - Modified property: totalNumberOfInstalments
+                  - Nullable changed from true to false
+                  - Max changed from null to 999999
+            - Modified property: meta
+              - Properties changed
+                - Deleted property: totalPages
+                - Deleted property: totalRecords
+  - Modified response: 400
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Properties changed
+                - Deleted property: totalPages
+                - Deleted property: totalRecords
+  - Modified response: 401
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Properties changed
+                - Deleted property: totalPages
+                - Deleted property: totalRecords
+  - Modified response: 403
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Properties changed
+                - Deleted property: totalPages
+                - Deleted property: totalRecords
+  - Modified response: 404
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Properties changed
+                - Deleted property: totalPages
+                - Deleted property: totalRecords
+  - Modified response: 405
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Properties changed
+                - Deleted property: totalPages
+                - Deleted property: totalRecords
+  - Modified response: 406
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Properties changed
+                - Deleted property: totalPages
+                - Deleted property: totalRecords
+  - Modified response: 429
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Properties changed
+                - Deleted property: totalPages
+                - Deleted property: totalRecords
+  - Modified response: 500
+    - Content changed
+      - Modified media type: application/json; charset=utf-8
+        - Schema changed
+          - Properties changed
+            - Modified property: meta
+              - Properties changed
+                - Deleted property: totalPages
+                - Deleted property: totalRecords
+  - Modified response: default
+    - Content changed
+      - Deleted media type: application/json
+    - Headers changed
+      - Deleted header: x-fapi-interaction-id
+GET /contracts/{contractId}/warranties
 - Modified query param: page
   - Schema changed
     - Max changed from null to 2.147483647e+09
@@ -204,447 +529,12 @@ GET /accounts/{creditCardAccountId}/bills
             - Modified property: data
               - Items changed
                 - Properties changed
-                  - Modified property: billId
-                    - MinLength changed from 0 to 1
-                    - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
-                  - Modified property: billMinimumAmount
+                  - Modified property: warrantyAmount
                     - Type changed from 'number' to 'string'
+                    - Format changed from 'double' to ''
                     - MinLength changed from 0 to 4
-                  - Modified property: billTotalAmount
-                    - Type changed from 'number' to 'object'
-                    - Format changed from 'double' to ''
-                    - AdditionalProperties changed from null to false
-                    - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to ''
-                    - Required changed
-                      - New required property: amount
-                      - New required property: currency
-                    - Properties changed
-                      - New property: amount
-                      - New property: currency
-                  - Modified property: financeCharges
-                    - Items changed
-                      - Properties changed
-                        - Modified property: amount
-                          - Type changed from 'number' to 'string'
-                          - Nullable changed from true to false
-                          - MinLength changed from 0 to 4
-                  - Modified property: payments
-                    - Items changed
-                      - Properties changed
-                        - Modified property: amount
-                          - Type changed from 'number' to 'string'
-                          - MinLength changed from 0 to 4
-                          - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to '^\d{1,15}\.\d{2,4}$'
-  - Modified response: 400
-    - Content changed
-      - Modified media type: application/json; charset=utf-8
-        - Schema changed
-          - Properties changed
-            - Modified property: meta
-              - Properties changed
-                - Deleted property: totalPages
-                - Deleted property: totalRecords
-  - Modified response: 401
-    - Content changed
-      - Modified media type: application/json; charset=utf-8
-        - Schema changed
-          - Properties changed
-            - Modified property: meta
-              - Properties changed
-                - Deleted property: totalPages
-                - Deleted property: totalRecords
-  - Modified response: 403
-    - Content changed
-      - Modified media type: application/json; charset=utf-8
-        - Schema changed
-          - Properties changed
-            - Modified property: meta
-              - Properties changed
-                - Deleted property: totalPages
-                - Deleted property: totalRecords
-  - Modified response: 404
-    - Content changed
-      - Modified media type: application/json; charset=utf-8
-        - Schema changed
-          - Properties changed
-            - Modified property: meta
-              - Properties changed
-                - Deleted property: totalPages
-                - Deleted property: totalRecords
-  - Modified response: 405
-    - Content changed
-      - Modified media type: application/json; charset=utf-8
-        - Schema changed
-          - Properties changed
-            - Modified property: meta
-              - Properties changed
-                - Deleted property: totalPages
-                - Deleted property: totalRecords
-  - Modified response: 406
-    - Content changed
-      - Modified media type: application/json; charset=utf-8
-        - Schema changed
-          - Properties changed
-            - Modified property: meta
-              - Properties changed
-                - Deleted property: totalPages
-                - Deleted property: totalRecords
-  - Modified response: 429
-    - Content changed
-      - Modified media type: application/json; charset=utf-8
-        - Schema changed
-          - Properties changed
-            - Modified property: meta
-              - Properties changed
-                - Deleted property: totalPages
-                - Deleted property: totalRecords
-  - Modified response: 500
-    - Content changed
-      - Modified media type: application/json; charset=utf-8
-        - Schema changed
-          - Properties changed
-            - Modified property: meta
-              - Properties changed
-                - Deleted property: totalPages
-                - Deleted property: totalRecords
-  - Modified response: default
-    - Content changed
-      - Deleted media type: application/json
-    - Headers changed
-      - Deleted header: x-fapi-interaction-id
-GET /accounts/{creditCardAccountId}/bills/{billId}/transactions
-- Modified query param: page
-  - Schema changed
-    - Max changed from null to 2.147483647e+09
-- Modified query param: payeeMCC
-  - Schema changed
-    - Format changed from '' to 'int32'
-    - Max changed from null to 9999
-- Responses changed
-  - Modified response: 200
-    - Content changed
-      - Modified media type: application/json
-        - Schema changed
-          - Properties changed
-            - Modified property: data
-              - Items changed
-                - Properties changed
-                  - Deleted property: currency
-                  - Deleted property: lineName
-                  - Modified property: amount
-                    - Type changed from 'number' to 'object'
-                    - Format changed from 'double' to ''
-                    - AdditionalProperties changed from null to false
-                    - Nullable changed from true to false
-                    - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to ''
-                    - Required changed
-                      - New required property: amount
-                      - New required property: currency
-                    - Properties changed
-                      - New property: amount
-                      - New property: currency
-                  - Modified property: billId
-                    - MinLength changed from 0 to 1
-                    - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
-                  - Modified property: billPostDate
-                    - Pattern changed from '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$|^NA$' to '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
-                  - Modified property: brazilianAmount
-                    - Type changed from 'number' to 'object'
-                    - Format changed from 'double' to ''
-                    - AdditionalProperties changed from null to false
-                    - Nullable changed from true to false
-                    - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to ''
-                    - Required changed
-                      - New required property: amount
-                      - New required property: currency
-                    - Properties changed
-                      - New property: amount
-                      - New property: currency
-                  - Modified property: chargeNumber
-                    - Nullable changed from true to false
-                    - Max changed from null to 999
-                  - Modified property: feeTypeAdditionalInfo
-                    - Pattern changed from '' to '^\S[\s\S]*$'
-                  - Modified property: identificationNumber
-                    - MinLength changed from 0 to 1
-                    - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
-                  - Modified property: otherCreditsAdditionalInfo
-                    - Pattern changed from '' to '^\S[\s\S]*$'
-                  - Modified property: payeeMCC
-                    - Nullable changed from true to false
-                    - Max changed from null to 2.147483647e+09
-                  - Modified property: transactionDate
-                    - Pattern changed from '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$|^NA$' to '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
-                  - Modified property: transactionId
-                    - MinLength changed from 0 to 1
-                    - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
-                  - Modified property: transactionalAdditionalInfo
-                    - Pattern changed from '' to '^\S[\s\S]*$'
-            - Modified property: links
-              - Properties changed
-                - Deleted property: last
-            - Modified property: meta
-              - Properties changed
-                - Deleted property: totalPages
-                - Deleted property: totalRecords
-  - Modified response: 400
-    - Content changed
-      - Modified media type: application/json; charset=utf-8
-        - Schema changed
-          - Properties changed
-            - Modified property: meta
-              - Properties changed
-                - Deleted property: totalPages
-                - Deleted property: totalRecords
-  - Modified response: 401
-    - Content changed
-      - Modified media type: application/json; charset=utf-8
-        - Schema changed
-          - Properties changed
-            - Modified property: meta
-              - Properties changed
-                - Deleted property: totalPages
-                - Deleted property: totalRecords
-  - Modified response: 403
-    - Content changed
-      - Modified media type: application/json; charset=utf-8
-        - Schema changed
-          - Properties changed
-            - Modified property: meta
-              - Properties changed
-                - Deleted property: totalPages
-                - Deleted property: totalRecords
-  - Modified response: 404
-    - Content changed
-      - Modified media type: application/json; charset=utf-8
-        - Schema changed
-          - Properties changed
-            - Modified property: meta
-              - Properties changed
-                - Deleted property: totalPages
-                - Deleted property: totalRecords
-  - Modified response: 405
-    - Content changed
-      - Modified media type: application/json; charset=utf-8
-        - Schema changed
-          - Properties changed
-            - Modified property: meta
-              - Properties changed
-                - Deleted property: totalPages
-                - Deleted property: totalRecords
-  - Modified response: 406
-    - Content changed
-      - Modified media type: application/json; charset=utf-8
-        - Schema changed
-          - Properties changed
-            - Modified property: meta
-              - Properties changed
-                - Deleted property: totalPages
-                - Deleted property: totalRecords
-  - Modified response: 429
-    - Content changed
-      - Modified media type: application/json; charset=utf-8
-        - Schema changed
-          - Properties changed
-            - Modified property: meta
-              - Properties changed
-                - Deleted property: totalPages
-                - Deleted property: totalRecords
-  - Modified response: 500
-    - Content changed
-      - Modified media type: application/json; charset=utf-8
-        - Schema changed
-          - Properties changed
-            - Modified property: meta
-              - Properties changed
-                - Deleted property: totalPages
-                - Deleted property: totalRecords
-  - Modified response: default
-    - Content changed
-      - Deleted media type: application/json
-    - Headers changed
-      - Deleted header: x-fapi-interaction-id
-GET /accounts/{creditCardAccountId}/limits
-- Responses changed
-  - Modified response: 200
-    - Content changed
-      - Modified media type: application/json
-        - Schema changed
-          - Properties changed
-            - Modified property: data
-              - Items changed
-                - Properties changed
-                  - Modified property: availableAmount
-                    - Type changed from 'number' to 'string'
-                    - Nullable changed from true to false
-                    - MinLength changed from 0 to 4
-                  - Modified property: availableAmountCurrency
-                    - Pattern changed from '^(\w{3}){1}$|^NA$' to '^(\w{3}){1}$'
-                  - Modified property: identificationNumber
-                    - MinLength changed from 0 to 1
-                    - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
-                  - Modified property: limitAmount
-                    - Type changed from 'number' to 'string'
-                    - Nullable changed from true to false
-                    - MinLength changed from 0 to 4
-                  - Modified property: limitAmountCurrency
-                    - Pattern changed from '^(\w{3}){1}$|^NA$' to '^(\w{3}){1}$'
-                  - Modified property: lineNameAdditionalInfo
-                    - MaxLength changed from null to 50
-                  - Modified property: usedAmount
-                    - Type changed from 'number' to 'string'
-                    - Nullable changed from true to false
-                    - MinLength changed from 0 to 4
-                  - Modified property: usedAmountCurrency
-                    - Pattern changed from '^(\w{3}){1}$|^NA$' to '^(\w{3}){1}$'
-  - Modified response: 400
-    - Content changed
-      - Modified media type: application/json; charset=utf-8
-        - Schema changed
-          - Properties changed
-            - Modified property: meta
-              - Properties changed
-                - Deleted property: totalPages
-                - Deleted property: totalRecords
-  - Modified response: 401
-    - Content changed
-      - Modified media type: application/json; charset=utf-8
-        - Schema changed
-          - Properties changed
-            - Modified property: meta
-              - Properties changed
-                - Deleted property: totalPages
-                - Deleted property: totalRecords
-  - Modified response: 403
-    - Content changed
-      - Modified media type: application/json; charset=utf-8
-        - Schema changed
-          - Properties changed
-            - Modified property: meta
-              - Properties changed
-                - Deleted property: totalPages
-                - Deleted property: totalRecords
-  - Modified response: 404
-    - Content changed
-      - Modified media type: application/json; charset=utf-8
-        - Schema changed
-          - Properties changed
-            - Modified property: meta
-              - Properties changed
-                - Deleted property: totalPages
-                - Deleted property: totalRecords
-  - Modified response: 405
-    - Content changed
-      - Modified media type: application/json; charset=utf-8
-        - Schema changed
-          - Properties changed
-            - Modified property: meta
-              - Properties changed
-                - Deleted property: totalPages
-                - Deleted property: totalRecords
-  - Modified response: 406
-    - Content changed
-      - Modified media type: application/json; charset=utf-8
-        - Schema changed
-          - Properties changed
-            - Modified property: meta
-              - Properties changed
-                - Deleted property: totalPages
-                - Deleted property: totalRecords
-  - Modified response: 429
-    - Content changed
-      - Modified media type: application/json; charset=utf-8
-        - Schema changed
-          - Properties changed
-            - Modified property: meta
-              - Properties changed
-                - Deleted property: totalPages
-                - Deleted property: totalRecords
-  - Modified response: 500
-    - Content changed
-      - Modified media type: application/json; charset=utf-8
-        - Schema changed
-          - Properties changed
-            - Modified property: meta
-              - Properties changed
-                - Deleted property: totalPages
-                - Deleted property: totalRecords
-  - Modified response: default
-    - Content changed
-      - Deleted media type: application/json
-    - Headers changed
-      - Deleted header: x-fapi-interaction-id
-GET /accounts/{creditCardAccountId}/transactions
-- Modified query param: page
-  - Schema changed
-    - Max changed from null to 2.147483647e+09
-- Modified query param: payeeMCC
-  - Schema changed
-    - Format changed from '' to 'int32'
-    - Max changed from null to 9999
-- Responses changed
-  - Modified response: 200
-    - Content changed
-      - Modified media type: application/json
-        - Schema changed
-          - Properties changed
-            - Modified property: data
-              - Items changed
-                - Properties changed
-                  - Deleted property: currency
-                  - Deleted property: lineName
-                  - Modified property: amount
-                    - Type changed from 'number' to 'object'
-                    - Format changed from 'double' to ''
-                    - AdditionalProperties changed from null to false
-                    - Nullable changed from true to false
-                    - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to ''
-                    - Required changed
-                      - New required property: amount
-                      - New required property: currency
-                    - Properties changed
-                      - New property: amount
-                      - New property: currency
-                  - Modified property: billId
-                    - MinLength changed from 0 to 1
-                    - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
-                  - Modified property: billPostDate
-                    - Pattern changed from '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$|^NA$' to '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
-                  - Modified property: brazilianAmount
-                    - Type changed from 'number' to 'object'
-                    - Format changed from 'double' to ''
-                    - AdditionalProperties changed from null to false
-                    - Nullable changed from true to false
-                    - Pattern changed from '^-?\d{1,15}\.\d{2,4}$' to ''
-                    - Required changed
-                      - New required property: amount
-                      - New required property: currency
-                    - Properties changed
-                      - New property: amount
-                      - New property: currency
-                  - Modified property: chargeNumber
-                    - Nullable changed from true to false
-                    - Max changed from null to 999
-                  - Modified property: feeTypeAdditionalInfo
-                    - Pattern changed from '' to '^\S[\s\S]*$'
-                  - Modified property: identificationNumber
-                    - MinLength changed from 0 to 1
-                    - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
-                  - Modified property: otherCreditsAdditionalInfo
-                    - Pattern changed from '' to '^\S[\s\S]*$'
-                  - Modified property: payeeMCC
-                    - Nullable changed from true to false
-                    - Max changed from null to 2.147483647e+09
-                  - Modified property: transactionDate
-                    - Pattern changed from '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$|^NA$' to '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
-                  - Modified property: transactionId
-                    - MinLength changed from 0 to 1
-                    - Pattern changed from '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$' to '^[a-zA-Z0-9][a-zA-Z0-9-]{1,100}$'
-                  - Modified property: transactionalAdditionalInfo
-                    - Pattern changed from '' to '^\S[\s\S]*$'
-            - Modified property: links
-              - Properties changed
-                - Deleted property: last
+                  - Modified property: warrantyType
+                    - Deleted enum values: [SEM_TIPO_GARANTIA]
             - Modified property: meta
               - Properties changed
                 - Deleted property: totalPages
@@ -727,5 +617,5 @@ GET /accounts/{creditCardAccountId}/transactions
     - Headers changed
       - Deleted header: x-fapi-interaction-id
 Servers changed
-- Deleted server: https://api.banco.com.br/open-banking/credit-cards-accounts/v1
-- Deleted server: https://apih.banco.com.br/open-banking/credit-cards-accounts/v1
+- Deleted server: https://api.banco.com.br/open-banking/unarranged-accounts-overdraft/v1
+- Deleted server: https://apih.banco.com.br/open-banking/unarranged-accounts-overdraft/v1

@@ -26,6 +26,7 @@ GET /business-accounts
                       - MinItems changed from 1 to 0
                       - Items changed
                         - Property 'AllOf' changed
+                          - 1 schemas deleted
                         - Type changed from 'object' to ''
                         - Properties changed
                           - New property: cnpjNumber
@@ -163,6 +164,7 @@ GET /business-credit-cards
               - Properties changed
                 - Modified property: brand
                   - Property 'AllOf' changed
+                    - 1 schemas deleted
                   - Required changed
                     - New required property: name
                   - Properties changed
@@ -172,6 +174,7 @@ GET /business-credit-cards
                       - MinItems changed from 1 to 0
                       - Items changed
                         - Property 'AllOf' changed
+                          - 1 schemas deleted
                         - Type changed from 'object' to ''
                         - Properties changed
                           - New property: cnpjNumber
@@ -259,12 +262,15 @@ GET /business-financings
               - Properties changed
                 - Modified property: brand
                   - Property 'AllOf' changed
+                    - 1 schemas deleted
                   - Properties changed
                     - New property: name
                     - Modified property: companies
                       - MinItems changed from 1 to 0
                       - Items changed
                         - Property 'AllOf' changed
+                          - 1 schemas added
+                          - 1 schemas deleted
                         - Properties changed
                           - New property: name
                           - New property: urlComplementaryList
@@ -337,6 +343,8 @@ GET /business-invoice-financings
                       - MinItems changed from 1 to 0
                       - Items changed
                         - Property 'AllOf' changed
+                          - 1 schemas added
+                          - 1 schemas deleted
                         - Properties changed
                           - New property: name
                           - New property: urlComplementaryList
@@ -410,6 +418,10 @@ GET /business-loans
                       - MinItems changed from 1 to 0
                       - Items changed
                         - Property 'AllOf' changed
+                          - Schema #/components/schemas/CNPJ modified
+                            - Properties changed
+                              - Modified property: cnpjNumber
+                                - Pattern changed from '^(\d{14})$|^NA$' to '(\d{2})(\d{3})(\d{3})'
                         - Properties changed
                           - Modified property: businessLoans
                             - Description changed from 'Lista de modalidades de empréstimos' to 'Lista'
@@ -489,6 +501,7 @@ GET /personal-accounts
                       - MinItems changed from 1 to 0
                       - Items changed
                         - Property 'AllOf' changed
+                          - 1 schemas deleted
                         - Properties changed
                           - New property: cnpjNumbers
                           - New property: name
@@ -647,6 +660,7 @@ GET /personal-credit-cards
               - Properties changed
                 - Modified property: brand
                   - Property 'AllOf' changed
+                    - 1 schemas deleted
                   - Required changed
                     - New required property: name
                   - Properties changed
@@ -656,6 +670,7 @@ GET /personal-credit-cards
                       - MinItems changed from 1 to 0
                       - Items changed
                         - Property 'AllOf' changed
+                          - 1 schemas deleted
                         - Type changed from 'object' to ''
                         - Required changed
                           - Deleted required property: personalCreditCards
@@ -743,12 +758,15 @@ GET /personal-financings
               - Properties changed
                 - Modified property: brand
                   - Property 'AllOf' changed
+                    - 1 schemas deleted
                   - Properties changed
                     - New property: name
                     - Modified property: companies
                       - MinItems changed from 1 to 0
                       - Items changed
                         - Property 'AllOf' changed
+                          - 1 schemas added
+                          - 1 schemas deleted
                         - Properties changed
                           - New property: name
                           - New property: urlComplementaryList
@@ -820,6 +838,8 @@ GET /personal-invoice-financings
                       - MinItems changed from 1 to 0
                       - Items changed
                         - Property 'AllOf' changed
+                          - 1 schemas added
+                          - 1 schemas deleted
                         - Properties changed
                           - New property: name
                           - New property: urlComplementaryList
@@ -883,6 +903,10 @@ GET /personal-loans
                       - MinItems changed from 1 to 0
                       - Items changed
                         - Property 'AllOf' changed
+                          - Schema #/components/schemas/CNPJ modified
+                            - Properties changed
+                              - Modified property: cnpjNumber
+                                - Pattern changed from '^(\d{14})$|^NA$' to '(\d{2})(\d{3})(\d{3})'
                         - Properties changed
                           - Modified property: personalLoans
                             - Description changed from 'Lista de modalidades de empréstimos' to 'Lista'

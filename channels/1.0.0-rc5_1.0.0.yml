@@ -20,17 +20,32 @@ GET /banking-agents
               - Properties changed
                 - Modified property: brand
                   - Property 'AllOf' changed
+                    - 1 schemas deleted
                   - Properties changed
                     - Modified property: companies
                       - MinItems changed from 1 to 0
                       - Items changed
                         - Property 'AllOf' changed
+                          - Schema #/components/schemas/CNPJ modified
+                            - Required changed
+                              - New required property: cnpjNumber
+                            - Properties changed
+                              - Modified property: cnpjNumber
+                                - Description changed from 'Número completo do CNPJ da instituição' to 'CNPJ'
+                                - Pattern changed from '^(\d{14})$|^NA$' to '^(\d{14})$'
                         - Properties changed
                           - Modified property: contractors
                             - Description changed from 'Relação de informações de um contratante do serviço de correspondente.' to 'Lista de contratantes'
                             - MinItems changed from 1 to 0
                             - Items changed
                               - Property 'AllOf' changed
+                                - Schema #/components/schemas/CNPJ modified
+                                  - Required changed
+                                    - New required property: cnpjNumber
+                                  - Properties changed
+                                    - Modified property: cnpjNumber
+                                      - Description changed from 'Número completo do CNPJ da instituição' to 'CNPJ'
+                                      - Pattern changed from '^(\d{14})$|^NA$' to '^(\d{14})$'
                               - Required changed
                                 - Deleted required property: cnpjNumber
                               - Properties changed
@@ -45,6 +60,13 @@ GET /banking-agents
                                       - Deleted property: locations
                                       - Modified property: identification
                                         - Property 'AllOf' changed
+                                          - Schema #/components/schemas/CNPJ modified
+                                            - Required changed
+                                              - New required property: cnpjNumber
+                                            - Properties changed
+                                              - Modified property: cnpjNumber
+                                                - Description changed from 'Número completo do CNPJ da instituição' to 'CNPJ'
+                                                - Pattern changed from '^(\d{14})$|^NA$' to '^(\d{14})$'
                                         - Required changed
                                           - Deleted required property: cnpjNumber
                                         - Properties changed
@@ -95,6 +117,13 @@ GET /branches
                       - MinItems changed from 1 to 0
                       - Items changed
                         - Property 'AllOf' changed
+                          - Schema #/components/schemas/CNPJ modified
+                            - Required changed
+                              - New required property: cnpjNumber
+                            - Properties changed
+                              - Modified property: cnpjNumber
+                                - Description changed from 'Número completo do CNPJ da instituição' to 'CNPJ'
+                                - Pattern changed from '^(\d{14})$|^NA$' to '^(\d{14})$'
                         - Required changed
                           - Deleted required property: cnpjNumber
                         - Properties changed
@@ -159,6 +188,7 @@ Posto de Atendimento é a dependência subordinada a agência  ou à sede da ins
                                   - MinItems changed from 1 to 0
                                   - Items changed
                                     - Property 'AllOf' changed
+                                      - 1 schemas deleted
                                     - Required changed
                                       - New required property: areaCode
                                       - New required property: countryCode
@@ -171,6 +201,7 @@ Posto de Atendimento é a dependência subordinada a agência  ou à sede da ins
                                       - New property: type
                                 - Modified property: postalAddresses
                                   - Property 'AllOf' changed
+                                    - 1 schemas deleted
                                   - Properties changed
                                     - New property: address
                                     - New property: countrySubDivision
@@ -207,6 +238,13 @@ GET /electronic-channels
                       - MinItems changed from 1 to 0
                       - Items changed
                         - Property 'AllOf' changed
+                          - Schema #/components/schemas/CNPJ modified
+                            - Required changed
+                              - New required property: cnpjNumber
+                            - Properties changed
+                              - Modified property: cnpjNumber
+                                - Description changed from 'Número completo do CNPJ da instituição' to 'CNPJ'
+                                - Pattern changed from '^(\d{14})$|^NA$' to '^(\d{14})$'
                         - Required changed
                           - Deleted required property: cnpjNumber
                         - Properties changed
@@ -261,6 +299,13 @@ GET /phone-channels
                       - MinItems changed from 1 to 0
                       - Items changed
                         - Property 'AllOf' changed
+                          - Schema #/components/schemas/CNPJ modified
+                            - Required changed
+                              - New required property: cnpjNumber
+                            - Properties changed
+                              - Modified property: cnpjNumber
+                                - Description changed from 'Número completo do CNPJ da instituição' to 'CNPJ'
+                                - Pattern changed from '^(\d{14})$|^NA$' to '^(\d{14})$'
                         - Required changed
                           - Deleted required property: cnpjNumber
                         - Properties changed

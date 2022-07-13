@@ -53,6 +53,11 @@ GET /branches
                                 - Modified property: phones
                                   - Items changed
                                     - Property 'AllOf' changed
+                                      - Schema #/components/schemas/Phone modified
+                                        - Properties changed
+                                          - Modified property: countryCallingCode
+                                            - MaxLength changed from 4 to 2
+                                            - Pattern changed from '^\d{1,4}$' to '^\d{2}$'
 GET /phone-channels
 - Responses changed
   - Modified response: 200

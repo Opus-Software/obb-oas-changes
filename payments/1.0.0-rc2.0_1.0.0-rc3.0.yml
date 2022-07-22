@@ -205,7 +205,7 @@ No caso de chave aleatória deve ser informado o UUID gerado pelo DICT, conforme
           - Deleted example: Valor da transação incompatível
           - Deleted example: Valor inválido
 - Security changed
-  - New security requirements: OAuth2Security AND OpenId
+  - New security requirements: OpenId AND OAuth2Security
   - Deleted security requirements: OpenId
 GET /pix/payments/{paymentId}
 - Responses changed
@@ -269,5 +269,5 @@ No caso de chave aleatória deve ser informado o UUID gerado pelo DICT, conforme
 [Restrição] Obrigatório quando o campo localInstrument for igual a DICT.
 '
 - Security changed
-  - New security requirements: OpenId AND OAuth2Security
+  - New security requirements: OAuth2Security AND OpenId
   - Deleted security requirements: OpenId
